@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulk Renamer PRO — VibeWhisper</title>
+  <meta name="description" content="Batch file renaming con 17 regole componibili: regex, numerazione, traslitterazione, cleanup. PyQt6, Catppuccin Mocha theme.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_x9ko36x9ko36x9ko.png" alt="Bulk Renamer PRO Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg rose">✏️</div>
+    <h1>Bulk Renamer PRO</h1>
+    <p class="subtitle">
+      Rinomina file in batch con 17 regole componibili. Preview live con colori, undo illimitato, tema Catppuccin Mocha. Clone di ReNamer in Python + PyQt6.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python 3.10+</span>
+      <span class="tech-tag">PyQt6</span>
+      <span class="tech-tag">Catppuccin Mocha</span>
+      <span class="tech-tag">PyInstaller</span>
+      <span class="tech-tag">Regex</span>
+      <span class="tech-tag">MIT License</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/bulkrenamer/releases" class="link-btn" target="_blank" rel="noopener">📦 Download</a>
+      <a href="https://github.com/vigliafg/bulkrenamer/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+      <a href="https://github.com/vigliafg/bulkrenamer#installation" class="link-btn" target="_blank" rel="noopener">📖 Install Guide</a>
+      <a href="https://github.com/vigliafg/bulkrenamer" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <h2>✨ Cos'è</h2>
+    <p>
+      <strong>Bulk File Renamer PRO</strong> è un'applicazione GUI per il batch renaming di file. 
+      Componi uno <strong>stack di regole</strong> (fino a 17 tipi diversi) e vedi una preview live del risultato, 
+      con colori che evidenziano modifiche e conflitti. L'interfaccia è ispirata a ReNamer con un tema dark Catppuccin Mocha.
+    </p>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">17</div><div class="lbl">Regole componibili</div></div>
+      <div class="stat-card"><div class="num">93</div><div class="lbl">Test unit + E2E</div></div>
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Piattaforme</div></div>
+      <div class="stat-card"><div class="num">∞</div><div class="lbl">Undo stack</div></div>
+    </div>
+
+    <h2>📋 Le 17 Regole</h2>
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.85rem;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);text-align:left;">
+          <th style="padding:10px 14px;color:var(--text-dim);width:40px;">#</th>
+          <th style="padding:10px 14px;color:var(--accent-2);">Regola</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">Descrizione</th>
+        </tr>
+      </thead>
+      <tbody style="color:var(--text-muted);">
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">1</td><td style="padding:8px 14px;">📝 Insert</td><td style="padding:8px 14px;">Inserisci testo prima, dopo, a posizione specifica o dopo/prima di un delimitatore. Meta-tags: [[MTIME_DATE]], [[INDEX]], ecc.</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">2</td><td style="padding:8px 14px;">✂️ Delete</td><td style="padding:8px 14px;">Elimina un range di caratteri (per posizione, delimitatore o conteggio)</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">3</td><td style="padding:8px 14px;">🗑 Remove</td><td style="padding:8px 14px;">Rimuovi testo (tutte le occorrenze, prima/ultima), case-sensitive, whole-word. Multipli con *|*</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">4</td><td style="padding:8px 14px;">🔄 Replace</td><td style="padding:8px 14px;">Find & replace con regex, wildcard (* e ?), case-sensitive, whole-word</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">5</td><td style="padding:8px 14px;">🔀 Rearrange</td><td style="padding:8px 14px;">Riordina token del nome con delimitatori o posizioni esatte. Template con $1, $2...</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">6</td><td style="padding:8px 14px;">🔧 Extension</td><td style="padding:8px 14px;">Cambia estensione file, append, rimuovi duplicati consecutivi</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">7</td><td style="padding:8px 14px;">✂️ Strip</td><td style="padding:8px 14px;">Rimuovi caratteri specifici o set predefiniti (cifre, simboli, lettere, parentesi). Modalità invert</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">8</td><td style="padding:8px 14px;">🔠 Case</td><td style="padding:8px 14px;">Converti: lowercase, UPPERCASE, Title Case, Invert, First capital, Sentence case</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">9</td><td style="padding:8px 14px;">🔢 Serialize</td><td style="padding:8px 14px;">Numerazione: decimale, romana, lettere (a-z, ba-bz...), note musicali. Padding, step, reset</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">10</td><td style="padding:8px 14px;">🎲 Randomize</td><td style="padding:8px 14px;">Stringa random come prefisso/suffisso o sostituzione nome. Lunghezza e set caratteri configurabili</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">11</td><td style="padding:8px 14px;">📏 Padding</td><td style="padding:8px 14px;">Aggiungi/rimuovi zero-padding su numeri nei nomi file. Anche text padding</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">12</td><td style="padding:8px 14px;">🧹 Clean Up</td><td style="padding:8px 14px;">Rimuovi parentesi, normalizza spazi, split camelCase, rimuovi emoji e segni diacritici</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">13</td><td style="padding:8px 14px;">🌍 Translit</td><td style="padding:8px 14px;">Traslitterazione: tedesco, francese, italiano, spagnolo, portoghese, russo, greco, giapponese + mappe custom</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">14</td><td style="padding:8px 14px;">📅 Reformat Date</td><td style="padding:8px 14px;">Rileva date nei nomi file via regex e riformattale (es. 2025-06-01 → 01062025)</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">15</td><td style="padding:8px 14px;">🔣 Regex</td><td style="padding:8px 14px;">Sostituzione regex arbitraria. Per utenti avanzati</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">16</td><td style="padding:8px 14px;">📋 User Input</td><td style="padding:8px 14px;">Sostituisci nomi file con una lista fornita dall'utente</td></tr>
+        <tr><td style="padding:8px 14px;">17</td><td style="padding:8px 14px;">🗺 Mapping</td><td style="padding:8px 14px;">Rinomina basata su mappa chiave-valore (vecchio nome → nuovo nome)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🏷️ Meta-tags</h2>
+    <p>
+      <code>[[MTIME_DATE]]</code>, <code>[[MTIME_YEAR]]</code>, <code>[[MTIME_MONTH]]</code>, <code>[[MTIME_DAY]]</code>, 
+      <code>[[MTIME_TIME]]</code>, <code>[[INDEX]]</code> (1-based con auto padding), <code>[[INDEX0]]</code> (0-based).
+    </p>
+
+    <h2>🔄 Workflow Tipico</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li><strong>Carica file</strong> — da cartella o selezione manuale</li>
+      <li><strong>Aggiungi regole</strong> — dal menu Rules, appaiono come card impilabili</li>
+      <li><strong>Configura ogni regola</strong> — ogni card ha i suoi parametri, abilita/disabilita con checkbox</li>
+      <li><strong>Controlla la preview</strong> — pannello destro: nome originale, nuovo nome, stato (✓ cambiato, ⚠ duplicato, — invariato)</li>
+      <li><strong>Seleziona file</strong> — checkbox nella colonna ☑, header per selezionare/deselezionare tutti</li>
+      <li><strong>Rinomina!</strong> — click su ✅ Rename (N) per applicare</li>
+    </ol>
+
+    <h2>💾 Presets & Undo</h2>
+    <p>
+      Salva la configurazione corrente delle regole in un file <code>.json</code> e ricaricala dopo. 
+      Undo illimitato: dopo una rinomina, puoi annullare l'operazione con <code>↩ Undo</code>. 
+      Factory Reset dal menu Tools per riportare tutto ai valori predefiniti.
+    </p>
+
+    <h2>🧪 Testing</h2>
+    <p>
+      <strong>93 test</strong> unit + end-to-end che coprono ogni funzione dell'engine, apply_rules_stack con combinazioni, 
+      ordinamento, regole disabilitate, meta-token e regressioni di bug fix. Solo standard library — nessuna dipendenza extra per i test.
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/bulkrenamer" style="color:var(--accent-2);">GitHub</a> · MIT License</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>epub2site — VibeWhisper</title>
+  <meta name="description" content="Converti EPUB in sito web statico: reader con TOC, temi, font regolabili. Binario standalone, zero dipendenze.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_uf16nguf16nguf16.png" alt="epub2site Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg amber">🌐</div>
+    <h1>epub2site</h1>
+    <p class="subtitle">
+      Converti qualsiasi EPUB in un sito web statico auto-contenuto — leggibile in qualsiasi browser, senza server, zero dipendenze a runtime.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Node.js</span>
+      <span class="tech-tag">JavaScript</span>
+      <span class="tech-tag">epub.js</span>
+      <span class="tech-tag">Bun (binary)</span>
+      <span class="tech-tag">CLI</span>
+      <span class="tech-tag">Static HTML</span>
+      <span class="tech-tag">MIT License</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/epub2site/releases" class="link-btn" target="_blank" rel="noopener">📦 Download</a>
+      <a href="https://github.com/vigliafg/epub2site/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+      <a href="https://github.com/vigliafg/epub2site#installation" class="link-btn" target="_blank" rel="noopener">📖 Install Guide</a>
+      <a href="https://github.com/vigliafg/epub2site" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <h2>✨ Cosa Fa</h2>
+    <p>
+      <strong>epub2site</strong> prende un file <code>.epub</code> e produce una cartella di HTML puri. 
+      Il risultato è un'esperienza di lettura completamente offline con TOC gerarchico, tema chiaro/scuro, 
+      controlli di font e layout — il tutto senza bisogno di un server.
+    </p>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Piattaforme</div></div>
+      <div class="stat-card"><div class="num">92 MB</div><div class="lbl">Binary standalone</div></div>
+      <div class="stat-card"><div class="num">0</div><div class="lbl">Dipendenze runtime (binary)</div></div>
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Modalità CSS</div></div>
+    </div>
+
+    <h2>🎮 Reader Controls</h2>
+    <ul class="feature-list">
+      <li><span class="dot accent"></span> <strong>☰ TOC Sidebar</strong> — Indice gerarchico con sezioni collassabili, resizeabile, scroll position salvata per capitolo</li>
+      <li><span class="dot purple"></span> <strong>A− / A+</strong> — Controlli dimensione font (persistiti in localStorage)</li>
+      <li><span class="dot green"></span> <strong>CSS+ Toggle</strong> — Passa dallo stylesheet built-in al CSS originale del libro (callout, tabelle, figure)</li>
+      <li><span class="dot amber"></span> <strong>◑ Theme Toggle</strong> — Chiaro / Scuro, salvato tra sessioni</li>
+      <li><span class="dot accent"></span> <strong>Progress Bar</strong> — Sticky header con barra di avanzamento capitolo</li>
+    </ul>
+
+    <h2>📦 Output Structure</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.82rem;overflow-x:auto;line-height:1.8;margin:16px 0;">
+&lt;output-dir&gt;/
+├── index.html          # Cover page con metadati libro
+├── cover.jpg           # Immagine di copertina
+├── assets/
+│   ├── reader.css      # Stylesheet del reader
+│   ├── reader.js       # Comportamento lato browser
+│   ├── toc.js          # Dati TOC auto-generati
+│   └── enriched.css    # CSS originale del libro (scopato)
+├── chapters/
+│   ├── ch-001.html
+│   ├── ch-002.html
+│   └── ...
+├── images/             # Tutte le immagini estratte
+└── fonts/              # Tutti i font estratti
+    </pre>
+
+    <h2>🚀 Utilizzo</h2>
+    <p>
+      <code>epub2site mio-libro.epub --open</code> — Converti e apri nel browser<br>
+      <code>epub2site mio-libro.epub --css original</code> — Usa CSS originale del libro<br>
+      <code>epub2site mio-libro.epub ./output/</code> — Specifica cartella output
+    </p>
+
+    <h2>🏗️ Architettura</h2>
+    <p>Il progetto è diviso in tre aree:</p>
+    <ul class="feature-list">
+      <li><span class="dot accent"></span> <strong>src/epub/</strong> — Legge e parsa il file EPUB (parser + TOC extraction da NCX/nav.xhtml)</li>
+      <li><span class="dot green"></span> <strong>src/generator/</strong> — Produce HTML statico: assets, capitoli, index, enriched CSS (scoping via prefisso <code>.chapter-content</code>)</li>
+      <li><span class="dot purple"></span> <strong>src/reader/</strong> — CSS e JS embedded in ogni pagina generata (tema, font, TOC, progresso)</li>
+    </ul>
+
+    <h2>🔧 Enriched CSS System</h2>
+    <p>
+      epub2site può estrarre e rendere sicuro il CSS originale del libro. Il processo: rimuove commenti, filtra regole non sicure 
+      (@font-face, @import, @keyframes), filtra selettori pericolosi (body, html, *), e prefissa ogni selettore con 
+      <code>.chapter-content</code>. Il risultato è uno stylesheet che convive con il reader senza romperne l'UI.
+    </p>
+
+    <h2>📦 Binary Monolitico</h2>
+    <p>
+      Oltre alla versione Node.js, epub2site è disponibile come <strong>binario standalone (~92 MB)</strong> compilato con Bun — 
+      nessuna installazione di Node.js richiesta. Disponibile per Linux x64, macOS ARM e Windows x64. 
+      Il binario incorpora reader.js e reader.css come costanti stringa.
+    </p>
+
+    <h2>🎯 Design Decisions</h2>
+    <ul class="feature-list">
+      <li><span class="dot accent"></span> <strong>No build step</strong> — JS e CSS del reader sono file copiati as-is</li>
+      <li><span class="dot green"></span> <strong>toc.js come data bridge</strong> — Il TOC è un file separato, non inline in ogni capitolo</li>
+      <li><span class="dot purple"></span> <strong>Enriched CSS come file esterno</strong> — La cache del browser evita ricaricamenti tra capitoli</li>
+      <li><span class="dot amber"></span> <strong>scroll-margin-top</strong> — Corregge nativamente gli anchor fragment sotto l'header sticky, senza JS</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/epub2site" style="color:var(--accent-2);">GitHub</a> · MIT License</p>
+</footer>
+
+</body>
+</html>

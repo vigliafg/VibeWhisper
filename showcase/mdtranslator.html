@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mdtranslator — VibeWhisper</title>
+  <meta name="description" content="Traduci file Markdown preservando la formattazione: tabelle, heading, code block. 3 motori (Google, DeepL, Edge), interfaccia CLI e GUI.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_mdtranslator_banner.png" alt="mdtranslator Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg rose">🌍</div>
+    <h1>mdtranslator</h1>
+    <p class="subtitle">
+      Traduci documenti Markdown in qualsiasi lingua preservando la struttura: tabelle, heading, code block, liste — tutto rimane al suo posto. Tre motori di traduzione, CLI e GUI.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Google Translate</span>
+      <span class="tech-tag">DeepL</span>
+      <span class="tech-tag">Edge Translate</span>
+      <span class="tech-tag">Tkinter</span>
+      <span class="tech-tag">CLI + GUI</span>
+      <span class="tech-tag">MIT License</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/mdtranslator" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/mdtranslator/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <h2>✨ Cos'è mdtranslator</h2>
+    <p>
+      <strong>mdtranslator</strong> è un traduttore di documenti Markdown che rispetta la formattazione originale. 
+      A differenza dei traduttori generici che distruggono tabelle, mescolano heading e corrompono blocchi di codice, 
+      mdtranslator preserva ogni elemento strutturale — traducendo solo il testo e lasciando intatto l'impaginato.
+    </p>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Motori (Google/DeepL/Edge)</div></div>
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Interfacce (CLI + GUI)</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Formattazione preservata</div></div>
+      <div class="stat-card"><div class="num">MIT</div><div class="lbl">Licenza</div></div>
+    </div>
+
+    <h2>🎯 Il Problema</h2>
+    <p>
+      Tradurre un file Markdown con strumenti generici (Google Translate via browser, copy-paste) distrugge 
+      sistematicamente la struttura: le tabelle si sfaldano, gli heading perdono i marker <code>#</code>, 
+      i blocchi di codice vengono tradotti (spezzandoli) e i link si corrompono. mdtranslator risolve tutto questo 
+      con un <strong>parser Markdown dedicato</strong> che isola semanticamente ogni elemento.
+    </p>
+
+    <h2>🌐 Tre Motori di Traduzione</h2>
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.88rem;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);text-align:left;">
+          <th style="padding:10px 14px;color:var(--text-dim);">Motore</th>
+          <th style="padding:10px 14px;color:var(--accent-2);">Google 🏆</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">DeepL</th>
+          <th style="padding:10px 14px;color:var(--accent-3);">Edge</th>
+        </tr>
+      </thead>
+      <tbody style="color:var(--text-muted);">
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Prezzo</td><td style="padding:8px 14px;color:var(--accent-3);">Gratuito</td><td style="padding:8px 14px;">Free tier disponibile</td><td style="padding:8px 14px;color:var(--accent-3);">Gratuito</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">API Key</td><td style="padding:8px 14px;color:var(--accent-3);">Non richiesta</td><td style="padding:8px 14px;">Richiesta</td><td style="padding:8px 14px;color:var(--accent-3);">Non richiesta</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Qualità</td><td style="padding:8px 14px;">Buona</td><td style="padding:8px 14px;color:var(--accent-2);">Eccellente</td><td style="padding:8px 14px;">Buona</td></tr>
+        <tr><td style="padding:8px 14px;">Rate Limit</td><td style="padding:8px 14px;">Sì</td><td style="padding:8px 14px;">Dipende dal piano</td><td style="padding:8px 14px;">Moderato</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🖥️ CLI Mode</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.82rem;overflow-x:auto;line-height:1.8;margin:16px 0;">
+# Traduzione base (Google, lingua target obbligatoria)
+python mdtranslator.py documento.md -t en
+
+# Specifica lingua sorgente, motore e output
+python mdtranslator.py documento.md -t fr -s it -e deepl -o output.md
+
+# Opzioni disponibili:
+#   -t, --target    Lingua di destinazione (obbligatoria)
+#   -s, --source    Lingua sorgente (auto-detect se omessa)
+#   -e, --engine    Motore: google (default), deepl, edge
+#   -o, --output    Percorso file di output</pre>
+
+    <h2>🖱️ GUI Mode</h2>
+    <p>
+      Interfaccia grafica costruita con <strong>Tkinter</strong> (con supporto opzionale customtkinter per un look moderno):
+    </p>
+    <ul class="feature-list">
+      <li><span class="dot accent"></span> <strong>File browser</strong> — Seleziona il file Markdown da tradurre con dialog nativo</li>
+      <li><span class="dot green"></span> <strong>Selezione lingue</strong> — Dropdown per lingua sorgente e target</li>
+      <li><span class="dot purple"></span> <strong>Scelta motore</strong> — Radio button per Google, DeepL o Edge</li>
+      <li><span class="dot amber"></span> <strong>Progresso in tempo reale</strong> — Barra di avanzamento durante la traduzione</li>
+      <li><span class="dot rose"></span> <strong>Anteprima output</strong> — Visualizzazione del Markdown tradotto prima del salvataggio</li>
+    </ul>
+
+    <h2>📋 Elementi Markdown Supportati</h2>
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.85rem;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);text-align:left;">
+          <th style="padding:10px 14px;color:var(--text-dim);">Elemento</th>
+          <th style="padding:10px 14px;color:var(--accent-3);">Supporto</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">Comportamento</th>
+        </tr>
+      </thead>
+      <tbody style="color:var(--text-muted);">
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Heading (H1-H6)</td><td style="padding:8px 14px;color:var(--accent-3);">✅</td><td style="padding:8px 14px;">Marker <code>#</code> preservati, solo testo tradotto</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Tabelle</td><td style="padding:8px 14px;color:var(--accent-3);">✅</td><td style="padding:8px 14px;">Struttura pipe e allineamento intatti</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Code Block</td><td style="padding:8px 14px;color:var(--accent-3);">✅</td><td style="padding:8px 14px;">Contenuto NON tradotto, backtick preservati</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Immagini</td><td style="padding:8px 14px;color:var(--accent-3);">✅</td><td style="padding:8px 14px;">Sintassi <code>![alt](url)</code> preservata</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Liste (ul/ol)</td><td style="padding:8px 14px;color:var(--accent-3);">✅</td><td style="padding:8px 14px;">Marker <code>-/*/1.</code> e nidificazione preservati</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Blockquote</td><td style="padding:8px 14px;color:var(--accent-3);">✅</td><td style="padding:8px 14px;">Prefisso <code>&gt;</code> preservato</td></tr>
+        <tr><td style="padding:8px 14px;">Horizontal Rules</td><td style="padding:8px 14px;color:var(--accent-3);">✅</td><td style="padding:8px 14px;"><code>---</code> lasciati intatti</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🏗️ Architettura</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.82rem;overflow-x:auto;line-height:1.8;margin:16px 0;">
+mdtranslator/
+├── mdtranslator.py        # Entry point: CLI parsing + GUI launch
+├── parser/                # Markdown parser modulare
+│   ├── element.py         # Classi per ogni elemento MD (heading, table, code...)
+│   ├── table.py           # Gestione dedicata tabelle Markdown
+│   └── utils.py           # Utility di parsing e splitting
+├── engines/               # Moduli di traduzione
+│   ├── google.py          # Google Translate (free, no key)
+│   ├── deepl.py           # DeepL API (richiede key)
+│   └── edge.py            # Microsoft Edge Translate (free)
+├── images/                # Asset GUI
+└── requirements.txt       # Dipendenze Python</pre>
+
+    <h2>🔒 Privacy</h2>
+    <p>
+      Il testo viene inviato ai motori di traduzione scelti (Google, DeepL o Microsoft Edge) tramite le rispettive API. 
+      DeepL offre il miglior rapporto qualità/privacy. Per uso offline, è possibile integrare motori locali. 
+      Il file Markdown originale non viene mai modificato — l'output è sempre un nuovo file.
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/mdtranslator" style="color:var(--accent-2);">GitHub</a> · MIT License</p>
+</footer>
+
+</body>
+</html>

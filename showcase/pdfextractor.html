@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pdfextractor — VibeWhisper</title>
+  <meta name="description" content="Converti PDF scientifici multi-colonna in Markdown pulito. Ricostruzione layout, de-hyphenation, tabelle, immagini. Ottimizzato per CPU e bassa RAM.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_pdfextractor_banner.png" alt="pdfextractor Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg amber">📑</div>
+    <h1>pdfextractor</h1>
+    <p class="subtitle">
+      Converti PDF scientifici multi-colonna in Markdown pulito e ben strutturato. Ricostruzione layout, de-hyphenation, estrazione tabelle e immagini. Ottimizzato per ambienti a basse risorse.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Docling</span>
+      <span class="tech-tag">Typer</span>
+      <span class="tech-tag">Rich</span>
+      <span class="tech-tag">pypdfium2</span>
+      <span class="tech-tag">CLI</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/pdfextractor" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/pdfextractor/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <h2>✨ Cos'è pdfextractor</h2>
+    <p>
+      <strong>pdfextractor</strong> (package <code>pdf_to_md</code>) è un convertitore CLI Python che trasforma PDF scientifici — 
+      anche quelli con layout a due colonne — in file Markdown puliti e semanticamente strutturati. 
+      Usa <strong>Docling</strong> di IBM Research per l'estrazione del contenuto, con ottimizzazioni specifiche 
+      per ambienti CPU-only e macchine con meno di 4 GB di RAM.
+    </p>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">2-col</div><div class="lbl">Layout ricostruito</div></div>
+      <div class="stat-card"><div class="num">&lt;4 GB</div><div class="lbl">RAM richiesta</div></div>
+      <div class="stat-card"><div class="num">CPU</div><div class="lbl">Senza GPU</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Open Source</div></div>
+    </div>
+
+    <h2>🎯 Problema Risolto</h2>
+    <p>
+      I PDF scientifici e accademici sono notoriamente difficili da convertire in testo strutturato. 
+      Layout a due colonne, tabelle complesse, note a piè di pagina, formule ed equazioni, parole 
+      sillabate a fine riga — tutti ostacoli che rendono il copia-incolla un incubo. 
+      <strong>pdfextractor</strong> affronta ognuno di questi problemi con una pipeline dedicata.
+    </p>
+
+    <h2>🔧 Funzionalità Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot accent"></span> <strong>Ricostruzione Strutturale</strong> — Linearizza layout multi-colonna preservando l'ordine di lettura corretto</li>
+      <li><span class="dot green"></span> <strong>De-hyphenation Automatica</strong> — Ricongiunge le parole spezzate a fine riga (es. "conver-\ntire" → "convertire")</li>
+      <li><span class="dot purple"></span> <strong>Conversioni Tabelle</strong> — Trasforma tabelle complesse in tabelle Markdown perfettamente allineate</li>
+      <li><span class="dot amber"></span> <strong>Estrazione Immagini</strong> — Salva automaticamente le immagini in una cartella <code>images/</code> con riferimenti nel Markdown</li>
+      <li><span class="dot accent"></span> <strong>Output Pulito</strong> — Markdown semanticamente corretto con heading, paragrafi, liste, blockquote</li>
+    </ul>
+
+    <h2>⚙️ Ottimizzazioni Low-Resource</h2>
+    <p>
+      A differenza di molti convertitori PDF che richiedono GPU e 16+ GB di RAM, pdfextractor è 
+      progettato per funzionare su <strong>qualsiasi laptop</strong>. Le ottimizzazioni hardcoded in <code>converter.py</code>:
+    </p>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>CPU-only</strong> — PyTorch installato con indice CPU, nessuna dipendenza CUDA</li>
+      <li><span class="dot purple"></span> <strong>Single-threading</strong> — Forza l'uso di un solo thread per evitare memory spike</li>
+      <li><span class="dot amber"></span> <strong>Batch size = 1</strong> — Elaborazione pagina per pagina invece che a lotti</li>
+      <li><span class="dot accent"></span> <strong>Backend pypdfium2</strong> — Rendering PDF più efficiente rispetto ad alternative più pesanti</li>
+    </ul>
+
+    <h2>🖥️ Utilizzo</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.82rem;overflow-x:auto;line-height:1.8;margin:16px 0;">
+# Installazione (ambiente virtuale consigliato)
+python3 -m venv venv
+source venv/bin/activate
+pip install docling --extra-index-url https://download.pytorch.org/whl/cpu
+pip install "typer[all]" rich pypdfium2
+
+# Conversione base
+python -m pdf_to_md.cli documento.pdf
+
+# Con percorso di output personalizzato
+python -m pdf_to_md.cli documento.pdf -o output/risultato.md</pre>
+
+    <h2>🏗️ Architettura</h2>
+    <p>Il progetto ha una struttura minimale e modulare (4 file Python):</p>
+    <ul class="feature-list">
+      <li><span class="dot accent"></span> <strong><code>cli.py</code></strong> — Interfaccia a riga di comando con Typer. Gestisce argomenti (path, output) e orchestrazione</li>
+      <li><span class="dot green"></span> <strong><code>converter.py</code></strong> — Core della conversione. Configura Docling con le ottimizzazioni low-resource e gestisce il pipeline di estrazione</li>
+      <li><span class="dot purple"></span> <strong><code>utils.py</code></strong> — Funzioni di supporto per pulizia testo, de-hyphenation, e post-processing del Markdown</li>
+      <li><span class="dot amber"></span> <strong><code>__init__.py</code></strong> — Package marker</li>
+    </ul>
+
+    <h2>📂 Output</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.82rem;overflow-x:auto;line-height:1.8;margin:16px 0;">
+documento.md          # Markdown strutturato con tutti i contenuti
+images/               # Immagini estratte dal PDF
+  ├── image_001.png
+  ├── image_002.jpg
+  └── ...</pre>
+
+    <h2>🧪 Testing</h2>
+    <p>
+      Suite di test unitari in <code>tests/test_converter.py</code> che verificano la corretta conversione 
+      di PDF campione con layout semplici e multi-colonna.
+    </p>
+
+    <h2>🔒 Privacy</h2>
+    <p>
+      <strong>100% locale.</strong> Tutta l'elaborazione avviene sulla tua macchina. Nessun upload a server, 
+      nessuna API cloud — il PDF viene letto dal filesystem e il Markdown viene scritto sul disco locale.
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/pdfextractor" style="color:var(--accent-2);">GitHub</a></p>
+</footer>
+
+</body>
+</html>

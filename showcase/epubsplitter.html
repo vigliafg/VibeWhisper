@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>epubsplitter — VibeWhisper</title>
+  <meta name="description" content="Estrai capitoli specifici da EPUB in nuovi file autonomi. TOC gerarchico, drag & drop, 100% locale nel browser.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_epubsplitter_banner.png" alt="epubsplitter Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg purple">✂️</div>
+    <h1>EpubSplitter Pro</h1>
+    <p class="subtitle">
+      Estrai capitoli specifici da qualsiasi EPUB in nuovi file autonomi e perfettamente formattati. Single-file HTML, TOC gerarchico, rewriting OPF/NCX — tutto nel browser.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">React</span>
+      <span class="tech-tag">TypeScript</span>
+      <span class="tech-tag">Vite</span>
+      <span class="tech-tag">JSZip</span>
+      <span class="tech-tag">DOMParser</span>
+      <span class="tech-tag">EPUB 2 + 3</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://noesis-epub-tools.vercel.app/" class="link-btn" target="_blank" rel="noopener">🌐 Live App</a>
+      <a href="https://raw.githubusercontent.com/vigliafg/noesis-multi/main/epubsplitter.html" class="link-btn" target="_blank" rel="noopener">📥 Versione Standalone</a>
+      <a href="https://github.com/vigliafg/noesis-epub-tools" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <h2>✨ Cos'è EpubSplitter Pro</h2>
+    <p>
+      <strong>EpubSplitter Pro</strong> fa parte della suite <strong>noesis-epub-tools</strong> (React + TypeScript + Vite, deploy su Vercel). 
+      Carica un EPUB, esplora il suo indice gerarchico (TOC), seleziona il capitolo 
+      che ti interessa e ottieni un nuovo EPUB autonomo con SOLO quel contenuto — OPF riscritto, NCX rigenerato, 
+      asset (immagini, font, CSS) preservati.
+    </p>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">∞</div><div class="lbl">Capitoli estraibili</div></div>
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Formati TOC (NCX + Nav)</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Fedeltà strutturale</div></div>
+      <div class="stat-card"><div class="num">0</div><div class="lbl">Dipendenze server</div></div>
+    </div>
+
+    <h2>🧩 Due Formati Disponibili</h2>
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.88rem;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);text-align:left;">
+          <th style="padding:10px 14px;color:var(--text-dim);">Caratteristica</th>
+          <th style="padding:10px 14px;color:var(--accent-2);">Unified App 🏆</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">Standalone HTML</th>
+        </tr>
+      </thead>
+      <tbody style="color:var(--text-muted);">
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Accesso</td><td style="padding:8px 14px;"><a href="https://noesis-epub-tools.vercel.app/" style="color:var(--accent-2);">noesis-epub-tools.vercel.app</a></td><td style="padding:8px 14px;"><code>epubsplitter.html</code> (~650 righe)</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Installazione</td><td style="padding:8px 14px;color:var(--accent-3);">Nessuna (via browser)</td><td style="padding:8px 14px;">Scarica e apri</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Stack</td><td style="padding:8px 14px;">React 18 + TS + Vite</td><td style="padding:8px 14px;">React 18 ESM + Tailwind CDN</td></tr>
+        <tr><td style="padding:8px 14px;">Altri tool</td><td style="padding:8px 14px;color:var(--accent-2);">Anche Slimmer & Batch</td><td style="padding:8px 14px;">Solo Chapter Splitter</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🎯 Workflow</h2>
+      <li><strong>Carica l'EPUB</strong> — Drag & drop o click per selezionare il file</li>
+      <li><strong>Esplora il TOC</strong> — Navigator gerarchico con sezioni espandibili, icone file/cartella, metadati del libro</li>
+      <li><strong>Seleziona un capitolo</strong> — Click sul nodo desiderato nell'albero dei contenuti (i sotto-capitoli vengono inclusi automaticamente)</li>
+      <li><strong>Estrai!</strong> — Premi "Extract Chapter" e scarica il nuovo EPUB autonomo con tutti gli asset</li>
+    </ol>
+
+    <h2>🏗️ Algoritmo di Estrazione</h2>
+    <p>L'estrazione segue una pipeline in 7 fasi che preserva l'integrità strutturale dell'EPUB:</p>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>1. Parsing EPUB</strong> — Rilevamento <code>META-INF/container.xml</code> → OPF → metadati, manifest, spine</li>
+      <li><span class="dot accent"></span> <strong>2. Rilevamento TOC</strong> — EPUB 3 Nav Document (prioritario) → EPUB 2 NCX (fallback). Parsing ricorsivo dei navPoint</li>
+      <li><span class="dot green"></span> <strong>3. Raccolta HTML</strong> — Identificazione di tutti i file XHTML del capitolo selezionato e dei suoi sotto-capitoli</li>
+      <li><span class="dot amber"></span> <strong>4. Analisi asset</strong> — Scansione di ogni HTML per immagini (<code>&lt;img&gt;</code>, SVG, poster), CSS (<code>&lt;link&gt;</code>), font</li>
+      <li><span class="dot purple"></span> <strong>5. Copia selettiva</strong> — Nuovo ZIP con solo i file necessari: mimetype, container.xml, HTML, asset, font, CSS</li>
+      <li><span class="dot accent"></span> <strong>6. Rewriting OPF</strong> — Aggiornamento titolo, pulizia manifest (rimozione item inutilizzati), filtro spine (solo itemref del capitolo)</li>
+      <li><span class="dot green"></span> <strong>7. Rigenerazione NCX</strong> — Estrazione del navPoint selezionato dall'NCX originale e reinserimento nel nuovo documento</li>
+    </ul>
+
+    <h2>🖥️ Interfaccia</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>TOC Gerarchico</strong> — Nodi espandibili con indentazione proporzionale alla profondità, icone 📁/📄, selezione con checkmark</li>
+      <li><span class="dot accent"></span> <strong>Pannello Metadata</strong> — Sidebar con titolo, autore e lingua dell'EPUB</li>
+      <li><span class="dot green"></span> <strong>Drag & Drop</strong> — Upload via trascinamento con validazione .epub</li>
+      <li><span class="dot amber"></span> <strong>Progress bar</strong> — 4 fasi visuali: preparazione (0-25%), copia asset (25-60%), rewriting OPF (60-70%), generazione ZIP (70-100%)</li>
+      <li><span class="dot purple"></span> <strong>Reset/Start Over</strong> — Pulsante per caricare un nuovo EPUB senza refresh</li>
+    </ul>
+
+    <h2>🔧 Dettaglio Tecnico: EpubService</h2>
+    <p>
+      L'intera logica di parsing e manipolazione EPUB è incapsulata in una classe <strong>EpubService</strong> (~400 righe) 
+      definita inline nel file HTML. Supporta:
+    </p>
+    <ul class="feature-list">
+      <li><span class="dot accent"></span> <strong>Risoluzione path</strong> — Funzione <code>resolvePath()</code> che gestisce path relativi, assoluti, <code>../</code>, e fragment</li>
+      <li><span class="dot green"></span> <strong>Parsing NCX</strong> — <code>parseNcx()</code> con attraversamento ricorsivo dei navPoint, estrazione label da <code>&lt;navLabel&gt;</code></li>
+      <li><span class="dot purple"></span> <strong>Parsing Nav</strong> — <code>parseNav()</code> per EPUB 3 con selettore <code>nav[epub:type="toc"]</code>, parsing ricorsivo di <code>&lt;ol&gt;</code></li>
+      <li><span class="dot amber"></span> <strong>Raccolta asset</strong> — <code>querySelectorAll</code> su img, video, audio, source, SVG image, link[rel=stylesheet] con decode URI</li>
+      <li><span class="dot accent"></span> <strong>Rewriting OPF</strong> — Rimozione <code>&lt;item&gt;</code> e <code>&lt;itemref&gt;</code> non più necessari, update titolo</li>
+      <li><span class="dot green"></span> <strong>XML Serialization</strong> — <code>XMLSerializer</code> nativo del browser per rigenerare OPF e NCX</li>
+    </ul>
+
+    <h2>🔒 Privacy</h2>
+    <p>
+      <strong>100% client-side.</strong> L'EPUB non lascia mai il tuo computer. Parsing, estrazione e generazione 
+      avvengono interamente in memoria via JSZip e DOMParser. Nessun server, nessun upload, nessuna API esterna.
+    </p>
+
+    <h2>📦 Versione Standalone (Single-File HTML)</h2>
+    <p>
+      Oltre all'app Vercel, EpubSplitter Pro è disponibile anche come <strong>file HTML monolitico</strong> (~650 righe). 
+      React e JSZip sono importati via 
+      <strong>ESM import maps</strong> da CDN, JSZip e Lucide Icons anch'essi da ESM, Tailwind via script tag. 
+      L'<code>EpubService</code> (~400 righe) e tutti i componenti React (FileUpload, TocNode, TocViewer, App) 
+      sono definiti inline in un unico <code>&lt;script type="module"&gt;</code>.
+    </p>
+
+    <h2>📦 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> Isolare un saggio o racconto da un'antologia</li>
+      <li><span class="dot accent"></span> Estrarre un capitolo da condividere con colleghi o studenti</li>
+      <li><span class="dot green"></span> Separare appendici, note o glossari dal testo principale</li>
+      <li><span class="dot amber"></span> Creare EPUB più piccoli e mirati per dispositivi con poco spazio</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://noesis-epub-tools.vercel.app/" style="color:var(--accent-2);">Live App</a> · <a href="https://github.com/vigliafg/noesis-epub-tools" style="color:var(--accent-2);">GitHub (noesis-epub-tools)</a> · MIT License</p>
+</footer>
+
+</body>
+</html>

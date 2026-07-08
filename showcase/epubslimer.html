@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>epubslimer — VibeWhisper</title>
+  <meta name="description" content="Comprimi immagini EPUB con elaborazione parallela. Qualità regolabile, modalità singola e batch, fino al 70% di riduzione. 100% locale.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_epubslimer_banner.png" alt="epubslimer Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg green">🗜️</div>
+    <h1>epubslimer</h1>
+    <p class="subtitle">
+      Riduci le dimensioni dei tuoi EPUB comprimendo le immagini con elaborazione parallela via Canvas API. Slider qualità/peso, due modalità operative — tutto in un singolo file HTML.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">React</span>
+      <span class="tech-tag">TypeScript</span>
+      <span class="tech-tag">Vite</span>
+      <span class="tech-tag">JSZip</span>
+      <span class="tech-tag">Canvas API</span>
+      <span class="tech-tag">100% Client-Side</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://noesis-epub-tools.vercel.app/" class="link-btn" target="_blank" rel="noopener">🌐 Live App (Vercel)</a>
+      <a href="https://raw.githubusercontent.com/vigliafg/noesis-multi/main/epubslimer.html" class="link-btn" target="_blank" rel="noopener">📥 Standalone Fast</a>
+      <a href="https://raw.githubusercontent.com/vigliafg/noesis-multi/main/multiepubslimer.html" class="link-btn" target="_blank" rel="noopener">📦 Standalone Batch</a>
+      <a href="https://github.com/vigliafg/noesis-epub-tools" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <h2>✨ Cos'è epubslimer</h2>
+    <p>
+      <strong>epubslimer</strong> è un'app web che fa parte della suite <strong>noesis-epub-tools</strong> (React + TypeScript + Vite, deploy su Vercel). 
+      Comprime le immagini all'interno degli EPUB (JPG, PNG, WEBP) usando 
+      l'API Canvas del browser, mantenendo intatta la struttura del libro.
+    </p>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">70%</div><div class="lbl">Riduzione massima</div></div>
+      <div class="stat-card"><div class="num">4×</div><div class="lbl">Compressione parallela</div></div>
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Modalità (Unified + Fast + Batch)</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Elaborazione locale</div></div>
+    </div>
+
+    <h2>📋 Due Versioni</h2>
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.88rem;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);text-align:left;">
+          <th style="padding:10px 14px;color:var(--text-dim);">Caratteristica</th>
+          <th style="padding:10px 14px;color:var(--accent-2);">Unified App 🏆</th>
+          <th style="padding:10px 14px;color:var(--accent-3);">Fast Standalone</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">Batch Standalone</th>
+        </tr>
+      </thead>
+      <tbody style="color:var(--text-muted);">
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Accesso</td><td style="padding:8px 14px;"><a href="https://noesis-epub-tools.vercel.app/" style="color:var(--accent-2);">noesis-epub-tools.vercel.app</a></td><td style="padding:8px 14px;"><code>epubslimer.html</code></td><td style="padding:8px 14px;"><code>multiepubslimer.html</code></td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Installazione</td><td style="padding:8px 14px;color:var(--accent-3);">Nessuna (via browser)</td><td style="padding:8px 14px;">Scarica e apri</td><td style="padding:8px 14px;">Scarica e apri</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Stack</td><td style="padding:8px 14px;">React 19 + TS + Vite</td><td style="padding:8px 14px;" colspan="2">React 19 ESM + Tailwind CDN</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Modalità</td><td style="padding:8px 14px;">Single + Batch + Splitter</td><td style="padding:8px 14px;">Singolo EPUB</td><td style="padding:8px 14px;">Fino a 10 EPUB</td></tr>
+        <tr><td style="padding:8px 14px;">Compressione</td><td style="padding:8px 14px;" colspan="3">Canvas API ×4 parallela, DEFLATE level 1</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🎛️ Fast Edition (Singolo EPUB)</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Drag & Drop</strong> — Trascina un EPUB o clicca per selezionarlo</li>
+      <li><span class="dot accent"></span> <strong>Slider qualità/peso</strong> — Da 10% (massima compressione) a 80% (massima qualità). Predefinito: 60%</li>
+      <li><span class="dot green"></span> <strong>Progresso in tempo reale</strong> — Barra percentuale con conteggio immagini processate</li>
+      <li><span class="dot purple"></span> <strong>Riepilogo dettagliato</strong> — Confronto prima/dopo con percentuale di riduzione</li>
+      <li><span class="dot amber"></span> <strong>Download</strong> — Scarica il file compresso come <code>nome_slim.epub</code></li>
+    </ul>
+
+    <h2>📦 Batch Edition (Multi-EPUB)</h2>
+    <ul class="feature-list">
+      <li><span class="dot accent"></span> <strong>Coda fino a 10 EPUB</strong> — Aggiungi più file, visualizza lo stato di ciascuno (pending/processing/done/error)</li>
+      <li><span class="dot green"></span> <strong>Elaborazione sequenziale</strong> — Un EPUB alla volta per risparmiare RAM, ma 4 immagini in parallelo all'interno di ciascuno</li>
+      <li><span class="dot purple"></span> <strong>Download automatico</strong> — Ogni EPUB viene scaricato appena completato, senza attese</li>
+      <li><span class="dot amber"></span> <strong>Gestione coda</strong> — Rimuovi file prima dell'elaborazione, "Pulisci coda" al termine</li>
+    </ul>
+
+    <h2>🏗️ Come Funziona</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>L'EPUB viene aperto con <strong>JSZip</strong> come container ZIP in memoria</li>
+      <li>Tutti i file <code>.jpg</code>, <code>.jpeg</code>, <code>.png</code>, <code>.webp</code> vengono identificati</li>
+      <li>Ogni immagine viene ridisegnata su un <strong>Canvas HTML</strong> e riesportata con la qualità scelta (JPEG/PNG)</li>
+      <li>4 immagini vengono compresse <strong>in parallelo</strong> (chunking con <code>Promise.all</code>)</li>
+      <li>Il container ZIP viene rigenerato con <strong>DEFLATE level 1</strong> (massima velocità)</li>
+    </ol>
+
+    <h2>🔒 Privacy</h2>
+    <p>
+      <strong>100% client-side.</strong> Il file EPUB non lascia mai il tuo computer — viene aperto, processato e risalvato 
+      interamente nella memoria del browser. Nessun server, nessun upload, nessuna API esterna per la compressione.
+      Puoi usarlo offline dopo il primo caricamento.
+    </p>
+
+    <h2>📦 Versione Standalone (Single-File HTML)</h2>
+    <p>
+      Oltre all'app Vercel, epubslimer è disponibile anche come <strong>file HTML monolitico</strong> — zero build step, 
+      apribile direttamente nel browser. React e JSZip sono importati via 
+      <strong>ESM import maps</strong> da CDN, Tailwind via script tag, Lucide Icons da ESM. 
+      Nessun bundler, nessun <code>node_modules</code>, nessun build step — apri il file e funziona.
+    </p>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;script type="importmap"&gt;
+    { "imports": {
+        "react": "esm.sh/react@19.0.0",
+        "jszip": "esm.sh/jszip@3.10.1",
+        "lucide-react": "esm.sh/lucide-react@0.454.0"
+    }}
+  &lt;/script&gt;
+  &lt;script type="module"&gt;
+    // App React completa inline (~250 righe)
+    // Canvas API per compressione immagini (concorrenza ×4)
+    // JSZip per manipolazione container EPUB
+  &lt;/script&gt;
+&lt;/html&gt;</pre>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://noesis-epub-tools.vercel.app/" style="color:var(--accent-2);">Live App</a> · <a href="https://github.com/vigliafg/noesis-epub-tools" style="color:var(--accent-2);">GitHub (noesis-epub-tools)</a> · MIT License</p>
+</footer>
+
+</body>
+</html>

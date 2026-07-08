@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBS EPUB Metadata Scraper — VibeWhisper</title>
+  <meta name="description" content="Arricchisci EPUB con metadati da IBS.it: ISBN, editore, descrizione, pagine. 1.1 sec/libro, 100% success rate. CLI + GUI.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_a0750sa0750sa075.png" alt="IBS EPUB Metadata Scraper Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg green">📊</div>
+    <h1>IBS EPUB Metadata Scraper</h1>
+    <p class="subtitle">
+      Arricchisci i tuoi EPUB con metadati da IBS.it — ricerca automatica, estrazione e embedding di ISBN, editore, descrizione, lingua e pagine direttamente nel file EPUB.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">requests</span>
+      <span class="tech-tag">BeautifulSoup4</span>
+      <span class="tech-tag">customtkinter</span>
+      <span class="tech-tag">Algolia API</span>
+      <span class="tech-tag">CLI + GUI</span>
+      <span class="tech-tag">Playwright (fallback)</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/ibs-epub-metadata-scraper/releases" class="link-btn" target="_blank" rel="noopener">📦 Download</a>
+      <a href="https://github.com/vigliafg/ibs-epub-metadata-scraper/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+      <a href="https://github.com/vigliafg/ibs-epub-metadata-scraper/blob/main/README.md#installazione" class="link-btn" target="_blank" rel="noopener">📖 Install Guide</a>
+      <a href="https://github.com/vigliafg/ibs-epub-metadata-scraper" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <h2>📋 Tre Strumenti in Uno</h2>
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">1.1s</div><div class="lbl">Per libro (Fast)</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Success rate (49 libri)</div></div>
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Script (CLI + GUI + Legacy)</div></div>
+      <div class="stat-card"><div class="num">0</div><div class="lbl">Browser richiesto (Fast)</div></div>
+    </div>
+
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.88rem;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);text-align:left;">
+          <th style="padding:10px 14px;color:var(--text-dim);">Caratteristica</th>
+          <th style="padding:10px 14px;color:var(--accent-2);">ibs_fast 🏆</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">ibs_legacy</th>
+          <th style="padding:10px 14px;color:var(--accent-3);">GUI 🖥️</th>
+        </tr>
+      </thead>
+      <tbody style="color:var(--text-muted);">
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Tipo</td><td style="padding:8px 14px;">CLI</td><td style="padding:8px 14px;">CLI</td><td style="padding:8px 14px;">GUI (customtkinter)</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Sorgente</td><td style="padding:8px 14px;">API Algolia diretta</td><td style="padding:8px 14px;">Algolia via Playwright</td><td style="padding:8px 14px;">API Algolia diretta</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Velocità</td><td style="padding:8px 14px;color:var(--accent-3);">⚡ 1.1 sec/libro</td><td style="padding:8px 14px;">🐢 8-15 sec/libro</td><td style="padding:8px 14px;color:var(--accent-3);">⚡ come ibs_fast</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Browser</td><td style="padding:8px 14px;color:var(--accent-3);">❌ Nessuno</td><td style="padding:8px 14px;">✅ Playwright</td><td style="padding:8px 14px;color:var(--accent-3);">❌ Nessuno</td></tr>
+        <tr><td style="padding:8px 14px;">Log in tempo reale</td><td style="padding:8px 14px;">Terminale</td><td style="padding:8px 14px;">Terminale</td><td style="padding:8px 14px;color:var(--accent-3);">✅ GUI colorata</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🖥️ GUI</h2>
+    <p>
+      L'interfaccia grafica usa <strong>customtkinter</strong> per un look moderno e scuro. Permette di selezionare la cartella, 
+      configurare le opzioni via checkbox (--force, --json-only, --verbose), avviare la pipeline con un clic e visualizzare il log 
+      in tempo reale con colori (verde = successo, rosso = errore, giallo = warning). Pulsante Stop per interrompere l'esecuzione in qualsiasi momento.
+    </p>
+
+    <h2>📁 Pipeline Output</h2>
+    <p>Eseguito con <code>--force</code> su una directory, lo script:</p>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li><strong>Scarica metadati</strong> da IBS.it</li>
+      <li><strong>Copia backup originali</strong> in <code>origins/</code></li>
+      <li><strong>Riscrive gli EPUB</strong> con metadati arricchiti in <code>embedded/</code></li>
+      <li><strong>Sposta i non trovati</strong> in <code>notfound/</code></li>
+      <li><strong>Genera report HTML</strong> e <strong>JSON</strong> dei risultati</li>
+    </ol>
+
+    <h2>📊 Performance Real-World</h2>
+    <p>Test eseguito su <strong>49 EPUB italiani</strong> con <code>ibs_fast_metadata_search.py</code>:</p>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> Tempo totale scraping: <strong>54.5 secondi</strong></li>
+      <li><span class="dot green"></span> Success rate: <strong>100% (49/49)</strong></li>
+      <li><span class="dot accent"></span> Con ISBN: <strong>49/49</strong></li>
+      <li><span class="dot accent"></span> Con editore: <strong>49/49</strong></li>
+      <li><span class="dot purple"></span> Con descrizione: <strong>49/49</strong></li>
+      <li><span class="dot amber"></span> Con pagine: <strong>46/49</strong></li>
+    </ul>
+
+    <h2>🛠️ Utilizzo CLI</h2>
+    <p>
+      <code>python ibs_fast_metadata_search.py ./libri/ --force</code> — embedding automatico senza conferma<br>
+      <code>python ibs_fast_metadata_search.py ./libri/ --json-only</code> — solo scraping, produce metadata_batch.json
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/ibs-epub-metadata-scraper" style="color:var(--accent-2);">GitHub</a></p>
+</footer>
+
+</body>
+</html>

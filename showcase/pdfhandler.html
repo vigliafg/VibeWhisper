@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pdfhandler — VibeWhisper</title>
+  <meta name="description" content="Toolbox PDF completo nel browser: 15+ strumenti, tutto client-side, zero upload. React 19, TypeScript, Tailwind CSS.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_jb66hwjb66hwjb66.png" alt="pdfhandler Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg blue">📄</div>
+    <h1>pdfhandler</h1>
+    <p class="subtitle">
+      Il tuo toolkit PDF nel browser. Estrai, ruota, unisci, dividi, filigrane, cifratura — 15+ strumenti, tutto client-side, zero upload.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">React 19</span>
+      <span class="tech-tag">TypeScript 6</span>
+      <span class="tech-tag">Tailwind CSS 4</span>
+      <span class="tech-tag">Vite 8</span>
+      <span class="tech-tag">pdf-lib</span>
+      <span class="tech-tag">pdfjs-dist 6</span>
+      <span class="tech-tag">Cloudflare Pages</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://pdfhandler.vigliafg.workers.dev" class="link-btn" target="_blank" rel="noopener">🌐 Live App</a>
+      <a href="https://github.com/vigliafg/pdfhandler/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+      <a href="https://github.com/vigliafg/pdfhandler#getting-started" class="link-btn" target="_blank" rel="noopener">📖 Install Guide</a>
+      <a href="https://github.com/vigliafg/pdfhandler" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <h2>✨ Design Principles</h2>
+    <ul class="feature-list">
+      <li><span class="dot accent"></span> <strong>Non-destructive</strong> — Il PDF originale non viene mai modificato; ogni operazione produce nuovi file</li>
+      <li><span class="dot purple"></span> <strong>TOC-aware</strong> — Molte operazioni preservano e aggiornano automaticamente l'indice dei contenuti (bookmarks)</li>
+      <li><span class="dot green"></span> <strong>Offline-first</strong> — Tutta l'elaborazione avviene lato client con pdf-lib e pdfjs-dist. Nessun dato lascia la tua macchina</li>
+      <li><span class="dot amber"></span> <strong>Keyboard-friendly</strong> — Il viewer supporta scorciatoie da tastiera per navigazione e zoom</li>
+    </ul>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">15+</div><div class="lbl">Strumenti PDF</div></div>
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Modalità (Viewer + Editor)</div></div>
+      <div class="stat-card"><div class="num">AES-256</div><div class="lbl">Cifratura</div></div>
+      <div class="stat-card"><div class="num">Playwright</div><div class="lbl">Test E2E</div></div>
+    </div>
+
+    <h2>📖 Viewer Mode</h2>
+    <p>Un lettore PDF veloce e scrollabile con layout configurabili: pagina singola, doppia, o 3 colonne. Zoom manuale, fit-to-width, rotazione. Pannello TOC laterale con navigazione cliccabile. Scorciatoie: ↓↑ per scroll, PageDown/Up per pagine, +/- per zoom.</p>
+
+    <h2>✂️ Editor Mode — Page Tools</h2>
+    <ul class="feature-list">
+      <li><span class="dot accent"></span> <strong>Extract</strong> — Estrai pagine (file unico o ZIP con una per pagina), opzionalmente elimina dopo estrazione</li>
+      <li><span class="dot accent"></span> <strong>Insert/Replace</strong> — Inserisci o sostituisci pagine da un altro PDF, TOC automaticamente rimappato</li>
+      <li><span class="dot purple"></span> <strong>Delete</strong> — Rimuovi pagine, bookmarks ripuliti e rinumerati</li>
+      <li><span class="dot purple"></span> <strong>Rotate</strong> — Ruota di 90°, 180° o 270° (accumulativo)</li>
+      <li><span class="dot green"></span> <strong>Copy/Move</strong> — Duplica (1-99 copie) o sposta pagine, TOC preservato e rimappato</li>
+      <li><span class="dot green"></span> <strong>Reverse</strong> — Inverti ordine pagine (tutte o selezione)</li>
+      <li><span class="dot amber"></span> <strong>Split</strong> — Dividi per numero pagine, N parti uguali, range personalizzati, o per bookmarks TOC</li>
+      <li><span class="dot amber"></span> <strong>Merge</strong> — Unisci più PDF, riordina file via drag-and-drop</li>
+      <li><span class="dot accent"></span> <strong>Reorder</strong> — Riordina pagine via drag & drop o swap numerico, TOC completamente rimappato</li>
+      <li><span class="dot purple"></span> <strong>Compose</strong> — Assembla un nuovo PDF da range di pagine di multiple fonti (merge non-lineare)</li>
+    </ul>
+
+    <h2>📋 Editor Mode — Document Tools</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Info</strong> — Dettagli file: dimensione, pagine, dimensioni pagina, metadati</li>
+      <li><span class="dot amber"></span> <strong>Metadata</strong> — Modifica titolo, autore, soggetto, keywords</li>
+      <li><span class="dot accent"></span> <strong>Watermark (Text)</strong> — Testo con font, opacità, colore RGB, angolo, posizione configurabili</li>
+      <li><span class="dot purple"></span> <strong>Watermark (Image)</strong> — Immagine PNG/JPEG con scala e opacità</li>
+      <li><span class="dot green"></span> <strong>Page Numbers</strong> — Numerazione con formato custom {n}/{t}, posizione e numero di partenza</li>
+      <li><span class="dot amber"></span> <strong>Add Blank Pages</strong> — Inserisci pagine A4/Letter all'inizio, fine o dopo una pagina specifica</li>
+      <li><span class="dot accent"></span> <strong>Export Images</strong> — Esporta pagine come PNG a 1.5× in ZIP</li>
+      <li><span class="dot purple"></span> <strong>Extract Text</strong> — Estrai tutto il testo in .txt con header per pagina</li>
+      <li><span class="dot green"></span> <strong>Encrypt/Decrypt</strong> — AES-256-GCM con PBKDF2 (100k iterazioni), salt e IV random</li>
+    </ul>
+
+    <h2>🔐 TOC Preservation</h2>
+    <p>
+      pdfhandler è costruito per preservare i bookmark PDF attraverso operazioni distruttive. Delete, rotate, copy, move, reverse, reorder, insert, replace e split aggiornano automaticamente l'indice. 
+      Il TOC viene estratto via <code>pdfjs-dist.getOutline()</code> e riscritto con le API di pdf-lib.
+    </p>
+
+    <h2>🧪 Testing</h2>
+    <p>
+      Test end-to-end con <strong>Playwright</strong>: smoke test, tutti i page tools, tutti i document tools, TOC preservation. 
+      Deploy su Cloudflare Pages con build automatica da GitHub.
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://pdfhandler.vigliafg.workers.dev" style="color:var(--accent-2);">Live App</a> · <a href="https://github.com/vigliafg/pdfhandler" style="color:var(--accent-2);">GitHub</a> · MIT License</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TGM Drive NXT — VibeWhisper</title>
+  <meta name="description" content="Trasforma canali Telegram in cloud storage personale. Upload fino a 2 GB, multi-canale, tag, coda trasferimenti. PyQt6 desktop app.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_6hdh1h6hdh1h6hdh.jpeg" alt="TGM Drive NXT Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg cyan">☁️</div>
+    <h1>TGM Drive NXT</h1>
+    <p class="subtitle">
+      Trasforma uno o più canali Telegram privati nel tuo cloud personale. Upload fino a 2 GB, multi-canale, tag, drag & drop — tutto con un'interfaccia desktop nativa in PyQt6.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python 3.10+</span>
+      <span class="tech-tag">PyQt6</span>
+      <span class="tech-tag">Telethon</span>
+      <span class="tech-tag">SQLite</span>
+      <span class="tech-tag">MTProto</span>
+      <span class="tech-tag">asyncio</span>
+      <span class="tech-tag">GPL-3.0</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/tgm-drive-nxt/releases" class="link-btn" target="_blank" rel="noopener">📦 Download</a>
+      <a href="https://github.com/vigliafg/tgm-drive-nxt/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+      <a href="https://github.com/vigliafg/tgm-drive-nxt/blob/main/README.md#installazione" class="link-btn" target="_blank" rel="noopener">📖 Install Guide</a>
+      <a href="https://github.com/vigliafg/tgm-drive-nxt" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <h2>✨ Core Features</h2>
+    <ul class="feature-list">
+      <li><span class="dot cyan"></span> <strong>⬆ Upload & ⬇ Download</strong> — Barra di progresso e velocità in tempo reale (MB/s)</li>
+      <li><span class="dot cyan"></span> <strong>Drag & Drop</strong> — Trascina file dal filesystem per upload, dalla tabella cloud per download</li>
+      <li><span class="dot accent"></span> <strong>Esploratore locale integrato</strong> — QFileSystemModel con navigazione ad albero</li>
+      <li><span class="dot accent"></span> <strong>Lista file cloud</strong> — Ricerca, filtri, colonne ordinabili, preview file testuali</li>
+    </ul>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">2/4 GB</div><div class="lbl">Max file size (Std/Premium)</div></div>
+      <div class="stat-card"><div class="num">426</div><div class="lbl">Test automatici</div></div>
+      <div class="stat-card"><div class="num">68%</div><div class="lbl">Test coverage</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Coverage logica pura</div></div>
+    </div>
+
+    <h2>📡 Gestione Multi-Canale</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Multi-canale</strong> — Gestisci più canali Telegram come spazi cloud separati</li>
+      <li><span class="dot amber"></span> <strong>⭐ Canali Preferiti</strong> — Barra rapida in alto per passare da un canale all'altro</li>
+      <li><span class="dot purple"></span> <strong>📋 Copia / 📦 Sposta</strong> — File tra canali con operazioni in due fasi (download → upload)</li>
+      <li><span class="dot accent"></span> <strong>Filtro canale</strong> — Visualizza file di un canale specifico o di tutti</li>
+    </ul>
+
+    <h2>🏷️ Sistema di Tag</h2>
+    <p>
+      Assegna un tag a ciascun file durante l'upload o successivamente. Filtra per tag su tutti i canali 
+      contemporaneamente con chip cliccabili sotto la tabella cloud. Crea, rinomina, elimina e riordina i tag dalle Impostazioni.
+    </p>
+
+    <h2>📦 Coda di Trasferimento</h2>
+    <p>
+      Coda asincrona gestita da <strong>TransferManager</strong> con finestra dedicata che mostra progresso, 
+      velocità MB/s, file completati/errore. Auto-clear dei completati, badge colorati: blu (upload), ambra (download), 
+      verde (completato), rosso (errore).
+    </p>
+
+    <h2>🛡️ Resilienza</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Catena Copy/Move persistente</strong> — Stato salvato in SQLite; se l'app crasha, al riavvio i file temporanei vengono puliti</li>
+      <li><span class="dot accent"></span> <strong>Event-driven client Telegram</strong> — Loop asyncio con asyncio.Event invece di polling → latenza zero, CPU idle ~0%</li>
+    </ul>
+
+    <h2>🎨 Interfaccia Utente</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>Tema Dark/Light/System</strong> selezionabile</li>
+      <li><span class="dot accent"></span> <strong>Dimensione font</strong> regolabile (8-24 pt)</li>
+      <li><span class="dot green"></span> <strong>Wizard di primo avvio</strong> — 5 passi guidati in 2 minuti</li>
+      <li><span class="dot amber"></span> <strong>Notifiche di sistema</strong> — Popup + beep al completamento trasferimenti</li>
+      <li><span class="dot cyan"></span> <strong>Scorciatoie</strong> — F5 per aggiornare, Delete per eliminare</li>
+      <li><span class="dot purple"></span> <strong>Checkbox di selezione multipla</strong> per azioni batch</li>
+    </ul>
+
+    <h2>🏗️ Tecnologia</h2>
+    <ul class="feature-list">
+      <li><span class="dot cyan"></span> <strong>Autenticazione MTProto</strong> via Telethon (account utente, non bot)</li>
+      <li><span class="dot accent"></span> <strong>Thread dedicato</strong> — Client Telegram in QThread separato con event loop asyncio → GUI sempre reattiva</li>
+      <li><span class="dot green"></span> <strong>Database SQLite</strong> locale per metadati, ricerca rapida e browsing offline</li>
+      <li><span class="dot amber"></span> <strong>Sessione persistente</strong> — Il file .session evita di reinserire credenziali a ogni avvio</li>
+    </ul>
+
+    <h2>🧪 Test Suite</h2>
+    <p>
+      <strong>426 test</strong> tutti passanti, zero flaky. <strong>68% coverage</strong> complessivo, <strong>100% sui moduli di logica pura</strong> 
+      (database, config, services). CI via GitHub Actions con matrix Python 3.10/3.11/3.12. 
+      Test suddivisi in unit (database, config, cloud model, transfer manager, transfer chain, tag) e UI (auth, channel, destination, settings, tag chip, transfer dialogs).
+    </p>
+
+    <h2>📦 CI/CD</h2>
+    <p>
+      Build automatici con GitHub Actions e PyInstaller <code>--onefile</code> per Linux x64, Windows x64 e macOS ARM64. 
+      Ogni tag crea automaticamente una GitHub Release con tutti e tre i binari pronti per il download.
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/tgm-drive-nxt" style="color:var(--accent-2);">GitHub</a> · GPL-3.0</p>
+</footer>
+
+</body>
+</html>

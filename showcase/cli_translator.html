@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cli_translator — VibeWhisper</title>
+  <meta name="description" content="Traduci interi EPUB in italiano con un solo comando. Due motori (Google gratuito o AI via OpenRouter), multithreading, TOC ricorsivo.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg blue">📖</div>
+    <h1>cli_translator</h1>
+    <p class="subtitle">
+      Traduci interi EPUB in italiano — o in qualsiasi lingua — con un solo comando. Due motori (Google Translate gratuito e AI via OpenRouter), elaborazione multithread, TOC ricorsivo. Un unico file Python, zero dipendenze pesanti.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Google Translate</span>
+      <span class="tech-tag">OpenRouter AI</span>
+      <span class="tech-tag">ebooklib</span>
+      <span class="tech-tag">lxml</span>
+      <span class="tech-tag">CLI</span>
+      <span class="tech-tag">Monolithic</span>
+      <span class="tech-tag">MIT License</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/cli_translator" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/cli_translator/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <h2>✨ Cos'è cli_translator</h2>
+    <p>
+      <strong>cli_translator</strong> è un traduttore CLI per ebook EPUB progettato per la massima portabilità.
+      Un singolo file Python (<code>cli_translator.py</code>) contiene tutta la logica: parsing EPUB, estrazione
+      del testo, traduzione, ricostruzione del libro e salvataggio. Basta un comando e il tuo EPUB è tradotto.
+    </p>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Motori (Google/OpenRouter)</div></div>
+      <div class="stat-card"><div class="num">1</div><div class="lbl">File (monolitico)</div></div>
+      <div class="stat-card"><div class="num">8-12</div><div class="lbl">Thread paralleli</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">TOC tradotto</div></div>
+    </div>
+
+    <h2>🎯 Il Problema</h2>
+    <p>
+      Tradurre un intero ebook EPUB è un'operazione complessa: bisogna estrarre il testo da ogni capitolo
+      senza rompere la struttura HTML/XML, tradurre preservando tag e formattazione, aggiornare il TOC
+      (Table of Contents) e ricostruire l'EPUB in modo valido. Gli strumenti generici falliscono su EPUB
+      complessi o traducono in modo decontestualizzato. <strong>cli_translator</strong> risolve tutto questo
+      con un parser EPUB dedicato e due motori di traduzione intercambiabili.
+    </p>
+
+    <h2>🌐 Due Motori di Traduzione</h2>
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.88rem;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);text-align:left;">
+          <th style="padding:10px 14px;color:var(--text-dim);">Caratteristica</th>
+          <th style="padding:10px 14px;color:var(--accent-2);">Google Translate 🏆</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">OpenRouter AI</th>
+        </tr>
+      </thead>
+      <tbody style="color:var(--text-muted);">
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Prezzo</td><td style="padding:8px 14px;color:var(--accent-3);">Gratuito</td><td style="padding:8px 14px;">API key + crediti</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">API Key</td><td style="padding:8px 14px;color:var(--accent-3);">Non richiesta</td><td style="padding:8px 14px;">Richiesta (OpenRouter)</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Qualità</td><td style="padding:8px 14px;">Buona, veloce</td><td style="padding:8px 14px;color:var(--accent-2);">Eccellente, letteraria</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Contesto</td><td style="padding:8px 14px;">Per frase</td><td style="padding:8px 14px;color:var(--accent-2);">Batch da 20 segmenti</td></tr>
+        <tr><td style="padding:8px 14px;">Modelli</td><td style="padding:8px 14px;">N/D</td><td style="padding:8px 14px;">GPT-4, DeepSeek, OSS-120B…</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🖥️ Utilizzo CLI</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.82rem;overflow-x:auto;line-height:1.8;margin:16px 0;">
+# Traduzione base con Google Translate (gratuito, nessuna API key)
+python cli_translator.py libro.epub
+
+# Traduzione con AI via OpenRouter (qualità superiore)
+export OPENROUTER_API_KEY="sk-or-..."
+python cli_translator.py libro.epub -OPR
+
+# Specifica modello AI e numero di thread
+python cli_translator.py libro.epub -OPR --model deepseek/deepseek-chat --threads 12
+
+# Output: libro_ITALIANO.epub</pre>
+
+    <h2>⚡ Elaborazione Multithread</h2>
+    <p>
+      Con il motore OpenRouter, la traduzione avviene in <strong>batch da 20 segmenti</strong> elaborati in parallelo
+      tramite <code>ThreadPoolExecutor</code>. Il numero di thread è configurabile (default 8, consigliato 12).
+      Un log in tempo reale mostra il progresso con la velocità in segmenti/secondo.
+    </p>
+
+    <h2>📑 Traduzione del TOC</h2>
+    <p>
+      Il Table of Contents (indice) dell'EPUB viene tradotto <strong>ricorsivamente</strong> in tutte le sue
+      gerarchie — capitoli, sottocapitoli, sezioni. Ogni voce del TOC viene elaborata in batch e
+      riscritta nell'EPUB di output, preservando la struttura nidificata originale.
+    </p>
+
+    <h2>🧹 Sanitizzazione Intelligente</h2>
+    <p>
+      I modelli AI a volte restituiscono output con prefissi indesiderati come "Translation:", "Output:",
+      "Traduzione:" o virgolette superflue. <strong>cli_translator</strong> include un layer di sanitizzazione
+      che ripulisce automaticamente questi artefatti, garantendo un testo pulito nell'EPUB finale.
+    </p>
+
+    <h2>🏗️ Architettura</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.82rem;overflow-x:auto;line-height:1.8;margin:16px 0;">
+cli_translator/
+├── cli_translator.py          # Script monolitico (tutto in un file)
+│   ├── GoogleFreeTranslateNew  # Motore Google gratuito
+│   ├── OpenRouter              # Motore AI via OpenRouter
+│   ├── Element / PageElement   # Classi per nodi HTML/EPUB
+│   ├── Extraction               # Parser ricorsivo dei capitoli
+│   ├── ElementHandler           # Gestione placeholder e sostituzioni
+│   └── process_epub()           # Pipeline completa
+├── requirements.txt            # ebooklib, lxml, mechanize, cssselect
+└── README.md</pre>
+
+    <h2>📋 Requisiti</h2>
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.85rem;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);text-align:left;">
+          <th style="padding:10px 14px;color:var(--text-dim);">Pacchetto</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">Ruolo</th>
+        </tr>
+      </thead>
+      <tbody style="color:var(--text-muted);">
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;"><code>ebooklib</code></td><td style="padding:8px 14px;">Lettura e scrittura file EPUB</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;"><code>lxml</code></td><td style="padding:8px 14px;">Parsing HTML/XML ad alte prestazioni</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;"><code>mechanize</code></td><td style="padding:8px 14px;">HTTP client per richieste di traduzione</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;"><code>cssselect</code></td><td style="padding:8px 14px;">Selezione elementi via CSS selector</td></tr>
+        <tr><td style="padding:8px 14px;"><code>PySocks</code></td><td style="padding:8px 14px;">Supporto proxy SOCKS (opzionale)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🔒 Privacy</h2>
+    <p>
+      Con Google Translate il testo viene inviato ai server di Google. Con OpenRouter, il testo passa attraverso
+      il provider AI scelto (OpenAI, DeepSeek, etc.). Per la massima privacy, è possibile utilizzare modelli
+      open-source ospitati self-hosted tramite OpenRouter. Il file EPUB originale non viene mai modificato —
+      l'output è sempre un nuovo file con suffisso <code>_ITALIANO.epub</code>.
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/cli_translator" style="color:var(--accent-2);">GitHub</a> · MIT License</p>
+</footer>
+
+</body>
+</html>

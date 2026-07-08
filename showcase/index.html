@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibeWhisper — Portfolio di App</title>
+  <meta name="description" content="Collezione di applicazioni costruite con vibe coding: PDF toolkit, reader EPUB, cloud storage, bulk renamer, e molto altro.">
+  <meta property="og:title" content="VibeWhisper — Portfolio di App">
+  <meta property="og:description" content="10 applicazioni costruite con passione e vibe coding.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="#projects">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="#projects" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Portfolio
+    </div>
+    <h1 class="hero-title">
+      <span class="phrase phrase-a">VibeWhisper</span>
+      <span class="phrase phrase-b">Idee che diventano <span class="gradient-text">codice</span></span>
+    </h1>
+    <p class="subtitle">
+      Undici progetti nati da un'intuizione e cresciuti riga dopo riga. Dal mondo dei PDF agli EPUB, dal cloud storage al batch renaming — ogni applicazione risolve un problema reale con un'interfaccia pensata per chi la usa.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="number">11</div>
+        <div class="label">Progetti</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">5</div>
+        <div class="label">Tecnologie</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">500+</div>
+        <div class="label">Test automatici</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">100%</div>
+        <div class="label">Open Source</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-header">
+      <h2>I Progetti</h2>
+      <p>Ogni app con la sua storia, le sue tecnologie e il suo scopo</p>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="project-grid">
+
+      <!-- NOESIS MULTI -->
+      <a href="noesis-multi.html" class="project-card animate delay-1">
+        <div class="browser-frame">
+          <div class="browser-frame-bar">
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="icon purple">📚</div>
+          <h3>Noesis Multi</h3>
+          <div class="tags">
+            <span class="tag">Vanilla JS</span>
+            <span class="tag">Single File</span>
+            <span class="tag">Offline</span>
+          </div>
+          <p class="desc">
+            Reader EPUB + ambiente di studio integrato. Leggi, traduci in streaming, estrai capitoli e rielaborali in un editor professionale — tutto in un singolo file HTML, senza server.
+          </p>
+          <div class="arrow">Scopri di più →</div>
+        </div>
+      </a>
+
+      <!-- PDFHANDLER -->
+      <a href="pdfhandler.html" class="project-card animate delay-2">
+        <div class="browser-frame">
+          <div class="browser-frame-bar">
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="icon blue">📄</div>
+          <h3>pdfhandler</h3>
+          <div class="tags">
+            <span class="tag">React 19</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Tailwind</span>
+          </div>
+          <p class="desc">
+            Toolbox PDF completo nel browser: estrai, ruota, unisci, dividi, filigrane, numeri pagina, cifratura AES-256. 15+ strumenti, tutto client-side, zero upload.
+          </p>
+          <div class="arrow">Scopri di più →</div>
+        </div>
+      </a>
+
+      <!-- IBS EPUB METADATA SCRAPER -->
+      <a href="ibs-epub-metadata-scraper.html" class="project-card animate delay-3">
+        <div class="browser-frame">
+          <div class="browser-frame-bar">
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="icon green">📊</div>
+          <h3>IBS EPUB Metadata Scraper</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">CLI + GUI</span>
+            <span class="tag">Web Scraping</span>
+          </div>
+          <p class="desc">
+            Arricchisci i tuoi EPUB con metadati da IBS.it: ISBN, editore, descrizione, lingua, pagine. 1.1 sec per libro, 100% success rate, con interfaccia GUI moderna.
+          </p>
+          <div class="arrow">Scopri di più →</div>
+        </div>
+      </a>
+
+      <!-- EPUB2SITE -->
+      <a href="epub2site.html" class="project-card animate delay-4">
+        <div class="browser-frame">
+          <div class="browser-frame-bar">
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="icon amber">🌐</div>
+          <h3>epub2site</h3>
+          <div class="tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">CLI</span>
+            <span class="tag">Static Site</span>
+          </div>
+          <p class="desc">
+            Converti qualsiasi EPUB in un sito web statico leggibile ovunque. Reader completo con TOC, temi chiaro/scuro, progress bar, font regolabili. Binario standalone disponibile.
+          </p>
+          <div class="arrow">Scopri di più →</div>
+        </div>
+      </a>
+
+      <!-- TGM DRIVE NXT -->
+      <a href="tgm-drive-nxt.html" class="project-card animate delay-5">
+        <div class="browser-frame">
+          <div class="browser-frame-bar">
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="icon cyan">☁️</div>
+          <h3>TGM Drive NXT</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">PyQt6</span>
+            <span class="tag">Telegram API</span>
+          </div>
+          <p class="desc">
+            Trasforma canali Telegram nel tuo cloud personale. Upload fino a 2 GB, multi-canale, tag, coda trasferimenti, drag & drop. 426 test, 68% coverage.
+          </p>
+          <div class="arrow">Scopri di più →</div>
+        </div>
+      </a>
+
+      <!-- EPUB SPLITTER -->
+      <a href="epubsplitter.html" class="project-card animate delay-6">
+        <div class="browser-frame">
+          <div class="browser-frame-bar">
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="icon purple">✂️</div>
+          <h3>epubsplitter</h3>
+          <div class="tags">
+            <span class="tag">React + TS</span>
+            <span class="tag">JSZip</span>
+            <span class="tag">Canvas API</span>
+          </div>
+          <p class="desc">
+            Estrai capitoli EPUB in nuovi file autonomi. TOC gerarchico EPUB 2+3, rewriting OPF/NCX, raccolta asset. App Vercel + standalone HTML.
+          </p>
+          <div class="arrow">Scopri di più →</div>
+        </div>
+      </a>
+
+      <!-- EPUB SLIMER -->
+      <a href="epubslimer.html" class="project-card animate delay-7">
+        <div class="browser-frame">
+          <div class="browser-frame-bar">
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="icon green">🗜️</div>
+          <h3>epubslimer</h3>
+          <div class="tags">
+            <span class="tag">React + TS</span>
+            <span class="tag">JSZip</span>
+            <span class="tag">Canvas API</span>
+          </div>
+          <p class="desc">
+            Comprimi immagini EPUB con Canvas API ×4 parallela. Modalità Single e Batch unificate, slider qualità 10-80%. App Vercel + standalone HTML.
+          </p>
+          <div class="arrow">Scopri di più →</div>
+        </div>
+      </a>
+
+      <!-- PDF EXTRACTOR -->
+      <a href="pdfextractor.html" class="project-card animate delay-8">
+        <div class="browser-frame">
+          <div class="browser-frame-bar">
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="icon amber">📑</div>
+          <h3>pdfextractor</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Docling</span>
+            <span class="tag">CLI</span>
+          </div>
+          <p class="desc">
+            Converti PDF scientifici multi-colonna in Markdown pulito. Ricostruzione layout, de-hyphenation, tabelle, immagini. Ottimizzato per CPU e bassa RAM.
+          </p>
+          <div class="arrow">Scopri di più →</div>
+        </div>
+      </a>
+
+      <!-- MD TRANSLATOR -->
+      <a href="mdtranslator.html" class="project-card animate delay-9">
+        <div class="browser-frame">
+          <div class="browser-frame-bar">
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="icon rose">🌍</div>
+          <h3>mdtranslator</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">CLI + GUI</span>
+            <span class="tag">Tkinter</span>
+          </div>
+          <p class="desc">
+            Traduci file Markdown preservando la formattazione: tabelle, heading, code block. 3 motori (Google, DeepL, Edge), interfaccia CLI e GUI.
+          </p>
+          <div class="arrow">Scopri di più →</div>
+        </div>
+      </a>
+
+      <!-- CLI TRANSLATOR -->
+      <a href="cli_translator.html" class="project-card animate delay-10">
+        <div class="browser-frame">
+          <div class="browser-frame-bar">
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="icon blue">📖</div>
+          <h3>cli_translator</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">CLI</span>
+            <span class="tag">Google/AI</span>
+          </div>
+          <p class="desc">
+            Traduci interi EPUB in italiano con un solo comando. Due motori: Google Translate gratuito o AI via OpenRouter. Multithreading, batch processing, TOC ricorsivo.
+          </p>
+          <div class="arrow">Scopri di più →</div>
+        </div>
+      </a>
+
+      <!-- BULK RENAMER -->
+      <a href="bulkrenamer.html" class="project-card animate delay-11">
+        <div class="browser-frame">
+          <div class="browser-frame-bar">
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+            <span class="browser-frame-dot"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="icon rose">✏️</div>
+          <h3>Bulk Renamer PRO</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">PyQt6</span>
+            <span class="tag">Catppuccin</span>
+          </div>
+          <p class="desc">
+            Rinomina file in batch con 17 regole componibili: regex, numerazione, traslitterazione, date, cleanup. Preview live, undo illimitato, tema Catppuccin Mocha.
+          </p>
+          <div class="arrow">Scopri di più →</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>VibeWhisper · Idee che diventano codice · Tutti i progetti sono open source</p>
+</footer>
+
+</body>
+</html>
