@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>pdfextractor — VibeWhisper</title>
   <meta name="description" content="Converti PDF scientifici multi-colonna in Markdown pulito. Ricostruzione layout, de-hyphenation, tabelle, immagini. Ottimizzato per CPU e bassa RAM.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -49,13 +52,27 @@
 
   <div class="project-body">
 
-    <h2>✨ Cos'è pdfextractor</h2>
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
     <p>
-      <strong>pdfextractor</strong> (package <code>pdf_to_md</code>) è un convertitore CLI Python che trasforma PDF scientifici — 
-      anche quelli con layout a due colonne — in file Markdown puliti e semanticamente strutturati. 
-      Usa <strong>Docling</strong> di IBM Research per l'estrazione del contenuto, con ottimizzazioni specifiche 
-      per ambienti CPU-only e macchine con meno di 4 GB di RAM.
+      <strong>pdfextractor</strong>(pacchetto Python pdf_to_md) è un convertitore CLI che trasforma PDF scientifici e accademici — anche quelli con layout complessi a due colonne — in file Markdown puliti e semanticamente strutturati. Basato su Docling di IBM Research, il convertitore affronta tutti i problemi tipici dell'estrazione da PDF: linearizza layout multi-colonna preservando l'ordine di lettura, ricongiunge parole sillabate a fine riga (de-hyphenation), converte tabelle complesse in tabelle Markdown allineate, estrae immagini in una cartella dedicata con riferimenti nel testo.
     </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      pdfextractor è pensato per <strong>ricercatori, accademici e analisti che lavorano con pubblicazioni scientifiche in PDF</strong>. Chiunque abbia provato a copiare testo da un paper a due colonne sa quanto sia frustrante: il testo si mescola tra le colonne, le tabelle si sfaldano, le parole sillabate vanno ricongiunte a mano. pdfextractor automatizza l'intero processo, producendo Markdown pulito pronto per essere indicizzato, cercato, rielaborato. Data scientist che costruiscono pipeline NLP su letteratura scientifica possono convertire intere collezioni di PDF in testo strutturato per training di modelli. Giornalisti e divulgatori scientifici che rielaborano contenuti da paper accademici.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      La pipeline di conversione si basa su <strong>Docling</strong> di IBM Research, configurato con ottimizzazioni specifiche per ambienti CPU-only. Fase 1: il PDF viene aperto con <strong>pypdfium2</strong> (backend efficiente, più leggero di alternative come Poppler). Fase 2: Docling analizza il layout — identifica colonne, tabelle, immagini, heading, paragrafi — e produce una rappresentazione strutturata del documento. Fase 3: un modulo di <strong>de-hyphenation</strong>scansiona il testo e ricongiunge automaticamente le parole spezzate a fine riga ("conver-\\ntire" → "convertire"). Fase 4: le tabelle vengono convertite in tabelle Markdown con allineamento preservato.
+    </p>
+    </div>
+
 
     <div class="stats-row">
       <div class="stat-card"><div class="num">2-col</div><div class="lbl">Layout ricostruito</div></div>

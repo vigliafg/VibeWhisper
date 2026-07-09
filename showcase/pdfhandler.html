@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>pdfhandler — VibeWhisper</title>
   <meta name="description" content="Toolbox PDF completo nel browser: 15+ strumenti, tutto client-side, zero upload. React 19, TypeScript, Tailwind CSS.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -51,6 +54,27 @@
   </div>
 
   <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>pdfhandler</strong> è un toolkit PDF completo interamente browser-based, senza upload. Costruito con React 19, TypeScript e Tailwind, offre 15+ strumenti in due modalità: Viewer (lettura con zoom, scroll, TOC) ed Editor (modifica non-distruttiva). Supporta estrazione pagine, merge drag-and-drop, split per pagine/bookmark, rotazione, filigrane testo/immagine, numerazione, crittografia AES-256-GCM, modifica metadati e molto altro. Il TOC viene automaticamente preservato attraverso ogni operazione.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      pdfhandler è per <strong>chiunque lavori regolarmente con PDF e cerchi strumenti rapidi senza software pesante</strong>. Professionisti (contratti, fatture, documenti legali) possono unire, dividere e filigranare in pochi click. Ricercatori apprezzano estrazione e numerazione per riorganizzare paper. Chi tiene alla privacy trova un'alternativa sicura ai servizi online: i file non lasciano mai il computer. Designer beneficiano della composizione avanzata e del drag-and-drop. Funziona offline dopo il primo caricamento.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      Due modalità complementari. Il <strong>Viewer</strong> (pdfjs-dist) offre navigazione singola/doppia/tripla, zoom, TOC laterale e scorciatoie. L'<strong>Editor</strong> ha Page Tools (extract, delete, rotate, copy/move, reverse, reorder, split, merge, compose) che manipolano la struttura via pdf-lib preservando i bookmark. I Document Tools gestiscono metadati, watermark (testo con font/opacità; immagine con scala), numeri pagina, pagine bianche, esportazione PNG, estrazione testo e cifratura AES-256-GCM. Test E2E con Playwright.
+    </p>
+    </div>
 
     <h2>✨ Design Principles</h2>
     <ul class="feature-list">

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IBS EPUB Metadata Scraper — VibeWhisper</title>
   <meta name="description" content="Arricchisci EPUB con metadati da IBS.it: ISBN, editore, descrizione, pagine. 1.1 sec/libro, 100% success rate. CLI + GUI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -51,6 +54,27 @@
   </div>
 
   <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>IBS EPUB Metadata Scraper</strong> è un toolkit Python che arricchisce automaticamente gli EPUB con metadati da IBS.it. Invece di compilare manualmente ISBN, editore, descrizione, lingua e pagine, lo scraper legge l'EPUB, identifica il libro e interroga il catalogo IBS, incorporando i risultati nel file. Disponibile in tre versioni: CLI veloce (ibs_fast, 1.1 sec/libro via API Algolia), CLI legacy (Playwright) e GUI moderna (customtkinter). Test reale: 49 EPUB, 100% success rate.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      Ideale per <strong>collezionisti di ebook, bibliotecari digitali e gestori di librerie EPUB</strong> che vogliono cataloghi uniformi. Chi ha centinaia di EPUB con metadati mancanti (niente descrizione, editore assente, lingua vuota) risolve il problema in batch. La GUI è accessibile ai non tecnici; la CLI si integra in pipeline di automazione. Perfetto per chi converte libri da altri formati perdendo metadati, o per EPUB da fonti senza dati editoriali. Il report HTML/JSON finale dà una panoramica immediata.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      La pipeline opera in tre modalità. <strong>ibs_fast</strong> interroga l'API Algolia di IBS.it senza browser, leggendo metadati EPUB esistenti e recuperando dati in ~1.1 sec/libro. <strong>ibs_legacy</strong> usa Playwright per automatizzare Chromium e raccogliere metadati aggiuntivi (8-15 sec). La <strong>GUI</strong> (customtkinter, tema scuro) espone le stesse funzionalità con checkbox per --force, --json-only, --verbose, log colorato e pulsante Stop. Flusso completo: scarica metadati → copia backup in origins/ → riscrive EPUB in embedded/ → sposta non trovati in notfound/ → report HTML/JSON.
+    </p>
+    </div>
 
     <h2>📋 Tre Strumenti in Uno</h2>
     <div class="stats-row">

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noesis Multi — VibeWhisper</title>
   <meta name="description" content="Reader EPUB + ambiente di studio: traduzione, estrazione capitoli, editor integrato. Single file HTML, zero server.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -31,7 +34,7 @@
     <div class="icon-lg purple">📚</div>
     <h1>Noesis Multi</h1>
     <p class="subtitle">
-      Trasforma la tua lettura in conoscenza pura — reader EPUB, traduzione in streaming, estrazione capitoli ed editor integrato in un singolo file HTML.
+      Trasforma la tua lettura in conoscenza pura — reader EPUB con traduzione in streaming via il motore nativo del browser (Chrome, Edge, Firefox), estrazione capitoli ed editor integrato. Zero API esterne, un singolo file HTML.
     </p>
     <div class="tech-tags">
       <span class="tech-tag">Vanilla JS</span>
@@ -51,12 +54,27 @@
 
   <div class="project-body">
 
-    <h2>✨ Cos'è Noesis</h2>
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
     <p>
-      Noesis è un <strong>sistema Reading-to-Knowledge</strong> che abbatte le barriere tra lettura e produzione intellettuale. 
-      È un singolo file HTML (SPA — Single Page Application) che funziona interamente nel browser, senza server, senza account, senza tracking. 
-      I tuoi libri e le tue annotazioni non lasciano mai la tua memoria locale.
+      <strong>Noesis Multi</strong> è un ambiente integrato di lettura e studio EPUB interamente browser-based — un singolo file HTML di 6500+ righe Vanilla JS. Combina un reader avanzato (15 temi, layout singolo/doppio/scroll, highlight a 3 colori, segnalibri CFI) con un editor WYSIWYG Summernote. La traduzione in streaming sfrutta il motore nativo del browser senza mai inviare testo a server esterni. Include snapshot per versioning documenti, raccolta chunk (testo, immagini, tabelle) ed esportazione in Markdown, DOCX, PDF e JSON. Offline-ready dopo il primo caricamento.
     </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      Noesis Multi è pensato per <strong>studenti, ricercatori e lettori poliglotti</strong>. Ideale per chi studia testi in lingua straniera e deve tradurre interi capitoli senza costi API. I ricercatori possono estrarre capitoli, annotarli e raccogliere chunk per costruire documenti di studio. I lettori occasionali apprezzano 15 temi e la modalità offline. Chi gestisce grandi librerie EPUB beneficia dell'import multiplo in IndexedDB e del salvataggio automatico della posizione. Zero competenze tecniche richieste: basta aprire il file HTML nel browser.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      Tre ambienti integrati: <strong>Biblioteca</strong> (import EPUB, griglia cover, snapshot), <strong>Reader</strong> (iframe epub.js, TOC, 15 temi, highlight CFI, traduzione browser con auto-pause salvataggio), <strong>Editor sn56.x</strong> (Summernote via postMessage). Workflow: importa EPUB → leggi con traduzione streaming → evidenzia → estrai capitolo → snapshot → raccogli chunk → editor → esporta in PDF/DOCX/Markdown. Due database IndexedDB separati (EpubLibraryDB e noesisDB). Editor standalone disponibile come file HTML separato.
+    </p>
+    </div>
+
 
     <div class="stats-row">
       <div class="stat-card"><div class="num">1</div><div class="lbl">File HTML</div></div>
@@ -67,7 +85,7 @@
 
     <h2>🎯 Caratteristiche Principali</h2>
     <ul class="feature-list">
-      <li><span class="dot purple"></span> <strong>Traduzione Intelligente</strong> — Streaming nel reader e one-shot nell'editor, senza API esterne</li>
+      <li><span class="dot purple"></span> <strong>Traduzione Intelligente</strong> — Streaming nel reader e one-shot nell'editor, sfruttando il motore di traduzione nativo del browser (Chrome Translate, Firefox Translation, Edge Translator). Zero API, zero costi per carattere, nessun dato inviato a server esterni.</li>
       <li><span class="dot purple"></span> <strong>Privacy Totale «By Design»</strong> — Zero server, funzionamento offline, dati solo in locale</li>
       <li><span class="dot accent"></span> <strong>Personalizzazione Estrema</strong> — 15 temi, controllo tipografico (font, interlinea, layout), pagina singola/doppia/scroll</li>
       <li><span class="dot accent"></span> <strong>Annotazione Professionale</strong> — Highlight a 3 colori, segnalibri persistenti (CFI), lookup su dizionari</li>
@@ -85,6 +103,47 @@
       <li><span class="dot accent"></span> <strong>Lettore EPUB</strong> — Viewer in iframe con sidebar TOC, toolbar completa, 15 temi, highlight, segnalibri, estrazione capitoli, salvataggio stato</li>
       <li><span class="dot green"></span> <strong>Editor Estratti (sn56.x)</strong> — Popup esterno con payload JSON, comunica via postMessage con IndexedDB condiviso</li>
     </ul>
+
+    <h2>🌍 Traduzione in Streaming — Come Funziona</h2>
+    <p>
+      A differenza di altri reader EPUB che integrano API di traduzione a pagamento (Google Translate API, DeepL API), Noesis adotta un approccio radicalmente diverso: <strong>sfrutta il motore di traduzione già integrato in ogni browser moderno</strong>.
+    </p>
+
+    <h3>🔧 Meccanismo Tecnico</h3>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>L'EPUB viene renderizzato in un <strong>iframe</strong> con l'attributo <code>translate="yes"</code> sui contenuti, abilitando la traduzione automatica del browser</li>
+      <li>L'utente attiva la traduzione con <strong>tasto destro → "Traduci in Italiano"</strong> (Chrome/Edge) o tramite l'estensione Firefox Translation</li>
+      <li>Il browser traduce <strong>l'intero capitolo</strong> in tempo reale, senza inviare il testo a server esterni (Firefox Translation funziona completamente offline)</li>
+      <li>La traduzione «scorre» insieme alla lettura — da qui il termine <em>streaming translation</em></li>
+    </ol>
+
+    <h3>🛡️ Protezione dei Dati (CFI Auto-Pause)</h3>
+    <p>
+      Quando il browser attiva la traduzione, modifica il DOM della pagina aggiungendo tag <code>&lt;font&gt;</code> e wrapper.
+      Queste modifiche <strong>corromperebbero i CFI</strong> (Canonical Fragment Identifier) usati per salvare la posizione di lettura.
+      Noesis risolve il problema con un meccanismo di rilevamento: la funzione <code>_isBrowserTranslated()</code> controlla
+      la presenza delle classi <code>translated-ltr</code> / <code>translated-rtl</code> e dell'attributo <code>translated</code>
+      sull'elemento <code>&lt;html&gt;</code>. Quando la traduzione è attiva, l'auto-salvataggio della posizione viene
+      <strong>sospeso automaticamente</strong>, preservando l'integrità dei dati di lettura.
+    </p>
+
+    <h3>✨ Vantaggi Rispetto alle API Tradizionali</h3>
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.88rem;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);text-align:left;">
+          <th style="padding:10px 14px;color:var(--text-dim);">Caratteristica</th>
+          <th style="padding:10px 14px;color:var(--accent-2);">Noesis (Browser Native)</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">API Terze Parti</th>
+        </tr>
+      </thead>
+      <tbody style="color:var(--text-muted);">
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Costo</td><td style="padding:8px 14px;color:var(--accent-3);">Gratuito, illimitato</td><td style="padding:8px 14px;">€ / milione di caratteri</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Privacy</td><td style="padding:8px 14px;color:var(--accent-3);">Testo MAI inviato a server esterni</td><td style="padding:8px 14px;">Testo inviato a server terzi</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Limiti</td><td style="padding:8px 14px;color:var(--accent-3);">Nessun limite di caratteri</td><td style="padding:8px 14px;">Limiti per richiesta / mese</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Offline</td><td style="padding:8px 14px;color:var(--accent-3);">Sì (Firefox Translation)</td><td style="padding:8px 14px;">No</td></tr>
+        <tr><td style="padding:8px 14px;">Browser supportati</td><td style="padding:8px 14px;">Chrome, Edge, Firefox, Opera</td><td style="padding:8px 14px;">Qualsiasi (dipende dall'API)</td></tr>
+      </tbody>
+    </table>
 
     <h2>🛠️ Workflow</h2>
     <p>

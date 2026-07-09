@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mdtranslator — VibeWhisper</title>
   <meta name="description" content="Traduci file Markdown preservando la formattazione: tabelle, heading, code block. 3 motori (Google, DeepL, Edge), interfaccia CLI e GUI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -50,12 +53,26 @@
 
   <div class="project-body">
 
-    <h2>✨ Cos'è mdtranslator</h2>
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
     <p>
-      <strong>mdtranslator</strong> è un traduttore di documenti Markdown che rispetta la formattazione originale. 
-      A differenza dei traduttori generici che distruggono tabelle, mescolano heading e corrompono blocchi di codice, 
-      mdtranslator preserva ogni elemento strutturale — traducendo solo il testo e lasciando intatto l'impaginato.
+      <strong>mdtranslator</strong>è un traduttore specializzato per documenti Markdown che preserva intatta la formattazione originale durante la traduzione. A differenza dei traduttori generici — che distruggono tabelle, mescolano heading e corrompono blocchi di codice — mdtranslator usa un parser Markdown dedicato per isolare semanticamente ogni elemento: heading (H1-H6 con marker # preservati), tabelle (struttura pipe e allineamento intatti), code block (contenuto mai tradotto, backtick preservati), immagini (sintassi ![](url) intatta), liste nidificate, blockquote (>), link e horizontal rules.
     </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      mdtranslator è pensato per <strong>sviluppatori, technical writer e chiunque lavori con documentazione in Markdown multilingua</strong>. Team open-source che mantengono README e documentazione in più lingue possono tradurre rapidamente senza perdere la formattazione. Blogger e content creator che scrivono in Markdown (Jekyll, Hugo, Next.js MDX) possono localizzare interi siti statici preservando link e struttura. Ricercatori che collaborano internazionalmente possono tradurre paper e note tecniche. Chi traduce documentazione API apprezza la protezione dei blocchi di codice (mai toccati dal traduttore).
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      La CLI accetta un file Markdown e produce un nuovo file tradotto nella lingua target. Il processo: il <strong>parser</strong> scompone il Markdown in elementi atomici (heading, paragrafi, tabelle, code block, liste, immagini, blockquote), isolando il testo traducibile dalla sintassi. Ogni elemento viene inviato al <strong>motore scelto</strong> (Google via API gratuita, DeepL via API key, o Edge Translate). Le tabelle vengono tradotte cella per cella preservando pipe e allineamento; i code block vengono saltati; i link mantengono URL intatti. Il <strong>ricompositore</strong>riassembla il Markdown con la formattazione originale. La GUI (Tkinter/customtkinter) offre file browser, dropdown lingue,
+    </p>
+    </div>
 
     <div class="stats-row">
       <div class="stat-card"><div class="num">3</div><div class="lbl">Motori (Google/DeepL/Edge)</div></div>

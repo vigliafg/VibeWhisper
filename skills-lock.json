@@ -1,11 +1,35 @@
 {
   "version": 1,
   "skills": {
+    "aesthetic": {
+      "source": "samhvw8/dot-claude",
+      "sourceType": "github",
+      "skillPath": "skills/aesthetic/SKILL.md",
+      "computedHash": "624c3c3f0271f0402a17e1c0d5a3cdbfef2caffa845591720e7f676d659d4d1e"
+    },
+    "canvas-design": {
+      "source": "samhvw8/dot-claude",
+      "sourceType": "github",
+      "skillPath": "skills/canvas-design/SKILL.md",
+      "computedHash": "5a8902954d16494e1dde33ed18e5c34536bff59b581d5fa4f6b30880532149af"
+    },
     "product-showcase": {
       "source": "jezweb/claude-skills",
       "sourceType": "github",
       "skillPath": "plugins/frontend/skills/product-showcase/SKILL.md",
       "computedHash": "ff1cb76865d567c8cee8876543e21bc41be323983d15eec3961c8517dca076ee"
+    },
+    "ui-design-system": {
+      "source": "samhvw8/dot-claude",
+      "sourceType": "github",
+      "skillPath": "skills/ui-design-system/SKILL.md",
+      "computedHash": "e3618600c5afe99fd04a7d3c36a54c27badbf762b4f6093684ccf86bff87ef84"
+    },
+    "ui-ux-design": {
+      "source": "samhvw8/dot-claude",
+      "sourceType": "github",
+      "skillPath": "skills/ui-ux-design/SKILL.md",
+      "computedHash": "302a6882df0da127ef6e809f37b0be1b4aaa01cf1636bb4064808825ef348439"
     }
   }
 }

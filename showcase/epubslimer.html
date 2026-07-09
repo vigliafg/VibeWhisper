@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>epubslimer — VibeWhisper</title>
   <meta name="description" content="Comprimi immagini EPUB con elaborazione parallela. Qualità regolabile, modalità singola e batch, fino al 70% di riduzione. 100% locale.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -51,12 +54,27 @@
 
   <div class="project-body">
 
-    <h2>✨ Cos'è epubslimer</h2>
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
     <p>
-      <strong>epubslimer</strong> è un'app web che fa parte della suite <strong>noesis-epub-tools</strong> (React + TypeScript + Vite, deploy su Vercel). 
-      Comprime le immagini all'interno degli EPUB (JPG, PNG, WEBP) usando 
-      l'API Canvas del browser, mantenendo intatta la struttura del libro.
+      <strong>epubslimer</strong>è un compressore di immagini per EPUB che funziona interamente nel browser, riducendo le dimensioni dei file EPUB del 40-70% senza toccare la struttura del libro. Sfrutta l'API Canvas del browser per ricodificare al volo tutte le immagini (JPG, PNG, WEBP) contenute nell'EPUB, con elaborazione parallela su 4 thread simultanei. L'interfaccia offre uno slider qualità/peso dal 10% (massima compressione) all'80% (massima qualità), anteprima del risparmio in KB prima/dopo, e due modalità: singolo EPUB e batch (fino a 10 EPUB in coda).
     </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      epubslimer è pensato per <strong>chiunque abbia EPUB troppo pesanti e voglia ridurne le dimensioni senza perdere qualità percepibile</strong>. Lettori con dispositivi e-reader dalla memoria limitata (Kindle, Kobo) che vogliono far entrare più libri. Collezionisti di ebook con librerie di centinaia di titoli che occupano troppo spazio su disco. Editori e autori self-published che devono ottimizzare EPUB prima della distribuzione, riducendo i costi di bandwidth. Chi crea EPUB da scannerizzazioni o PDF e si ritrova con immagini ad alta risoluzione sproporzionate rispetto al testo — epubslimer le ottimizza senza toccare il contenuto.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      Il processo sfrutta tre tecnologie browser. <strong>JSZip</strong> apre l'EPUB come archivio ZIP in memoria, ne analizza la struttura e identifica tutti i file immagine (.jpg, .jpeg, .png, .webp). <strong>Canvas API</strong> ridisegna ogni immagine su un elemento canvas off-screen e la riesporta come JPEG o PNG con la qualità scelta dallo slider (10% = compressione massima, 80% = qualità massima, default 60%). <strong>Promise.all con chunking</strong>elabora 4 immagini in parallelo per massimizzare la velocità, riducendo i tempi del 70% rispetto all'elaborazione sequenziale.
+    </p>
+    </div>
+
 
     <div class="stats-row">
       <div class="stat-card"><div class="num">70%</div><div class="lbl">Riduzione massima</div></div>

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>cli_translator — VibeWhisper</title>
   <meta name="description" content="Traduci interi EPUB in italiano con un solo comando. Due motori (Google gratuito o AI via OpenRouter), multithreading, TOC ricorsivo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -51,12 +54,27 @@
 
   <div class="project-body">
 
-    <h2>✨ Cos'è cli_translator</h2>
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
     <p>
-      <strong>cli_translator</strong> è un traduttore CLI per ebook EPUB progettato per la massima portabilità.
-      Un singolo file Python (<code>cli_translator.py</code>) contiene tutta la logica: parsing EPUB, estrazione
-      del testo, traduzione, ricostruzione del libro e salvataggio. Basta un comando e il tuo EPUB è tradotto.
+      <strong>cli_translator</strong>è un traduttore CLI per ebook EPUB progettato per la massima portabilità e qualità. Un singolo file Python monolitico (~800 righe) contiene tutta la logica: parsing EPUB, estrazione del testo da ogni capitolo preservando la struttura HTML/XML, traduzione tramite due motori intercambiabili, ricostruzione dell'EPUB con TOC tradotto ricorsivamente e salvataggio. I due motori sono Google Translate (gratuito, nessuna API key, veloce) e OpenRouter AI ( qualità letteraria superiore, supporta GPT-4, DeepSeek, OSS-120B e decine di altri modelli).
     </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      cli_translator è ideale per <strong>lettori poliglotti, collezionisti di ebook e professionisti dell'editoria digitale</strong>. Chi vuole leggere romanzi e saggi in lingue straniere prima che escano le traduzioni ufficiali può tradurre interi EPUB con un solo comando. Blogger e content creator che operano in più lingue possono tradurre ebook per i loro lettori internazionali. Case editrici e agenzie di traduzione apprezzano la qualità letteraria del motore OpenRouter (GPT-4, DeepSeek) per produrre bozze professionali da raffinare. Il motore Google Translate è perfetto per traduzioni veloci e gratuite di testi non critici.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      La pipeline è orchestrata interamente da <code>process_epub()</code>. Fase 1: <strong>parsing EPUB</strong> con ebooklib — apertura del container ZIP, lettura OPF, individuazione dei capitoli (spine), estrazione del TOC gerarchico. Fase 2: <strong>estrazione testo</strong> con lxml — ogni capitolo XHTML viene parsato, il testo viene separato dalla formattazione HTML, i tag vengono preservati come placeholder. Fase 3: <strong>traduzione</strong> — con Google, il testo viene inviato in chunk via mechanize HTTP; con OpenRouter, i segmenti vengono raggruppati in batch da 20 ed elaborati in parallelo con ThreadPoolExecutor (configurabile, default 8 thread). Fase 4: <strong>ricostruzione</strong>— il testo
+    </p>
+    </div>
+
 
     <div class="stats-row">
       <div class="stat-card"><div class="num">2</div><div class="lbl">Motori (Google/OpenRouter)</div></div>

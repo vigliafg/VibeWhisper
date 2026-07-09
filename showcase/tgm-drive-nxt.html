@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TGM Drive NXT — VibeWhisper</title>
   <meta name="description" content="Trasforma canali Telegram in cloud storage personale. Upload fino a 2 GB, multi-canale, tag, coda trasferimenti. PyQt6 desktop app.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -51,6 +54,27 @@
   </div>
 
   <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>TGM Drive NXT</strong>è un'applicazione desktop che trasforma uno o più canali Telegram privati nel tuo cloud storage personale, gratuito e senza limiti di spazio. Costruita con Python e PyQt6, sfrutta l'API MTProto di Telegram (via Telethon) per caricare e gestire file fino a 2 GB (4 GB con account Premium) direttamente nei tuoi canali. L'interfaccia desktop nativa offre esploratore file locale, drag & drop bidirezionale, coda trasferimenti con velocità in tempo reale, gestione multi-canale con canali preferiti, sistema di tag per organizzare i file e ricerca globale.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      TGM Drive NXT è pensato per <strong>chiunque cerchi un cloud storage gratuito, flessibile e senza limiti artificiali</strong>. Professionisti che gestiscono grandi quantità di dati (video editor, fotografi, sviluppatori) e sono stanchi dei piani a pagamento di Google Drive, Dropbox o OneDrive possono sfruttare l'infrastruttura Telegram per upload fino a 2 GB per file (4 GB con Premium). Freelance e team distribuiti possono usare canali Telegram condivisi come spazio cloud collaborativo, organizzando i file con tag e canali multipli.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      TGM Drive NXT usa l'API MTProto di Telegram (via Telethon) autenticandosi come utente normale — non come bot — per accedere ai canali di cui si è membri. L'architettura si basa su tre componenti: <strong>TelegramClient</strong> (eseguito in un QThread dedicato con event loop asyncio, mantiene la GUI sempre reattiva), <strong>TransferManager</strong> (gestisce la coda asincrona di upload/download con velocità in tempo reale, badge colorati e notifiche di sistema), e <strong>SQLite</strong>(database locale per metadati, ricerca rapida e browsing offline della lista file). Il file .session persiste l'autenticazione tra gli avvii.
+    </p>
+    </div>
 
     <h2>✨ Core Features</h2>
     <ul class="feature-list">

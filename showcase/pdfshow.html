@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pdfshow — VibeWhisper</title>
+  <meta name="description" content="Visualizzatore rapido di copertine PDF con thumbnail uniformi. Sfoglia intere cartelle di PDF a colpo d'occhio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_t46n2it46n2it46n.png" alt="pdfshow Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg rose">🖼️</div>
+    <h1>pdfshow</h1>
+    <p class="subtitle">
+      Visualizzatore rapido di copertine PDF. Sfoglia intere cartelle di documenti con una griglia di anteprime uniformi e pulite. Apri qualsiasi PDF con un click.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Streamlit</span>
+      <span class="tech-tag">PyMuPDF</span>
+      <span class="tech-tag">Pillow</span>
+      <span class="tech-tag">Web UI</span>
+      <span class="tech-tag">Caching</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/pdfshow" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>pdfshow</strong>è un visualizzatore web locale che trasforma una cartella piena di PDF in una galleria visiva di copertine, permettendo di identificare documenti a colpo d'occhio senza aprirli uno per uno. Costruito con Streamlit, estrae la prima pagina di ogni PDF trovato nella directory di esecuzione, la converte in immagine con PyMuPDF (fitz) e la ridimensiona a una dimensione uniforme di 200×280 pixel con Pillow (qualità LANCZOS). Il risultato è una griglia di anteprime pulita e omogenea, navigabile nel browser.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      pdfshow è pensato per <strong>chiunque lavori con molteplici PDF e fatichi a orientarsi tra nomi di file criptici</strong>. Ricercatori e accademici con cartelle piene di paper scientifici (spesso con nomi come "paper_final_v3_revised.pdf") possono identificare l'articolo giusto dalla copertina invece di aprirli a tentativi. Avvocati e commercialisti che gestiscono centinaia di contratti e fatture trovano subito il documento dall'aspetto visivo. Designer e creativi con portfolio in PDF sfogliano i lavori come in una galleria. Bibliotecari digitali che catalogano collezioni di documenti scansionati apprezzano la visione d'insieme.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      All'avvio (<code>streamlit run show.py</code>), pdfshow scansiona la directory corrente con <code>os.listdir()</code> filtrando i file con estensione .pdf. Per ogni PDF trovato, la funzione <code>get_thumbnail()</code> (decorata con <code>@st.cache_data</code>) apre il file con PyMuPDF, estrae la prima pagina (<code>doc[0]</code>), la renderizza come immagine pixmap e la converte in un oggetto PIL Image. L'immagine viene ridimensionata a 200×280 pixel con <code>Image.LANCZOS</code>, producendo anteprime uniformi indipendentemente dal formato originale (A4, Letter, orizzontale). Le anteprime vengono disposte in una griglia reattiva con <code>st.columns(n)</code>. Sotto ogni anteprima, un pulsante richiama <code>os.startfile()</code> (Windows) o <code>subprocess.run(['open',
+    </p>
+    </div>
+
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">200×280</div><div class="lbl">Dimensione anteprime</div></div>
+      <div class="stat-card"><div class="num">193</div><div class="lbl">Righe di codice</div></div>
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Dipendenze</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Elaborazione locale</div></div>
+    </div>
+
+    <h2>🎯 Perché pdfshow</h2>
+    <p>
+      Hai mai passato minuti ad aprire PDF uno per uno cercando il documento giusto? 
+      <strong>pdfshow</strong> risolve questo problema: ti mostra tutte le copertine in una griglia 
+      uniforme, rendendo immediato riconoscere ogni documento dal suo aspetto visivo. Basta un click 
+      per aprirlo nel visualizzatore predefinito.
+    </p>
+
+    <h2>🖼️ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Anteprime uniformi</strong> — Tutte le copertine vengono ridimensionate a 200×280 px con Pillow, qualità LANCZOS</li>
+      <li><span class="dot accent"></span> <strong>Griglia reattiva</strong> — Layout adattivo via Streamlit <code>st.columns()</code>, si adatta alla larghezza dello schermo</li>
+      <li><span class="dot amber"></span> <strong>Cache intelligente</strong> — Le anteprime vengono cachate con <code>st.cache_data</code> per caricamenti istantanei</li>
+      <li><span class="dot purple"></span> <strong>Apri con un click</strong> — Pulsante sotto ogni anteprima per aprire il PDF nel visualizzatore di sistema</li>
+      <li><span class="dot cyan"></span> <strong>Auto-detection</strong> — Rileva automaticamente tutti i PDF nella directory di esecuzione</li>
+    </ul>
+
+    <h2>🏗️ Come Funziona</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>All'avvio, pdfshow <strong>scansiona la directory corrente</strong> alla ricerca di file <code>.pdf</code></li>
+      <li>Per ogni PDF trovato, usa <strong>PyMuPDF (fitz)</strong> per estrarre la prima pagina</li>
+      <li>La pagina viene convertita in immagine e ridimensionata a <strong>200×280 pixel</strong> con <strong>Pillow (LANCZOS)</strong></li>
+      <li>Le anteprime vengono <strong>cachate</strong> — alla riapertura sono istantanee</li>
+      <li>La griglia viene renderizzata con <strong>Streamlit</strong> in modalità <em>wide</em> per sfruttare tutto lo schermo</li>
+    </ol>
+
+    <h2>🎨 Design dell'Interfaccia</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Layout wide</strong> — Sfrutta l'intera larghezza dello schermo per massimizzare il numero di colonne</li>
+      <li><span class="dot accent"></span> <strong>Griglia pulita</strong> — Le anteprime uniformi creano un layout ordinato e professionale</li>
+      <li><span class="dot amber"></span> <strong>Feedback immediato</strong> — Barra di caricamento durante la generazione delle anteprime</li>
+      <li><span class="dot purple"></span> <strong>Web-based</strong> — Si apre nel browser, nessuna installazione GUI nativa necessaria</li>
+    </ul>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Clona il repository
+git clone https://github.com/vigliafg/pdfshow.git
+cd pdfshow
+
+# Installa le dipendenze
+pip install -r requirements.txt
+
+# Posiziona i tuoi PDF nella stessa directory...
+# ...e avvia l'app!
+streamlit run show.py</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Librerie PDF</strong> — Sfoglia visivamente grandi collezioni di documenti</li>
+      <li><span class="dot accent"></span> <strong>Fatture e contratti</strong> — Identifica rapidamente documenti dal loro layout</li>
+      <li><span class="dot amber"></span> <strong>Paper accademici</strong> — Riconosci gli articoli dalla prima pagina</li>
+      <li><span class="dot purple"></span> <strong>Portfolio design</strong> — Mostra anteprime del tuo lavoro in PDF</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/pdfshow" style="color:var(--accent-2);">GitHub</a> · MIT License</p>
+</footer>
+
+</body>
+</html>

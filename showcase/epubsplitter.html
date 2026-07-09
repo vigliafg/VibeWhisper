@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>epubsplitter — VibeWhisper</title>
   <meta name="description" content="Estrai capitoli specifici da EPUB in nuovi file autonomi. TOC gerarchico, drag & drop, 100% locale nel browser.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -50,13 +53,27 @@
 
   <div class="project-body">
 
-    <h2>✨ Cos'è EpubSplitter Pro</h2>
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
     <p>
-      <strong>EpubSplitter Pro</strong> fa parte della suite <strong>noesis-epub-tools</strong> (React + TypeScript + Vite, deploy su Vercel). 
-      Carica un EPUB, esplora il suo indice gerarchico (TOC), seleziona il capitolo 
-      che ti interessa e ottieni un nuovo EPUB autonomo con SOLO quel contenuto — OPF riscritto, NCX rigenerato, 
-      asset (immagini, font, CSS) preservati.
+      <strong>EpubSplitter Pro</strong>è uno strumento di estrazione chirurgica per EPUB che funziona interamente nel browser. Carica un EPUB, esplora il suo indice gerarchico e seleziona uno o più capitoli da estrarre in un nuovo file EPUB autonomo e perfettamente formattato. L'app preserva l'integrità strutturale del libro: manifest, spine, OPF e NCX vengono riscritti per riflettere solo il contenuto estratto, mentre tutti gli asset (immagini, font, CSS) vengono raccolti selettivamente. Supporta sia EPUB 2 (NCX) che EPUB 3 (Nav Document) con parsing ricorsivo del TOC.
     </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      EpubSplitter Pro è pensato per <strong>chiunque abbia bisogno di isolare contenuti specifici da un EPUB senza strumenti di authoring complessi</strong>. Studenti e ricercatori che vogliono estrarre un singolo saggio o articolo da un'antologia o una raccolta accademica per studiarlo separatamente. Insegnanti e formatori che preparano materiale didattico estraendo capitoli specifici da manuali o libri di testo. Redattori ed editor che lavorano su singole sezioni di un libro e hanno bisogno di file EPUB autonomi da condividere con i revisori.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      La pipeline di estrazione segue 7 fasi precise. <strong>Fase 1</strong>: parsing EPUB — JSZip apre il container ZIP, individua META-INF/container.xml, carica l'OPF e cataloga manifest, spine e metadati. <strong>Fase 2</strong>: rilevamento TOC — parsing ricorsivo del Nav Document EPUB 3 (prioritario) o NCX EPUB 2 (fallback), costruendo un albero gerarchico navigabile. <strong>Fase 3</strong>: raccolta HTML — identificazione di tutti i file XHTML del capitolo selezionato e dei sotto-capitoli. <strong>Fase 4</strong>: analisi asset — scansione DOM di ogni HTML per immagini, SVG, font, CSS e altri asset collegati. <strong>Fase 5</strong>: copia
+    </p>
+    </div>
+
 
     <div class="stats-row">
       <div class="stat-card"><div class="num">∞</div><div class="lbl">Capitoli estraibili</div></div>

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>epub2site — VibeWhisper</title>
   <meta name="description" content="Converti EPUB in sito web statico: reader con TOC, temi, font regolabili. Binario standalone, zero dipendenze.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -52,12 +55,27 @@
 
   <div class="project-body">
 
-    <h2>✨ Cosa Fa</h2>
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
     <p>
-      <strong>epub2site</strong> prende un file <code>.epub</code> e produce una cartella di HTML puri. 
-      Il risultato è un'esperienza di lettura completamente offline con TOC gerarchico, tema chiaro/scuro, 
-      controlli di font e layout — il tutto senza bisogno di un server.
+      <strong>epub2site</strong>è un convertitore CLI che trasforma qualsiasi file EPUB in un sito web statico auto-contenuto, leggibile in qualsiasi browser senza server, senza dipendenze di runtime e completamente offline. Costruito in Node.js, estrae il contenuto dell'EPUB — testo, immagini, font, CSS — e genera una struttura di directory pronta per essere aperta con un doppio click su index.html. Il risultato è un'esperienza di lettura completa con TOC gerarchico navigabile, barra di progresso, tema chiaro/scuro persistente, controlli di dimensione font (A−/A+) e la possibilità di passare dal CSS del reader al CSS originale del libro (enriched
     </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      epub2site è pensato per <strong>chi vuole leggere EPUB ovunque senza vincoli di app o dispositivo</strong>. Sviluppatori e autori che pubblicano documentazione tecnica in EPUB possono convertirla in siti web navigabili da condividere via GitHub Pages o qualsiasi hosting statico. Lettori che preferiscono l'esperienza del browser agli e-reader dedicati ottengono un'interfaccia familiare con TOC, progresso e temi. Biblioteche e archivi digitali possono pubblicare collezioni EPUB come siti web accessibili senza gestire server. Il binario standalone è ideale per ambienti locked-down dove non si può installare Node.js.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      L'architettura si divide in tre moduli. <strong>src/epub/</strong> gestisce il parsing: apre l'EPUB come archivio ZIP, legge container.xml per trovare l'OPF, estrae il TOC da NCX (EPUB 2) o nav.xhtml (EPUB 3), e cataloga tutti gli asset. <strong>src/generator/</strong> produce l'output: genera index.html con cover e metadati, converte ogni capitolo in HTML standalone nella cartella chapters/, copia immagini e font nelle rispettive directory, e produce enriched.css — il CSS originale del libro con selettori prefixati sotto .chapter-content e regole pericolose filtrate (@font-face, @import, @keyframes). <strong>src/reader/</strong>fornisce CSS e JS embedded in ogni pagina per TOC sidebar, progress
+    </p>
+    </div>
+
 
     <div class="stats-row">
       <div class="stat-card"><div class="num">3</div><div class="lbl">Piattaforme</div></div>

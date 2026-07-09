@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyfer — VibeWhisper</title>
+  <meta name="description" content="Cifratura file con GUI moderna: AES, DES, Triple DES. Generazione chiavi sicure via movimento mouse. 100% offline.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_3r3tyq3r3tyq3r3t.png" alt="Cyfer Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg amber">🔐</div>
+    <h1>Cyfer</h1>
+    <p class="subtitle">
+      Cifratura e decifratura file con GUI moderna e intuitiva. Tre algoritmi standard (AES, DES, Triple DES), generazione chiavi tramite movimento casuale del mouse — tutto completamente offline.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">CustomTkinter</span>
+      <span class="tech-tag">PyCryptodome</span>
+      <span class="tech-tag">AES</span>
+      <span class="tech-tag">DES</span>
+      <span class="tech-tag">Triple DES</span>
+      <span class="tech-tag">GUI</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/cyfer" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>Cyfer</strong>è un'applicazione desktop per la cifratura e decifratura sicura di file, costruita con Python e CustomTkinter per offrire un'interfaccia moderna e intuitiva. Supporta tre algoritmi di cifratura standard tramite la libreria PyCryptodome: AES (Advanced Encryption Standard — il più sicuro e veloce, consigliato per la maggior parte dei casi), DES (Data Encryption Standard — storico, sicurezza base) e Triple DES (applica DES tre volte, sicurezza elevata ma più lento). La generazione delle chiavi sfrutta l'entropia del movimento del mouse: muovendo il cursore per 5 secondi si produce una chiave crittografica realmente casuale.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      Cyfer è pensato per <strong>chiunque abbia bisogno di proteggere file sensibili con cifratura forte, senza complicazioni tecniche</strong>. Professionisti che gestiscono documenti riservati (contratti, dati finanziari, cartelle cliniche) e vogliono un metodo semplice per cifrarli prima di archiviarli o inviarli. Privati che proteggono foto, video e documenti personali su chiavette USB o cloud storage. Studenti e ricercatori che cifrano dati di ricerca sensibili.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      L'operazione è guidata passo-passo dall'interfaccia. <strong>Cifratura</strong>: l'utente seleziona il file tramite Browse, sceglie l'algoritmo (AES consigliato), genera una chiave muovendo il mouse per 5 secondi (o la inserisce manualmente) e avvia la cifratura. PyCryptodome cifra il file con la chiave e l'algoritmo scelti, il risultato viene salvato come <code>nomefile.enc</code> e la chiave come <code>nomefile.key</code>. <strong>Decifratura</strong>: l'utente seleziona il file .enc; se il corrispondente file .key esiste nella stessa directory, viene rilevato automaticamente. Altrimenti può essere selezionato manualmente. Il file decifrato viene salvato con estensione .dec.
+    </p>
+    </div>
+
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Algoritmi disponibili</div></div>
+      <div class="stat-card"><div class="num">348</div><div class="lbl">Righe di codice</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Elaborazione offline</div></div>
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Dipendenze Python</div></div>
+    </div>
+
+    <h2>🔑 Gestione delle Chiavi</h2>
+    <ul class="feature-list">
+      <li><span class="dot amber"></span> <strong>Generazione mouse-based</strong> — Muovi il mouse per 5 secondi per generare una chiave crittografica basata sull'entropia del movimento</li>
+      <li><span class="dot green"></span> <strong>Inserimento manuale</strong> — Inserisci una chiave personalizzata per casi d'uso specifici</li>
+      <li><span class="dot accent"></span> <strong>File chiave automatici</strong> — Le chiavi vengono salvate in file <code>.key</code> per un facile riutilizzo</li>
+      <li><span class="dot purple"></span> <strong>Rilevamento automatico</strong> — In decifratura, il programma riconosce automaticamente il file <code>.key</code> corrispondente</li>
+    </ul>
+
+    <h2>🎛️ Algoritmi Supportati</h2>
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.88rem;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);text-align:left;">
+          <th style="padding:10px 14px;color:var(--text-dim);">Algoritmo</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">Tipo</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">Sicurezza</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">Velocità</th>
+        </tr>
+      </thead>
+      <tbody style="color:var(--text-muted);">
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px 14px;font-weight:600;color:var(--accent-3);">AES</td>
+          <td style="padding:8px 14px;">Simmetrico a blocchi</td>
+          <td style="padding:8px 14px;">⭐⭐⭐ Elevata</td>
+          <td style="padding:8px 14px;">⭐⭐⭐ Veloce</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px 14px;font-weight:600;color:var(--accent-4);">DES</td>
+          <td style="padding:8px 14px;">Simmetrico a blocchi</td>
+          <td style="padding:8px 14px;">⭐ Base</td>
+          <td style="padding:8px 14px;">⭐⭐ Media</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 14px;font-weight:600;color:var(--accent);">Triple DES</td>
+          <td style="padding:8px 14px;">Simmetrico a blocchi</td>
+          <td style="padding:8px 14px;">⭐⭐ Alta</td>
+          <td style="padding:8px 14px;">⭐ Più lenta</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>📋 Flusso di Lavoro</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>Seleziona il file da cifrare tramite il pulsante <strong>"Browse"</strong></li>
+      <li>Scegli l'algoritmo desiderato (<strong>AES</strong> consigliato per la maggior parte dei casi)</li>
+      <li>Genera una chiave sicura muovendo il mouse, oppure inseriscila manualmente</li>
+      <li>Avvia la cifratura — il file viene processato e salvato con estensione <code>.enc</code></li>
+      <li>Per decifrare: seleziona il file <code>.enc</code>, la chiave viene rilevata automaticamente se presente nella stessa directory</li>
+    </ol>
+
+    <h2>✨ Interfaccia Utente</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>GUI moderna</strong> — Design pulito e reattivo con CustomTkinter, ispirato al Material Design</li>
+      <li><span class="dot accent"></span> <strong>Barra di progresso</strong> — Indicatore visivo durante le operazioni di cifratura/decifratura</li>
+      <li><span class="dot amber"></span> <strong>Icone di stato</strong> — Feedback immediato sul successo o fallimento delle operazioni</li>
+      <li><span class="dot purple"></span> <strong>Log in tempo reale</strong> — Registro operazioni con timestamp nel pannello principale</li>
+      <li><span class="dot cyan"></span> <strong>Estensioni automatiche</strong> — I file cifrati ricevono estensione <code>.enc</code>, quelli decifrati <code>.dec</code></li>
+    </ul>
+
+    <h2>🔒 Privacy e Sicurezza</h2>
+    <p>
+      <strong>100% offline.</strong> Cyfer non richiede connessione a internet — la cifratura avviene interamente 
+      sul tuo computer. I file non vengono mai caricati su server esterni. La generazione della chiave tramite 
+      movimento del mouse sfrutta l'entropia fisica per creare chiavi realmente casuali.
+    </p>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Clona il repository
+git clone https://github.com/vigliafg/cyfer.git
+cd cyfer
+
+# Installa le dipendenze
+pip install -r requirements.txt
+
+# Avvia l'applicazione
+python file_encryptor.py</pre>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/cyfer" style="color:var(--accent-2);">GitHub</a> · MIT License</p>
+</footer>
+
+</body>
+</html>

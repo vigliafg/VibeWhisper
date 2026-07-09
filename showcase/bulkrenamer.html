@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bulk Renamer PRO — VibeWhisper</title>
   <meta name="description" content="Batch file renaming con 17 regole componibili: regex, numerazione, traslitterazione, cleanup. PyQt6, Catppuccin Mocha theme.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -51,12 +54,27 @@
 
   <div class="project-body">
 
-    <h2>✨ Cos'è</h2>
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
     <p>
-      <strong>Bulk File Renamer PRO</strong> è un'applicazione GUI per il batch renaming di file. 
-      Componi uno <strong>stack di regole</strong> (fino a 17 tipi diversi) e vedi una preview live del risultato, 
-      con colori che evidenziano modifiche e conflitti. L'interfaccia è ispirata a ReNamer con un tema dark Catppuccin Mocha.
+      <strong>Bulk Renamer PRO</strong>è un'applicazione desktop per il batch renaming di file con un'interfaccia ispirata al celebre ReNamer. Costruita con Python e PyQt6, offre 17 tipi di regole componibili in uno stack: Insert (testo con meta-tag [[MTIME_DATE]], [[INDEX]]), Delete (per posizione, delimitatore o conteggio), Remove, Replace (regex e wildcard), Rearrange (riordina token con $1, $2...), Extension, Strip (cifre, simboli, parentesi), Case (lowercase, UPPERCASE, Title Case), Serialize (decimale, romano, lettere, padding configurabile), Randomize (stringa casuale con charset personalizzabile), Padding (zero-padding su numeri), Clean Up (rimuovi emoji, normalizza spazi, split camelCase), Translit (tedesco, francese, russo, greco, giapponese
     </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      Bulk Renamer PRO è pensato per <strong>chiunque gestisca grandi quantità di file con naming disomogeneo</strong>. Fotografi e videomaker che rinominano centinaia di scatti con data e numerazione sequenziale. Sviluppatori che riorganizzano asset di progetto con pattern coerenti. Musicisti e DJ che normalizzano nomi di tracce audio rimuovendo caratteri speciali. Archivisti digitali che applicano regole di translitterazione a intere librerie di documenti. Chi scarica serie TV o collezioni di ebook e deve uniformare i nomi dei file. Professionisti che gestiscono fatture e documenti scansionati con date nel nome.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      Il workflow è semplice ma potente. L'utente carica i file da una cartella o selezione manuale, poi costruisce uno <strong>stack di regole</strong> dal menu Rules — ogni regola appare come una card con parametri configurabili e checkbox abilita/disabilita. Il pannello destro mostra una <strong>preview live</strong>con tre colonne: nome originale, nuovo nome e stato (✓ cambiato, ⚠ duplicato, — invariato), con colori che evidenziano le modifiche. Le regole vengono applicate in ordine dall'alto verso il basso, e l'ordine è riordinabile. Una volta soddisfatti, si selezionano i file (checkbox ☑) e si clicca ✅ Rename.
+    </p>
+    </div>
+
 
     <div class="stats-row">
       <div class="stat-card"><div class="num">17</div><div class="lbl">Regole componibili</div></div>
