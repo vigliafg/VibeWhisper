@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForexFlow AI — VibeWhisper</title>
+  <meta name="description" content="Analisi tecnica EUR/USD con 9 modelli previsionali, 10 indicatori tecnici e AI via OpenRouter e NVIDIA NIM. React 19, TypeScript, Vite.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <!-- Banner placeholder: replace with generated image -->
+    <div class="project-hero-banner" style="background: linear-gradient(135deg, #0f172a 0%, #064e3b 30%, #065f46 60%, #0f172a 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+      <div style="position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(16,185,129,0.03) 2px, rgba(16,185,129,0.03) 4px);"></div>
+      <div style="text-align: center; position: relative; z-index: 1;">
+        <div style="font-size: 4rem; margin-bottom: 8px;">📊</div>
+        <div style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 850; letter-spacing: -0.04em; background: linear-gradient(135deg, #6ee7b7, #34d399, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">ForexFlow AI</div>
+        <div style="font-size: 0.9rem; color: #6ee7b7; margin-top: 4px; font-family: var(--font-mono);">EUR/USD Technical Analysis</div>
+      </div>
+    </div>
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg green">📊</div>
+    <h1>ForexFlow AI</h1>
+    <p class="subtitle">
+      Analisi tecnica avanzata EUR/USD con 9 modelli previsionali, 10 indicatori tecnici in tempo reale e insight AI generati da LLM. Ensemble consensus, OpenRouter e NVIDIA NIM.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">React 19</span>
+      <span class="tech-tag">TypeScript</span>
+      <span class="tech-tag">Vite 6</span>
+      <span class="tech-tag">Tailwind CSS</span>
+      <span class="tech-tag">Recharts</span>
+      <span class="tech-tag">OpenRouter API</span>
+      <span class="tech-tag">NVIDIA NIM</span>
+      <span class="tech-tag">Yahoo Finance</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/forexflow" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/forexflow/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>ForexFlow AI</strong> è una piattaforma di analisi tecnica per il cambio <strong>EUR/USD</strong>, interamente browser-based. Combina <strong>9 modelli previsionali</strong> (Linear Regression, ARIMA, XGBoost, GARCH, Monte Carlo, Exponential Smoothing, Mean Reversion, Momentum Decay ed Ensemble Consensus) con <strong>10 indicatori tecnici</strong> (RSI, Golden/Death Cross, MACD, Bollinger Bands, Stochastic, CCI, ADX, Williams %R, ATR, Price vs EMA) su 5 timeframes. L'analisi viene arricchita da insight generati da LLM (OpenRouter o NVIDIA NIM) in italiano, con verdetto COMPRA/VENDI/ATTENDI. I dati di mercato sono fetchati live da Yahoo Finance con fallback automatico a dati simulati.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      ForexFlow AI è per <strong>trader retail e appassionati di mercati finanziari</strong> che vogliono un'analisi tecnica rapida e multi-modello senza costi. Studenti di finanza possono esplorare l'impatto di diversi algoritmi previsionali sullo stesso dataset. <strong>Sviluppatori</strong> interessati all'integrazione frontend di LLM trovano un esempio concreto di architettura multi-provider con fallback e service discovery. Chiunque cerchi un'alternativa gratuita e open source ai terminali di trading professionali.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      <strong>1. Dati:</strong> OHLCV candles vengono fetchati da Yahoo Finance via proxy Vite (zero CORS in dev) o <code>allorigins.win</code> in produzione, con fallback a random walk.<br>
+      <strong>2. Segnali:</strong> 10 indicatori tecnici calcolati client-side classificano ogni metrica come Bullish/Bearish/Neutral.<br>
+      <strong>3. Previsioni:</strong> 9 modelli statistici indipendenti proiettano il prezzo a t+1, t+2, t+3 periodi con range di confidenza e probabilità. I 3 migliori vengono combinati nell'<strong>Ensemble Consensus</strong> (~84% accuratezza backtest).<br>
+      <strong>4. AI:</strong> Il report completo viene inviato al provider LLM configurato (OpenRouter con 26+ modelli free, o NVIDIA NIM) per un'analisi narrativa in italiano.<br>
+      <strong>5. UI:</strong> Setup wizard per API key, export/import TOML della configurazione, selettore provider/model, toggle visibilità modelli, zoom/pan sul grafico.
+    </p>
+    </div>
+
+    <h2>✨ Caratteristiche</h2>
+    <ul class="feature-list">
+      <li><span class="dot accent"></span> <strong>Multi-model forecasting</strong> — 9 modelli indipendenti + Ensemble Consensus che combina i 3 migliori</li>
+      <li><span class="dot purple"></span> <strong>Dual LLM provider</strong> — OpenRouter (26+ modelli free) e NVIDIA NIM con switch on-the-fly</li>
+      <li><span class="dot green"></span> <strong>5 timeframes</strong> — 15m, 1h, 1d, 1w, 1mo con dati live da Yahoo Finance</li>
+      <li><span class="dot amber"></span> <strong>10 indicatori tecnici</strong> — RSI, SMA crossover, MACD, Bollinger, Stocastico, CCI, ADX, Williams %R, ATR</li>
+      <li><span class="dot cyan"></span> <strong>Grafico interattivo</strong> — Recharts con zoom, pan, toggle modelli, reference line al prezzo corrente</li>
+      <li><span class="dot accent"></span> <strong>Setup wizard</strong> — Onboarding guidato con discovery automatica modelli, export/import TOML</li>
+      <li><span class="dot purple"></span> <strong>Analisi AI in italiano</strong> — Verdetto COMPRA/VENDI/ATTENDI + livelli supporto/resistenza</li>
+      <li><span class="dot green"></span> <strong>Offline-ready</strong> — Fallback automatico a dati simulati se Yahoo Finance non raggiungibile</li>
+    </ul>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">9</div><div class="lbl">Modelli Previsionali</div></div>
+      <div class="stat-card"><div class="num">10</div><div class="lbl">Indicatori Tecnici</div></div>
+      <div class="stat-card"><div class="num">5</div><div class="lbl">Timeframes</div></div>
+      <div class="stat-card"><div class="num">84%</div><div class="lbl">Accuratezza Ensemble</div></div>
+    </div>
+
+    <h2>🔮 Modelli Previsionali</h2>
+    <p>
+      Ogni modello proietta il prezzo a t+1, t+2 e t+3 periodi con prezzo target, range (low/high) e probabilità. La confidence decresce nel tempo per tutti i modelli.
+    </p>
+    <table>
+      <thead>
+        <tr><th>Modello</th><th>Metodologia</th><th>Accuratezza Backtest</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Ensemble (Consensus)</strong></td><td>Media ponderata di Linear, ARIMA e XGBoost</td><td>~84%</td></tr>
+        <tr><td>XGBoost ML</td><td>Gradient Boosting + bias RSI</td><td>~77%</td></tr>
+        <tr><td>ARIMA</td><td>AutoRegressive Integrated Moving Average</td><td>~72%</td></tr>
+        <tr><td>GARCH</td><td>Volatility clustering projection</td><td>~68%</td></tr>
+        <tr><td>Exponential Smoothing</td><td>Pesatura esponenziale dei prezzi recenti</td><td>~65%</td></tr>
+        <tr><td>Linear Regression</td><td>Proiezione linea di trend</td><td>~62%</td></tr>
+        <tr><td>Momentum Decay</td><td>Momentum corrente con fattore di decadimento</td><td>~60%</td></tr>
+        <tr><td>Mean Reversion</td><td>Ritorno alla SMA a 20 periodi</td><td>~58%</td></tr>
+        <tr><td>Monte Carlo</td><td>Media di 1000 iterazioni random walk</td><td>~55%</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🤖 Provider AI</h2>
+    <p>
+      Due provider LLM supportati, configurabili via setup wizard o variabili d'ambiente. Almeno uno è necessario per l'analisi AI.
+    </p>
+    <table>
+      <thead>
+        <tr><th>Provider</th><th>Modelli Free</th><th>CORS</th><th>API Key</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>OpenRouter</strong></td><td>26+ (Llama, Gemma, Nemotron, Qwen...)</td><td>✅ Nativo</td><td><a href="https://openrouter.ai/keys" style="color:var(--accent-2);">openrouter.ai/keys</a></td></tr>
+        <tr><td><strong>NVIDIA NIM</strong></td><td>Developer tier (DeepSeek, Mistral, Llama...)</td><td>⚠️ Proxy richiesto</td><td><a href="https://build.nvidia.com/" style="color:var(--accent-2);">build.nvidia.com</a></td></tr>
+      </tbody>
+    </table>
+
+    <h2>🏗️ Architettura</h2>
+    <pre style="font-size:0.75rem; line-height:1.6; background:rgba(16,20,30,0.8);">
+┌──────────────────────────────────────────────────────┐
+│                     Browser                          │
+│  ┌─────────────┐  ┌──────────────┐  ┌─────────────┐ │
+│  │  ChartPanel │  │  SignalPanel │  │ ForecastCard│ │
+│  └──────┬──────┘  └──────┬───────┘  └──────┬──────┘ │
+│         │                │                  │        │
+│  ┌──────┴────────────────┴──────────────────┴──────┐ │
+│  │                   App.tsx                       │ │
+│  └──┬──────────┬──────────┬──────────┬────────────┘ │
+│     │          │          │          │               │
+│  ┌──▼──┐  ┌───▼───┐  ┌──▼───┐  ┌──▼──────────┐     │
+│  │Data │  │Analysis│  │LLM   │  │Config       │     │
+│  │Svc  │  │Svc     │  │Svc   │  │Svc (TOML)   │     │
+│  └──┬──┘  └───────┘  └──┬───┘  └─────────────┘     │
+│     │                    │                           │
+│  ┌──▼──────────────┐  ┌──▼──────────────────┐       │
+│  │ Yahoo Finance   │  │ OpenRouter / NVIDIA │       │
+│  │ (Vite proxy)     │  │ NIM API             │       │
+│  └─────────────────┘  └─────────────────────┘       │
+└──────────────────────────────────────────────────────┘</pre>
+
+    <h2>🔒 Privacy & Sicurezza</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Zero backend</strong> — Nessun server, nessun database, tutto client-side</li>
+      <li><span class="dot accent"></span> <strong>API key in localStorage</strong> — Mai inviate a server terzi, solo chiamate dirette ai provider LLM</li>
+      <li><span class="dot amber"></span> <strong>Nessun tracking</strong> — Zero analytics, zero telemetria</li>
+      <li><span class="dot purple"></span> <strong>Config TOML</strong> — Export/import della configurazione in formato leggibile</li>
+    </ul>
+
+    <h2>⚠️ Disclaimer</h2>
+    <p>
+      Questa applicazione è a scopo <strong>educativo e dimostrativo</strong>. I segnali e le previsioni generati sono basati su modelli statistici semplificati e non costituiscono consulenza finanziaria. Il trading sul Forex comporta rischi significativi. Le performance passate non garantiscono risultati futuri.
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/forexflow" style="color:var(--accent-2);">GitHub</a> · MIT License</p>
+</footer>
+
+</body>
+</html>

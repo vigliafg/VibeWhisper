@@ -2,7 +2,7 @@
 
 > Idee che diventano codice
 
-**VibeWhisper** è il portfolio showcase di 14 applicazioni costruite con *vibe coding* — dal mondo dei PDF agli EPUB, dal cloud storage al batch renaming, dalla traduzione automatica allo scraping di metadati. Ogni progetto risolve un problema reale con un'interfaccia pensata per chi la usa.
+**VibeWhisper** è il portfolio showcase di 15 applicazioni costruite con *vibe coding* — dal mondo dei PDF agli EPUB, dal cloud storage al batch renaming, dalla traduzione automatica allo scraping di metadati. Ogni progetto risolve un problema reale con un'interfaccia pensata per chi la usa.
 
 ## 🚀 Guarda lo Showcase
 
@@ -26,6 +26,7 @@ Apri [`showcase/index.html`](showcase/index.html) nel browser oppure visita la [
 | 🎙️ [NovoDictate](showcase/novodictate.html) | Dettatura italiana con Faster-Whisper e LanguageTool | Python, PyQt6, Whisper, VAD |
 | 🔐 [Cyfer](showcase/cyfer.html) | Cifratura file con GUI moderna: AES, DES, 3DES | Python, CustomTkinter, Crittografia |
 | 🖼️ [pdfshow](showcase/pdfshow.html) | Galleria visiva di copertine PDF con cache intelligente | Python, Streamlit, PyMuPDF |
+| 📊 [ForexFlow AI](showcase/forexflow.html) | Analisi tecnica EUR/USD con 9 modelli previsionali e AI | React 19, TypeScript, Vite, OpenRouter, NVIDIA NIM |
 
 ## 🛠️ Tecnologie
 
