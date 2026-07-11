@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovoDictate — VibeWhisper</title>
+  <meta name="description" content="Dettatura italiana intelligente: riconoscimento vocale con Faster-Whisper e correzione grammaticale con LanguageTool. App desktop multipiattaforma in PyQt6.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_xbkbebxbkbebxbkb.png" alt="NovoDictate Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg purple">🎙️</div>
+    <h1>NovoDictate</h1>
+    <p class="subtitle">
+      Dettatura italiana intelligente con riconoscimento vocale <strong>Faster-Whisper</strong> e correzione grammaticale <strong>LanguageTool</strong>. Parla in italiano e scrivi testo perfetto — tutto offline, multipiattaforma, con un'interfaccia moderna in PyQt6.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python 3.10+</span>
+      <span class="tech-tag">PyQt6</span>
+      <span class="tech-tag">Faster-Whisper</span>
+      <span class="tech-tag">LanguageTool</span>
+      <span class="tech-tag">WebRTC VAD</span>
+      <span class="tech-tag">sounddevice</span>
+      <span class="tech-tag">scipy</span>
+      <span class="tech-tag">MIT</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/novodictate" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+      <a href="https://github.com/vigliafg/novodictate" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>NovoDictate</strong> è un'applicazione desktop multipiattaforma per la <strong>dettatura vocale in italiano</strong> con correzione grammaticale integrata. Basta parlare al microfono e il testo appare sullo schermo in tempo reale, con la possibilità di correggere automaticamente la grammatica con un click. Basata su <strong>Faster-Whisper</strong> per un riconoscimento vocale veloce e accurato (anche su CPU), e su <strong>LanguageTool</strong> per la correzione grammaticale italiana. Include Voice Activity Detection (VAD) con WebRTC VAD per ridurre i falsi positivi, calibrazione adattiva del microfono, e chunking dinamico con overlap per mantenere il contesto tra i segmenti audio.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      NovoDictate è pensato per <strong>chiunque scriva in italiano e voglia risparmiare tempo</strong>. Professionisti che producono documenti, email o report possono dettare il testo invece di digitarlo, con la sicurezza di una correzione grammaticale automatica. Studenti e ricercatori possono prendere appunti velocemente durante lo studio. Content creator, giornalisti e scrittori possono catturare idee al volo senza interrompere il flusso creativo. Persone con disabilità motorie o difficoltà di digitazione trovano in NovoDictate uno strumento di accessibilità potente e gratuito. <strong>Funziona offline</strong> — nessun dato audio lascia il tuo computer.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      NovoDictate cattura l'audio dal microfono tramite <strong>sounddevice</strong> e lo elabora in tre fasi: <strong>VAD</strong> (WebRTC Voice Activity Detection) rileva la presenza di voce in ogni frame da 30ms, scartando il silenzio; <strong>Chunking dinamico</strong> accumula l'audio con voce e lo invia a Whisper quando viene rilevata una pausa (>1s) o quando il chunk raggiunge la durata massima (10s), mantenendo un overlap di 0.5s tra i chunk per preservare il contesto; <strong>Faster-Whisper</strong> (modello base di default, configurabile da tiny a large) trascrive l'audio in italiano con elevata accuratezza. La pipeline audio include noise reduction, normalizzazione e filtri per migliorare la qualità in ambienti rumorosi. La correzione grammaticale è on-demand via LanguageTool.
+    </p>
+    </div>
+
+    <h2>✨ Core Features</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>🎤 Dettatura in tempo reale</strong> — Parla in italiano e vedi il testo apparire mentre parli</li>
+      <li><span class="dot accent"></span> <strong>✨ Correzione grammaticale</strong> — LanguageTool integrato, attivabile con un click</li>
+      <li><span class="dot green"></span> <strong>🎙️ Voice Activity Detection</strong> — WebRTC VAD riduce i falsi positivi e migliora la latenza</li>
+      <li><span class="dot amber"></span> <strong>⏸️ Pausa/Riprendi</strong> — Metti in pausa la dettatura senza perdere il contesto</li>
+    </ul>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">5</div><div class="lbl">Modelli Whisper (tiny→large)</div></div>
+      <div class="stat-card"><div class="num">~142 MB</div><div class="lbl">Modello base (default)</div></div>
+      <div class="stat-card"><div class="num">30 ms</div><div class="lbl">Frame audio VAD</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Offline, zero cloud</div></div>
+    </div>
+
+    <h2>🎛️ Elaborazione Audio</h2>
+    <ul class="feature-list">
+      <li><span class="dot cyan"></span> <strong>Pipeline audio completa</strong> — Noise reduction (noisereduce), normalizzazione, filtri passa-banda</li>
+      <li><span class="dot accent"></span> <strong>Calibrazione adattiva</strong> — Percentile RMS e noise floor dinamico per adattarsi all'ambiente</li>
+      <li><span class="dot green"></span> <strong>Chunking dinamico</strong> — Overlap di 0.5s tra i chunk per preservare il contesto</li>
+      <li><span class="dot amber"></span> <strong>Indicatore audio</strong> — Barra live del livello microfono nella toolbar</li>
+    </ul>
+
+    <h2>🧠 Modelli Whisper</h2>
+    <p>
+      NovoDictate supporta tutti i modelli Faster-Whisper, selezionabili da riga di comando:
+    </p>
+    <table>
+      <thead>
+        <tr><th>Modello</th><th>Dimensione</th><th>RAM</th><th>Velocità</th><th>Accuratezza</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>tiny</code></td><td>~72 MB</td><td>~1 GB</td><td>⚡⚡⚡⚡⚡</td><td>★★☆☆☆</td></tr>
+        <tr><td><code>base</code></td><td>~142 MB</td><td>~1 GB</td><td>⚡⚡⚡⚡</td><td>★★★☆☆</td></tr>
+        <tr><td><code>small</code></td><td>~466 MB</td><td>~2 GB</td><td>⚡⚡⚡</td><td>★★★★☆</td></tr>
+        <tr><td><code>medium</code></td><td>~1.5 GB</td><td>~5 GB</td><td>⚡⚡</td><td>★★★★★</td></tr>
+        <tr><td><code>large</code></td><td>~2.9 GB</td><td>~10 GB</td><td>⚡</td><td>★★★★★</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🎨 Interfaccia Utente</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>Tema dark moderno</strong> — Palette viola/indaco con stile glass morphism</li>
+      <li><span class="dot accent"></span> <strong>Textbox scorrevole</strong> — Testo in tempo reale con auto-scroll</li>
+      <li><span class="dot green"></span> <strong>Barra strumenti</strong> — Avvia/Ferma, Pausa, Calibra, Correggi, Copia, Pulisci</li>
+      <li><span class="dot amber"></span> <strong>Status bar</strong> — Feedback in tempo reale sullo stato del motore</li>
+      <li><span class="dot cyan"></span> <strong>Indicatore audio</strong> — Widget custom per il livello microfono</li>
+    </ul>
+
+    <h2>🏗️ Tecnologia</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>Faster-Whisper</strong> — Riconoscimento vocale CTranslate2, fino a 4× più veloce di OpenAI Whisper</li>
+      <li><span class="dot accent"></span> <strong>WebRTC VAD</strong> — Voice Activity Detection ottimizzato per voce umana</li>
+      <li><span class="dot green"></span> <strong>LanguageTool</strong> — Correzione grammaticale italiana con regole linguistiche</li>
+      <li><span class="dot amber"></span> <strong>PyQt6</strong> — Interfaccia desktop nativa multipiattaforma con stile Fusion</li>
+      <li><span class="dot cyan"></span> <strong>sounddevice + scipy</strong> — Acquisizione audio e processing del segnale</li>
+    </ul>
+
+    <h2>🧪 Test Suite</h2>
+    <p>
+      Suite di test completa con pytest: test per il motore di dettatura, VAD chunking, processing audio, correzione grammaticale, e interfaccia grafica. Include un benchmark di trascrizione per misurare le performance con diversi modelli Whisper.
+    </p>
+
+    <h2>💻 Utilizzo</h2>
+    <pre><code># Avvia con modello base (default)
+python main.py
+
+# Modello più veloce
+python main.py --model tiny
+
+# Alta qualità
+python main.py --model medium</code></pre>
+
+    <h2>🌍 Compatibilità</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Windows 10/11</strong></li>
+      <li><span class="dot accent"></span> <strong>macOS</strong> (Apple Silicon / Intel)</li>
+      <li><span class="dot purple"></span> <strong>Linux</strong> (Ubuntu, Fedora, Debian, Arch)</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/novodictate" style="color:var(--accent-2);">GitHub</a> · MIT</p>
+</footer>
+
+</body>
+</html>
