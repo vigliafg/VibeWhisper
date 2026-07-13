@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LazStats JS — VibeWhisper</title>
+  <meta name="description" content="Analisi statistica completa nel browser con grafici in tempo reale. React 19, TypeScript, Victory, jStat. 6 famiglie di test parametrici e non parametrici.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_7cem787cem787cem.png" alt="LazStats JS Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg purple">📊</div>
+    <h1>LazStats JS</h1>
+    <p class="subtitle">
+      Piattaforma di analisi statistica completa nel browser: 6 famiglie di test (descrittiva, t-test, ANOVA, regressione, correlazione, chi-quadro), ognuna con controparte non parametrica. Spreadsheet editor, grafici Victory interattivi, normality diagnostics con Q-Q plot.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">React 19</span>
+      <span class="tech-tag">TypeScript</span>
+      <span class="tech-tag">Vite 6</span>
+      <span class="tech-tag">Tailwind CSS 4</span>
+      <span class="tech-tag">Victory</span>
+      <span class="tech-tag">jStat</span>
+      <span class="tech-tag">Lucide React</span>
+      <span class="tech-tag">Motion</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/lazstatjs" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/lazstatjs/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>LazStats JS</strong> è un ambiente di analisi statistica interamente browser-based. Offre un editor dati in stile spreadsheet con tipizzazione per colonna (numerico, intero, decimale, stringa, alpha, char, booleano, data) e validazione regex per cella. Sei famiglie di test statistici coprono l'intero spettro dell'analisi quantitativa, ciascuna con la sua controparte non parametrica: <strong>Statistica Descrittiva</strong> con test di normalità Jarque-Bera e Kolmogorov-Smirnov e Q-Q plot; <strong>T-Test</strong> (one-sample, indipendente, paired) con Wilcoxon Signed-Rank e Mann-Whitney U; <strong>ANOVA</strong> one-way con Kruskal-Wallis H e post-hoc Bonferroni; <strong>Regressione</strong> OLS con stimatore robusto Theil-Sen e diagnostica avanzata dei residui; <strong>Correlazione</strong> (Pearson, Spearman, Kendall's Tau-b); <strong>Chi-Quadro</strong> con correzione di Yates e Fisher's Exact Test. I risultati appaiono in una console cumulativa a tab con visualizzazioni Victory interattive.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      LazStats JS è per <strong>studenti e ricercatori</strong> che necessitano di un tool statistico accessibile senza installare software pesanti. <strong>Data analyst e data scientist</strong> possono esplorare rapidamente dataset con test parametrici e non parametrici affiancati. <strong>Docenti</strong> di statistica trovano uno strumento didattico per mostrare l'impatto della scelta del test sui risultati. <strong>Sviluppatori</strong> interessati a librerie statistiche JavaScript possono studiare un'implementazione completa di test non parametrici (Fisher's Exact, Theil-Sen, Kendall's Tau-b, Kruskal-Wallis) in TypeScript puro. Chiunque cerchi un'alternativa gratuita, open source e offline a SPSS, JASP o jamovi per analisi di base.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      <strong>1. Data Editor:</strong> Inserisci i dati nel foglio di calcolo integrato — aggiungi righe/colonne, imposta il tipo per ogni colonna e la validazione regex controlla ogni cella in tempo reale.<br>
+      <strong>2. Configurazione:</strong> Seleziona l'analisi desiderata dalla sidebar, scegli le variabili dipendenti/indipendenti, imposta i parametri (intervallo di confidenza, test value, post-hoc, correzioni).<br>
+      <strong>3. Calcolo:</strong> Tutte le statistiche sono calcolate client-side con jStat e le implementazioni custom in <code>statsHelpers.ts</code> (560+ linee di test non parametrici puri).<br>
+      <strong>4. Output:</strong> I risultati appaiono nella console cumulativa — tabelle con statistiche, p-value, significatività, grafici Victory (boxplot, scatter, istogrammi, Q-Q plot, bar chart).<br>
+      <strong>5. Diagnostica:</strong> Per regressione e normalità, ottieni test dei residui (JB, KS), confronto OLS vs Theil-Sen, rank space scatter plot.
+    </p>
+    </div>
+
+    <h2>✨ Caratteristiche</h2>
+    <ul class="feature-list">
+      <li><span class="dot accent"></span> <strong>6 famiglie di test</strong> — Descrittiva, T-Test, ANOVA, Regressione, Correlazione, Chi-Quadro</li>
+      <li><span class="dot purple"></span> <strong>Parametrico + Non Parametrico</strong> — Ogni test offre entrambe le varianti affiancate</li>
+      <li><span class="dot green"></span> <strong>Test non parametrici custom</strong> — Fisher's Exact, Wilcoxon, Mann-Whitney, Kruskal-Wallis, Theil-Sen, Kendall's Tau</li>
+      <li><span class="dot amber"></span> <strong>Spreadsheet editor</strong> — Griglia interattiva con 8 tipi di colonna e validazione regex per cella</li>
+      <li><span class="dot cyan"></span> <strong>Diagnostica avanzata</strong> — Q-Q plot, test di normalità (JB + KS), analisi dei residui OLS e Theil-Sen</li>
+      <li><span class="dot accent"></span> <strong>Grafici Victory interattivi</strong> — Boxplot, scatter, istogrammi, bar chart, Q-Q plot con tooltip</li>
+      <li><span class="dot purple"></span> <strong>Console cumulativa</strong> — Output tabbati, risultati affiancabili, scroll automatico</li>
+      <li><span class="dot green"></span> <strong>Dark theme nativo</strong> — Interfaccia scura ottimizzata per lunghe sessioni di analisi</li>
+    </ul>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">6</div><div class="lbl">Famiglie di Test</div></div>
+      <div class="stat-card"><div class="num">12+</div><div class="lbl">Test Totali</div></div>
+      <div class="stat-card"><div class="num">560+</div><div class="lbl">Linee Stats Custom</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Client-Side</div></div>
+    </div>
+
+    <h2>🧪 Analisi Disponibili</h2>
+    <table>
+      <thead>
+        <tr><th>Analisi</th><th>Test Parametrico</th><th>Test Non Parametrico</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Descrittiva</strong></td>
+          <td>Media, Mediana, SD, Min, Max, Range, Varianza, Skewness, Kurtosis, IQR, Istogramma, Boxplot</td>
+          <td>Jarque-Bera, Kolmogorov-Smirnov (normalità), Q-Q Plot</td>
+        </tr>
+        <tr>
+          <td><strong>T-Test</strong></td>
+          <td>One-Sample, Independent, Paired</td>
+          <td>Wilcoxon Signed-Rank, Mann-Whitney U</td>
+        </tr>
+        <tr>
+          <td><strong>ANOVA</strong></td>
+          <td>One-Way ANOVA, Post-Hoc Tukey / Bonferroni</td>
+          <td>Kruskal-Wallis H, Post-Hoc Mann-Whitney con Bonferroni</td>
+        </tr>
+        <tr>
+          <td><strong>Regressione</strong></td>
+          <td>OLS (semplice e multipla), analisi residui</td>
+          <td>Theil-Sen (robust estimator)</td>
+        </tr>
+        <tr>
+          <td><strong>Correlazione</strong></td>
+          <td>Pearson (matrice + scatter)</td>
+          <td>Spearman's ρ, Kendall's Tau-b (matrici + rank scatter)</td>
+        </tr>
+        <tr>
+          <td><strong>Chi-Quadro</strong></td>
+          <td>Pearson Chi-Square, Yates correction</td>
+          <td>Fisher's Exact Test</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>🏗️ Architettura</h2>
+    <pre style="font-size:0.75rem; line-height:1.6; background:rgba(16,20,30,0.8);">
+┌──────────────────────────────────────────────────────────┐
+│                       Browser                            │
+│  ┌───────────┐  ┌──────────────┐  ┌──────────────────┐  │
+│  │Data Editor│  │Analysis Panel│  │  Output Console  │  │
+│  │(Grid+Type)│  │(Config Form) │  │(Tables + Charts) │  │
+│  └─────┬─────┘  └──────┬───────┘  └────────┬─────────┘  │
+│        │               │                   │             │
+│  ┌─────┴───────────────┴───────────────────┴──────────┐  │
+│  │                    App.tsx (~3000 lines)            │  │
+│  └──┬──────────────────────────┬──────────────────────┘  │
+│     │                          │                          │
+│  ┌──▼──────────────┐  ┌───────▼──────────────────────┐   │
+│  │  Victory Charts │  │   statsHelpers.ts (560 lines) │   │
+│  │  (Box, Bar,     │  │   Fisher, Wilcoxon, MWU,     │   │
+│  │   Scatter, QQ,  │  │   KruskalWallis, TheilSen,   │   │
+│  │   Histogram)    │  │   KendallTau, NormalityTests │   │
+│  └─────────────────┘  └──────┬───────────────────────┘   │
+│                              │                            │
+│                        ┌─────▼──────┐                     │
+│                        │   jStat    │                     │
+│                        │  (stats)   │                     │
+│                        └────────────┘                     │
+└──────────────────────────────────────────────────────────┘</pre>
+
+    <h2>🔬 Test Non Parametrici Custom</h2>
+    <p>
+      Oltre a jStat per le statistiche di base, LazStats JS implementa da zero in TypeScript puro una suite completa di test non parametrici:
+    </p>
+    <table>
+      <thead>
+        <tr><th>Funzione</th><th>Test</th><th>Dettagli Implementativi</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>calcFisherExact</code></td><td>Fisher's Exact Test</td><td>Probabilità esatta 2×2 via log-factorials, two-tailed con enumerazione completa</td></tr>
+        <tr><td><code>calcWilcoxonSignedRank</code></td><td>Wilcoxon Signed-Rank</td><td>Rank con tie correction, approssimazione normale con continuity correction 0.5</td></tr>
+        <tr><td><code>calcMannWhitneyU</code></td><td>Mann-Whitney U</td><td>Rank-sum con average rank per ties, z-score con correzione di continuità</td></tr>
+        <tr><td><code>calcKruskalWallis</code></td><td>Kruskal-Wallis H</td><td>Statistica H con tie correction, approssimazione chi-quadro</td></tr>
+        <tr><td><code>calcTheilSen</code></td><td>Theil-Sen Estimator</td><td>Mediana delle slope pairwise, robusto agli outlier</td></tr>
+        <tr><td><code>calcKendallTau</code></td><td>Kendall's Tau-b</td><td>Conteggio coppie concordanti/discordanti con tie adjustment</td></tr>
+        <tr><td><code>calcNormalityTests</code></td><td>Jarque-Bera + K-S</td><td>JB via skewness/kurtosis, KS via max diff ECDF vs CDF teorica</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🔒 Privacy & Sicurezza</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Zero backend</strong> — Nessun server, nessun database, tutto client-side</li>
+      <li><span class="dot accent"></span> <strong>Dati locali</strong> — I dati inseriti non lasciano mai il browser</li>
+      <li><span class="dot amber"></span> <strong>Nessun tracking</strong> — Zero analytics, zero telemetria</li>
+      <li><span class="dot purple"></span> <strong>Offline completo</strong> — Funziona senza connessione internet dopo il primo caricamento</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/lazstatjs" style="color:var(--accent-2);">GitHub</a> · MIT License</p>
+</footer>
+
+</body>
+</html>
