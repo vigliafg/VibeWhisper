@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pandoc WASM Studio — VibeWhisper</title>
+  <meta name="description" content="Convertitore di documenti universale via Pandoc WebAssembly nel browser. 100% client-side, zero upload. Markdown, HTML, LaTeX, EPUB, DOCX e molto altro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_lr6qp0lr6qp0lr6q.png" alt="Pandoc WASM Studio Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg cyan">🔄</div>
+    <h1>Pandoc WASM Studio</h1>
+    <p class="subtitle">
+      Convertitore di documenti universale che porta la potenza di Pandoc direttamente nel browser grazie a WebAssembly. Converti tra Markdown, HTML, LaTeX, EPUB, DOCX, ODT, reStructuredText, MediaWiki, Textile, Org-mode e molti altri — tutto localmente, zero upload, massima privacy.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">React 19</span>
+      <span class="tech-tag">TypeScript</span>
+      <span class="tech-tag">Vite 6</span>
+      <span class="tech-tag">Tailwind CSS 4</span>
+      <span class="tech-tag">WebAssembly</span>
+      <span class="tech-tag">Pandoc</span>
+      <span class="tech-tag">WASI</span>
+      <span class="tech-tag">Lucide React</span>
+      <span class="tech-tag">Motion</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/pandoc-wasm-studio" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/pandoc-wasm-studio/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>Pandoc WASM Studio</strong> è una web app moderna e completamente serverless che esegue Pandoc — il leggendario convertitore di documenti — direttamente nel browser tramite WebAssembly. Supporta una vasta gamma di formati di input e output: <strong>Markdown</strong> (standard e GitHub Flavored), <strong>HTML</strong>, <strong>LaTeX</strong>, <strong>EPUB</strong>, <strong>DOCX</strong>, <strong>ODT</strong>, <strong>reStructuredText</strong>, <strong>MediaWiki</strong>, <strong>Textile</strong>, <strong>Org-mode</strong>, <strong>JSON AST</strong> e <strong>Plain Text</strong>. L'intero processo di conversione avviene localmente sul dispositivo dell'utente grazie all'emulazione WASI (WebAssembly System Interface) tramite <code>@bjorn3/browser_wasi_shim</code>: i documenti non vengono mai caricati su alcun server. L'interfaccia offre drag-and-drop intelligente con rilevamento automatico del formato sorgente, un pulsante «Carica Esempio» per testare istantaneamente il motore WASM con vari scenari (tabelle, codice, formule LaTeX), e opzioni di esportazione rapida con copia negli appunti o download con estensione corretta.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      Pandoc WASM Studio è pensato per <strong>scrittori e autori tecnici</strong> che lavorano con documentazione in formati multipli e necessitano conversioni rapide senza installare tool. <strong>Sviluppatori</strong> che gestiscono README, CHANGELOG e documentazione di progetto in Markdown/HTML e vogliono esportare in formati pronti per la pubblicazione. <strong>Ricercatori e accademici</strong> che scrivono in LaTeX e devono condividere in DOCX, EPUB o HTML. <strong>Studenti</strong> che vogliono convertire appunti tra formati senza dipendere da servizi online. <strong>Chiunque abbia a cuore la privacy</strong>: conversioni 100% client-side, zero telemetria, zero caricamenti — ideale per documenti confidenziali, legali o aziendali. Perfetto per chi cerca un'alternativa gratuita, open source e offline ai convertitori online che richiedono upload.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      <strong>1. Caricamento:</strong> Trascina un file nell'area sorgente o usa il pulsante «Carica Esempio» per testare con documenti predefiniti (Markdown con tabelle, snippet di codice, formule LaTeX).<br>
+      <strong>2. Rilevamento:</strong> L'app rileva automaticamente il formato del file sorgente in base all'estensione e al contenuto.<br>
+      <strong>3. Conversione:</strong> Seleziona il formato di output desiderato e avvia la conversione. Pandoc WASM processa il documento localmente nel browser tramite WebAssembly + WASI shim — nessun dato lascia il dispositivo.<br>
+      <strong>4. Output:</strong> Visualizza il risultato convertito in tempo reale nel pannello di anteprima. Copia l'output negli appunti o scarica il file con l'estensione corretta.<br>
+      <strong>5. Engine Status:</strong> Una barra di stato in tempo reale mostra lo stato del motore WASM (caricamento, pronto, in conversione).
+    </p>
+    </div>
+
+    <h2>✨ Caratteristiche</h2>
+    <ul class="feature-list">
+      <li><span class="dot cyan"></span> <strong>100% Client-Side</strong> — Conversione locale via WebAssembly, nessun dato inviato a server</li>
+      <li><span class="dot accent"></span> <strong>10+ formati supportati</strong> — Markdown, HTML, LaTeX, EPUB, DOCX, ODT, reStructuredText, MediaWiki, Textile, Org-mode, JSON AST</li>
+      <li><span class="dot purple"></span> <strong>Drag-and-Drop intelligente</strong> — Rilevamento automatico del formato sorgente dal file trascinato</li>
+      <li><span class="dot green"></span> <strong>Carica Esempio in 1-Click</strong> — Testa il motore WASM con documenti predefiniti multi-formato</li>
+      <li><span class="dot amber"></span> <strong>Esportazione rapida</strong> — Copia negli appunti o scarica con estensione corretta in un click</li>
+      <li><span class="dot cyan"></span> <strong>Design «Clean Utility»</strong> — Interfaccia moderna con animazioni Motion, tema ad alto contrasto</li>
+      <li><span class="dot accent"></span> <strong>Engine Status in tempo reale</strong> — Monitora il caricamento e lo stato del motore Pandoc WASM</li>
+      <li><span class="dot purple"></span> <strong>GitHub Flavored Markdown</strong> — Supporto completo a GFM con tabelle, task list, strikethrough</li>
+    </ul>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">10+</div><div class="lbl">Formati Supportati</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Client-Side</div></div>
+      <div class="stat-card"><div class="num">WASM</div><div class="lbl">WebAssembly</div></div>
+      <div class="stat-card"><div class="num">0</div><div class="lbl">Upload Esterni</div></div>
+    </div>
+
+    <h2>🔄 Conversioni Supportate</h2>
+    <table>
+      <thead>
+        <tr><th>Formato Sorgente</th><th>Formati di Output</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Markdown / GFM</strong></td>
+          <td>HTML, LaTeX, PDF (via LaTeX), EPUB, DOCX, ODT, reStructuredText, MediaWiki, Textile, Org-mode, Plain Text, JSON AST</td>
+        </tr>
+        <tr>
+          <td><strong>HTML</strong></td>
+          <td>Markdown, GFM, LaTeX, EPUB, DOCX, ODT, Plain Text, JSON AST</td>
+        </tr>
+        <tr>
+          <td><strong>LaTeX</strong></td>
+          <td>Markdown, HTML, EPUB, DOCX, ODT, Plain Text, JSON AST</td>
+        </tr>
+        <tr>
+          <td><strong>EPUB</strong></td>
+          <td>Markdown, HTML, LaTeX, DOCX, Plain Text, JSON AST</td>
+        </tr>
+        <tr>
+          <td><strong>DOCX</strong></td>
+          <td>Markdown, HTML, LaTeX, EPUB, ODT, Plain Text, JSON AST</td>
+        </tr>
+        <tr>
+          <td><strong>reStructuredText</strong></td>
+          <td>Markdown, HTML, LaTeX, EPUB, DOCX, Plain Text</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>🏗️ Architettura</h2>
+    <pre style="font-size:0.75rem; line-height:1.6; background:rgba(16,20,30,0.8);">
+┌──────────────────────────────────────────────────────────────┐
+│                         Browser                              │
+│  ┌──────────────┐  ┌────────────────┐  ┌──────────────────┐ │
+│  │ Source Panel │  │ Format Picker  │  │  Output Preview  │ │
+│  │ (Drag&Drop)  │  │ (Auto-Detect)  │  │  (Copy/Download) │ │
+│  └──────┬───────┘  └───────┬────────┘  └────────┬─────────┘ │
+│         │                 │                     │            │
+│  ┌──────┴─────────────────┴─────────────────────┴─────────┐ │
+│  │                    App.tsx (React 19)                    │ │
+│  └──────────────┬──────────────────────┬───────────────────┘ │
+│                 │                      │                      │
+│  ┌──────────────▼──────────┐  ┌───────▼────────────────────┐ │
+│  │   pandoc-wasm engine    │  │   @bjorn3/browser_wasi_shim │ │
+│  │   (WebAssembly binary)  │  │   (WASI syscall emulation)  │ │
+│  └──────────────┬──────────┘  └───────┬────────────────────┘ │
+│                 │                      │                      │
+│  ┌──────────────▼──────────────────────▼───────────────────┐ │
+│  │               Pandoc WASM Runtime                        │ │
+│  │   stdin → pandoc.wasm → stdout (tutto in-memory)         │ │
+│  └──────────────────────────────────────────────────────────┘ │
+└──────────────────────────────────────────────────────────────┘</pre>
+
+    <h2>🔒 Privacy & Sicurezza</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Zero backend</strong> — Nessun server, nessun database, nessuna API esterna per la conversione</li>
+      <li><span class="dot accent"></span> <strong>Dati locali</strong> — I documenti caricati non lasciano mai il browser</li>
+      <li><span class="dot amber"></span> <strong>Nessun tracking</strong> — Zero analytics, zero telemetria</li>
+      <li><span class="dot purple"></span> <strong>Offline completo</strong> — Dopo il primo caricamento, funziona senza connessione internet</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/pandoc-wasm-studio" style="color:var(--accent-2);">GitHub</a> · MIT License</p>
+</footer>
+
+</body>
+</html>
