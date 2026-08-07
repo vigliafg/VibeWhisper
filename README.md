@@ -2,7 +2,7 @@
 
 > Idee che diventano codice
 
-**VibeWhisper** è il portfolio showcase di 15 applicazioni costruite con *vibe coding* — dal mondo dei PDF agli EPUB, dal cloud storage al batch renaming, dalla traduzione automatica allo scraping di metadati. Ogni progetto risolve un problema reale con un'interfaccia pensata per chi la usa.
+**VibeWhisper** è il portfolio showcase di 17 applicazioni costruite con *vibe coding* — dal mondo dei PDF agli EPUB, dal cloud storage al batch renaming, dalla traduzione automatica allo scraping di metadati. Ogni progetto risolve un problema reale con un'interfaccia pensata per chi la usa.
 
 ## 🚀 Guarda lo Showcase
 
