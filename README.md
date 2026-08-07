@@ -12,7 +12,7 @@ Apri [`showcase/index.html`](showcase/index.html) nel browser oppure visita la [
 
 | Progetto | Descrizione | Stack |
 |---|---|---|
-| 📚 [Noesis Multi](showcase/noesis-multi.html) | Reader EPUB + ambiente di studio: leggi, traduci, estrai capitoli | Vanilla JS, Single File, Offline |
+| 📚 [Noesis Reader](showcase/noesis-reader.html) | Reader EPUB con traduzione in tempo reale, appunti, editor ed Excalidraw | Vanilla JS, EPUB Reader, Offline-first |
 | 📄 [pdfhandler](showcase/pdfhandler.html) | Toolbox PDF client-side: 15+ strumenti, zero upload | React 19, TypeScript, Tailwind |
 | 📊 [IBS EPUB Metadata Scraper](showcase/ibs-epub-metadata-scraper.html) | Arricchisci EPUB con metadati da IBS.it | Python, CLI + GUI, Web Scraping |
 | 🌐 [epub2site](showcase/epub2site.html) | Converti EPUB in sito web statico leggibile ovunque | Node.js, CLI |

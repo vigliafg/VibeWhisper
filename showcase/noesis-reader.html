@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noesis Reader — VibeWhisper</title>
+  <meta name="description" content="Noesis Reader: lettore EPUB con traduzione in tempo reale, raccolta appunti, editor WYSIWYG ed Excalidraw integrato. Zero account, zero server, 100% privacy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#projects" class="active">Progetti</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <img src="Gemini_Generated_Image_n76ub3n76ub3n76u.png" alt="Noesis Reader Banner" class="project-hero-banner">
+    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <div class="icon-lg purple">📚</div>
+    <h1>Noesis Reader</h1>
+    <p class="subtitle">
+      Leggere, Capire, Imparare, Presentare — l'unico lettore EPUB che unisce traduzione in tempo reale, raccolta appunti, editor visuale e strumenti di disegno. Due file HTML, zero account, zero server, gratis per sempre.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Vanilla JS</span>
+      <span class="tech-tag">epub.js</span>
+      <span class="tech-tag">IndexedDB</span>
+      <span class="tech-tag">Excalidraw</span>
+      <span class="tech-tag">Offline-first</span>
+      <span class="tech-tag">MIT License</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://noesis-reader.vigliafg.workers.dev" class="link-btn" target="_blank" rel="noopener">🌐 Live App</a>
+      <a href="https://github.com/vigliafg/noesis-reader/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+      <a href="https://noesis-reader-website.vigliafg.workers.dev" class="link-btn" target="_blank" rel="noopener">🌍 Sito Web</a>
+      <a href="https://github.com/vigliafg/noesis-reader" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>Noesis Reader</strong> è un ecosistema completo per la lettura e lo studio di EPUB interamente browser-based. Due file HTML — <code>index.html</code> (Reader + Libreria) e <code>noesis-editor.html</code> (Editor + Appunti) — offrono un'esperienza integrata: leggi con 15 temi e 3 modalità, traduci in streaming con il motore nativo del browser (Chrome, Edge, Brave), raccogli appunti per libro e capitolo, edita documenti con un editor WYSIWYG e disegna diagrammi con Excalidraw. Il tutto senza account, senza server e senza costi. I tuoi dati non lasciano mai il dispositivo.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      Noesis Reader è pensato per <strong>studenti, ricercatori e lettori poliglotti</strong> che vogliono trasformare la lettura in conoscenza attiva. Perfetto per chi studia testi in lingua straniera e ha bisogno di traduzione immediata senza costi API. I ricercatori possono estrarre capitoli, raccogliere passaggi, immagini e tabelle, organizzarli per libro e capitolo, ed esportare in 7 formati. I creatori di contenuti apprezzano l'editor WYSIWYG e l'integrazione con Excalidraw per generare diagrammi. Chiunque apprezzi la privacy totale: <strong>nessun account, nessun server, nessun tracking</strong>. Basta aprire il file HTML nel browser.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      Quattro pilastri integrati in un unico ecosistema: <strong>Leggere</strong> — Libreria con griglia cover, import EPUB con validazione automatica (check integrità, rilevamento DRM), persistenza IndexedDB, e Reader con 15 temi, 3 modalità (pagina singola, doppia, scroll), TOC gerarchico, auto-salvataggio posizione ogni 3 secondi. <strong>Capire</strong> — Traduzione streaming via motore nativo del browser: nessuna API key, nessun costo, testo mai inviato a server esterni. <strong>Imparare</strong> — Estrazione capitoli in HTML standalone, raccolta appunti (testo, immagini, tabelle) con filtro per tipo o capitolo, esportazione in 7 formati. <strong>Presentare</strong> — Editor WYSIWYG completo + Excalidraw per diagrammi e schizzi, tutto locale.
+    </p>
+    </div>
+
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">2</div><div class="lbl">File HTML</div></div>
+      <div class="stat-card"><div class="num">15</div><div class="lbl">Temi di lettura</div></div>
+      <div class="stat-card"><div class="num">7</div><div class="lbl">Formati export</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Privacy (zero server)</div></div>
+    </div>
+
+    <h2>🎯 Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>Libreria EPUB</strong> — Importa EPUB con validazione automatica (integrità, DRM, struttura). Griglia cover ordinata per data, storage persistente, barra spazio disponibile in tempo reale. Tema chiaro/scuro con preferenza salvata.</li>
+      <li><span class="dot purple"></span> <strong>Reader Professionale</strong> — 15 temi in 6 categorie (dal bianco puro al nero notte), 3 modalità (singola/doppia/scroll), TOC gerarchico navigabile, auto-salvataggio posizione, segnalibri con etichette personalizzate.</li>
+      <li><span class="dot accent"></span> <strong>Traduzione Streaming</strong> — Sfrutta il motore di traduzione nativo del browser Chrome/Chromium. Traduci mentre leggi, senza interruzioni, gratis e senza limiti. Auto-pause salvataggio CFI quando la traduzione è attiva.</li>
+      <li><span class="dot accent"></span> <strong>Raccolta Appunti</strong> — Raccogli testo, immagini e tabelle durante la lettura. Ogni elemento è etichettato con libro e capitolo. Filtra per tipo o capitolo ed esporta in TXT, Markdown, MD+ZIP, DOCX, JSON, PDF, HTML.</li>
+      <li><span class="dot green"></span> <strong>Editor WYSIWYG</strong> — Word processor completo nel browser: scrivi, formatta, inserisci tabelle e immagini. Comunica con la Libreria via postMessage e IndexedDB condiviso.</li>
+      <li><span class="dot green"></span> <strong>Excalidraw Integrato</strong> — Versione ricostruita da zero per Noesis: solo il motore di disegno originale, niente cloud, niente account, niente condivisione in rete. I tuoi schizzi restano sul computer. Export SVG e PNG.</li>
+      <li><span class="dot amber"></span> <strong>100% Privacy</strong> — I tuoi libri e appunti restano sul tuo computer. Niente lascia il dispositivo. Zero server, zero account, zero tracking. Storage persistente richiesto automaticamente al browser.</li>
+      <li><span class="dot amber"></span> <strong>Strumenti Ancillari</strong> — EPUB Tools (slimmer e splitter), Pandoc Online (conversione universale via WebAssembly) e Mozilla PDF.js, tutto dal dropdown TOOLS della Libreria. 100% nel browser.</li>
+    </ul>
+
+    <h2>🌍 Traduzione in Streaming — Come Funziona</h2>
+    <p>
+      A differenza di altri reader EPUB che integrano API di traduzione a pagamento (Google Translate API, DeepL API), Noesis adotta un approccio radicalmente diverso: <strong>sfrutta il motore di traduzione già integrato in ogni browser Chromium moderno</strong>.
+    </p>
+
+    <h3>🔧 Il Meccanismo</h3>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li><strong>Apri un EPUB</strong> — Carica il tuo libro in Noesis Reader</li>
+      <li><strong>Clic destro → «Traduci in italiano»</strong> — O in qualsiasi altra lingua supportata dal browser</li>
+      <li><strong>Leggi in streaming</strong> — Chrome/Edge/Brave traducono ogni pagina mentre scorri, senza inviare testo a server esterni</li>
+    </ol>
+
+    <h3>🛡️ Protezione dei Dati (CFI Auto-Pause)</h3>
+    <p>
+      Quando il browser attiva la traduzione, modifica il DOM della pagina. Queste modifiche corromperebbero i CFI (Canonical Fragment Identifier) usati per salvare la posizione di lettura. Noesis rileva automaticamente lo stato di traduzione e <strong>sospende l'auto-salvataggio</strong>, preservando l'integrità dei dati di lettura.
+    </p>
+
+    <h3>✨ Vantaggi Rispetto alle API Tradizionali</h3>
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.88rem;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);text-align:left;">
+          <th style="padding:10px 14px;color:var(--text-dim);">Caratteristica</th>
+          <th style="padding:10px 14px;color:var(--accent-2);">Noesis (Browser Native)</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">API Terze Parti</th>
+        </tr>
+      </thead>
+      <tbody style="color:var(--text-muted);">
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Costo</td><td style="padding:8px 14px;color:var(--accent-3);">Gratuito, illimitato</td><td style="padding:8px 14px;">€ / milione di caratteri</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Privacy</td><td style="padding:8px 14px;color:var(--accent-3);">Testo MAI inviato a server</td><td style="padding:8px 14px;">Testo inviato a server terzi</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Limiti</td><td style="padding:8px 14px;color:var(--accent-3);">Nessun limite di caratteri</td><td style="padding:8px 14px;">Limiti per richiesta / mese</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Offline</td><td style="padding:8px 14px;color:var(--accent-3);">Sì (Lettura EPUB sempre offline)</td><td style="padding:8px 14px;">No</td></tr>
+        <tr><td style="padding:8px 14px;">Browser supportati</td><td style="padding:8px 14px;">Chrome, Edge, Brave, Opera (Chromium)</td><td style="padding:8px 14px;">Qualsiasi (dipende dall'API)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🏗️ Architettura: Due File, Zero Dipendenze</h2>
+    <p>
+      L'applicazione si compone di <strong>due file HTML</strong> da mettere nella stessa cartella:
+    </p>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>index.html</strong> — Reader + Libreria: importa EPUB, gestisci la collezione, leggi con 15 temi e 3 modalità, traduci in streaming, estrai capitoli e raccogli appunti.</li>
+      <li><span class="dot accent"></span> <strong>noesis-editor.html</strong> — Editor + Appunti: editor WYSIWYG per creare documenti, raccogli e organizza appunti da tutti i libri, esporta in 7 formati. Excalidraw accessibile dalla toolbar.</li>
+    </ul>
+    <p style="margin-top:12px;">
+      Due database IndexedDB (<strong>EpubLibraryDB</strong> per EPUB, metadati e stato lettore; <strong>noesisDB</strong> per appunti e snapshot). Comunicazione cross-window via <code>postMessage</code>. Pronto per Cloudflare Pages, GitHub Pages, Netlify, Vercel.
+    </p>
+
+    <h2>🛠️ Ecosistema: Strumenti Ancillari</h2>
+    <p>
+      Noesis Reader si completa con quattro strumenti esterni, tutti accessibili dal dropdown <strong>TOOLS</strong> nella barra della Libreria. Ogni strumento risolve un'esigenza reale del flusso di lavoro:
+    </p>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>EPUB Tools</strong> — Single Slimmer e Batch Slimmer comprimono le immagini degli EPUB prima di caricarli in libreria. Chapter Splitter estrae capitoli come EPUB standalone. Tutto nel browser, zero upload. <a href="https://noesis-epub-tools.vercel.app/" style="color:var(--accent-2);">Live App (Vercel)</a></li>
+      <li><span class="dot accent"></span> <strong>Pandoc Online</strong> — Il convertitore universale di documenti eseguito via WebAssembly. Converti in LaTeX, ODT, RST e decine di altri formati. Zero upload: la conversione avviene nella RAM del computer.</li>
+      <li><span class="dot green"></span> <strong>Mozilla PDF.js</strong> — Il lettore PDF ufficiale di Mozilla (lo stesso di Firefox). Ricerca full-text, zoom preciso, stampa ottimizzata. Perfetto per verificare la qualità dei PDF esportati da Noesis.</li>
+      <li><span class="dot amber"></span> <strong>Excalidraw Editor</strong> — Versione standalone creata per Noesis: solo il motore di disegno, niente cloud. Disegna diagrammi e mappe mentali senza uscire dall'ecosistema.</li>
+    </ul>
+
+    <h2>📊 Noesis vs Competitor</h2>
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.88rem;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);text-align:left;">
+          <th style="padding:10px 14px;color:var(--text-dim);">Caratteristica</th>
+          <th style="padding:10px 14px;color:var(--accent-2);">Noesis</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">Flow</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">Readest</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">Kindle</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">Calibre</th>
+        </tr>
+      </thead>
+      <tbody style="color:var(--text-muted);">
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Account richiesto</td><td style="padding:8px 14px;color:var(--accent-3);">No ✅</td><td style="padding:8px 14px;">No ✅</td><td style="padding:8px 14px;">Opzionale</td><td style="padding:8px 14px;">Sì</td><td style="padding:8px 14px;">No ✅</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Traduzione integrata</td><td style="padding:8px 14px;color:var(--accent-3);">Sì, gratis ✅</td><td style="padding:8px 14px;">No ❌</td><td style="padding:8px 14px;">Sì (con limiti)</td><td style="padding:8px 14px;">Solo dizionario</td><td style="padding:8px 14px;">No ❌</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Raccolta appunti</td><td style="padding:8px 14px;color:var(--accent-3);">Sì ✅</td><td style="padding:8px 14px;">Solo highlights</td><td style="padding:8px 14px;">Solo highlights</td><td style="padding:8px 14px;">Solo highlights</td><td style="padding:8px 14px;">No ❌</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Editor visuale</td><td style="padding:8px 14px;color:var(--accent-3);">Sì ✅</td><td style="padding:8px 14px;">No ❌</td><td style="padding:8px 14px;">Solo tema</td><td style="padding:8px 14px;">No ❌</td><td style="padding:8px 14px;">No ❌</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Disegno / diagrammi</td><td style="padding:8px 14px;color:var(--accent-3);">Sì ✅</td><td style="padding:8px 14px;">No ❌</td><td style="padding:8px 14px;">No ❌</td><td style="padding:8px 14px;">No ❌</td><td style="padding:8px 14px;">No ❌</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Privacy (zero server)</td><td style="padding:8px 14px;color:var(--accent-3);">100% ✅</td><td style="padding:8px 14px;">Sì ✅</td><td style="padding:8px 14px;">Locale o cloud</td><td style="padding:8px 14px;">Cloud Amazon</td><td style="padding:8px 14px;">Sì ✅</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Nessuna installazione</td><td style="padding:8px 14px;color:var(--accent-3);">Sì ✅</td><td style="padding:8px 14px;">Sì (PWA) ✅</td><td style="padding:8px 14px;">Desktop + web</td><td style="padding:8px 14px;">App o web</td><td style="padding:8px 14px;">Da installare</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:8px 14px;">Open source</td><td style="padding:8px 14px;color:var(--accent-3);">MIT ✅</td><td style="padding:8px 14px;">Sì ✅</td><td style="padding:8px 14px;">AGPLv3 ✅</td><td style="padding:8px 14px;">No ❌</td><td style="padding:8px 14px;">GPL ✅</td></tr>
+        <tr><td style="padding:8px 14px;">Costo</td><td style="padding:8px 14px;color:var(--accent-3);">Gratis ✅</td><td style="padding:8px 14px;">Gratis ✅</td><td style="padding:8px 14px;">Freemium</td><td style="padding:8px 14px;">Gratis*</td><td style="padding:8px 14px;">Gratis ✅</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🚀 Quick Start</h2>
+    <p>
+      Pronto in 30 secondi. Due file. Una cartella. Doppio clic. Funziona ovunque, anche offline.
+    </p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin:16px 0;">
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 24px;text-align:center;">
+        <div style="font-size:1.5rem;">📄</div>
+        <div style="font-weight:600;color:var(--text);">index.html</div>
+        <div style="font-size:0.78rem;color:var(--text-dim);">Reader + Libreria</div>
+      </div>
+      <div style="color:var(--accent-2);font-size:1.25rem;">+</div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 24px;text-align:center;">
+        <div style="font-size:1.5rem;">✏️</div>
+        <div style="font-weight:600;color:var(--text);">noesis-editor.html</div>
+        <div style="font-size:0.78rem;color:var(--text-dim);">Editor + Appunti</div>
+      </div>
+      <div style="color:var(--accent-2);font-size:1.25rem;">→</div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 24px;text-align:center;">
+        <div style="font-size:1.5rem;">📂</div>
+        <div style="font-weight:600;color:var(--text);">Stessa cartella</div>
+        <div style="font-size:0.78rem;color:var(--text-dim);">Apri index.html e via</div>
+      </div>
+    </div>
+
+    <h2>🌐 Riferimenti</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>Live App</strong> — <a href="https://noesis-reader.vigliafg.workers.dev" style="color:var(--accent-2);">noesis-reader.vigliafg.workers.dev</a></li>
+      <li><span class="dot accent"></span> <strong>Sito Web</strong> — <a href="https://noesis-reader-website.vigliafg.workers.dev" style="color:var(--accent-2);">noesis-reader-website.vigliafg.workers.dev</a></li>
+      <li><span class="dot green"></span> <strong>GitHub</strong> — <a href="https://github.com/vigliafg/noesis-reader" style="color:var(--accent-2);">github.com/vigliafg/noesis-reader</a></li>
+      <li><span class="dot amber"></span> <strong>EPUB Tools</strong> — <a href="https://noesis-epub-tools.vercel.app/" style="color:var(--accent-2);">noesis-epub-tools.vercel.app</a> · <a href="epubslimer.html" style="color:var(--accent-2);">epubslimer</a> · <a href="epubsplitter.html" style="color:var(--accent-2);">epubsplitter</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://noesis-reader.vigliafg.workers.dev" style="color:var(--accent-2);">Live App</a> · <a href="https://github.com/vigliafg/noesis-reader" style="color:var(--accent-2);">GitHub</a> · MIT License</p>
+</footer>
+
+</body>
+</html>
