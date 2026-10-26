@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mermaid-to-excalidraw — VibeWhisper</title>
+  <meta name="description" content="Fork di mermaid-to-excalidraw: converte 22 tipi di diagrammi Mermaid in elementi Excalidraw editabili, con harness e test visuali.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-mermaid-to-excalidraw-mobile.svg">
+      <img src="banner-mermaid-to-excalidraw.svg" alt="mermaid-to-excalidraw Banner" class="project-hero-banner">
+    </picture>
+    <a href="diagrammi-ai.html" class="back-link">← Diagrammi &amp; AI</a>
+    <div class="icon-lg green">🧩</div>
+    <h1>mermaid-to-excalidraw</h1>
+    <p class="subtitle">
+      Fork di mermaid-to-excalidraw che estende la conversione nativa a tutti i tipi Mermaid usati da Mermaid Creator: 22 casi su 22 convertiti in elementi editabili.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">TypeScript</span>
+      <span class="tech-tag">Mermaid 12</span>
+      <span class="tech-tag">Excalidraw</span>
+      <span class="tech-tag">pnpm</span>
+      <span class="tech-tag">MIT</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/mermaid-to-excalidraw" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>mermaid-to-excalidraw</strong> è un fork del progetto Excalidraw con un obiettivo preciso: convertire in modo nativo tutti i tipi di diagramma Mermaid usati da Mermaid Creator, non solo i flowchart. L'API <code>parseMermaidToExcalidraw()</code> prende una definizione Mermaid e restituisce elementi e file pronti per il canvas Excalidraw. Il fork aggiunge adapter semantici per flowchart, sequence, class, state, ER e timeline, e un adapter generico che mappa le primitive SVG in rettangoli, ellissi, linee, frecce, testi e freedraw editabili per gli altri tipi.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      È pensata per <strong>sviluppatori che integrano Mermaid in Excalidraw</strong> e per chi vuole modificare a mano un diagramma generato senza ripartire da un'immagine. È la base tecnica che permette a Mermaid Creator di esportare diagrammi editabili, e può essere usata come libreria in qualsiasi progetto TypeScript.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      La libreria renderizza il diagramma Mermaid, ne legge il DOM e lo traduce in elementi Excalidraw tramite adapter. Gli adapter semantici conoscono la struttura del tipo (nodi, archi, relazioni); l'adapter generico lavora sulle primitive SVG e produce forme modificabili, con fedeltà approssimata per i path complessi. Se la conversione fallisce o non produce elementi, resta il fallback <code>GraphImage</code>. Le versioni di Mermaid ed Excalidraw sono pinnate per evitare drift tra parser e dipendenze; l'harness misura la matrice dei casi e gli snapshot visuali.
+    </p>
+    </div>
+
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">22/22</div><div class="lbl">Casi convertiti</div></div>
+      <div class="stat-card"><div class="num">146</div><div class="lbl">Snapshot visuali</div></div>
+      <div class="stat-card"><div class="num">22</div><div class="lbl">Tipi di diagramma</div></div>
+      <div class="stat-card"><div class="num">MIT</div><div class="lbl">Licenza</div></div>
+    </div>
+
+    <h2>🎯 Perché mermaid-to-excalidraw</h2>
+    <p>
+      Perché un diagramma generato dall'AI è utile solo se puoi ancora spostare una scatola, cambiare una freccia o riscrivere un'etichetta. Questo fork sostituisce il fallback immagine con elementi veri, e tiene un harness che dice esattamente quanto è fedele ogni tipo.
+    </p>
+
+    <h2>✨ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>API semplice</strong> — <code>parseMermaidToExcalidraw(diagram, config)</code> restituisce <code>elements</code> e <code>files</code></li>
+      <li><span class="dot accent"></span> <strong>Adapter semantici</strong> — Flowchart, sequence, class, state, ER e timeline con struttura riconosciuta</li>
+      <li><span class="dot amber"></span> <strong>Adapter generico</strong> — Mappa le primitive SVG in forme editabili: rettangoli, ellissi, linee, frecce, testi e freedraw</li>
+      <li><span class="dot rose"></span> <strong>Fallback sicuro</strong> — <code>GraphImage</code> resta come rete di sicurezza se la conversione non produce elementi</li>
+      <li><span class="dot purple"></span> <strong>22 casi coperti</strong> — Gantt, pie, mindmap, journey, quadrant, XY chart, sankey, block, gitgraph e altri</li>
+      <li><span class="dot cyan"></span> <strong>Versioni pinnate</strong> — Mermaid 12.2.0 ed Excalidraw allineati a Mermaid Creator, per evitare drift</li>
+      <li><span class="dot green"></span> <strong>Harness di verifica</strong> — Report aggiornato in <code>harness/report/latest.md</code> con la matrice dei casi</li>
+      <li><span class="dot accent"></span> <strong>Test visuali</strong> — Suite con 146 snapshot, Playwright Chromium come baseline</li>
+    </ul>
+
+    <h2>🏗️ Come Funziona</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>Installa le dipendenze con pnpm e scarica Chromium per Playwright</li>
+      <li>Importa <code>parseMermaidToExcalidraw</code> e passa la definizione Mermaid</li>
+      <li>Ricevi <code>elements</code> e <code>files</code> e inseriscili nel canvas Excalidraw</li>
+      <li>Usa le opzioni per fontSize, curve dei flowchart, numero massimo di archi e caratteri</li>
+      <li>Esegui <code>pnpm test:visual</code> per verificare la conversione dopo una modifica</li>
+      <li>Non aggiornare Mermaid senza aver prima aggiornato gli adapter e rieseguito l'harness</li>
+    </ol>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Requisiti: Node.js 24+ e pnpm 12
+git clone https://github.com/vigliafg/mermaid-to-excalidraw.git
+cd mermaid-to-excalidraw
+
+pnpm install --allow-build=@swc/core --allow-build=esbuild
+pnpm exec playwright install chromium
+
+# Playground di sviluppo
+pnpm start
+
+# Test visuali
+pnpm test:visual
+
+# Uso come libreria
+# import { parseMermaidToExcalidraw } from &quot;@excalidraw/mermaid-to-excalidraw&quot;;
+# const { elements, files } = await parseMermaidToExcalidraw(diagram);</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Mermaid Creator</strong> — Esportare i diagrammi generati dall'AI come elementi Excalidraw modificabili</li>
+      <li><span class="dot accent"></span> <strong>Diagrammi editabili</strong> — Aprire un diagramma Mermaid e ritoccarlo a mano senza perdere la struttura</li>
+      <li><span class="dot amber"></span> <strong>Presentazioni</strong> — Portare un diagramma su un canvas libero per annotazioni e layout</li>
+      <li><span class="dot rose"></span> <strong>Integrazioni</strong> — Usare la libreria in un'app TypeScript che ha già Excalidraw</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/mermaid-to-excalidraw" style="color:var(--accent-2);">GitHub</a> · MIT</p>
+</footer>
+
+</body>
+</html>

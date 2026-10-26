@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPUB &amp; libri — VibeWhisper</title>
+  <meta name="description" content="Metadati, conversione, estrazione capitoli e compressione: i progetti che lavorano sul libro digitale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-sezione-epub-mobile.svg">
+      <img src="banner-sezione-epub.svg" alt="EPUB &amp; libri Banner" class="project-hero-banner">
+    </picture>
+    <a href="index.html#sezioni" class="back-link">← Tutte le sezioni</a>
+    <div class="icon-lg purple">📚</div>
+    <h1>EPUB &amp; libri</h1>
+    <p class="subtitle">
+      Metadati, conversione, estrazione capitoli e compressione: i progetti che lavorano sul libro digitale, prima e dopo la lettura.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">EPUB</span>
+      <span class="tech-tag">Metadati</span>
+      <span class="tech-tag">Split</span>
+      <span class="tech-tag">Compressione</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="#progetti" class="link-btn">📂 Vedi i progetti</a>
+    </div>
+  </div>
+
+  <div class="eco-wrap">
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">4</div><div class="lbl">Progetti</div></div>
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Strumenti EPUB</div></div>
+      <div class="stat-card"><div class="num">1</div><div class="lbl">Conversione EPUB→sito</div></div>
+      <div class="stat-card"><div class="num">0</div><div class="lbl">Upload</div></div>
+    </div>
+
+    <section class="eco-section" id="progetti">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Sezione 02 · Libri</span>
+        <h2>La filiera del libro digitale</h2>
+        <p>Arricchire i metadati, trasformare un EPUB in un sito, estrarre un capitolo o alleggerire le immagini: ogni progetto interviene in un punto preciso del ciclo di vita di un ebook.</p>
+      </div>
+
+      <div class="project-grid eco-grid">
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon green">📊</div>
+              <div>
+                <h3>IBS EPUB Metadata Scraper</h3>
+                <span class="eco-badge">CLI + GUI · scraping</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Web Scraping</span><span class="tag">GUI</span>
+            </div>
+            <p class="desc">
+              Arricchisci gli EPUB con metadati da IBS.it: ISBN, editore, descrizione, lingua e pagine. 1.1 s per libro, con interfaccia GUI.
+            </p>
+            <div class="eco-links">
+              <a href="ibs-epub-metadata-scraper.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/ibs-epub-metadata-scraper" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon amber">🌐</div>
+              <div>
+                <h3>epub2site</h3>
+                <span class="eco-badge">CLI · Node.js</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Node.js</span><span class="tag">CLI</span><span class="tag">Static Site</span>
+            </div>
+            <p class="desc">
+              Converti qualsiasi EPUB in un sito web statico con reader completo, TOC, temi chiaro/scuro, progress bar e font regolabili.
+            </p>
+            <div class="eco-links">
+              <a href="epub2site.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/epub2site" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon purple">✂️</div>
+              <div>
+                <h3>epubsplitter</h3>
+                <span class="eco-badge">Web · Noesis EPUB Tools</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">React + TS</span><span class="tag">JSZip</span>
+            </div>
+            <p class="desc">
+              Estrai capitoli EPUB in nuovi file autonomi: TOC gerarchico EPUB 2+3, rewriting OPF/NCX e raccolta automatica degli asset.
+            </p>
+            <div class="eco-links">
+              <a href="epubsplitter.html" class="link-btn">Scheda →</a><a href="https://noesis-epub-tools.vercel.app/" class="link-btn" target="_blank" rel="noopener">Apri app</a><a href="https://github.com/vigliafg/noesis-epub-tools" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon green">🗜️</div>
+              <div>
+                <h3>epubslimer</h3>
+                <span class="eco-badge">Web · Noesis EPUB Tools</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">React + TS</span><span class="tag">JSZip</span><span class="tag">Canvas</span>
+            </div>
+            <p class="desc">
+              Comprimi le immagini EPUB con Canvas API ×4 parallela: modalità Single e Batch, slider qualità 10-80% e nessun upload.
+            </p>
+            <div class="eco-links">
+              <a href="epubslimer.html" class="link-btn">Scheda →</a><a href="https://noesis-epub-tools.vercel.app/" class="link-btn" target="_blank" rel="noopener">Apri app</a><a href="https://github.com/vigliafg/noesis-epub-tools" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Come sono collegati</span>
+        <h2>Fili comuni</h2>
+        <p>I due strumenti di Noesis EPUB Tools condividono lo stesso repository e la stessa interfaccia; gli altri due lavorano a monte e a valle.</p>
+      </div>
+
+      <ul class="feature-list">
+        <li><span class="dot green"></span> <strong>IBS Metadata Scraper</strong> — Arricchisce i metadati del libro prima della conversione o della pubblicazione.</li>
+        <li><span class="dot amber"></span> <strong>epub2site</strong> — Trasforma l'EPUB in un sito statico leggibile ovunque, con reader e TOC.</li>
+        <li><span class="dot purple"></span> <strong>Noesis EPUB Tools</strong> — epubsplitter ed epubslimer sono i due strumenti della suite: estrazione capitoli e compressione immagini.</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="index.html#sezioni" style="color:var(--accent-2);">Tutte le sezioni</a> · 2026</p>
+</footer>
+
+</body>
+</html>

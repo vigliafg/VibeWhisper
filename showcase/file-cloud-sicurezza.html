@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File, cloud &amp; sicurezza — VibeWhisper</title>
+  <meta name="description" content="Rinomina, cifratura e cloud personale: gli strumenti che mettono ordine e sicurezza nei file di ogni giorno.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-sezione-file-mobile.svg">
+      <img src="banner-sezione-file.svg" alt="File, cloud &amp; sicurezza Banner" class="project-hero-banner">
+    </picture>
+    <a href="index.html#sezioni" class="back-link">← Tutte le sezioni</a>
+    <div class="icon-lg rose">🗂️</div>
+    <h1>File, cloud &amp; sicurezza</h1>
+    <p class="subtitle">
+      Rinomina, cifratura e cloud personale: gli strumenti che mettono ordine e sicurezza nei file di ogni giorno.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Rinomina</span>
+      <span class="tech-tag">Cifratura</span>
+      <span class="tech-tag">Cloud</span>
+      <span class="tech-tag">Telegram</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="#progetti" class="link-btn">📂 Vedi i progetti</a>
+    </div>
+  </div>
+
+  <div class="eco-wrap">
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Progetti</div></div>
+      <div class="stat-card"><div class="num">17</div><div class="lbl">Regole di rinomina</div></div>
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Algoritmi di cifratura</div></div>
+      <div class="stat-card"><div class="num">2 GB</div><div class="lbl">Upload per file</div></div>
+    </div>
+
+    <section class="eco-section" id="progetti">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Sezione 06 · File</span>
+        <h2>Ordine, privacy, archiviazione</h2>
+        <p>Tre progetti per il lavoro quotidiano sui file: rinominare in batch senza perdere il controllo, cifrare ciò che deve restare privato e archiviare tutto su un cloud personale.</p>
+      </div>
+
+      <div class="project-grid eco-grid">
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon rose">✏️</div>
+              <div>
+                <h3>Bulk Renamer PRO</h3>
+                <span class="eco-badge">Desktop · PyQt6</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">PyQt6</span><span class="tag">Catppuccin</span>
+            </div>
+            <p class="desc">
+              Rinomina file in batch con 17 regole componibili: regex, numerazione, traslitterazione, date e cleanup. Preview live e undo illimitato.
+            </p>
+            <div class="eco-links">
+              <a href="bulkrenamer.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/bulkrenamer" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon amber">🔐</div>
+              <div>
+                <h3>Cyfer</h3>
+                <span class="eco-badge">Desktop · crypto</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">CustomTkinter</span><span class="tag">AES/DES/3DES</span>
+            </div>
+            <p class="desc">
+              Cifratura file con GUI moderna: tre algoritmi, chiavi generate dal movimento del mouse e rilevamento automatico. 100% offline.
+            </p>
+            <div class="eco-links">
+              <a href="cyfer.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/cyfer" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon cyan">☁️</div>
+              <div>
+                <h3>TGM Drive NXT</h3>
+                <span class="eco-badge">Desktop · cloud</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">PyQt6</span><span class="tag">Telegram API</span><span class="tag">SQLite</span>
+            </div>
+            <p class="desc">
+              Trasforma i canali Telegram in un cloud personale: upload fino a 2 GB, multi-canale, tag, coda trasferimenti e drag &amp; drop.
+            </p>
+            <div class="eco-links">
+              <a href="tgm-drive-nxt.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/tgm-drive-nxt" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Come sono collegati</span>
+        <h2>Fili comuni</h2>
+        <p>Ognuno risolve un problema diverso, ma tutti lavorano in locale o su un canale che controlli.</p>
+      </div>
+
+      <ul class="feature-list">
+        <li><span class="dot rose"></span> <strong>Bulk Renamer PRO</strong> — Mette ordine nei nomi con 17 regole componibili, preview live e undo.</li>
+        <li><span class="dot amber"></span> <strong>Cyfer</strong> — Protegge i file con AES, DES e 3DES, chiavi generate dal mouse e rilevamento automatico.</li>
+        <li><span class="dot cyan"></span> <strong>TGM Drive NXT</strong> — Archivia i file su canali Telegram, con upload fino a 2 GB e coda trasferimenti.</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="index.html#sezioni" style="color:var(--accent-2);">Tutte le sezioni</a> · 2026</p>
+</footer>
+
+</body>
+</html>

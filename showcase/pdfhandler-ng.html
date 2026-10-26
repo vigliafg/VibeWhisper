@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pdfhandler-ng — VibeWhisper</title>
+  <meta name="description" content="Versione responsive e mobile-first di pdfhandler: 20 strumenti PDF con drawer, bottom sheet e target touch da 44px. Zero upload.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-pdfhandler-ng-mobile.svg">
+      <img src="banner-pdfhandler-ng.svg" alt="pdfhandler-ng Banner" class="project-hero-banner">
+    </picture>
+    <a href="documenti.html" class="back-link">← Documenti &amp; PDF</a>
+    <div class="icon-lg rose">📱</div>
+    <h1>pdfhandler-ng</h1>
+    <p class="subtitle">
+      Versione responsive e mobile-first di pdfhandler: gli stessi 20 strumenti PDF, con drawer, bottom sheet e target touch da 44px.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">React 19</span>
+      <span class="tech-tag">TypeScript 6</span>
+      <span class="tech-tag">Tailwind CSS 4</span>
+      <span class="tech-tag">Vite</span>
+      <span class="tech-tag">Responsive</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/pdfhandler-ng2" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>pdfhandler-ng</strong> è la variante responsive e mobile-first di pdfhandler. Mantiene tutti i 20 strumenti PDF dell'originale — estrazione, inserimento, rotazione, unione, divisione, filigrane, numeri di pagina, cifratura AES-256 e altro — ma riorganizza l'interfaccia per desktop, tablet e smartphone. Al posto di prompt e confirm nativi arrivano dialoghi personalizzati: bottom sheet su mobile e modali centrati su desktop. Tutto avviene nel browser, senza upload su server esterni.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      È pensata per <strong>chi manipola PDF da smartphone o tablet</strong>, oltre che da desktop, e per chi vuole un'interfaccia touch senza rinunciare agli strumenti di un editor completo. È utile a studenti, uffici e professionisti che ricevono PDF via email o chat e devono sistemarli subito, senza installare software né caricare documenti riservati su un sito.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      L'app ha due modalità: <strong>Viewer</strong>, un lettore con layout singolo, doppio o triplo, zoom, rotazione e navigazione; <strong>Editor</strong>, una griglia di miniature con selezione, range e riordino. Un drawer laterale raccoglie navigazione e strumenti, una bottom toolbar è visibile solo su mobile e la TOC diventa un pannello laterale su desktop o un bottom sheet su mobile. I dialoghi sono componenti custom che si adattano al breakpoint. Se scegli uno strumento di pagina dal Viewer, l'app passa automaticamente all'Editor.
+    </p>
+    </div>
+
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">20</div><div class="lbl">Strumenti PDF</div></div>
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Breakpoint responsive</div></div>
+      <div class="stat-card"><div class="num">44px</div><div class="lbl">Target touch minimi</div></div>
+      <div class="stat-card"><div class="num">0</div><div class="lbl">Upload</div></div>
+    </div>
+
+    <h2>🎯 Perché pdfhandler-ng</h2>
+    <p>
+      Perché gli strumenti PDF non dovrebbero obbligarti a tornare al computer. pdfhandler-ng porta la stessa potenza su uno schermo piccolo, con controlli grandi, pannelli a scomparsa e nessun documento che lascia il dispositivo.
+    </p>
+
+    <h2>✨ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot rose"></span> <strong>Mobile-first</strong> — Drawer a schermo intero su mobile, overlay su tablet, sidebar persistente su desktop</li>
+      <li><span class="dot accent"></span> <strong>Bottom toolbar</strong> — Accesso rapido a View, Edit, Contents e Tools solo sui dispositivi piccoli</li>
+      <li><span class="dot green"></span> <strong>Viewer flessibile</strong> — Layout singolo, doppio o triplo, zoom, fit-to-width, rotazione e salto pagina</li>
+      <li><span class="dot amber"></span> <strong>Editor a miniature</strong> — Griglia da 2 a 6 colonne, selezione con shift, riordino e contatore</li>
+      <li><span class="dot cyan"></span> <strong>Dialoghi custom</strong> — Bottom sheet con maniglia su mobile, modali centrati su desktop, niente prompt nativi</li>
+      <li><span class="dot purple"></span> <strong>TOC adattiva</strong> — Pannello laterale su desktop, bottom sheet scrollabile su mobile</li>
+      <li><span class="dot green"></span> <strong>Auto-switch</strong> — Uno strumento di pagina scelto dal Viewer apre subito l'Editor</li>
+      <li><span class="dot accent"></span> <strong>Touch target</strong> — Tutti i controlli interattivi rispettano i 44px minimi (WCAG 2.5.5)</li>
+      <li><span class="dot amber"></span> <strong>20 strumenti</strong> — Estrai, inserisci, elimina, ruota, copia, sposta, inverti, dividi, unisci, filigrana, cifra e altri</li>
+    </ul>
+
+    <h2>🏗️ Come Funziona</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>Apri l'app nel browser: non serve caricare nulla su un server</li>
+      <li>Carica un PDF e usa il Viewer per leggerlo con layout e zoom desiderati</li>
+      <li>Passa all'Editor per selezionare le pagine e applicare uno strumento</li>
+      <li>Apri il drawer per gli strumenti del documento: metadati, filigrana, numeri, cifratura</li>
+      <li>Su mobile usa la bottom toolbar per passare rapidamente tra le sezioni</li>
+      <li>Scarica il risultato: il file viene generato localmente nel browser</li>
+    </ol>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Requisiti: Node.js &gt;= 18 e npm
+git clone https://github.com/vigliafg/pdfhandler-ng2.git
+cd pdfhandler-ng2
+
+npm install
+npm run dev
+# Apri http://localhost:5174
+
+# Build di produzione
+npm run build
+# Output nella cartella dist/</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot rose"></span> <strong>PDF dal telefono</strong> — Sistemare un documento ricevuto via email senza passare al computer</li>
+      <li><span class="dot accent"></span> <strong>Studio</strong> — Estrarre, ruotare o unire dispense e slide da tablet</li>
+      <li><span class="dot green"></span> <strong>Ufficio</strong> — Aggiungere numeri di pagina o filigrane a un contratto, in locale</li>
+      <li><span class="dot amber"></span> <strong>Privacy</strong> — Manipolare documenti riservati senza caricarli su servizi esterni</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/pdfhandler-ng2" style="color:var(--accent-2);">GitHub</a> · MIT</p>
+</footer>
+
+</body>
+</html>

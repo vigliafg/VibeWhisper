@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documenti &amp; PDF — VibeWhisper</title>
+  <meta name="description" content="PDF, Office, Markdown e conversione: cinque progetti per manipolare, estrarre, sfogliare e convertire documenti.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-sezione-documenti-mobile.svg">
+      <img src="banner-sezione-documenti.svg" alt="Documenti &amp; PDF Banner" class="project-hero-banner">
+    </picture>
+    <a href="index.html#sezioni" class="back-link">← Tutte le sezioni</a>
+    <div class="icon-lg amber">📄</div>
+    <h1>Documenti &amp; PDF</h1>
+    <p class="subtitle">
+      PDF, Office, Markdown e conversione: cinque progetti per manipolare, estrarre, sfogliare e convertire documenti. Tutto quello che serve quando un file non è ancora nel formato che ti serve.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">PDF</span>
+      <span class="tech-tag">Office</span>
+      <span class="tech-tag">Markdown</span>
+      <span class="tech-tag">WASM</span>
+      <span class="tech-tag">CLI</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="#progetti" class="link-btn">📂 Vedi i progetti</a>
+    </div>
+  </div>
+
+  <div class="eco-wrap">
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">5</div><div class="lbl">Progetti</div></div>
+      <div class="stat-card"><div class="num">20</div><div class="lbl">Strumenti PDF</div></div>
+      <div class="stat-card"><div class="num">20+</div><div class="lbl">Formati di output</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Elaborazione locale</div></div>
+    </div>
+
+    <section class="eco-section" id="progetti">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Sezione 01 · Documenti</span>
+        <h2>Dal PDF al formato che ti serve</h2>
+        <p>Qui vivono i tool che aprono, modificano, leggono o convertono un documento. C'è la toolbox PDF completa, la sua variante mobile-first, l'estrattore per paper scientifici, la gallery di copertine e il convertitore universale con Pandoc.</p>
+      </div>
+
+      <div class="project-grid eco-grid">
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon blue">📄</div>
+              <div>
+                <h3>pdfhandler</h3>
+                <span class="eco-badge">Web · PDF toolbox</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Tailwind</span>
+            </div>
+            <p class="desc">
+              Toolbox PDF client-side: estrai, ruota, unisci, dividi, filigrane, numeri pagina, cifratura AES-256. 15+ strumenti, zero upload.
+            </p>
+            <div class="eco-links">
+              <a href="pdfhandler.html" class="link-btn">Scheda →</a><a href="https://pdfhandler.vigliafg.workers.dev" class="link-btn" target="_blank" rel="noopener">Apri app</a><a href="https://github.com/vigliafg/pdfhandler" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon rose">📱</div>
+              <div>
+                <h3>pdfhandler-ng</h3>
+                <span class="eco-badge">Web · mobile-first</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">React 19</span><span class="tag">TypeScript 6</span><span class="tag">Tailwind 4</span>
+            </div>
+            <p class="desc">
+              Versione responsive di pdfhandler: 20 strumenti con drawer, bottom sheet e target touch da 44px. Tutto client-side, zero upload.
+            </p>
+            <div class="eco-links">
+              <a href="pdfhandler-ng.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/pdfhandler-ng2" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon amber">📑</div>
+              <div>
+                <h3>pdfextractor</h3>
+                <span class="eco-badge">CLI · Python</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Docling</span><span class="tag">CLI</span>
+            </div>
+            <p class="desc">
+              Converti PDF scientifici multi-colonna in Markdown pulito: ricostruzione layout, de-hyphenation, tabelle e immagini. Ottimizzato per CPU e bassa RAM.
+            </p>
+            <div class="eco-links">
+              <a href="pdfextractor.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/pdfextractor" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon rose">🖼️</div>
+              <div>
+                <h3>pdfshow</h3>
+                <span class="eco-badge">Web · Streamlit</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">PyMuPDF</span>
+            </div>
+            <p class="desc">
+              Galleria visiva di copertine PDF: anteprime uniformi 200×280 px, cache intelligente e apertura con un click.
+            </p>
+            <div class="eco-links">
+              <a href="pdfshow.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/pdfshow" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon cyan">🔄</div>
+              <div>
+                <h3>Pandoc WASM Studio</h3>
+                <span class="eco-badge">Web · WebAssembly</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">WASM</span>
+            </div>
+            <p class="desc">
+              Convertitore universale di documenti con Pandoc via WebAssembly: Markdown, HTML, LaTeX, EPUB, DOCX e altro, nel browser.
+            </p>
+            <div class="eco-links">
+              <a href="pandoc-wasm-studio.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/pandoc-wasm-studio" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Come sono collegati</span>
+        <h2>Fili comuni</h2>
+        <p>Le cinque schede coprono momenti diversi della stessa filiera: modificare, leggere, sfogliare, convertire.</p>
+      </div>
+
+      <ul class="feature-list">
+        <li><span class="dot blue"></span> <strong>pdfhandler ↔ pdfhandler-ng</strong> — La stessa toolbox PDF in due interfacce: desktop-first e mobile-first, entrambe client-side.</li>
+        <li><span class="dot amber"></span> <strong>Leggere e convertire</strong> — pdfextractor estrae Markdown dai PDF complessi; Pandoc WASM Studio converte tra formati con WebAssembly.</li>
+        <li><span class="dot rose"></span> <strong>Sfogliare</strong> — pdfshow non modifica nulla: rende visibile una cartella di PDF attraverso le copertine.</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="index.html#sezioni" style="color:var(--accent-2);">Tutte le sezioni</a> · 2026</p>
+</footer>
+
+</body>
+</html>

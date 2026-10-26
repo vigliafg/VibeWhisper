@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noesis PDF Cloner — VibeWhisper</title>
+  <meta name="description" content="App desktop PyQt6 che mostra il PDF originale a sinistra e la pagina tradotta con layout preservato a destra, con export in PDF o ZIP.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-noesis-pdf-cloner-mobile.svg">
+      <img src="banner-noesis-pdf-cloner.svg" alt="Noesis PDF Cloner Banner" class="project-hero-banner">
+    </picture>
+    <a href="noesis.html" class="back-link">← Ecosistema Noesis</a>
+    <div class="icon-lg blue">🌍</div>
+    <h1>Noesis PDF Cloner</h1>
+    <p class="subtitle">
+      App desktop che apre un PDF e mostra a sinistra la pagina originale, a destra la stessa pagina tradotta nella lingua scelta con il layout preservato.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">PyQt6</span>
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">pdf2zh_next</span>
+      <span class="tech-tag">BabelDOC</span>
+      <span class="tech-tag">OpenRouter</span>
+      <span class="tech-tag">AGPL-3.0</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/noesis-pdf-cloner" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>Noesis PDF Cloner</strong> è un'app desktop derivata da Noesis PDF Reader Lite che traduce un PDF mantenendone l'impaginazione: testo, immagini, tabelle e numeri di pagina restano al loro posto, cambia solo la lingua. La pagina tradotta è prodotta da <a href="https://github.com/PDFMathTranslate/PDFMathTranslate-next" target="_blank" rel="noopener">pdf2zh_next v2</a> con typesetter BabelDOC, ed è mostrata accanto all'originale in una vista affiancata. La traduzione avviene on-demand pagina per pagina, con cache su disco separata per motore e coppia linguistica.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      È pensata per <strong>chi studia o lavora su documenti tecnici in lingua</strong>: paper scientifici, manuali, contratti, report e libri. È utile quando non basta estrarre il testo, perché la posizione di figure, tabelle e didascalie è parte del significato. Fa per te se vuoi leggere una pagina tradotta senza perdere il riferimento visivo all'originale e se ti serve esportare solo alcune pagine, non tutto il documento.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      L'app apre il PDF con PyMuPDF e mostra due pannelli sincronizzati. Quando premi <strong>▶ Traduci</strong>, il motore selezionato (Google, Bing o LLM) genera il clone della pagina corrente con pdf2zh_next; il risultato viene messo in cache su disco per motore e lingua. Google usa una catena gratuita con fallback progressivi, Bing è il traduttore integrato di pdf2zh_next, LLM passa da OpenRouter. Le pagine si traducono una alla volta; le richieste interne dell'LLM possono essere parallelizzate dalle impostazioni. L'export guidato in 5 passi permette di scegliere pagine, lingue, motore e formato senza perdere il riferimento alla numerazione fisica o stampata.
+    </p>
+    </div>
+
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Motori di traduzione</div></div>
+      <div class="stat-card"><div class="num">5</div><div class="lbl">Passi dell'export</div></div>
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Formati di output</div></div>
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Pannelli sincronizzati</div></div>
+    </div>
+
+    <h2>🎯 Perché Noesis PDF Cloner</h2>
+    <p>
+      Perché un PDF tradotto deve restare lo stesso documento, non un riassunto. Noesis PDF Cloner ti fa vedere subito se il risultato è fedele, pagina accanto a pagina, e ti dà il controllo su cosa tradurre e su come esportarlo.
+    </p>
+
+    <h2>✨ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot blue"></span> <strong>Vista affiancata</strong> — Originale a sinistra, clone tradotto a destra, con zoom sincronizzato e navigazione tra le pagine</li>
+      <li><span class="dot accent"></span> <strong>Tre motori</strong> — Google con catena gratuita, Bing integrato e LLM via OpenRouter, selezionabili al volo</li>
+      <li><span class="dot green"></span> <strong>Traduzione on-demand</strong> — La pagina parte solo dal pulsante ▶ Traduci: niente traduzioni automatiche cambiando pagina</li>
+      <li><span class="dot amber"></span> <strong>Cache per motore</strong> — Cache su disco separata per motore e coppia linguistica, con conferma prima di sovrascriverla</li>
+      <li><span class="dot rose"></span> <strong>Export guidato</strong> — Wizard in 5 passi con pagina corrente, intervallo o lista libera, anteprime e numerazione fisica/stampata</li>
+      <li><span class="dot cyan"></span> <strong>Tre output</strong> — PDF unico, ZIP di pagine singole o cartella di pagine separate</li>
+      <li><span class="dot purple"></span> <strong>Azioni di pagina</strong> — Salva, esporta, traduci la successiva, ritraduci, apri nel visualizzatore o cancella la cache</li>
+      <li><span class="dot green"></span> <strong>Tema e avvisi</strong> — Chiaro, scuro o come il sistema; notifica e suono a fine lavoro, senza standby durante la traduzione</li>
+      <li><span class="dot accent"></span> <strong>Chiave protetta</strong> — La chiave OpenRouter è salvata in un file per-utente 0600, con verifica e messaggi di errore classificati</li>
+    </ul>
+
+    <h2>🏗️ Come Funziona</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>Apri un PDF con <code>./run.sh /percorso/file.pdf</code> oppure dal menu File</li>
+      <li>Scegli la lingua di destinazione e il motore (Google, Bing o LLM) nel pannello destro</li>
+      <li>Premi <strong>▶ Traduci</strong>: la pagina corrente viene clonata e messa in cache</li>
+      <li>Naviga con TOC, numero di pagina o scorciatoie: al ritorno la pagina è istantanea</li>
+      <li>Apri <strong>💾 Esporta</strong> e scegli pagine, lingue, motore e formato (PDF, ZIP o cartella)</li>
+      <li>A fine processo copia il risultato in Download dall'avviso di completamento</li>
+    </ol>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Requisiti: Python 3.12 e uv
+git clone https://github.com/vigliafg/noesis-pdf-cloner.git
+cd noesis-pdf-cloner
+
+# Crea i due ambienti (app PyQt6 + motore pdf2zh_next) e apre la GUI
+./run.sh
+
+# Apri direttamente un PDF
+./run.sh /percorso/file.pdf
+
+# La chiave serve solo per il motore LLM
+export OPENROUTER_API_KEY=&quot;sk-or-...&quot;
+</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot blue"></span> <strong>Paper scientifici</strong> — Leggere un articolo in italiano mantenendo figure, tabelle e riferimenti</li>
+      <li><span class="dot accent"></span> <strong>Manuali tecnici</strong> — Tradurre solo le pagine che servono, senza processare tutto il volume</li>
+      <li><span class="dot green"></span> <strong>Contratti e report</strong> — Confrontare originale e traduzione con lo stesso layout sotto gli occhi</li>
+      <li><span class="dot amber"></span> <strong>Studio delle lingue</strong> — Leggere pagina per pagina e salvare le traduzioni già pronte in cache</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/noesis-pdf-cloner" style="color:var(--accent-2);">GitHub</a> · AGPL-3.0</p>
+</footer>
+
+</body>
+</html>

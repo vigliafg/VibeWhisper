@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noesis Ebook Translator Engine — VibeWhisper</title>
+  <meta name="description" content="Edizione CLI e TUI di Noesis Ebook Translator: un solo file Python, stesso motore del desktop, nessuna dipendenza Qt.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-noesis-ebook-translator-engine-mobile.svg">
+      <img src="banner-noesis-ebook-translator-engine.svg" alt="Noesis Ebook Translator Engine Banner" class="project-hero-banner">
+    </picture>
+    <a href="noesis.html" class="back-link">← Ecosistema Noesis</a>
+    <div class="icon-lg blue">⌨️</div>
+    <h1>Noesis Ebook Translator Engine</h1>
+    <p class="subtitle">
+      Edizione da riga di comando dello stesso motore di Noesis Ebook Translator: un solo file Python, front-end CLI e TUI opzionale, nessuna dipendenza Qt.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">CLI</span>
+      <span class="tech-tag">TUI</span>
+      <span class="tech-tag">Textual</span>
+      <span class="tech-tag">GPL-3.0</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/noesis-ebook-translator-engine" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>Noesis Ebook Translator Engine</strong> è la versione headless dell'app desktop. Un unico modulo generato (<code>noesis_ebook_translator_engine.py</code>) incorpora il motore verbatim del plugin Ebook Translator e vi aggiunge un front-end CLI; con <code>-gui</code> si apre una TUI Textual per chi preferisce un'interfaccia guidata senza GUI. Traduce un EPUB in un'altra lingua conservando formattazione, markup inline, blocchi di codice e indice, e produce un output identico a quello del desktop.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      È pensata per <strong>server, container, pipeline di automazione e utenti da terminale</strong> che vogliono tradurre EPUB senza installare Qt o aprire una finestra. Ottima per script notturni su una cartella di libri, per ambienti remoti via SSH e per chi vuole integrare la traduzione in un flusso di pubblicazione o di archiviazione.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      Lo script <code>tools/sync_from_desktop.py</code> inlinea i moduli del motore del desktop (più <code>appconfig.py</code> e <code>book.py</code>) in un unico file e vi appende il front-end CLI/TUI: il codice di traduzione è lo stesso, cambia solo l'interfaccia. La piccola superficie dell'API Calibre necessaria al motore è reimplementata nel file generato, quindi Calibre non serve. Il comando accetta motore, lingue, posizione della traduzione, cache, batching e chiavi API; la TUI si attiva con <code>-gui</code> e usa Textual, con fallback a un wizard a righe se Textual non è installato.
+    </p>
+    </div>
+
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">1</div><div class="lbl">File Python autonomo</div></div>
+      <div class="stat-card"><div class="num">15+</div><div class="lbl">Motori disponibili</div></div>
+      <div class="stat-card"><div class="num">~240</div><div class="lbl">Lingue</div></div>
+      <div class="stat-card"><div class="num">0</div><div class="lbl">Dipendenze Qt</div></div>
+    </div>
+
+    <h2>🎯 Perché Noesis Ebook Translator Engine</h2>
+    <p>
+      Perché lo stesso motore deve poter girare anche dove non c'è un desktop. L'edizione engine porta la qualità del progetto desktop in un comando ripetibile e scriptabile, senza duplicare la logica di traduzione.
+    </p>
+
+    <h2>✨ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot blue"></span> <strong>Un comando</strong> — <code>noesis-ebook-translator-engine libro.epub</code> produce <code>libro_ITALIAN.epub</code> accanto all'originale</li>
+      <li><span class="dot accent"></span> <strong>Stesso motore del desktop</strong> — Moduli inlineati verbatim: il risultato è identico a quello della GUI</li>
+      <li><span class="dot green"></span> <strong>Motori multipli</strong> — Google gratuito, Google API, DeepL, Microsoft Edge, Youdao, Baidu e LLM (Gemini, ChatGPT, Claude, DeepSeek, OpenRouter)</li>
+      <li><span class="dot amber"></span> <strong>Testo bilingue</strong> — Posizione <code>only</code>, <code>below</code> o <code>above</code> per traduzione affiancata all'originale</li>
+      <li><span class="dot cyan"></span> <strong>Cache e batching</strong> — Cache su disco attiva per default, disattivabile con <code>--no-cache</code>; batching online con <code>--batch</code></li>
+      <li><span class="dot purple"></span> <strong>TUI opzionale</strong> — Con <code>-gui</code> parte il wizard Textual, utile su terminali interattivi</li>
+      <li><span class="dot rose"></span> <strong>Elenco motori</strong> — <code>--list-engines</code> mostra motori, categorie e requisiti di chiave API</li>
+      <li><span class="dot green"></span> <strong>Automazione</strong> — Exit code e output prevedibili, ideale per script e job pianificati</li>
+    </ul>
+
+    <h2>🏗️ Come Funziona</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>Installa il pacchetto oppure esegui direttamente lo script dal checkout</li>
+      <li>Scegli il motore con <code>-e</code> (default <code>Google(Free)New</code>) e imposta <code>-s</code> e <code>-t</code></li>
+      <li>Aggiungi <code>--api-key</code> e <code>--model</code> solo se il motore scelto li richiede</li>
+      <li>Lancia la traduzione: il file di output viene scritto accanto all'input, o dove indica <code>-o</code></li>
+      <li>Per più libri, cicla il comando in uno script o in un job di sistema</li>
+    </ol>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Requisiti: Python 3.10+
+git clone https://github.com/vigliafg/noesis-ebook-translator-engine.git
+cd noesis-ebook-translator-engine
+
+python3 -m venv .venv
+. .venv/bin/activate
+pip install .
+
+# Traduzione (Google gratuito, italiano di default)
+noesis-ebook-translator-engine libro.epub
+
+# Con motore e lingue espliciti
+noesis-ebook-translator-engine libro.epub -e &quot;MicrosoftEdge(Free)&quot; -s English -t German
+
+# Interfaccia guidata TUI (richiede Textual)
+pip install &quot;.[tui]&quot;
+noesis-ebook-translator-engine -gui</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot blue"></span> <strong>Batch notturno</strong> — Tradurre una cartella di EPUB con un ciclo shell e la cache condivisa</li>
+      <li><span class="dot accent"></span> <strong>Server e container</strong> — Girare senza Qt su una macchina remota o in CI</li>
+      <li><span class="dot green"></span> <strong>Pubblicazione</strong> — Integrare la traduzione in una pipeline che produce l'edizione finale</li>
+      <li><span class="dot amber"></span> <strong>Terminali interattivi</strong> — Usare la TUI per scegliere motore e lingue senza ricordare le opzioni</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/noesis-ebook-translator-engine" style="color:var(--accent-2);">GitHub</a> · GPL-3.0</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="600" viewBox="0 0 1100 600" role="img" aria-label="Noesis PDF Reader Lite">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070a12"/>
+      <stop offset="0.55" stop-color="#0a0e19"/>
+      <stop offset="1" stop-color="#0d1220"/>
+    </linearGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="70"/></filter>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#818cf8" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glowA"><stop offset="0" stop-color="#fbbf24" stop-opacity="0.45"/><stop offset="1" stop-color="#fbbf24" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowB"><stop offset="0" stop-color="#818cf8" stop-opacity="0.34"/><stop offset="1" stop-color="#818cf8" stop-opacity="0"/></radialGradient>
+  </defs>
+
+  <rect width="1100" height="600" fill="url(#bg)"/>
+  <rect width="1100" height="600" fill="url(#grid)"/>
+  <circle cx="140" cy="120" r="230" fill="url(#glowA)"/>
+  <circle cx="980" cy="480" r="240" fill="url(#glowB)"/>
+  <circle cx="560" cy="560" r="180" fill="url(#glowA)" opacity="0.5"/>
+
+  <g opacity="0.9">
+    <circle cx="63" cy="112" r="5" fill="#fbbf24"/>
+    <text x="78" y="118" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17" font-weight="700" fill="#e7eaf0" letter-spacing="0.4">VibeWhisper</text>
+    <text x="78" y="136" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="10" fill="#7c8496" letter-spacing="2.2">PORTFOLIO · VIBE CODING</text>
+  </g>
+  <g>
+    <rect x="924" y="99" width="116" height="30" rx="15" fill="#fbbf24" fill-opacity="0.08" stroke="#fbbf24" stroke-opacity="0.32"/>
+    <text x="1027" y="118" text-anchor="end" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12" fill="#fbbf24" letter-spacing="1.1">DESKTOP APP</text>
+  </g>
+
+  <rect x="60" y="166" width="82" height="82" rx="20" fill="#fbbf24" fill-opacity="0.10" stroke="#fbbf24" stroke-opacity="0.35"/>
+  <text x="101" y="220" text-anchor="middle" font-family="'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji',sans-serif" font-size="40">🔎</text>
+  <rect x="60" y="264" width="46" height="3" rx="1.5" fill="#fbbf24"/>
+
+  <text x="60" y="282" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="46" font-weight="800" fill="#f4f6fa" letter-spacing="-1.4">Noesis</text><text x="60" y="336" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="46" font-weight="800" fill="#f4f6fa" letter-spacing="-1.4">PDF Reader Lite</text>
+  <text x="60" y="384" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">PDF → Markdown pulito con engine adattativo:</text><text x="60" y="411" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">colonne, tabelle, figure e header.</text>
+  
+    <rect x="60" y="456" width="55" height="30" rx="15" fill="#fbbf24" fill-opacity="0.10" stroke="#fbbf24" stroke-opacity="0.30"/>
+    <text x="88" y="476" text-anchor="middle" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="13" fill="#c9cfda">PyQt6</text>
+    <rect x="125.0" y="456" width="104" height="30" rx="15" fill="#fbbf24" fill-opacity="0.10" stroke="#fbbf24" stroke-opacity="0.30"/>
+    <text x="177" y="476" text-anchor="middle" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="13" fill="#c9cfda">PyMuPDF4LLM</text>
+    <rect x="239.2" y="456" width="80" height="30" rx="15" fill="#fbbf24" fill-opacity="0.10" stroke="#fbbf24" stroke-opacity="0.30"/>
+    <text x="279" y="476" text-anchor="middle" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="13" fill="#c9cfda">Markdown</text>
+
+  <rect x="620" y="140" width="420" height="345" rx="18" fill="#0c101b" fill-opacity="0.92" stroke="#fbbf24" stroke-opacity="0.28"/>
+    <rect x="620" y="140" width="420" height="42" rx="18" fill="#141a27"/>
+    <rect x="620" y="164" width="420" height="18" fill="#141a27"/>
+    <line x1="620" y1="182" x2="1040" y2="182" stroke="#fbbf24" stroke-opacity="0.18"/>
+    <circle cx="644" cy="161" r="5" fill="#ff5f57"/><circle cx="661" cy="161" r="5" fill="#febc2e"/><circle cx="678" cy="161" r="5" fill="#28c840"/>
+    <rect x="648" y="200" width="170" height="248" rx="8" fill="#ffffff" fill-opacity="0.045" stroke="#ffffff" stroke-opacity="0.12"/>
+    <rect x="666" y="218" width="84" height="10" rx="4" fill="#fbbf24" fill-opacity="0.70"/>
+    <rect x="666" y="244" width="134" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.32"/><rect x="666" y="258" width="112" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.32"/><rect x="666" y="272" width="90" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.32"/><rect x="666" y="286" width="68" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.32"/><rect x="666" y="300" width="134" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.32"/><rect x="666" y="314" width="112" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.32"/><rect x="666" y="328" width="90" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.32"/><rect x="666" y="342" width="68" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.32"/><rect x="666" y="356" width="134" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.32"/><rect x="666" y="370" width="112" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.32"/><rect x="666" y="384" width="90" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.32"/><rect x="666" y="398" width="68" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.32"/>
+    <rect x="840" y="200" width="198" height="248" rx="8" fill="#fbbf24" fill-opacity="0.05" stroke="#fbbf24" stroke-opacity="0.26"/>
+    <rect x="856" y="218" width="70" height="8" rx="4" fill="#fbbf24" fill-opacity="0.65"/>
+    <rect x="856" y="240" width="160" height="5" rx="2.5" fill="#fbbf24" fill-opacity="0.30"/><rect x="856" y="253" width="134" height="5" rx="2.5" fill="#fbbf24" fill-opacity="0.30"/><rect x="856" y="266" width="108" height="5" rx="2.5" fill="#fbbf24" fill-opacity="0.30"/><rect x="856" y="279" width="160" height="5" rx="2.5" fill="#fbbf24" fill-opacity="0.30"/><rect x="856" y="292" width="134" height="5" rx="2.5" fill="#fbbf24" fill-opacity="0.30"/><rect x="856" y="305" width="108" height="5" rx="2.5" fill="#fbbf24" fill-opacity="0.30"/><rect x="856" y="318" width="160" height="5" rx="2.5" fill="#fbbf24" fill-opacity="0.30"/><rect x="856" y="331" width="134" height="5" rx="2.5" fill="#fbbf24" fill-opacity="0.30"/><rect x="856" y="344" width="108" height="5" rx="2.5" fill="#fbbf24" fill-opacity="0.30"/>
+    <rect x="856" y="372" width="166" height="58" rx="6" fill="none" stroke="#818cf8" stroke-opacity="0.40"/>
+    <line x1="911" y1="372" x2="911" y2="430" stroke="#818cf8" stroke-opacity="0.30"/><line x1="966" y1="372" x2="966" y2="430" stroke="#818cf8" stroke-opacity="0.30"/>
+    <line x1="856" y1="391" x2="1022" y2="391" stroke="#818cf8" stroke-opacity="0.30"/><line x1="856" y1="410" x2="1022" y2="410" stroke="#818cf8" stroke-opacity="0.30"/>
+
+  <line x1="60" y1="540" x2="1040" y2="540" stroke="#ffffff" stroke-opacity="0.09"/>
+  <line x1="60" y1="540" x2="360" y2="540" stroke="url(#accentLine)" stroke-width="1.4"/>
+  <text x="60" y="570" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12.5" fill="#7c8496">github.com/vigliafg/noesis-pdf-reader-lite</text>
+  <text x="1040" y="570" text-anchor="end" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12" fill="#5b6273">idee che diventano codice · 2026</text>
+</svg>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lingua &amp; voce — VibeWhisper</title>
+  <meta name="description" content="Traduzione di documenti e dettatura vocale: strumenti per lavorare sulla lingua scritta e parlata.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-sezione-lingua-mobile.svg">
+      <img src="banner-sezione-lingua.svg" alt="Lingua &amp; voce Banner" class="project-hero-banner">
+    </picture>
+    <a href="index.html#sezioni" class="back-link">← Tutte le sezioni</a>
+    <div class="icon-lg green">🌍</div>
+    <h1>Lingua &amp; voce</h1>
+    <p class="subtitle">
+      Traduzione di documenti e dettatura vocale: strumenti per lavorare sulla lingua scritta e parlata, dalla riga di comando alla GUI.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Traduzione</span>
+      <span class="tech-tag">Dettatura</span>
+      <span class="tech-tag">CLI</span>
+      <span class="tech-tag">GUI</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="#progetti" class="link-btn">📂 Vedi i progetti</a>
+    </div>
+  </div>
+
+  <div class="eco-wrap">
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Progetti</div></div>
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Motori di traduzione</div></div>
+      <div class="stat-card"><div class="num">1</div><div class="lbl">Dettatura locale</div></div>
+      <div class="stat-card"><div class="num">0</div><div class="lbl">Account</div></div>
+    </div>
+
+    <section class="eco-section" id="progetti">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Sezione 03 · Lingua</span>
+        <h2>Scrivere, tradurre, dettare</h2>
+        <p>Tre progetti che trattano la lingua in modo diverso: mdtranslator preserva la struttura del Markdown, cli_translator traduce interi EPUB, NovoDictate porta la voce in testo con correzione grammaticale.</p>
+      </div>
+
+      <div class="project-grid eco-grid">
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon rose">🌍</div>
+              <div>
+                <h3>mdtranslator</h3>
+                <span class="eco-badge">CLI + GUI · Markdown</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">Google/DeepL</span>
+            </div>
+            <p class="desc">
+              Traduci file Markdown preservando tabelle, heading e code block. Tre motori (Google, DeepL, Edge), interfaccia CLI e GUI.
+            </p>
+            <div class="eco-links">
+              <a href="mdtranslator.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/mdtranslator" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon blue">📖</div>
+              <div>
+                <h3>cli_translator</h3>
+                <span class="eco-badge">CLI · EPUB</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">ebooklib</span><span class="tag">OpenRouter</span>
+            </div>
+            <p class="desc">
+              Traduci interi EPUB in italiano con un solo comando: Google Translate gratuito o AI via OpenRouter, multithreading e TOC ricorsivo.
+            </p>
+            <div class="eco-links">
+              <a href="cli_translator.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/cli_translator" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon purple">🎙️</div>
+              <div>
+                <h3>NovoDictate</h3>
+                <span class="eco-badge">Desktop · dettatura</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">PyQt6</span><span class="tag">Faster-Whisper</span><span class="tag">LanguageTool</span>
+            </div>
+            <p class="desc">
+              Dettatura italiana con Faster-Whisper, Voice Activity Detection e correzione grammaticale LanguageTool. Dark mode e trascrizione locale.
+            </p>
+            <div class="eco-links">
+              <a href="novodictate.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/novodictate" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Come sono collegati</span>
+        <h2>Fili comuni</h2>
+        <p>Due sono traduttori, uno è dettatura. Tutti evitano di stravolgere il testo di partenza.</p>
+      </div>
+
+      <ul class="feature-list">
+        <li><span class="dot rose"></span> <strong>mdtranslator</strong> — Lavora sul Markdown e mantiene tabelle, heading e code block.</li>
+        <li><span class="dot blue"></span> <strong>cli_translator</strong> — Lavora sull'EPUB e preserva capitoli, TOC e formattazione.</li>
+        <li><span class="dot purple"></span> <strong>NovoDictate</strong> — Lavora sull'audio: trascrive in italiano e corregge la grammatica.</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="index.html#sezioni" style="color:var(--accent-2);">Tutte le sezioni</a> · 2026</p>
+</footer>
+
+</body>
+</html>

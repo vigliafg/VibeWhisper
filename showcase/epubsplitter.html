@@ -17,20 +17,22 @@
     <a href="index.html" class="nav-logo">VibeWhisper</a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#projects" class="active">Progetti</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
     </ul>
     <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
   </div>
   <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
     <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
-    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
   </div>
 </nav>
 
 <main>
   <div class="project-hero">
     <img src="Gemini_Generated_Image_te8aujte8aujte8a.png" alt="epubsplitter Banner" class="project-hero-banner">
-    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <a href="epub-libri.html" class="back-link">← EPUB &amp; libri</a>
     <div class="icon-lg purple">✂️</div>
     <h1>EpubSplitter Pro</h1>
     <p class="subtitle">
@@ -100,6 +102,7 @@
     </table>
 
     <h2>🎯 Workflow</h2>
+      <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
       <li><strong>Carica l'EPUB</strong> — Drag & drop o click per selezionare il file</li>
       <li><strong>Esplora il TOC</strong> — Navigator gerarchico con sezioni espandibili, icone file/cartella, metadati del libro</li>
       <li><strong>Seleziona un capitolo</strong> — Click sul nodo desiderato nell'albero dei contenuti (i sotto-capitoli vengono inclusi automaticamente)</li>

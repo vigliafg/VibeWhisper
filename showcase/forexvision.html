@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForexVision — VibeWhisper</title>
+  <meta name="description" content="Webapp senza dipendenze per l&#x27;analisi forex: tecnica, Smart Money Concepts e sentiment con un verdetto di confluenza.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-forexvision-mobile.svg">
+      <img src="banner-forexvision.svg" alt="ForexVision Banner" class="project-hero-banner">
+    </picture>
+    <a href="dati-finanza.html" class="back-link">← Dati, finanza &amp; statistica</a>
+    <div class="icon-lg green">📈</div>
+    <h1>ForexVision</h1>
+    <p class="subtitle">
+      Webapp HTML/CSS/JavaScript senza dipendenze per analizzare il forex su tre fronti — tecnica, Smart Money Concepts e sentiment — con un verdetto di confluenza.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Vanilla JS</span>
+      <span class="tech-tag">HTML/CSS</span>
+      <span class="tech-tag">Yahoo Finance</span>
+      <span class="tech-tag">SMC</span>
+      <span class="tech-tag">Canvas</span>
+      <span class="tech-tag">Zero build</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/forexvision" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>ForexVision</strong> è una webapp per l'analisi del mercato forex che mette insieme tre letture diverse: <strong>analisi tecnica</strong>, <strong>Smart Money Concepts</strong> e <strong>sentiment di mercato</strong>. Ogni studio produce un punteggio, e un verdetto di confluenza li combina indicando quanti modelli sono d'accordo e con quale confidenza. Non usa framework né build step: HTML, CSS e JavaScript modulare, con grafici su canvas. Funziona sia con dati reali EUR/USD da Yahoo Finance (tramite un piccolo server locale) sia in modalità simulata, dichiarata sempre nell'interfaccia.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      È pensata per <strong>trader e appassionati di analisi tecnica</strong> che vogliono vedere più letture sullo stesso schermo, per <strong>studenti di finanza</strong> che imparano come si costruisce un segnale, e per chi vuole un laboratorio locale senza abbonamenti o chiavi API. La modalità simulata la rende utile anche per esercitarsi senza mercato aperto o senza rete.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      Il server locale (<code>server.py</code>) scarica i prezzi reali da Yahoo Finance, insieme a sentiment CFTC COT, VIX, indice del dollaro e notizie RSS, e li serve all'app in forma pulita e in cache. Senza server, l'app genera serie sintetiche calibrate su valori di mercato reali e lo dichiara. Otto famiglie di segnali tecnici vengono combinati con pesi adattivi al regime (direzionale o laterale); il punteggio diventa una probabilità con funzione logistica e la confidenza combina forza, concordanza e trend. Il backtest è walk-forward, senza look-ahead. I lanciatori avviano il ponte sulla porta 8199, aprono il browser e spengono tutto alla chiusura della finestra.
+    </p>
+    </div>
+
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Studi combinati</div></div>
+      <div class="stat-card"><div class="num">6</div><div class="lbl">Aree a tab</div></div>
+      <div class="stat-card"><div class="num">14</div><div class="lbl">Strumenti in watchlist</div></div>
+      <div class="stat-card"><div class="num">400+</div><div class="lbl">Controlli automatici</div></div>
+    </div>
+
+    <h2>🎯 Perché ForexVision</h2>
+    <p>
+      Perché un segnale isolato dice poco. ForexVision mostra tecnica, struttura di mercato e sentiment fianco a fianco, spiega ogni card con i dati del momento e ti lascia vedere anche i limiti dello studio — compreso un backtest che non promette più di quanto misuri.
+    </p>
+
+    <h2>✨ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Grafico a candele</strong> — EMA 9/21/50, Bollinger, volumi, crosshair con OHLC e zoom alla rotella</li>
+      <li><span class="dot accent"></span> <strong>Overlay SMC</strong> — Order block, fair value gap, BOS/CHoCH, pool di liquidità, premio/sconto</li>
+      <li><span class="dot amber"></span> <strong>Overlay extra</strong> — SuperTrend, Parabolic SAR, Ichimoku, divergenze e pivot point attivabili dal grafico</li>
+      <li><span class="dot rose"></span> <strong>Confluenza dei modelli</strong> — Punteggi di tecnica, SMC e sentiment in un unico verdetto con confidenza</li>
+      <li><span class="dot purple"></span> <strong>Studio SMC</strong> — Struttura, liquidità, zona OTE e scenario operativo con ingresso, stop e due obiettivi</li>
+      <li><span class="dot cyan"></span> <strong>Sentiment reale</strong> — Forza delle valute, posizionamento CFTC, VIX e indice del dollaro; il retail resta un modello dichiarato</li>
+      <li><span class="dot green"></span> <strong>Notizie e calendario</strong> — RSS di Fed, BCE, ForexLive e FXStreet, più calendario filtrato per EUR/USD</li>
+      <li><span class="dot accent"></span> <strong>Report divulgativo</strong> — Spiegazione in linguaggio semplice con glossario, copiabile, scaricabile o stampabile</li>
+      <li><span class="dot amber"></span> <strong>Backtest walk-forward</strong> — Hit rate, R medi, profit factor, drawdown e curva equity senza look-ahead</li>
+      <li><span class="dot rose"></span> <strong>Registro virtuale</strong> — Operazioni salvate in localStorage con esito manuale e hit rate complessivo</li>
+    </ul>
+
+    <h2>🏗️ Come Funziona</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>Avvia <code>./avvia.sh</code>: il ponte parte sulla porta 8199 e il browser si apre sull'app</li>
+      <li>Controlla il badge in alto: dati reali se il ponte risponde, simulati altrimenti</li>
+      <li>Esplora le sei tab: Dashboard, Grafici, Analisi tecnica, SMC, Sentiment e notizie, Registro</li>
+      <li>Apri l'aiuto di ogni card per leggere cosa mostra e i valori del momento</li>
+      <li>Usa il registro per annotare un'operazione virtuale e seguirne l'esito</li>
+      <li>Chiudi la finestra dell'app: il ponte si spegne da solo</li>
+    </ol>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Requisiti: Python 3 (solo per il ponte dati) e un browser
+git clone https://github.com/vigliafg/forexvision.git
+cd forexvision
+
+# Linux / macOS: avvia il ponte e apre l&#x27;app
+./avvia.sh
+
+# Windows: doppio clic su avvia.bat (o avvia.bat --stop)
+
+# Solo app, senza ponte: apri index.html
+# (parte in modalità simulata, dichiarata nel badge)
+
+# Opzioni utili
+./avvia.sh --lan            # raggiungibile da telefono/tablet in LAN
+./avvia.sh --port 9000      # porta diversa
+./avvia.sh --stop           # ferma un ponte rimasto attivo</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Analisi quotidiana</strong> — Vedere tecnica, SMC e sentiment su EUR/USD in un colpo d'occhio</li>
+      <li><span class="dot accent"></span> <strong>Studio dei segnali</strong> — Capire come nasce un punteggio e quanto pesa ogni famiglia di indicatori</li>
+      <li><span class="dot amber"></span> <strong>Backtest e registro</strong> — Misurare una strategia e annotare operazioni virtuali senza rischiare capitale</li>
+      <li><span class="dot rose"></span> <strong>Didattica</strong> — Usare le spiegazioni delle card e il report divulgativo per imparare i termini</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/forexvision" style="color:var(--accent-2);">GitHub</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noesis PDF Reader Lite Engine — VibeWhisper</title>
+  <meta name="description" content="CLI headless di Noesis PDF Reader Lite: estrazione e traduzione PDF in Markdown con gli stessi fix di layout del desktop.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-noesis-pdf-reader-lite-engine-mobile.svg">
+      <img src="banner-noesis-pdf-reader-lite-engine.svg" alt="Noesis PDF Reader Lite Engine Banner" class="project-hero-banner">
+    </picture>
+    <a href="noesis.html" class="back-link">← Ecosistema Noesis</a>
+    <div class="icon-lg amber">🧾</div>
+    <h1>Noesis PDF Reader Lite Engine</h1>
+    <p class="subtitle">
+      Edizione da riga di comando del motore di Noesis PDF Reader Lite: estrae le pagine in Markdown con gli stessi fix di layout e, se vuoi, le traduce.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">CLI</span>
+      <span class="tech-tag">TUI</span>
+      <span class="tech-tag">OCR</span>
+      <span class="tech-tag">pandoc</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/noesis-pdf-reader-lite-engine" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>Noesis PDF Reader Lite Engine</strong> è la versione headless di Noesis PDF Reader Lite. Prende un PDF, ricostruisce l'ordine di lettura con l'engine adattativo del desktop e produce Markdown pulito — oppure HTML, testo, EPUB, DOCX, ODT, RTF e LaTeX. Espone le stesse opzioni della procedura guidata dell'app: selezione pagine, contenuto originale/tradotto/entrambi, motore e lingue, figure, formato e impacchettamento. Con <code>-gui</code> offre un wizard TUI opzionale basato su Textual.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      È pensata per <strong>pipeline di elaborazione documenti, archivi digitali e utenti da terminale</strong> che devono convertire molti PDF senza aprire una GUI. Va bene per preparare testi per la ricerca full-text, per un LLM o per un'edizione EPUB, e per tradurre in batch interi capitoli mantenendo la struttura. È utile anche su server remoti, dove Qt non è disponibile.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      Il motore è lo stesso del desktop, copiato verbatim: analizza ogni pagina, sceglie il piano di fix e produce Markdown con tabelle, figure e titoli ricostruiti. La CLI aggiunge la selezione delle pagine e l'export: può produrre un Markdown unico, uno ZIP di pagine singole, una cartella numerata o un vault con indice e front-matter. Per i PDF scansionati usa Tesseract OCR, se installato. La traduzione può essere fatta prima dell'export e il file tradotto porta il suffisso <code>-translated</code>.
+    </p>
+    </div>
+
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">8</div><div class="lbl">Formati di contenuto</div></div>
+      <div class="stat-card"><div class="num">4</div><div class="lbl">Modalità di output</div></div>
+      <div class="stat-card"><div class="num">1</div><div class="lbl">Comando</div></div>
+      <div class="stat-card"><div class="num">OCR</div><div class="lbl">Opzionale</div></div>
+    </div>
+
+    <h2>🎯 Perché Noesis PDF Reader Lite Engine</h2>
+    <p>
+      Perché un comando deve bastare quando i PDF sono cento. L'engine porta la qualità dell'app desktop in uno script ripetibile, con le stesse regole di layout e la possibilità di scegliere esattamente cosa produrre.
+    </p>
+
+    <h2>✨ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot amber"></span> <strong>Stesso motore del desktop</strong> — Engine adattativo verbatim: ordine di lettura, tabelle, figure, header e titoli</li>
+      <li><span class="dot accent"></span> <strong>Selezione pagine</strong> — Pagina singola, intervallo, lista mista (<code>1,3,7-9</code>) o tutte</li>
+      <li><span class="dot green"></span> <strong>Originale o tradotto</strong> — Contenuto <code>original</code>, <code>translated</code> o <code>both</code>, con figure opzionali</li>
+      <li><span class="dot rose"></span> <strong>Otto formati</strong> — Markdown, HTML autonomo, testo, EPUB, DOCX, ODT, RTF e LaTeX via pandoc</li>
+      <li><span class="dot purple"></span> <strong>Quattro output</strong> — Markdown unico, ZIP di pagine, cartella numerata o vault con <code>index.md</code> e front-matter</li>
+      <li><span class="dot cyan"></span> <strong>OCR</strong> — Tesseract per i PDF scansionati, con scelta della lingua (<code>--ocr-lang eng+ita</code>)</li>
+      <li><span class="dot green"></span> <strong>Traduzione</strong> — Motori Google/Microsoft e cache, con suffisso <code>-translated</code> sui file tradotti</li>
+      <li><span class="dot accent"></span> <strong>Fallback sicuro</strong> — Se una pagina è problematica, ricade sulla pipeline classica solo per quella pagina</li>
+      <li><span class="dot amber"></span> <strong>Riepilogo JSON</strong> — Con <code>--json</code> produce un riepilogo leggibile da un altro programma</li>
+    </ul>
+
+    <h2>🏗️ Come Funziona</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>Installa il pacchetto oppure esegui <code>cli.py</code> dal checkout</li>
+      <li>Scegli le pagine con <code>--pages</code> e il contenuto con <code>--content</code></li>
+      <li>Imposta formato e impacchettamento con <code>--format</code> e <code>--range-mode</code></li>
+      <li>Aggiungi <code>--src</code>/<code>--dst</code> e il motore se vuoi tradurre durante l'export</li>
+      <li>Per i PDF scansionati attiva <code>--ocr-lang</code> (serve Tesseract)</li>
+      <li>Usa <code>-gui</code> per il wizard TUI, oppure <code>--json</code> per un riepilogo da script</li>
+    </ol>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Requisiti: Python 3.10+
+git clone https://github.com/vigliafg/noesis-pdf-reader-lite-engine.git
+cd noesis-pdf-reader-lite-engine
+
+python3 -m venv .venv
+. .venv/bin/activate
+pip install .
+
+# Estrazione di un capitolo
+noesis-pdf-reader-lite-engine manuale.pdf --pages 12-45 --content original -o cap3.md
+
+# Originale e traduzione nello stesso file
+noesis-pdf-reader-lite-engine articolo.pdf --content both --dst de -o articolo_de.md
+
+# Un file per pagina
+noesis-pdf-reader-lite-engine tesi.pdf --format folder --out pagine/
+
+# Wizard TUI (richiede Textual)
+pip install &quot;.[tui]&quot;
+noesis-pdf-reader-lite-engine -gui</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot amber"></span> <strong>Archivi digitali</strong> — Convertire intere raccolte in Markdown con una struttura prevedibile</li>
+      <li><span class="dot accent"></span> <strong>Pipeline LLM</strong> — Preparare testo pulito e figure referenziate per il retrieval</li>
+      <li><span class="dot green"></span> <strong>Batch di traduzione</strong> — Tradurre capitoli o documenti e produrre file separati per pagina</li>
+      <li><span class="dot rose"></span> <strong>Server e CI</strong> — Eseguire l'estrazione senza GUI, con exit code e riepilogo JSON</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/noesis-pdf-reader-lite-engine" style="color:var(--accent-2);">GitHub</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dati, finanza &amp; statistica — VibeWhisper</title>
+  <meta name="description" content="Forex, modelli previsionali e statistica inferenziale in laboratori locali e trasparenti.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-sezione-dati-mobile.svg">
+      <img src="banner-sezione-dati.svg" alt="Dati, finanza &amp; statistica Banner" class="project-hero-banner">
+    </picture>
+    <a href="index.html#sezioni" class="back-link">← Tutte le sezioni</a>
+    <div class="icon-lg green">📊</div>
+    <h1>Dati, finanza &amp; statistica</h1>
+    <p class="subtitle">
+      Forex, modelli previsionali e statistica inferenziale in laboratori locali e trasparenti. Strumenti per leggere il mercato e i dati senza abbonamenti.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Forex</span>
+      <span class="tech-tag">SMC</span>
+      <span class="tech-tag">Statistica</span>
+      <span class="tech-tag">Backtest</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="#progetti" class="link-btn">📂 Vedi i progetti</a>
+    </div>
+  </div>
+
+  <div class="eco-wrap">
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">4</div><div class="lbl">Progetti</div></div>
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Coppie FX</div></div>
+      <div class="stat-card"><div class="num">9</div><div class="lbl">Modelli previsionali</div></div>
+      <div class="stat-card"><div class="num">400+</div><div class="lbl">Controlli automatici</div></div>
+    </div>
+
+    <section class="eco-section" id="progetti">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Sezione 04 · Dati</span>
+        <h2>Leggere il mercato e i numeri</h2>
+        <p>Quattro laboratori che condividono lo stesso approccio: mostrare i calcoli, dichiarare i limiti e lasciare all'utente la lettura finale. Due sono focalizzati sul forex, uno aggiunge l'AI, uno è statistica generale.</p>
+      </div>
+
+      <div class="project-grid eco-grid">
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon green">📊</div>
+              <div>
+                <h3>ForexFlow AI</h3>
+                <span class="eco-badge">Web · React</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">AI</span>
+            </div>
+            <p class="desc">
+              Analisi EUR/USD con 9 modelli previsionali, 10 indicatori tecnici e insight AI via OpenRouter e NVIDIA NIM. Ensemble consensus e 5 timeframe.
+            </p>
+            <div class="eco-links">
+              <a href="forexflow.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/forexflow" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon green">📈</div>
+              <div>
+                <h3>ForexVision</h3>
+                <span class="eco-badge">Web · vanilla</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Vanilla JS</span><span class="tag">Canvas</span><span class="tag">Yahoo Finance</span>
+            </div>
+            <p class="desc">
+              Analisi tecnica, Smart Money Concepts e sentiment in un unico verdetto. Sei tab, 14 strumenti, backtest walk-forward e modalità simulata.
+            </p>
+            <div class="eco-links">
+              <a href="forexvision.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/forexvision" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon amber">📈</div>
+              <div>
+                <h3>ForexSMC</h3>
+                <span class="eco-badge">Web · SMC/ICT</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">HTML</span><span class="tag">Vanilla JS</span><span class="tag">Python</span>
+            </div>
+            <p class="desc">
+              Analizzatore SMC/ICT per EUR/USD, GBP/USD e USD/JPY: order block, FVG, liquidità, inducement e previsioni su 1H/4H/1D/1W.
+            </p>
+            <div class="eco-links">
+              <a href="forexsmc.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/forexsmc" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon purple">📊</div>
+              <div>
+                <h3>LazStats JS</h3>
+                <span class="eco-badge">Web · statistica</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Victory</span>
+            </div>
+            <p class="desc">
+              Statistica inferenziale nel browser: sei famiglie di test, spreadsheet editor, grafici, Q-Q plot e diagnostica dei residui. 100% client-side.
+            </p>
+            <div class="eco-links">
+              <a href="lazstatjs.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/lazstatjs" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Come sono collegati</span>
+        <h2>Fili comuni</h2>
+        <p>La finanza è coperta da tre angoli diversi; LazStats chiude il cerchio con la statistica inferenziale.</p>
+      </div>
+
+      <ul class="feature-list">
+        <li><span class="dot amber"></span> <strong>ForexSMC</strong> — L'analizzatore focalizzato su SMC/ICT: struttura, liquidità, order block, FVG e bias.</li>
+        <li><span class="dot green"></span> <strong>ForexVision</strong> — Aggiunge sentiment, confluenza e un verdetto unico tra tecnica, SMC e notizie.</li>
+        <li><span class="dot cyan"></span> <strong>ForexFlow AI</strong> — Aggiunge nove modelli previsionali e insight AI su EUR/USD.</li>
+        <li><span class="dot purple"></span> <strong>LazStats JS</strong> — Il laboratorio statistico generale: test parametrici, non parametrici e diagnostica.</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="index.html#sezioni" style="color:var(--accent-2);">Tutte le sezioni</a> · 2026</p>
+</footer>
+
+</body>
+</html>

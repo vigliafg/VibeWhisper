@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noesis PDF Reader Lite — VibeWhisper</title>
+  <meta name="description" content="Versione essenziale di Noesis PDF Reader: pagina a sinistra, Markdown a destra, con engine adattativo dei fix di layout sempre attivo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-noesis-pdf-reader-lite-mobile.svg">
+      <img src="banner-noesis-pdf-reader-lite.svg" alt="Noesis PDF Reader Lite Banner" class="project-hero-banner">
+    </picture>
+    <a href="noesis.html" class="back-link">← Ecosistema Noesis</a>
+    <div class="icon-lg amber">🔎</div>
+    <h1>Noesis PDF Reader Lite</h1>
+    <p class="subtitle">
+      Versione essenziale di Noesis PDF Reader: pagina a sinistra, testo estratto in Markdown a destra, con l'engine adattativo dei fix di layout sempre attivo.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">PyQt6</span>
+      <span class="tech-tag">PyMuPDF</span>
+      <span class="tech-tag">PyMuPDF4LLM</span>
+      <span class="tech-tag">Markdown</span>
+      <span class="tech-tag">OCR</span>
+      <span class="tech-tag">pandoc</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/noesis-pdf-reader-lite" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>Noesis PDF Reader Lite</strong> è la versione semplificata di Noesis PDF Reader: un solo motore di rendering (PyMuPDF), un solo motore di estrazione (PyMuPDF4LLM) e l'engine adattativo dei fix di layout sempre attivo. Apri un PDF e vedi a sinistra la pagina renderizzata, a destra il testo estratto in Markdown. L'engine sceglie da solo il piano di correzioni per ogni pagina: riordino colonne, tabelle, figure, header/footer, titoli e spaziature. Puoi anche disegnare zone di esclusione o inclusione per guidare l'estrazione, catturare oggetti e tradurre il testo.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      È pensata per <strong>ricercatori, studenti e professionisti</strong> che devono trasformare PDF complessi in testo pulito da riusare: paper a due o tre colonne, manuali con tabelle e figure, dispense, report. È utile a chi prepara materiale per un LLM, per un archivio ricercabile o per un'edizione EPUB, e a chi vuole tradurre pagina per pagina mantenendo il riferimento visivo all'originale.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      Per ogni pagina l'engine analizza il layout e sceglie un profilo, poi applica una pipeline di fix raggruppata in pack: pulizia Markdown, tabelle, figure, leggibilità, layout difficili e casi limite. I fix sono configurabili da <code>fix_rules.json</code> e ogni passaggio è reversibile. Le correzioni a livello documento deduplicano header e footer per frequenza e allineano la gerarchia dei titoli all'indice. Se una pagina è problematica, il motore ricade sulla pipeline classica solo per quella pagina, senza peggiorare il risultato. La tab Oggetti raccoglie immagini, tabelle e testi catturati, esportabili singolarmente o in blocco.
+    </p>
+    </div>
+
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">6</div><div class="lbl">Pack di fix di layout</div></div>
+      <div class="stat-card"><div class="num">8</div><div class="lbl">Formati in export</div></div>
+      <div class="stat-card"><div class="num">4</div><div class="lbl">Modalità di impacchettamento</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Elaborazione locale</div></div>
+    </div>
+
+    <h2>🎯 Perché Noesis PDF Reader Lite</h2>
+    <p>
+      Perché estrarre testo da un PDF non significa buttare fuori le righe nell'ordine in cui compaiono nel file. Noesis PDF Reader Lite ricostruisce l'ordine di lettura e ti mostra il risultato accanto alla pagina, così puoi verificare subito se il Markdown è davvero utilizzabile.
+    </p>
+
+    <h2>✨ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot amber"></span> <strong>Vista affiancata</strong> — Pagina originale a sinistra, Markdown a destra, sempre confrontabili</li>
+      <li><span class="dot accent"></span> <strong>Engine adattativo</strong> — Profilo, piano e pipeline scelti automaticamente per ogni pagina</li>
+      <li><span class="dot green"></span> <strong>Tabelle ricostruite</strong> — Griglia da <code>find_tables</code>, didascalie su riga propria, celle vuote e colonne fantasma rimosse</li>
+      <li><span class="dot rose"></span> <strong>Figure e didascalie</strong> — Quando c'è una didascalia <code>FIG n</code>, la figura diventa corpo unico più didascalia e entra nella gallery</li>
+      <li><span class="dot purple"></span> <strong>Header e footer</strong> — Riconosciuti per frequenza tra le pagine e rimossi anche quando il Markdown li traveste da titolo</li>
+      <li><span class="dot cyan"></span> <strong>Zone manuali</strong> — Escludi header, footer o immagini; includi regioni numerate per definire l'ordine di lettura</li>
+      <li><span class="dot green"></span> <strong>Tab Oggetti</strong> — Immagini, tabelle e testi catturati con filtri, conteggio ed export in blocco</li>
+      <li><span class="dot accent"></span> <strong>Traduzione</strong> — Motori Google o Microsoft, con cache su disco per pagina e lingua</li>
+      <li><span class="dot amber"></span> <strong>Export batch</strong> — Wizard in 5 passi: pagine, contenuto, lingue, formato (MD/HTML/testo/EPUB/e altro) e impacchettamento</li>
+    </ul>
+
+    <h2>🏗️ Come Funziona</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>Apri un PDF: l'engine analizza la pagina e mostra il Markdown a destra</li>
+      <li>Controlla il risultato e, se serve, disegna zone rosse (escludi) o verdi (includi e ordina)</li>
+      <li>Usa la tab Oggetti per catturare immagini, tabelle e testi</li>
+      <li>Traduci la pagina o attiva il rendering Markdown con il pulsante 📝 MD</li>
+      <li>Apri 💾 Esporta e scegli pagine, contenuto, formato e impacchettamento</li>
+      <li>A fine export trovi i file nella cartella scelta, con suffisso <code>-translated</code> per le versioni tradotte</li>
+    </ol>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Requisiti: Python 3.10+
+git clone https://github.com/vigliafg/noesis-pdf-reader-lite.git
+cd noesis-pdf-reader-lite
+
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python main.py       # oppure: ./run.sh
+
+# I formati Word/ODT/RTF/LaTeX usano pandoc:
+# se manca, l&#x27;app propone di scaricarlo al primo export</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot amber"></span> <strong>Paper scientifici</strong> — Estrarre testo e tabelle da PDF a due o tre colonne senza perdere l'ordine</li>
+      <li><span class="dot accent"></span> <strong>Archivio ricercabile</strong> — Convertire una cartella di documenti in Markdown indicizzabile</li>
+      <li><span class="dot green"></span> <strong>Preparazione per LLM</strong> — Ottenere testo pulito e figure referenziate da dare in pasto a un modello</li>
+      <li><span class="dot rose"></span> <strong>Studio e traduzione</strong> — Leggere l'originale e la traduzione pagina per pagina, con cache</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/noesis-pdf-reader-lite" style="color:var(--accent-2);">GitHub</a></p>
+</footer>
+
+</body>
+</html>

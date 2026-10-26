@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noesis Roads — VibeWhisper</title>
+  <meta name="description" content="Viewer didattico per esplorare opere d&#x27;arte dettaglio per dettaglio, con schede generate e pubblicate da noesis-roads-creator.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-noesis-roads-mobile.svg">
+      <img src="banner-noesis-roads.svg" alt="Noesis Roads Banner" class="project-hero-banner">
+    </picture>
+    <a href="noesis.html" class="back-link">← Ecosistema Noesis</a>
+    <div class="icon-lg rose">🎨</div>
+    <h1>Noesis Roads</h1>
+    <p class="subtitle">
+      Viewer didattico per esplorare opere d'arte dettaglio per dettaglio, con schede generate e pubblicate da noesis-roads-creator.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">React</span>
+      <span class="tech-tag">Node.js</span>
+      <span class="tech-tag">SQLite</span>
+      <span class="tech-tag">OpenRouter</span>
+      <span class="tech-tag">AI</span>
+      <span class="tech-tag">Zero dipendenze</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/noesis-roads" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>Noesis Roads</strong> è un viewer didattico per esplorare opere d'arte dettaglio per dettaglio. La collezione e i contenuti — presentazione, sezioni per ogni dettaglio su due livelli, opere simili, immagini — arrivano dalle schede pubblicate con <strong>noesis-roads-creator</strong>. Il viewer legge il database SQLite in sola lettura e presenta testi già verificati, senza generazione al volo. Accanto alle schede d'arte supporta schede generiche per altre materie, con un renderer unico e modelli dichiarativi.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      È pensata per <strong>insegnanti di storia dell'arte, musei, studenti e divulgatori</strong> che vogliono raccontare un'opera per dettagli invece di mostrare una singola immagine. È utile anche a chi costruisce materiale didattico multidisciplinare: la stessa pipeline può pubblicare schede di filosofia o di altre materie senza scrivere codice nuovo.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      Il launcher avvia due programmi indipendenti e un hub: il <strong>viewer</strong> su :18000 legge le schede <code>ready</code> dal DB del creator; il <strong>creator</strong> su :18100 gestisce la pipeline AI di generazione e pubblicazione. Il server del viewer espone <code>/api/library</code>, <code>/api/artworks/:id</code>, <code>/api/subjects/:id</code>, <code>/api/comparisons/:id</code> e le API delle schede generiche, leggendo SQLite in sola lettura. Alla pubblicazione il creator genera miniature composite con Pillow; il viewer non scrive mai nel database.
+    </p>
+    </div>
+
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Tipi di scheda d'arte</div></div>
+      <div class="stat-card"><div class="num">10</div><div class="lbl">Opere simili per scheda</div></div>
+      <div class="stat-card"><div class="num">40</div><div class="lbl">Test automatici</div></div>
+      <div class="stat-card"><div class="num">0</div><div class="lbl">Dipendenze npm</div></div>
+    </div>
+
+    <h2>🎯 Perché Noesis Roads</h2>
+    <p>
+      Perché un'opera si capisce guardando i particolari, non solo l'insieme. Noesis Roads organizza il racconto in dettagli, confronti e contesto storico, e separa la generazione dei contenuti (creator) dalla lettura (viewer): quello che vedi è stato verificato prima di essere pubblicato.
+    </p>
+
+    <h2>✨ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot rose"></span> <strong>Lettura per dettagli</strong> — Immagine annotata, chip dei dettagli e due tab: Studio del dettaglio e Approfondimento</li>
+      <li><span class="dot accent"></span> <strong>Opere simili</strong> — Carosello con le opere che condividono lo stesso soggetto, lette dal DB</li>
+      <li><span class="dot green"></span> <strong>Soggetto nella storia</strong> — Timeline per epoche, origini iconografiche, opere rappresentative e simboli ricorrenti</li>
+      <li><span class="dot amber"></span> <strong>Faccia a faccia</strong> — Confronto critico tra due opere, con punti in comune, differenze, tecnica e contesto</li>
+      <li><span class="dot cyan"></span> <strong>Schede generiche</strong> — Nucleo per qualsiasi materia: materie, modelli, sezioni e immagini senza codice ad hoc</li>
+      <li><span class="dot purple"></span> <strong>Creator con pipeline AI</strong> — Riconoscimento, dettagli, tab, presentazione e simili, con editor e approvazione</li>
+      <li><span class="dot green"></span> <strong>Sola lettura</strong> — Il viewer apre connessioni SQLite read-only e non scrive mai nel database</li>
+      <li><span class="dot accent"></span> <strong>Hub e installer</strong> — Un launcher con due bottoni e stato dei server, più <code>install.mjs</code> multipiattaforma</li>
+      <li><span class="dot amber"></span> <strong>Export</strong> — Miniature composite e PDF generati dalla pipeline di pubblicazione</li>
+    </ul>
+
+    <h2>🏗️ Come Funziona</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>Clona il repository e lancia <code>node install.mjs</code> per verificare Node, Python e dipendenze</li>
+      <li>Avvia <code>node launcher.mjs</code>: l'hub si apre su http://127.0.0.1:18080</li>
+      <li>Da «Vedi le schede» apri il viewer su :18000; da «Crea le schede» apri il creator su :18100</li>
+      <li>Nel creator carica un'immagine e segui la pipeline: riconoscimento, dettagli, presentazione, simili</li>
+      <li>Approva la scheda: solo gli elementi <code>ready</code> compaiono nel viewer</li>
+      <li>Il viewer legge il DB in sola lettura: puoi esplorarlo senza rischiare di modificarlo</li>
+    </ol>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Requisiti: Node.js &gt;= 22.5 (usa node:sqlite)
+# Opzionale: Python 3 + Pillow e reportlab per gli export
+git clone https://github.com/vigliafg/noesis-roads.git
+cd noesis-roads
+
+# Installer multipiattaforma (consigliato)
+node install.mjs
+
+# Avvio di hub + viewer + creator
+node launcher.mjs
+# Hub:     http://127.0.0.1:18080
+# Viewer:  http://127.0.0.1:18000
+# Creator: http://127.0.0.1:18100
+
+# Avvio separato
+node server.mjs
+node noesis-roads-creator/server.mjs</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot rose"></span> <strong>Didattica dell'arte</strong> — Raccontare un'opera per dettagli, con approfondimenti e fonti</li>
+      <li><span class="dot accent"></span> <strong>Musei e mostre</strong> — Preparare schede leggibili e coerenti per una collezione</li>
+      <li><span class="dot green"></span> <strong>Confronti</strong> — Mettere due opere faccia a faccia e evidenziare differenze e continuità</li>
+      <li><span class="dot amber"></span> <strong>Altre materie</strong> — Usare il nucleo generico per schede di filosofia o di altre discipline</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/noesis-roads" style="color:var(--accent-2);">GitHub</a></p>
+</footer>
+
+</body>
+</html>

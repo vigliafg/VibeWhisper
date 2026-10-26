@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mermaid Creator — VibeWhisper</title>
+  <meta name="description" content="Desktop app Tauri per creare diagrammi Mermaid con l&#x27;AI, organizzarli in un workspace affiancato e conservarne le versioni.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-mermaid-creator-mobile.svg">
+      <img src="banner-mermaid-creator.svg" alt="Mermaid Creator Banner" class="project-hero-banner">
+    </picture>
+    <a href="diagrammi-ai.html" class="back-link">← Diagrammi &amp; AI</a>
+    <div class="icon-lg cyan">🧜</div>
+    <h1>Mermaid Creator</h1>
+    <p class="subtitle">
+      Desktop app per creare diagrammi Mermaid con l'AI, organizzarli in un workspace affiancato alla chat e conservarne le versioni. Chat, editor e libreria in un'unica finestra, con i dati salvati in locale.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Tauri 2</span>
+      <span class="tech-tag">React 19</span>
+      <span class="tech-tag">Rust</span>
+      <span class="tech-tag">OpenRouter</span>
+      <span class="tech-tag">SQLite</span>
+      <span class="tech-tag">Mermaid 12</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/mermaid-creator" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>Mermaid Creator</strong> è un'app desktop che unisce una chat AI con streaming e un editor visuale per diagrammi Mermaid. Descrivi il diagramma che ti serve, l'AI lo genera, l'app estrae automaticamente il blocco Mermaid dalla risposta e lo apre nel workspace affiancato: da lì puoi cambiarne tema, forma, etichette e struttura, confrontare le versioni e salvarlo nella libreria. È costruita con Tauri 2 (backend Rust) e React 19, e tiene conversazioni, diagrammi, versioni e allegati in un database SQLite locale.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      È pensata per <strong>sviluppatori, architetti software, docenti, studenti e product manager</strong> che disegnano flussi, architetture, schemi ER o timeline e vogliono partire da un prompt invece che da un canvas vuoto. Fa per te se ti serve un diagramma editabile — non un'immagine generata — e se vuoi conservare la cronologia delle versioni senza caricare nulla su un servizio cloud.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      La chat chiama OpenRouter in streaming e salva la conversazione in SQLite. Quando la risposta contiene un blocco <code>mermaid</code>, l'app lo estrae e lo renderizza con <strong>Pele</strong>, con fallback su <strong>Mermaid.js</strong>; il sorgente resta modificabile e l'anteprima si aggiorna in tempo reale. Il workspace supporta selezione, pan, zoom alla rotella, fit, 13 temi e preset, stile per elemento e modifica di label e struttura dei flowchart. Ogni salvataggio crea una versione ripristinabile nella libreria locale. La API key di OpenRouter è validata e conservata nel keyring di sistema.
+    </p>
+    </div>
+
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">13</div><div class="lbl">Temi per diagrammi</div></div>
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Renderer: Pele + Mermaid.js</div></div>
+      <div class="stat-card"><div class="num">1</div><div class="lbl">Database SQLite locale</div></div>
+      <div class="stat-card"><div class="num">0</div><div class="lbl">Telemetria</div></div>
+    </div>
+
+    <h2>🎯 Perché Mermaid Creator</h2>
+    <p>
+      Perché passare da un prompt a un diagramma modificabile dovrebbe essere un unico gesto. Mermaid Creator tiene insieme il momento creativo (la chat), il momento di rifinitura (il workspace) e la memoria del lavoro (versioni e libreria), senza obbligarti a copiare e incollare codice tra tre applicazioni diverse.
+    </p>
+
+    <h2>✨ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot cyan"></span> <strong>Chat con streaming</strong> — Conversazione con il modello via OpenRouter, con estrazione automatica dei blocchi Mermaid dalle risposte</li>
+      <li><span class="dot accent"></span> <strong>Catalogo modelli</strong> — Ricerca nel catalogo OpenRouter, filtri vision/gratis e preferiti salvati in locale</li>
+      <li><span class="dot green"></span> <strong>Allegati</strong> — Testo, PDF testuali, DOCX, immagini, clipboard e drag&amp;drop direttamente nella chat</li>
+      <li><span class="dot amber"></span> <strong>Workspace espandibile</strong> — Editor a tutta finestra, con selezione, pan, zoom alla rotella, fit e fascia controlli richiudibile</li>
+      <li><span class="dot purple"></span> <strong>13 temi e preset</strong> — Neon, Blueprint, Terminal, Mono e altri, con comandi AI per preset e palette</li>
+      <li><span class="dot rose"></span> <strong>Editing visuale</strong> — Stile per elemento, modifica di label e struttura flowchart, punte delle connessioni e direzione del layout</li>
+      <li><span class="dot green"></span> <strong>Versioni e ripristino</strong> — Ogni salvataggio conserva una versione del diagramma, ripristinabile dalla cronologia</li>
+      <li><span class="dot accent"></span> <strong>Libreria</strong> — Ricerca, preferiti ed export in SVG, PNG e sorgente .mmd</li>
+      <li><span class="dot amber"></span> <strong>Privacy by design</strong> — API key nel keyring di sistema, dati in SQLite locale, nessuna telemetria</li>
+    </ul>
+
+    <h2>🏗️ Come Funziona</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>Apri l'app e scegli un modello dal catalogo OpenRouter (la chiave viene salvata nel keyring di sistema)</li>
+      <li>Descrivi il diagramma nella chat; puoi allegare un PDF, un DOCX o un'immagine come contesto</li>
+      <li>L'app estrae il blocco Mermaid dalla risposta e lo apre nel workspace affiancato</li>
+      <li>Rifinisci tema, struttura, etichette e direzione del layout con l'anteprima live</li>
+      <li>Salva: il diagramma entra nella libreria e la versione precedente resta ripristinabile</li>
+      <li>Esporta in SVG, PNG o .mmd per condividerlo o versionarlo nel tuo repository</li>
+    </ol>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Requisiti: Node.js 24+, Rust stable, WebKitGTK 4.1 (Linux)
+git clone https://github.com/vigliafg/mermaid-creator.git
+cd mermaid-creator
+
+# Avvio con lo script dedicato
+./scripts/run.sh
+
+# Oppure manualmente
+source scripts/env.sh
+npm install
+npm run tauri:dev</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot cyan"></span> <strong>Architetture software</strong> — Flowchart, diagrammi di classi, stati ed ER partendo da una descrizione</li>
+      <li><span class="dot accent"></span> <strong>Processi e flussi</strong> — Mappare un workflow aziendale o una pipeline e rifinirlo a mano</li>
+      <li><span class="dot green"></span> <strong>Didattica</strong> — Spiegare un concetto con un diagramma pulito, esportabile in SVG</li>
+      <li><span class="dot amber"></span> <strong>Documentazione</strong> — Tenere versioni diverse dello stesso schema e ripristinare quella giusta</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/mermaid-creator" style="color:var(--accent-2);">GitHub</a></p>
+</footer>
+
+</body>
+</html>

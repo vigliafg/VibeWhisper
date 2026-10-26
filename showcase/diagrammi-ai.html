@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagrammi &amp; AI — VibeWhisper</title>
+  <meta name="description" content="Mermaid, Excalidraw e AI: generare diagrammi, rifinirli e convertirli in elementi editabili.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-sezione-diagrammi-mobile.svg">
+      <img src="banner-sezione-diagrammi.svg" alt="Diagrammi &amp; AI Banner" class="project-hero-banner">
+    </picture>
+    <a href="index.html#sezioni" class="back-link">← Tutte le sezioni</a>
+    <div class="icon-lg cyan">🧩</div>
+    <h1>Diagrammi &amp; AI</h1>
+    <p class="subtitle">
+      Mermaid, Excalidraw e AI: generare diagrammi, rifinirli in un workspace e convertirli in elementi editabili su un canvas.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Mermaid</span>
+      <span class="tech-tag">Excalidraw</span>
+      <span class="tech-tag">AI</span>
+      <span class="tech-tag">Export</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="#progetti" class="link-btn">📂 Vedi i progetti</a>
+    </div>
+  </div>
+
+  <div class="eco-wrap">
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Progetti</div></div>
+      <div class="stat-card"><div class="num">22</div><div class="lbl">Tipi Mermaid</div></div>
+      <div class="stat-card"><div class="num">13</div><div class="lbl">Temi</div></div>
+      <div class="stat-card"><div class="num">0</div><div class="lbl">Cloud</div></div>
+    </div>
+
+    <section class="eco-section" id="progetti">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Sezione 05 · Diagrammi</span>
+        <h2>Dall'idea al diagramma editabile</h2>
+        <p>Due progetti complementari: Mermaid Creator è il workspace desktop dove il diagramma nasce e viene rifinito; mermaid-to-excalidraw è la libreria che lo trasforma in forme modificabili.</p>
+      </div>
+
+      <div class="project-grid eco-grid">
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon cyan">🧜</div>
+              <div>
+                <h3>Mermaid Creator</h3>
+                <span class="eco-badge">Desktop · Tauri</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Tauri 2</span><span class="tag">React 19</span><span class="tag">Rust</span>
+            </div>
+            <p class="desc">
+              Crea diagrammi Mermaid con l'AI, rifiniscili in un workspace affiancato e conserva le versioni in SQLite. Libreria, preferiti ed export.
+            </p>
+            <div class="eco-links">
+              <a href="mermaid-creator.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/mermaid-creator" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon green">🧩</div>
+              <div>
+                <h3>mermaid-to-excalidraw</h3>
+                <span class="eco-badge">Library · TypeScript</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">TypeScript</span><span class="tag">Mermaid 12</span><span class="tag">Excalidraw</span>
+            </div>
+            <p class="desc">
+              Fork che converte 22 tipi di diagramma Mermaid in elementi Excalidraw editabili, con adapter semantici, fallback e 146 snapshot visuali.
+            </p>
+            <div class="eco-links">
+              <a href="mermaid-to-excalidraw.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/mermaid-to-excalidraw" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Come sono collegati</span>
+        <h2>Fili comuni</h2>
+        <p>Uno genera e organizza, l'altro converte. Insieme coprono il ciclo dal prompt all'export.</p>
+      </div>
+
+      <ul class="feature-list">
+        <li><span class="dot cyan"></span> <strong>Mermaid Creator</strong> — Chat AI, workspace, temi, versioni e libreria. Esporta SVG, PNG e .mmd.</li>
+        <li><span class="dot green"></span> <strong>mermaid-to-excalidraw</strong> — Fork con 22 casi convertiti nativamente in elementi Excalidraw editabili.</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="index.html#sezioni" style="color:var(--accent-2);">Tutte le sezioni</a> · 2026</p>
+</footer>
+
+</body>
+</html>

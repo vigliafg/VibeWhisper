@@ -17,20 +17,22 @@
     <a href="index.html" class="nav-logo">VibeWhisper</a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#projects" class="active">Progetti</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
     </ul>
     <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
   </div>
   <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
     <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
-    <a href="index.html#projects" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Progetti</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
   </div>
 </nav>
 
 <main>
   <div class="project-hero">
     <img src="Gemini_Generated_Image_t46n2it46n2it46n.png" alt="pdfshow Banner" class="project-hero-banner">
-    <a href="index.html" class="back-link">← Torna ai progetti</a>
+    <a href="documenti.html" class="back-link">← Documenti &amp; PDF</a>
     <div class="icon-lg rose">🖼️</div>
     <h1>pdfshow</h1>
     <p class="subtitle">
@@ -68,7 +70,7 @@
     <div class="section-card section-comefunziona">
     <h2>⚙️ Come funziona</h2>
     <p>
-      All'avvio (<code>streamlit run show.py</code>), pdfshow scansiona la directory corrente con <code>os.listdir()</code> filtrando i file con estensione .pdf. Per ogni PDF trovato, la funzione <code>get_thumbnail()</code> (decorata con <code>@st.cache_data</code>) apre il file con PyMuPDF, estrae la prima pagina (<code>doc[0]</code>), la renderizza come immagine pixmap e la converte in un oggetto PIL Image. L'immagine viene ridimensionata a 200×280 pixel con <code>Image.LANCZOS</code>, producendo anteprime uniformi indipendentemente dal formato originale (A4, Letter, orizzontale). Le anteprime vengono disposte in una griglia reattiva con <code>st.columns(n)</code>. Sotto ogni anteprima, un pulsante richiama <code>os.startfile()</code> (Windows) o <code>subprocess.run(['open',
+      All'avvio (<code>streamlit run show.py</code>), pdfshow scansiona la directory corrente con <code>os.listdir()</code> filtrando i file con estensione .pdf. Per ogni PDF trovato, la funzione <code>get_thumbnail()</code> (decorata con <code>@st.cache_data</code>) apre il file con PyMuPDF, estrae la prima pagina (<code>doc[0]</code>), la renderizza come immagine pixmap e la converte in un oggetto PIL Image. L'immagine viene ridimensionata a 200×280 pixel con <code>Image.LANCZOS</code>, producendo anteprime uniformi indipendentemente dal formato originale (A4, Letter, orizzontale). Le anteprime vengono disposte in una griglia reattiva con <code>st.columns(n)</code>. Sotto ogni anteprima, un pulsante richiama <code>os.startfile()</code> (Windows), <code>open</code> (macOS) o <code>xdg-open</code> (Linux) per aprire il PDF nel visualizzatore predefinito.
     </p>
     </div>
 

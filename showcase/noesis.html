@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecosistema Noesis — VibeWhisper</title>
+  <meta name="description" content="Mappa dei 14 progetti Noesis, classificati per tipo di lavoro: leggere, tradurre, estrarre dai PDF, post-produzione EPUB, disegno, didattica e pubblicazione.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni">Sezioni</a></li>
+      <li><a href="noesis.html" class="active">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-noesis-mobile.svg">
+      <img src="banner-noesis.svg" alt="Ecosistema Noesis Banner" class="project-hero-banner">
+    </picture>
+    <a href="index.html#sezioni" class="back-link">← Tutte le sezioni</a>
+    <div class="icon-lg purple">🧭</div>
+    <h1>Ecosistema Noesis</h1>
+    <p class="subtitle">
+      Quattordici progetti, un solo filo: leggere, capire, tradurre e presentare la conoscenza. Questa mappa li ordina per tipo di lavoro, dal reader che apre un EPUB al servizio che traduce un PDF senza toccarne il layout.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">EPUB</span>
+      <span class="tech-tag">PDF</span>
+      <span class="tech-tag">PyQt6</span>
+      <span class="tech-tag">CLI</span>
+      <span class="tech-tag">Web</span>
+      <span class="tech-tag">AI</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="#mappa" class="link-btn">🗺️ Vai alla mappa</a>
+      <a href="https://github.com/vigliafg" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="eco-wrap">
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">14</div><div class="lbl">Progetti Noesis</div></div>
+      <div class="stat-card"><div class="num">6</div><div class="lbl">Famiglie di lavoro</div></div>
+      <div class="stat-card"><div class="num">4</div><div class="lbl">App desktop</div></div>
+      <div class="stat-card"><div class="num">7</div><div class="lbl">App web</div></div>
+    </div>
+
+    <div class="eco-jump" role="navigation" aria-label="Categorie">
+      <a href="#leggere">📚 Leggere</a>
+      <a href="#tradurre-libri">🌍 Tradurre libri</a>
+      <a href="#leggere-pdf">📄 Lavorare sui PDF</a>
+      <a href="#tradurre-pdf">🪞 Tradurre PDF</a>
+      <a href="#strumenti">🧰 Strumenti</a>
+      <a href="#divulgare">🎨 Divulgare</a>
+    </div>
+
+    <section id="mappa" class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">La mappa</span>
+        <h2>Sei modi di lavorare, un ecosistema</h2>
+        <p>Ogni progetto nasce da un gesto preciso: aprire un libro, estrarre una pagina, tradurre un documento, comprimere un EPUB, disegnare un concetto o raccontare un'opera. Qui sotto trovi la classificazione completa; più in basso le schede, con i link alle pagine di dettaglio e ai repository.</p>
+      </div>
+
+      <div class="eco-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo di lavoro</th>
+              <th>Progetti</th>
+              <th>Superficie</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Leggere e studiare</strong></td>
+              <td><a href="#leggere">Noesis Reader</a> · <a href="#leggere">Noesis Multi</a> · <a href="#leggere">Noesis</a></td>
+              <td>Web</td>
+            </tr>
+            <tr>
+              <td><strong>Tradurre libri</strong></td>
+              <td><a href="#tradurre-libri">Noesis Ebook Translator</a> · <a href="#tradurre-libri">Noesis Ebook Translator Engine</a></td>
+              <td>Desktop + CLI/TUI</td>
+            </tr>
+            <tr>
+              <td><strong>Leggere ed estrarre PDF</strong></td>
+              <td><a href="#leggere-pdf">Noesis PDF Reader Lite</a> · <a href="#leggere-pdf">Noesis PDF Reader Lite Engine</a> · <a href="#leggere-pdf">Noesis PDF Reader</a></td>
+              <td>Desktop + CLI</td>
+            </tr>
+            <tr>
+              <td><strong>Tradurre PDF</strong></td>
+              <td><a href="#tradurre-pdf">Noesis PDF Cloner</a> · <a href="#tradurre-pdf">Noesis PDF Cloner Service</a></td>
+              <td>Desktop + Server</td>
+            </tr>
+            <tr>
+              <td><strong>Post-produzione e disegno</strong></td>
+              <td><a href="#strumenti">Noesis EPUB Tools</a> · <a href="#strumenti">Noesis Excalidraw</a></td>
+              <td>Web</td>
+            </tr>
+            <tr>
+              <td><strong>Didattica e comunicazione</strong></td>
+              <td><a href="#divulgare">Noesis Roads</a> · <a href="#divulgare">Noesis Reader Website</a></td>
+              <td>Web</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="leggere" class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">01 · Leggere</span>
+        <h2>Leggere e studiare</h2>
+        <p>Il cuore dell'ecosistema: ambienti di lettura EPUB che funzionano nel browser, senza server e senza account. Dal prototipo monolitico al reader completo con annotazioni, editor e traduzione.</p>
+      </div>
+
+      <div class="project-grid eco-grid">
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon purple">📚</div>
+              <div>
+                <h3>Noesis Reader</h3>
+                <span class="eco-badge">Web · single-file</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Vanilla JS</span>
+              <span class="tag">EPUB</span>
+              <span class="tag">Offline-first</span>
+            </div>
+            <p class="desc">
+              Libreria e reader EPUB in due file HTML: biblioteca, annotazioni, bookmark, estrazione capitoli, editor WYSIWYG e traduzione con il motore di Chrome. Zero server, zero account, 100% privacy.
+            </p>
+            <div class="eco-links">
+              <a href="noesis-reader.html" class="link-btn">Scheda →</a>
+              <a href="https://noesis-reader.vigliafg.workers.dev" class="link-btn" target="_blank" rel="noopener">Apri app</a>
+              <a href="https://github.com/vigliafg/noesis-reader" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon cyan">🌐</div>
+              <div>
+                <h3>Noesis Multi</h3>
+                <span class="eco-badge">Web · multilingua</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">Vanilla JS</span>
+              <span class="tag">i18n</span>
+            </div>
+            <p class="desc">
+              La versione multilingua del sistema Reading-to-Knowledge: un unico file HTML con reader EPUB, ambiente di studio integrato e documentazione completa di architettura e workflow.
+            </p>
+            <div class="eco-links">
+              <a href="https://github.com/vigliafg/noesis-multi" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon amber">📜</div>
+              <div>
+                <h3>Noesis</h3>
+                <span class="eco-badge">Prototipo · HTML</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Vanilla JS</span>
+            </div>
+            <p class="desc">
+              Il prototipo originale da cui è partito tutto: lettore e ambiente di studio in pagine HTML monolitiche, con la documentazione di architettura, i pattern di estensione e le guide CSS.
+            </p>
+            <div class="eco-links">
+              <a href="https://github.com/vigliafg/noesis" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="tradurre-libri" class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">02 · Tradurre libri</span>
+        <h2>Tradurre libri EPUB</h2>
+        <p>Lo stesso motore di traduzione, preso verbatim dal plugin Calibre Ebook Translator, in due confezioni: l'app desktop per chi vuole leggere e rivedere, e l'engine per chi vuole automatizzare.</p>
+      </div>
+
+      <div class="project-grid eco-grid">
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon purple">📚</div>
+              <div>
+                <h3>Noesis Ebook Translator</h3>
+                <span class="eco-badge">Desktop · PyQt6</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">PyQt6</span>
+              <span class="tag">LLM</span>
+              <span class="tag">SQLite</span>
+            </div>
+            <p class="desc">
+              Traduci un EPUB preservando formattazione, link, figure, tabelle e indice. Lettore integrato, stima di token e costi, cache, testo bilingue, valutazione qualità ed export per capitoli.
+            </p>
+            <div class="eco-links">
+              <a href="noesis-ebook-translator.html" class="link-btn">Scheda →</a>
+              <a href="https://github.com/vigliafg/noesis-ebook-translator" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon blue">⌨️</div>
+              <div>
+                <h3>Noesis Ebook Translator Engine</h3>
+                <span class="eco-badge">CLI + TUI · headless</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">CLI</span>
+              <span class="tag">Textual</span>
+            </div>
+            <p class="desc">
+              Lo stesso motore in un solo file Python: un comando, scelta del motore e delle lingue, cache e batching online. TUI opzionale con <code>-gui</code>, nessuna dipendenza Qt.
+            </p>
+            <div class="eco-links">
+              <a href="noesis-ebook-translator-engine.html" class="link-btn">Scheda →</a>
+              <a href="https://github.com/vigliafg/noesis-ebook-translator-engine" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="leggere-pdf" class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">03 · Lavorare sui PDF</span>
+        <h2>Leggere ed estrarre dai PDF</h2>
+        <p>Dalla pagina renderizzata al Markdown: tre generazioni dello stesso motore di estrazione, con l'engine adattativo che ricostruisce colonne, tabelle, figure e header. La versione Lite è quella attuale; la Reader completa è la base da cui è nata.</p>
+      </div>
+
+      <div class="project-grid eco-grid">
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon amber">🔎</div>
+              <div>
+                <h3>Noesis PDF Reader Lite</h3>
+                <span class="eco-badge">Desktop · attuale</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">PyQt6</span>
+              <span class="tag">PyMuPDF4LLM</span>
+              <span class="tag">Markdown</span>
+            </div>
+            <p class="desc">
+              Un solo motore di rendering e uno di estrazione, con i fix di layout sempre attivi. Pagina a sinistra, Markdown a destra, zone manuali, traduzione ed export in otto formati.
+            </p>
+            <div class="eco-links">
+              <a href="noesis-pdf-reader-lite.html" class="link-btn">Scheda →</a>
+              <a href="https://github.com/vigliafg/noesis-pdf-reader-lite" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon amber">🧾</div>
+              <div>
+                <h3>Noesis PDF Reader Lite Engine</h3>
+                <span class="eco-badge">CLI + TUI · headless</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">CLI</span>
+              <span class="tag">OCR</span>
+            </div>
+            <p class="desc">
+              Estrazione e traduzione da riga di comando con gli stessi fix del desktop: selezione pagine, contenuto originale o tradotto, otto formati, quattro impacchettamenti e OCR opzionale.
+            </p>
+            <div class="eco-links">
+              <a href="noesis-pdf-reader-lite-engine.html" class="link-btn">Scheda →</a>
+              <a href="https://github.com/vigliafg/noesis-pdf-reader-lite-engine" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon blue">📄</div>
+              <div>
+                <h3>Noesis PDF Reader</h3>
+                <span class="eco-badge">Desktop · predecessore</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">PyQt6</span>
+              <span class="tag">Multi-engine</span>
+              <span class="tag">Markdown</span>
+            </div>
+            <p class="desc">
+              La versione completa da cui è nata la linea Lite: più motori di estrazione selezionabili a runtime, traduzione, gallery delle figure e un lungo lavoro di benchmark e fix di layout.
+            </p>
+            <div class="eco-links">
+              <a href="https://github.com/vigliafg/noesis-pdf-reader" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="tradurre-pdf" class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">04 · Tradurre PDF</span>
+        <h2>Tradurre senza perdere il layout</h2>
+        <p>Qui il PDF non viene estratto: viene clonato. La pagina tradotta mantiene testo, immagini, tabelle e numeri al loro posto, e può essere esportata in PDF, ZIP o cartella. La pipeline è la stessa, desktop o server.</p>
+      </div>
+
+      <div class="project-grid eco-grid">
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon blue">🌍</div>
+              <div>
+                <h3>Noesis PDF Cloner</h3>
+                <span class="eco-badge">Desktop · PyQt6</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">pdf2zh_next</span>
+              <span class="tag">BabelDOC</span>
+              <span class="tag">OpenRouter</span>
+            </div>
+            <p class="desc">
+              Originale e pagina tradotta affiancati, stesso layout. Tre motori (Google, Bing, LLM), cache per pagina e motore, export guidato in PDF, ZIP o cartella e azioni sulla singola pagina.
+            </p>
+            <div class="eco-links">
+              <a href="noesis-pdf-cloner.html" class="link-btn">Scheda →</a>
+              <a href="https://github.com/vigliafg/noesis-pdf-cloner" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon cyan">🐳</div>
+              <div>
+                <h3>Noesis PDF Cloner Service</h3>
+                <span class="eco-badge">Server + CLI · Docker</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">FastAPI</span>
+              <span class="tag">Docker</span>
+              <span class="tag">CLI</span>
+            </div>
+            <p class="desc">
+              La stessa pipeline come servizio: web UI e CLI headless, coda a priorità, cache condivisa, autosizing su CPU/RAM/disco e immagine Docker multi-arch pronta su GHCR.
+            </p>
+            <div class="eco-links">
+              <a href="noesis-pdf-cloner-service.html" class="link-btn">Scheda →</a>
+              <a href="https://github.com/vigliafg/noesis-pdf-cloner-service" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="strumenti" class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">05 · Strumenti</span>
+        <h2>Post-produzione e disegno</h2>
+        <p>I progetti che stanno attorno alla lettura: sistemano un EPUB dopo averlo creato o tradotto, oppure offrono un canvas locale per annotare, spiegare e progettare.</p>
+      </div>
+
+      <div class="project-grid eco-grid">
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon green">🧰</div>
+              <div>
+                <h3>Noesis EPUB Tools</h3>
+                <span class="eco-badge">Web · 3 strumenti</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">React 19</span>
+              <span class="tag">JSZip</span>
+              <span class="tag">Canvas</span>
+            </div>
+            <p class="desc">
+              Una suite unificata per la post-produzione EPUB: Slimmer singolo e batch per comprimere le immagini, e Chapter Splitter per estrarre capitoli in file autonomi con TOC e asset.
+            </p>
+            <div class="eco-links">
+              <a href="epubsplitter.html" class="link-btn">Splitter →</a>
+              <a href="epubslimer.html" class="link-btn">Slimer →</a>
+              <a href="https://github.com/vigliafg/noesis-epub-tools" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon rose">✏️</div>
+              <div>
+                <h3>Noesis Excalidraw</h3>
+                <span class="eco-badge">Web · locale</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Excalidraw</span>
+              <span class="tag">Vite</span>
+            </div>
+            <p class="desc">
+              Build standalone di Excalidraw per Noesis: un canvas locale per disegnare, annotare e progettare senza cloud. Pensato per integrarsi nel flusso di studio e di presentazione.
+            </p>
+            <div class="eco-links">
+              <a href="https://github.com/vigliafg/noesis-excalidraw" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="divulgare" class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">06 · Divulgare</span>
+        <h2>Didattica e comunicazione</h2>
+        <p>Il lato in uscita: trasformare ciò che si è letto in schede didattiche, presentazioni e un sito che racconta il progetto. Qui la conoscenza diventa materiale per gli altri.</p>
+      </div>
+
+      <div class="project-grid eco-grid">
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon rose">🎨</div>
+              <div>
+                <h3>Noesis Roads</h3>
+                <span class="eco-badge">Web + creator · AI</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">SQLite</span>
+            </div>
+            <p class="desc">
+              Schede didattiche d'arte da esplorare dettaglio per dettaglio: presentazione, opere simili, timeline per epoche e confronti. Un creator AI separato genera e pubblica; il viewer legge in sola lettura.
+            </p>
+            <div class="eco-links">
+              <a href="noesis-roads.html" class="link-btn">Scheda →</a>
+              <a href="https://github.com/vigliafg/noesis-roads" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon green">🌐</div>
+              <div>
+                <h3>Noesis Reader Website</h3>
+                <span class="eco-badge">Web · 6 lingue</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">i18n</span>
+              <span class="tag">Vanilla JS</span>
+            </div>
+            <p class="desc">
+              Il sito ufficiale di Noesis Reader: presentazione, funzionalità e pagine tematiche in sei lingue, con un i18n completo. Racconta il progetto a chi non lo ha ancora aperto.
+            </p>
+            <div class="eco-links">
+              <a href="https://noesis-reader-website.vigliafg.workers.dev" class="link-btn" target="_blank" rel="noopener">Apri sito</a>
+              <a href="https://github.com/vigliafg/noesis-reader-website" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Come sono collegati</span>
+        <h2>Un motore, più superfici</h2>
+        <p>La classificazione non è solo tematica: molti progetti condividono codice o pipeline. Ecco le relazioni principali da tenere a mente.</p>
+      </div>
+
+      <ul class="feature-list">
+        <li><span class="dot purple"></span> <strong>Desktop ↔ CLI</strong> — Noesis Ebook Translator, PDF Reader Lite e PDF Cloner hanno un'edizione engine che riusa lo stesso motore, con cache e opzioni condivise.</li>
+        <li><span class="dot cyan"></span> <strong>Desktop → Server</strong> — Noesis PDF Cloner Service porta su Docker la pipeline di PDF Cloner, con coda, worker e cache condivisa.</li>
+        <li><span class="dot green"></span> <strong>Un solo motore di layout</strong> — PDF Reader Lite e il suo engine condividono i pack di fix; PDF Reader è il predecessore da cui è nata la semplificazione.</li>
+        <li><span class="dot amber"></span> <strong>Strumenti di contorno</strong> — EPUB Tools interviene dopo la creazione o la traduzione; Excalidraw e Roads trasformano il testo in materiale visivo e didattico.</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="index.html#sezioni" style="color:var(--accent-2);">Tutti i progetti</a> · Ecosistema Noesis · 2026</p>
+</footer>
+
+</body>
+</html>

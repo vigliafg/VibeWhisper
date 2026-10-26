@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForexSMC — VibeWhisper</title>
+  <meta name="description" content="Analizzatore forex SMC/ICT per EUR/USD, GBP/USD e USD/JPY: order block, FVG, struttura, liquidità, inducement e previsioni su 1H/4H/1D/1W.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-forexsmc-mobile.svg">
+      <img src="banner-forexsmc.svg" alt="ForexSMC Banner" class="project-hero-banner">
+    </picture>
+    <a href="dati-finanza.html" class="back-link">← Dati, finanza &amp; statistica</a>
+    <div class="icon-lg amber">📈</div>
+    <h1>ForexSMC</h1>
+    <p class="subtitle">
+      Analizzatore di mercato forex basato su SMC e ICT: candele reali, order block, FVG, struttura, liquidità, inducement e previsioni a bias strutturale.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">HTML</span>
+      <span class="tech-tag">Vanilla JS</span>
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Yahoo Finance</span>
+      <span class="tech-tag">Lightweight Charts</span>
+      <span class="tech-tag">SMC/ICT</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/forexsmc" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>ForexSMC</strong> è un analizzatore di mercato forex focalizzato su <strong>Smart Money Concepts</strong> e <strong>ICT</strong>. Mostra candele reali su un grafico interattivo e sovrappone gli elementi chiave dell'analisi — order block, fair value gap, struttura, liquidità, inducement, OTE e kill zones — calcolati con regole trasparenti. Gira interamente in locale: una pagina HTML/JavaScript servita da un mini server Python che fa da ponte verso Yahoo Finance, senza pacchetti esterni.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      È pensato per <strong>trader e studenti di analisi tecnica</strong> che vogliono vedere gli elementi SMC/ICT su dati reali, per chi studia la struttura di mercato e la liquidità senza abbonamenti, e per chi preferisce un laboratorio locale in cui ogni zona e ogni previsione è spiegata. La modalità è dichiaratamente didattica: non è consulenza finanziaria e non genera segnali automatici.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      Yahoo Finance non invia l'header CORS, quindi il browser non può leggere i dati direttamente. Il server Python <code>forex_server.py</code> serve la pagina e fa da proxy su <code>/api/yahoo</code>; il front-end costruisce la cache, aggrega il 4H dal 1H e chiama <code>analyze()</code>. Il motore calcola pivot, struttura (BOS/CHoCH), order block, FVG, liquidità, range ed elementi ICT; <code>liquidityBias()</code> e <code>findInducements()</code> producono la stima della liquidità target e l'inducement. Le previsioni 1H/1D/1W sono un bias strutturale con supporto, resistenza, obiettivo e invalidazione.
+    </p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Coppie supportate</div></div>
+      <div class="stat-card"><div class="num">4</div><div class="lbl">Timeframe</div></div>
+      <div class="stat-card"><div class="num">11</div><div class="lbl">Overlay SMC/ICT</div></div>
+      <div class="stat-card"><div class="num">0</div><div class="lbl">Pacchetti da installare</div></div>
+    </div>
+
+    <h2>🎯 Perché ForexSMC</h2>
+    <p>
+      Perché l'analisi SMC/ICT è fatta di livelli, zone e struttura, non di una linea magica. ForexSMC mette tutto sullo stesso grafico e accanto a ogni lettura mostra le motivazioni, così puoi verificare perché una zona esiste e quali sono i limiti del quadro. È il laboratorio focalizzato che sta accanto a ForexVision e ForexFlow.
+    </p>
+
+    <h2>✨ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot amber"></span> <strong>Candele reali</strong> — Dati da Yahoo Finance senza API key, con auto-aggiornamento ogni 5 minuti</li>
+      <li><span class="dot green"></span> <strong>Tre coppie</strong> — EUR/USD, GBP/USD e USD/JPY con cambio istantaneo</li>
+      <li><span class="dot accent"></span> <strong>Quattro timeframe</strong> — 1H, 4H (aggregato dal 1H), 1D e 1W</li>
+      <li><span class="dot purple"></span> <strong>Overlay SMC/ICT</strong> — Order block, FVG, BOS/CHoCH, liquidità BSL/SSL, inducement, premium/discount, OTE, =H/=L e kill zones</li>
+      <li><span class="dot cyan"></span> <strong>Liquidity Bias</strong> — Direzione, probabilità, target (DOL), inducement e le BSL/SSL più vicine, con motivazioni</li>
+      <li><span class="dot rose"></span> <strong>Previsioni strutturali</strong> — Bias 1H, 1D e 1W con confidenza, supporto, resistenza, obiettivo e invalidazione</li>
+      <li><span class="dot green"></span> <strong>Zone mitigate</strong> — Le zone già ritoccate restano visibili in tono attenuato</li>
+      <li><span class="dot amber"></span> <strong>Grafico interattivo</strong> — Zoom, trascinamento e crosshair con TradingView Lightweight Charts</li>
+      <li><span class="dot blue"></span> <strong>Tema e responsive</strong> — Chiaro/scuro e layout adattivo</li>
+    </ul>
+
+    <h2>🏗️ Come Funziona</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>Avvia <code>forex_server.py</code> (o <code>AVVIA_FOREX.bat</code> su Windows): il server ascolta sulla porta 8000</li>
+      <li>Apri il browser su <code>http://localhost:8000</code></li>
+      <li>Scegli coppia e timeframe; il front-end carica le candele reali tramite il proxy</li>
+      <li>Attiva o disattiva i singoli overlay SMC/ICT dal pannello</li>
+      <li>Leggi il Liquidity Bias e le previsioni 1H/1D/1W con le relative motivazioni</li>
+    </ol>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Requisiti: Python 3 (solo libreria standard), browser, connessione
+git clone https://github.com/vigliafg/forexsmc.git
+cd forexsmc
+
+# Linux / macOS / Windows
+python forex_server.py
+# Apri http://localhost:8000
+
+# Windows: doppio clic su AVVIA_FOREX.bat
+
+# Porta diversa
+python forex_server.py 8123
+# Apri http://localhost:8123</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot amber"></span> <strong>Studio SMC/ICT</strong> — Vedere order block, FVG e struttura su dati reali e capire come si formano</li>
+      <li><span class="dot green"></span> <strong>Analisi quotidiana</strong> — Controllare liquidità e bias su tre coppie e quattro timeframe</li>
+      <li><span class="dot accent"></span> <strong>Didattica</strong> — Usare le motivazioni e la legenda per spiegare ogni elemento</li>
+      <li><span class="dot purple"></span> <strong>Laboratorio locale</strong> — Sperimentare con overlay e soglie senza servizi esterni</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="dati-finanza.html" style="color:var(--accent-2);">Dati, finanza &amp; statistica</a> · <a href="https://github.com/vigliafg/forexsmc" style="color:var(--accent-2);">GitHub</a> · Uso personale/didattico</p>
+</footer>
+
+</body>
+</html>

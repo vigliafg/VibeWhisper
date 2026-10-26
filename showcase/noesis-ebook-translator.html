@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noesis Ebook Translator — VibeWhisper</title>
+  <meta name="description" content="GUI desktop PyQt6 per tradurre EPUB preservando formattazione, markup inline, link, figure e indice. Motore verbatim dal plugin Calibre Ebook Translator.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-noesis-ebook-translator-mobile.svg">
+      <img src="banner-noesis-ebook-translator.svg" alt="Noesis Ebook Translator Banner" class="project-hero-banner">
+    </picture>
+    <a href="noesis.html" class="back-link">← Ecosistema Noesis</a>
+    <div class="icon-lg purple">📚</div>
+    <h1>Noesis Ebook Translator</h1>
+    <p class="subtitle">
+      GUI desktop per tradurre ebook EPUB in un'altra lingua conservando formattazione, markup inline e indice. Il motore è preso verbatim dal plugin Calibre Ebook Translator.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">PyQt6</span>
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">EPUB</span>
+      <span class="tech-tag">LLM</span>
+      <span class="tech-tag">foliate-js</span>
+      <span class="tech-tag">SQLite</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/noesis-ebook-translator" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>Noesis Ebook Translator</strong> è un front-end desktop snello per il motore di traduzione del plugin Calibre <em>Ebook Translator</em> di bookfere, copiato verbatim (GPLv3). Apri un EPUB, scegli motore e lingue, premi Traduci: ottieni un nuovo EPUB accanto all'originale con suffisso della lingua (<code>libro_ITALIAN.epub</code>), con formattazione, link e ancore, blocchi di codice, figure e indice preservati. Attorno al motore c'è un'app completa: lettore EPUB integrato, libreria persistente, valutazione della qualità, split/merge dei capitoli ed editor di testi e immagini.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      È lo strumento giusto per <strong>lettori forti, traduttori, studenti e ricercatori</strong> che vogliono leggere in italiano un libro acquistato in un'altra lingua senza perdere l'impaginazione, e per chi gestisce una libreria di EPUB e vuole tradurne interi volumi o singoli capitoli. Utile anche a chi confronta la qualità di motori diversi o deve produrre un'edizione bilingue per studio e revisione.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      Il motore è composto dai moduli verbatim del plugin (<code>lib/</code>, <code>engines/</code>, <code>vendor/</code>): gestisce gli elementi del libro, le richieste di traduzione, la cache e la configurazione. L'app PyQt6 aggiunge un ribbon (Home · Motore · Lingua · Opzioni · Info), la stima di token, costo e durata con tiktoken e i prezzi dei provider, e un'analisi del testo che propone istruzioni di stile. La cache su disco evita di ritradurre ciò che è già stato fatto; il batching online riduce le chiamate. Il lettore integrato usa foliate-js per EPUB, MOBI/AZW3, FB2, CBZ e PDF, con fallback leggero su QTextBrowser.
+    </p>
+    </div>
+
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">15+</div><div class="lbl">Motori di traduzione</div></div>
+      <div class="stat-card"><div class="num">~240</div><div class="lbl">Lingue supportate</div></div>
+      <div class="stat-card"><div class="num">13</div><div class="lbl">Libri Gutenberg nei test</div></div>
+      <div class="stat-card"><div class="num">4</div><div class="lbl">Provider LLM in parallelo</div></div>
+    </div>
+
+    <h2>🎯 Perché Noesis Ebook Translator</h2>
+    <p>
+      Perché tradurre un ebook non è tradurre un testo: se il risultato perde il corsivo, l'indice o i link, il libro diventa scomodo da leggere. Noesis Ebook Translator mette al centro l'integrità dell'EPUB e ti lascia scegliere il motore — gratuito o LLM — con una stima dei costi prima di iniziare.
+    </p>
+
+    <h2>✨ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>Markup preservato</strong> — Link, ancore, blocchi di codice, corsivi, grassetti, figure e tabelle restano al loro posto</li>
+      <li><span class="dot accent"></span> <strong>Indice tradotto</strong> — Il TOC viene tradotto insieme al testo e mantenuto nella sua gerarchia</li>
+      <li><span class="dot green"></span> <strong>Cache su disco</strong> — Le parti già tradotte non vengono richieste di nuovo: utile dopo un errore di rete o un'interruzione</li>
+      <li><span class="dot amber"></span> <strong>Stima prima di partire</strong> — Token, costo e durata stimati nel wizard con i prezzi reali del provider scelto</li>
+      <li><span class="dot rose"></span> <strong>Testo bilingue</strong> — Traduzione sotto o sopra l'originale, oltre alla modalità solo traduzione</li>
+      <li><span class="dot cyan"></span> <strong>Lettore integrato</strong> — Indice multilivello, zoom, temi, ricerca, note e vista parallela originale/tradotto</li>
+      <li><span class="dot purple"></span> <strong>Libreria e capitoli</strong> — Database SQLite con copertine, ricerca, posizione di lettura e capitoli estratti o tradotti</li>
+      <li><span class="dot accent"></span> <strong>Qualità e revisione</strong> — Metriche automatiche più giudice AI, con report esportabile</li>
+      <li><span class="dot green"></span> <strong>Split, merge, editor</strong> — Dividi o unisci capitoli e modifica testi, figure e tavole scrivendo direttamente nell'EPUB</li>
+    </ul>
+
+    <h2>🏗️ Come Funziona</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>Apri l'EPUB dalla Home e controlla i metadati nel pannello Libreria</li>
+      <li>Scegli il motore (Google gratuito, DeepL, Microsoft Edge o un LLM configurato) e imposta lingua di origine e destinazione</li>
+      <li>Attiva eventualmente testo bilingue, cache e batching online nelle Opzioni</li>
+      <li>Avvia la traduzione: l'avanzamento è mostrato per capitolo, con log e stato del lavoro</li>
+      <li>Valuta la qualità, correggi con l'editor o esporta un'edizione di soli capitoli scelti</li>
+      <li>Il file tradotto viene salvato accanto all'originale come <code>*_&lt;LINGUA&gt;.epub</code></li>
+    </ol>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Requisiti: Python 3.10+
+git clone https://github.com/vigliafg/noesis-ebook-translator.git
+cd noesis-ebook-translator
+
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python main.py
+
+# Lettore completo (QtWebEngine) ed export DOCX:
+# .venv/bin/pip install -r requirements-full.txt</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>Libreria personale</strong> — Leggere in italiano libri EPUB acquistati in inglese o in altre lingue</li>
+      <li><span class="dot accent"></span> <strong>Saggi e manuali</strong> — Tradurre testi lunghi conservando note, figure e indice</li>
+      <li><span class="dot green"></span> <strong>Studio e ricerca</strong> — Produrre un'edizione bilingue per confrontare terminologia e passaggi</li>
+      <li><span class="dot amber"></span> <strong>Revisione qualità</strong> — Confrontare motori diversi sullo stesso capitolo e misurare il risultato</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/noesis-ebook-translator" style="color:var(--accent-2);">GitHub</a> · GPL-3.0</p>
+</footer>
+
+</body>
+</html>

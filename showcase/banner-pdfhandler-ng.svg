@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="600" viewBox="0 0 1100 600" role="img" aria-label="pdfhandler-ng">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070a12"/>
+      <stop offset="0.55" stop-color="#0a0e19"/>
+      <stop offset="1" stop-color="#0d1220"/>
+    </linearGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="70"/></filter>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f472b6"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glowA"><stop offset="0" stop-color="#f472b6" stop-opacity="0.45"/><stop offset="1" stop-color="#f472b6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowB"><stop offset="0" stop-color="#22d3ee" stop-opacity="0.34"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></radialGradient>
+  </defs>
+
+  <rect width="1100" height="600" fill="url(#bg)"/>
+  <rect width="1100" height="600" fill="url(#grid)"/>
+  <circle cx="140" cy="120" r="230" fill="url(#glowA)"/>
+  <circle cx="980" cy="480" r="240" fill="url(#glowB)"/>
+  <circle cx="560" cy="560" r="180" fill="url(#glowA)" opacity="0.5"/>
+
+  <g opacity="0.9">
+    <circle cx="63" cy="112" r="5" fill="#f472b6"/>
+    <text x="78" y="118" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17" font-weight="700" fill="#e7eaf0" letter-spacing="0.4">VibeWhisper</text>
+    <text x="78" y="136" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="10" fill="#7c8496" letter-spacing="2.2">PORTFOLIO · VIBE CODING</text>
+  </g>
+  <g>
+    <rect x="965" y="99" width="75" height="30" rx="15" fill="#f472b6" fill-opacity="0.08" stroke="#f472b6" stroke-opacity="0.32"/>
+    <text x="1027" y="118" text-anchor="end" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12" fill="#f472b6" letter-spacing="1.1">WEBAPP</text>
+  </g>
+
+  <rect x="60" y="166" width="82" height="82" rx="20" fill="#f472b6" fill-opacity="0.10" stroke="#f472b6" stroke-opacity="0.35"/>
+  <text x="101" y="220" text-anchor="middle" font-family="'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji',sans-serif" font-size="40">📱</text>
+  <rect x="60" y="264" width="46" height="3" rx="1.5" fill="#f472b6"/>
+
+  <text x="60" y="304" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="46" font-weight="800" fill="#f4f6fa" letter-spacing="-1.4">pdfhandler-ng</text>
+  <text x="60" y="352" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">20 strumenti PDF in un&#x27;interfaccia mobile-first.</text><text x="60" y="379" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">Tutto nel browser, zero upload.</text>
+  
+    <rect x="60" y="424" width="80" height="30" rx="15" fill="#f472b6" fill-opacity="0.10" stroke="#f472b6" stroke-opacity="0.30"/>
+    <text x="100" y="444" text-anchor="middle" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="13" fill="#c9cfda">React 19</text>
+    <rect x="149.6" y="424" width="96" height="30" rx="15" fill="#f472b6" fill-opacity="0.10" stroke="#f472b6" stroke-opacity="0.30"/>
+    <text x="198" y="444" text-anchor="middle" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="13" fill="#c9cfda">TypeScript</text>
+    <rect x="255.6" y="424" width="96" height="30" rx="15" fill="#f472b6" fill-opacity="0.10" stroke="#f472b6" stroke-opacity="0.30"/>
+    <text x="304" y="444" text-anchor="middle" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="13" fill="#c9cfda">Tailwind 4</text>
+
+  <rect x="620" y="140" width="420" height="345" rx="18" fill="#0c101b" fill-opacity="0.92" stroke="#f472b6" stroke-opacity="0.28"/>
+    <rect x="620" y="140" width="420" height="42" rx="18" fill="#141a27"/>
+    <rect x="620" y="164" width="420" height="18" fill="#141a27"/>
+    <line x1="620" y1="182" x2="1040" y2="182" stroke="#f472b6" stroke-opacity="0.18"/>
+    <circle cx="644" cy="161" r="5" fill="#ff5f57"/><circle cx="661" cy="161" r="5" fill="#febc2e"/><circle cx="678" cy="161" r="5" fill="#28c840"/>
+    <rect x="786" y="198" width="116" height="248" rx="20" fill="#0a0d16" stroke="#f472b6" stroke-opacity="0.45" stroke-width="2"/>
+    <rect x="800" y="218" width="88" height="208" rx="10" fill="#f472b6" fill-opacity="0.05"/>
+    <rect x="822" y="204" width="44" height="7" rx="3.5" fill="#f472b6" fill-opacity="0.30"/>
+    <rect x="808" y="228" width="72" height="14" rx="7" fill="#f472b6" fill-opacity="0.20"/>
+    <rect x="810" y="254" width="20" height="20" rx="6" fill="#22d3ee" fill-opacity="0.14" stroke="#22d3ee" stroke-opacity="0.35"/><rect x="836" y="254" width="20" height="20" rx="6" fill="#22d3ee" fill-opacity="0.14" stroke="#22d3ee" stroke-opacity="0.35"/><rect x="862" y="254" width="20" height="20" rx="6" fill="#22d3ee" fill-opacity="0.14" stroke="#22d3ee" stroke-opacity="0.35"/><rect x="810" y="284" width="20" height="20" rx="6" fill="#22d3ee" fill-opacity="0.14" stroke="#22d3ee" stroke-opacity="0.35"/><rect x="836" y="284" width="20" height="20" rx="6" fill="#22d3ee" fill-opacity="0.14" stroke="#22d3ee" stroke-opacity="0.35"/><rect x="862" y="284" width="20" height="20" rx="6" fill="#22d3ee" fill-opacity="0.14" stroke="#22d3ee" stroke-opacity="0.35"/><rect x="810" y="314" width="20" height="20" rx="6" fill="#22d3ee" fill-opacity="0.14" stroke="#22d3ee" stroke-opacity="0.35"/><rect x="836" y="314" width="20" height="20" rx="6" fill="#22d3ee" fill-opacity="0.14" stroke="#22d3ee" stroke-opacity="0.35"/><rect x="862" y="314" width="20" height="20" rx="6" fill="#22d3ee" fill-opacity="0.14" stroke="#22d3ee" stroke-opacity="0.35"/>
+    <rect x="808" y="356" width="72" height="18" rx="9" fill="#f472b6" fill-opacity="0.55"/>
+    <rect x="808" y="390" width="72" height="8" rx="4" fill="#b0b7c3" fill-opacity="0.20"/>
+    <rect x="650" y="214" width="108" height="72" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.10"/>
+    <rect x="662" y="230" width="60" height="7" rx="3.5" fill="#f472b6" fill-opacity="0.55"/>
+    <rect x="662" y="246" width="80" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.28"/>
+    <rect x="662" y="258" width="46" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.20"/>
+    <rect x="650" y="302" width="108" height="72" rx="10" fill="#22d3ee" fill-opacity="0.07" stroke="#22d3ee" stroke-opacity="0.22"/>
+    <rect x="662" y="318" width="60" height="7" rx="3.5" fill="#22d3ee" fill-opacity="0.55"/>
+    <rect x="662" y="334" width="80" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.28"/>
+    <rect x="662" y="346" width="46" height="5" rx="2.5" fill="#b0b7c3" fill-opacity="0.20"/>
+
+  <line x1="60" y1="540" x2="1040" y2="540" stroke="#ffffff" stroke-opacity="0.09"/>
+  <line x1="60" y1="540" x2="360" y2="540" stroke="url(#accentLine)" stroke-width="1.4"/>
+  <text x="60" y="570" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12.5" fill="#7c8496">github.com/vigliafg/pdfhandler-ng2</text>
+  <text x="1040" y="570" text-anchor="end" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12" fill="#5b6273">idee che diventano codice · 2026</text>
+</svg>

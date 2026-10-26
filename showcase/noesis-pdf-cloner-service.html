@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noesis PDF Cloner Service — VibeWhisper</title>
+  <meta name="description" content="Server web e CLI headless per tradurre PDF preservando il layout. Docker multi-arch, coda, cache condivisa e batch da riga di comando.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-noesis-pdf-cloner-service-mobile.svg">
+      <img src="banner-noesis-pdf-cloner-service.svg" alt="Noesis PDF Cloner Service Banner" class="project-hero-banner">
+    </picture>
+    <a href="noesis.html" class="back-link">← Ecosistema Noesis</a>
+    <div class="icon-lg cyan">🐳</div>
+    <h1>Noesis PDF Cloner Service</h1>
+    <p class="subtitle">
+      Server web e CLI headless della pipeline di Noesis PDF Cloner: carichi un PDF, scegli le pagine e scarichi la versione tradotta con lo stesso layout.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">FastAPI</span>
+      <span class="tech-tag">Docker</span>
+      <span class="tech-tag">CLI</span>
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">AGPL-3.0</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/noesis-pdf-cloner-service" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>Noesis PDF Cloner Service</strong> porta la pipeline di traduzione PDF con layout preservato su una macchina, in LAN o in un container. Ha due anime: un'interfaccia web con drag&amp;drop per scegliere pagine, lingua e motore, e una CLI headless per lavorare su molti PDF in blocco. Il risultato è un PDF unico con le pagine tradotte oppure uno ZIP con le pagine singole; il motore è pdf2zh_next v2 (BabelDOC) con Google, Bing o LLM via OpenRouter.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      È la scelta giusta per <strong>team, laboratori e utenti avanzati</strong> che vogliono un servizio condiviso invece di un'app desktop: un computer sulla rete traduce per tutti, oppure una pipeline automatica processa una cartella di documenti. Utile anche per chi lavora su server senza interfaccia grafica e vuole la stessa resa del progetto desktop.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      Il servizio espone una web UI e un'API; i lavori entrano in una coda a priorità e vengono eseguiti da worker. All'avvio misura CPU, RAM e disco (anche i limiti del container) e regola da solo il parallelismo; se la macchina è sotto pressione, rifiuta temporaneamente nuovi lavori invece di crollare. Le pagine sono lavorate a blocchi da 100, così anche volumi di migliaia di pagine procedono. La cache è condivisa e versionata tra server e CLI. La distribuzione avviene come immagine Docker multi-arch su GHCR, con motore e asset inclusi.
+    </p>
+    </div>
+
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Motori</div></div>
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Formati di output</div></div>
+      <div class="stat-card"><div class="num">100</div><div class="lbl">Pagine per blocco</div></div>
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Architetture Docker</div></div>
+    </div>
+
+    <h2>🎯 Perché Noesis PDF Cloner Service</h2>
+    <p>
+      Perché la traduzione di PDF è un carico di lavoro, non un clic. Il servizio separa chi riceve i lavori da chi li esegue, mette in cache ciò che è già stato fatto e si adatta alla macchina: puoi partire da un container e aggiungere worker quando serve.
+    </p>
+
+    <h2>✨ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot cyan"></span> <strong>Web UI + CLI</strong> — Drag&amp;drop nel browser per un lavoro veloce, comandi e batch per l'automazione</li>
+      <li><span class="dot accent"></span> <strong>Selezione pagine</strong> — Pagina singola, intervallo, lista (<code>3,5,10-12</code>) o tutto il libro (<code>all</code>)</li>
+      <li><span class="dot green"></span> <strong>PDF o ZIP</strong> — Un PDF unico con le pagine tradotte oppure pagine singole in un archivio</li>
+      <li><span class="dot amber"></span> <strong>Anteprima anti-errore</strong> — Miniatura con numero fisico e numero stampato, perché nei PDF spesso non coincidono</li>
+      <li><span class="dot rose"></span> <strong>Stima prima dell'avvio</strong> — Tempo e costo (per LLM) calcolati prima di partire e mostrati nel browser</li>
+      <li><span class="dot purple"></span> <strong>Coda e streaming</strong> — Più lavori in coda, log completi e avanzamento in tempo reale</li>
+      <li><span class="dot cyan"></span> <strong>Autosizing</strong> — Parallelismo regolato su CPU, RAM e disco; guardie che proteggono il servizio</li>
+      <li><span class="dot accent"></span> <strong>Scala</strong> — API e worker separabili, con worker aggiungibili anche su più macchine</li>
+      <li><span class="dot green"></span> <strong>Docker pronto</strong> — Immagine <code>linux/amd64</code> e <code>linux/arm64</code> su GHCR, tutto incluso</li>
+    </ul>
+
+    <h2>🏗️ Come Funziona</h2>
+    <ol style="color:var(--text-muted);margin:12px 0 20px 24px;line-height:2;">
+      <li>Avvia il container o il server locale e apri l'interfaccia web</li>
+      <li>Carica il PDF e scegli le pagine: controlla l'anteprima con numero fisico e stampato</li>
+      <li>Imposta lingua di origine e destinazione, motore e formato di output</li>
+      <li>Avvia il lavoro e segui l'avanzamento in tempo reale; le pagine già in cache sono immediate</li>
+      <li>Scarica il PDF tradotto o lo ZIP delle pagine singole</li>
+      <li>Per i batch, usa la CLI con <code>run-cli.sh</code> e gli stessi parametri</li>
+    </ol>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Metodo più semplice: Docker (Linux, Windows, macOS)
+docker run -d --name noesis -p 18080:18080 -v noesis-data:/data \
+  ghcr.io/vigliafg/noesis-pdf-cloner-service:latest
+
+# Apri http://localhost:18080
+
+# Con motore LLM (Google e Bing non richiedono chiave)
+docker run -d --name noesis -p 18080:18080 -v noesis-data:/data \
+  -e OPENROUTER_API_KEY=&quot;sk-or-...&quot; \
+  ghcr.io/vigliafg/noesis-pdf-cloner-service:latest
+
+# Da sorgente
+./setup_engine.sh
+./run.sh                     # server su http://127.0.0.1:18080
+
+# CLI headless
+./run-cli.sh pdfs/libro.pdf -p 100-103 --src en --dst it --engine google \
+  --output libro_it --range-mode merged</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot cyan"></span> <strong>Servizio di laboratorio</strong> — Un computer in LAN che traduce per tutti, senza installare nulla sui client</li>
+      <li><span class="dot accent"></span> <strong>Batch di documenti</strong> — Processare una cartella di PDF con un solo comando e la cache condivisa</li>
+      <li><span class="dot green"></span> <strong>Pipeline automatiche</strong> — Integrare la traduzione in un flusso di pubblicazione o di archiviazione</li>
+      <li><span class="dot amber"></span> <strong>Server senza GUI</strong> — Usare Docker o la CLI su una macchina headless</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/noesis-pdf-cloner-service" style="color:var(--accent-2);">GitHub</a> · AGPL-3.0</p>
+</footer>
+
+</body>
+</html>
