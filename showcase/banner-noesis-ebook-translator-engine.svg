@@ -28,8 +28,8 @@
     <text x="78" y="136" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="10" fill="#7c8496" letter-spacing="2.2">PORTFOLIO · VIBE CODING</text>
   </g>
   <g>
-    <rect x="940" y="99" width="100" height="30" rx="15" fill="#818cf8" fill-opacity="0.08" stroke="#818cf8" stroke-opacity="0.32"/>
-    <text x="1027" y="118" text-anchor="end" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12" fill="#818cf8" letter-spacing="1.1">CLI + TUI</text>
+    <rect x="815" y="99" width="225" height="30" rx="15" fill="#818cf8" fill-opacity="0.08" stroke="#818cf8" stroke-opacity="0.32"/>
+    <text x="1027" y="118" text-anchor="end" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12" fill="#818cf8" letter-spacing="1.1">v2.5.0 · CLI + TUI + MCP</text>
   </g>
 
   <rect x="60" y="166" width="82" height="82" rx="20" fill="#818cf8" fill-opacity="0.10" stroke="#818cf8" stroke-opacity="0.35"/>
@@ -37,7 +37,7 @@
   <rect x="60" y="264" width="46" height="3" rx="1.5" fill="#818cf8"/>
 
   <text x="60" y="282" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="46" font-weight="800" fill="#f4f6fa" letter-spacing="-1.4">Noesis Ebook</text><text x="60" y="336" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="46" font-weight="800" fill="#f4f6fa" letter-spacing="-1.4">Translator Engine</text>
-  <text x="60" y="384" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">Lo stesso motore del desktop in un solo file:</text><text x="60" y="411" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">CLI e TUI, senza dipendenze Qt.</text>
+  <text x="60" y="384" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">Lo stesso motore del desktop in un solo file:</text><text x="60" y="411" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">CLI, TUI e server MCP per agenti.</text>
   
     <rect x="60" y="456" width="63" height="30" rx="15" fill="#818cf8" fill-opacity="0.10" stroke="#818cf8" stroke-opacity="0.30"/>
     <text x="92" y="476" text-anchor="middle" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="13" fill="#c9cfda">Python</text>
