@@ -40,7 +40,7 @@ La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 
 | 🌍 [mdtranslator](showcase/mdtranslator.html) | Traduci Markdown preservando la formattazione | Python, CLI + GUI, Tkinter |
 | 📖 [cli_translator](showcase/cli_translator.html) | Traduci EPUB con Google o AI via OpenRouter | Python, CLI, ebooklib |
 | 📚 [Noesis Ebook Translator](showcase/noesis-ebook-translator.html) | Traduci EPUB preservando formattazione e indice | Python, PyQt6, foliate-js, LLM |
-| ⌨️ [Noesis Ebook Translator Engine](showcase/noesis-ebook-translator-engine.html) | Lo stesso motore EPUB in CLI e TUI, senza Qt | Python, CLI, Textual |
+| ⌨️ [Noesis Ebook Translator Engine](showcase/noesis-ebook-translator-engine.html) | Lo stesso motore EPUB in CLI, TUI e server MCP per agenti, senza Qt | Python, CLI, Textual, MCP |
 | 🌍 [Noesis PDF Cloner](showcase/noesis-pdf-cloner.html) | PDF originale e clone tradotto affiancati | Python, PyQt6, pdf2zh_next, BabelDOC |
 | 🐳 [Noesis PDF Cloner Service](showcase/noesis-pdf-cloner-service.html) | Server web e CLI per PDF tradotti con layout | FastAPI, Docker, pdf2zh_next |
 | 🔎 [Noesis PDF Reader Lite](showcase/noesis-pdf-reader-lite.html) | PDF → Markdown con engine adattativo dei fix | Python, PyQt6, PyMuPDF4LLM |

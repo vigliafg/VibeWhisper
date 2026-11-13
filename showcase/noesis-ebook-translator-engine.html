@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noesis Ebook Translator Engine — VibeWhisper</title>
-  <meta name="description" content="Edizione CLI e TUI di Noesis Ebook Translator: un solo file Python, stesso motore del desktop, nessuna dipendenza Qt.">
+  <meta name="description" content="Edizione CLI, TUI e server MCP di Noesis Ebook Translator: un solo file Python, stesso motore del desktop, tool agentico senza dipendenze Qt.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -39,17 +39,24 @@
     <div class="icon-lg blue">⌨️</div>
     <h1>Noesis Ebook Translator Engine</h1>
     <p class="subtitle">
-      Edizione da riga di comando dello stesso motore di Noesis Ebook Translator: un solo file Python, front-end CLI e TUI opzionale, nessuna dipendenza Qt.
+      Edizione da riga di comando dello stesso motore di Noesis Ebook Translator: un solo file Python, front-end CLI, TUI opzionale e — dalla 2.5.0 — server MCP per agenti. Nessuna dipendenza Qt.
     </p>
+    <div class="hero-badge">
+      <span class="badge-dot"></span> v2.5.0 · tool agentico (MCP stdio + CLI JSON)
+    </div>
     <div class="tech-tags">
       <span class="tech-tag">Python</span>
       <span class="tech-tag">CLI</span>
       <span class="tech-tag">TUI</span>
       <span class="tech-tag">Textual</span>
+      <span class="tech-tag">MCP</span>
+      <span class="tech-tag">Agenti</span>
+      <span class="tech-tag">JSON</span>
       <span class="tech-tag">GPL-3.0</span>
     </div>
-    <div style="margin-top:20px;">
+    <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
       <a href="https://github.com/vigliafg/noesis-ebook-translator-engine" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/noesis-ebook-translator-engine/releases/tag/v2.5.0" class="link-btn" target="_blank" rel="noopener">📦 Download v2.5.0</a>
     </div>
   </div>
 
@@ -60,19 +67,45 @@
     <p>
       <strong>Noesis Ebook Translator Engine</strong> è la versione headless dell'app desktop. Un unico modulo generato (<code>noesis_ebook_translator_engine.py</code>) incorpora il motore verbatim del plugin Ebook Translator e vi aggiunge un front-end CLI; con <code>-gui</code> si apre una TUI Textual per chi preferisce un'interfaccia guidata senza GUI. Traduce un EPUB in un'altra lingua conservando formattazione, markup inline, blocchi di codice e indice, e produce un output identico a quello del desktop.
     </p>
+    <p>
+      Dalla <strong>2.5.0</strong> è anche un <strong>tool agentico</strong>: espone le proprie capacità a un agente tramite <strong>server MCP su stdio</strong> e <strong>CLI JSON</strong>, senza dipendenze aggiuntive.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>🤖 Novità 2.5.0 — capacità agentiche</h2>
+    <p>
+      <strong>Server MCP su stdio</strong> (<code>--mcp</code>): <strong>16 tool</strong> tipizzati per scoprire il libro, pianificare token e costi, tradurre, esportare e riprendere; risorse per metadati, TOC e capitoli; prompt di workflow; job asincroni con progresso, annullamento e ripresa. Nessun SDK: solo libreria standard, anche nel binario PyInstaller.
+    </p>
+    <p>
+      <strong>CLI per agenti</strong>: <code>--json</code> (un documento su stdout), <code>--json-stream</code> (eventi NDJSON), <code>--describe</code> (manifest dei tool), <code>--dry-run</code> (piano e stima senza tradurre) e <code>--resume</code>. Capitoli selezionabili per indice, range, href o <strong>titolo</strong>, con errori espliciti: una selezione ambigua o inesistente non produce mai un EPUB vuoto.
+    </p>
+    <p>
+      <strong>Sicurezza</strong>: percorsi confinati alle <code>--root</code>, modalità <code>--read-only</code>, configurazione e cache isolabili, chiavi API da ambiente e testo dei libri marcato come <strong>non attendibile</strong>. Un solo job di traduzione alla volta.
+    </p>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# server MCP per un agente (stdio)
+noesis-ebook-translator-engine --mcp --root ~/Libri
+
+# equivalente macchina-leggibile della CLI
+noesis-ebook-translator-engine libro.epub --dry-run
+noesis-ebook-translator-engine libro.epub -t Italian --chapters 3 --json</pre>
+    <p style="margin-top:12px;">
+      Guida completa: <a href="https://github.com/vigliafg/noesis-ebook-translator-engine/blob/v2.5.0/docs/agenti-mcp-cli.md" style="color:var(--accent-2);" target="_blank" rel="noopener">docs/agenti-mcp-cli.md</a>.
+    </p>
     </div>
 
     <div class="section-card section-chiserve">
     <h2>👤 A chi serve</h2>
     <p>
-      È pensata per <strong>server, container, pipeline di automazione e utenti da terminale</strong> che vogliono tradurre EPUB senza installare Qt o aprire una finestra. Ottima per script notturni su una cartella di libri, per ambienti remoti via SSH e per chi vuole integrare la traduzione in un flusso di pubblicazione o di archiviazione.
+      È pensata per <strong>server, container, pipeline di automazione, agenti AI e utenti da terminale</strong> che vogliono tradurre EPUB senza installare Qt o aprire una finestra. Ottima per script notturni su una cartella di libri, per ambienti remoti via SSH, per un agente che traduce un capitolo su richiesta via MCP e per chi vuole integrare la traduzione in un flusso di pubblicazione o di archiviazione.
     </p>
     </div>
 
     <div class="section-card section-comefunziona">
     <h2>⚙️ Come funziona</h2>
     <p>
-      Lo script <code>tools/sync_from_desktop.py</code> inlinea i moduli del motore del desktop (più <code>appconfig.py</code> e <code>book.py</code>) in un unico file e vi appende il front-end CLI/TUI: il codice di traduzione è lo stesso, cambia solo l'interfaccia. La piccola superficie dell'API Calibre necessaria al motore è reimplementata nel file generato, quindi Calibre non serve. Il comando accetta motore, lingue, posizione della traduzione, cache, batching e chiavi API; la TUI si attiva con <code>-gui</code> e usa Textual, con fallback a un wizard a righe se Textual non è installato.
+      Lo script <code>tools/sync_from_desktop.py</code> inlinea i moduli del motore del desktop (più <code>appconfig.py</code> e <code>book.py</code>) in un unico file e vi appende il front-end CLI/TUI e il livello agenti (<code>tools/agent.py</code>: AgentAPI, job runner, server MCP): il codice di traduzione è lo stesso, cambia solo l'interfaccia. La piccola superficie dell'API Calibre necessaria al motore è reimplementata nel file generato, quindi Calibre non serve. Il comando accetta motore, lingue, posizione della traduzione, cache, batching e chiavi API; la TUI si attiva con <code>-gui</code> e usa Textual, con fallback a un wizard a righe se Textual non è installato. Il server MCP parla JSON-RPC 2.0 su stdio con framing NDJSON e non richiede SDK esterni.
     </p>
     </div>
 
@@ -81,6 +114,7 @@
       <div class="stat-card"><div class="num">1</div><div class="lbl">File Python autonomo</div></div>
       <div class="stat-card"><div class="num">15+</div><div class="lbl">Motori disponibili</div></div>
       <div class="stat-card"><div class="num">~240</div><div class="lbl">Lingue</div></div>
+      <div class="stat-card"><div class="num">16</div><div class="lbl">Tool MCP</div></div>
       <div class="stat-card"><div class="num">0</div><div class="lbl">Dipendenze Qt</div></div>
     </div>
 
@@ -98,7 +132,10 @@
       <li><span class="dot cyan"></span> <strong>Cache e batching</strong> — Cache su disco attiva per default, disattivabile con <code>--no-cache</code>; batching online con <code>--batch</code></li>
       <li><span class="dot purple"></span> <strong>TUI opzionale</strong> — Con <code>-gui</code> parte il wizard Textual, utile su terminali interattivi</li>
       <li><span class="dot rose"></span> <strong>Elenco motori</strong> — <code>--list-engines</code> mostra motori, categorie e requisiti di chiave API</li>
-      <li><span class="dot green"></span> <strong>Automazione</strong> — Exit code e output prevedibili, ideale per script e job pianificati</li>
+      <li><span class="dot blue"></span> <strong>Server MCP</strong> — <code>--mcp</code>: 16 tool, risorse, prompt, job con progresso, annullamento e ripresa; nessun SDK esterno</li>
+      <li><span class="dot cyan"></span> <strong>CLI per agenti</strong> — <code>--json</code>, <code>--json-stream</code>, <code>--describe</code>, <code>--dry-run</code> con stima di token e costo</li>
+      <li><span class="dot purple"></span> <strong>Job e ripresa</strong> — Avvio asincrono, polling incrementale, <code>cancel</code> e <code>--resume</code> dalla cache</li>
+      <li><span class="dot green"></span> <strong>Automazione e agenti</strong> — Exit code e output prevedibili, ideale per script, job pianificati e agenti AI</li>
     </ul>
 
     <h2>🏗️ Come Funziona</h2>
@@ -108,6 +145,7 @@
       <li>Aggiungi <code>--api-key</code> e <code>--model</code> solo se il motore scelto li richiede</li>
       <li>Lancia la traduzione: il file di output viene scritto accanto all'input, o dove indica <code>-o</code></li>
       <li>Per più libri, cicla il comando in uno script o in un job di sistema</li>
+      <li>Per un agente: avvia <code>--mcp</code> (stdio) o usa <code>--json</code>; <code>--describe</code> espone il manifest dei tool</li>
     </ol>
 
     <h2>📦 Installazione</h2>
@@ -128,7 +166,10 @@ noesis-ebook-translator-engine libro.epub -e &quot;MicrosoftEdge(Free)&quot; -s 
 
 # Interfaccia guidata TUI (richiede Textual)
 pip install &quot;.[tui]&quot;
-noesis-ebook-translator-engine -gui</pre>
+noesis-ebook-translator-engine -gui
+
+# Server MCP per agenti (stdio, nessuna dipendenza)
+noesis-ebook-translator-engine --mcp --root ~/Libri</pre>
 
     <h2>💡 Casi d'Uso</h2>
     <ul class="feature-list">
@@ -136,13 +177,14 @@ noesis-ebook-translator-engine -gui</pre>
       <li><span class="dot accent"></span> <strong>Server e container</strong> — Girare senza Qt su una macchina remota o in CI</li>
       <li><span class="dot green"></span> <strong>Pubblicazione</strong> — Integrare la traduzione in una pipeline che produce l'edizione finale</li>
       <li><span class="dot amber"></span> <strong>Terminali interattivi</strong> — Usare la TUI per scegliere motore e lingue senza ricordare le opzioni</li>
+      <li><span class="dot cyan"></span> <strong>Agenti AI</strong> — Tradurre un capitolo su richiesta via MCP, con piano e stima del costo prima di eseguire</li>
     </ul>
 
   </div>
 </main>
 
 <footer>
-  <p>VibeWhisper · <a href="https://github.com/vigliafg/noesis-ebook-translator-engine" style="color:var(--accent-2);">GitHub</a> · GPL-3.0</p>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/noesis-ebook-translator-engine" style="color:var(--accent-2);">GitHub</a> · <a href="https://github.com/vigliafg/noesis-ebook-translator-engine/releases/tag/v2.5.0" style="color:var(--accent-2);">Release v2.5.0</a> · GPL-3.0</p>
 </footer>
 
 </body>
