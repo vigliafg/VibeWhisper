@@ -2,7 +2,7 @@
 
 > Idee che diventano codice
 
-**VibeWhisper** è il portfolio showcase di **35 progetti** raccolti in **7 sezioni tematiche** — dal mondo dei PDF agli EPUB, dalla traduzione di documenti ai diagrammi Mermaid, dal cloud storage al batch renaming, dalla dettatura vocale all'analisi forex. Ogni progetto risolve un problema reale con un'interfaccia pensata per chi la usa.
+**VibeWhisper** è il portfolio showcase di **35 progetti** raccolti in **8 sezioni tematiche** — dal mondo dei PDF agli EPUB, dalla traduzione di documenti ai diagrammi Mermaid, dal cloud storage al batch renaming, dalla dettatura vocale all'analisi forex. Ogni progetto risolve un problema reale con un'interfaccia pensata per chi la usa.
 
 ## 🚀 Guarda lo Showcase
 
@@ -18,11 +18,12 @@ La home è un hub: ogni sezione raccoglie i progetti per **tipo di lavoro**.
 | [📄 Documenti & PDF](showcase/documenti.html) | 5 | pdfhandler, pdfhandler-ng, pdfextractor, pdfshow, Pandoc WASM Studio |
 | [📚 EPUB & libri](showcase/epub-libri.html) | 4 | IBS Metadata Scraper, epub2site, epubsplitter, epubslimer |
 | [🌍 Lingua & voce](showcase/lingua-voce.html) | 3 | mdtranslator, cli_translator, NovoDictate |
-| [📊 Dati, finanza & statistica](showcase/dati-finanza.html) | 4 | ForexFlow AI, ForexVision, ForexSMC, LazStats JS |
+| [📈 Finanza](showcase/finanza.html) | 3 | ForexFlow AI, ForexVision, ForexSMC |
+| [📊 Statistica](showcase/statistica.html) | 2 | LazStats JS, LazStats Pro (v0.35.0, CLI e MCP) |
 | [🧩 Diagrammi & AI](showcase/diagrammi-ai.html) | 2 | Mermaid Creator, mermaid-to-excalidraw |
 | [🗂️ File, cloud & sicurezza](showcase/file-cloud-sicurezza.html) | 3 | Bulk Renamer PRO, Cyfer, TGM Drive NXT |
 
-La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 famiglie. La tabella qui sotto elenca le **29 schede con pagina di dettaglio**; gli altri 6 repository Noesis sono raggiungibili dalla mappa.
+La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 famiglie. La tabella qui sotto elenca le **schede con pagina di dettaglio**; gli altri repository Noesis sono raggiungibili dalla mappa.
 
 ## 🧩 I Progetti
 
@@ -56,6 +57,7 @@ La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 
 | 📈 [ForexVision](showcase/forexvision.html) | Tecnica, SMC e sentiment in un unico verdetto | Vanilla JS, Canvas, Yahoo Finance |
 | 📈 [ForexSMC](showcase/forexsmc.html) | Analizzatore SMC/ICT per EUR/USD, GBP/USD e USD/JPY | HTML, Vanilla JS, Python |
 | 📊 [LazStats JS](showcase/lazstatjs.html) | Statistica inferenziale nel browser, 100% client-side | React 19, TypeScript, Victory |
+| ⚡ [LazStats Pro](showcase/lazstatjs-pro.html) | Evoluzione desktop, CLI e MCP: oltre 70 procedure, report e agenti AI. Release 0.35.0 | Electron, React 19, TypeScript, Vega-Lite, MCP |
 | 🔄 [Pandoc WASM Studio](showcase/pandoc-wasm-studio.html) | Convertitore universale di documenti nel browser | React 19, TypeScript, WebAssembly |
 
 ## 🛠️ Tecnologie
@@ -72,13 +74,14 @@ La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 
 ```
 VibeWhisper/
 ├── showcase/
-│   ├── index.html          # Home hub con le 7 sezioni
+│   ├── index.html          # Home hub con le 8 sezioni
 │   ├── styles.css          # Design system condiviso
 │   ├── noesis.html         # Mappa dell'ecosistema Noesis
 │   ├── documenti.html      # Sezione Documenti & PDF
 │   ├── epub-libri.html     # Sezione EPUB & libri
 │   ├── lingua-voce.html    # Sezione Lingua & voce
-│   ├── dati-finanza.html   # Sezione Dati, finanza & statistica
+│   ├── finanza.html        # Sezione Finanza
+│   ├── statistica.html     # Sezione Statistica
 │   ├── diagrammi-ai.html   # Sezione Diagrammi & AI
 │   ├── file-cloud-sicurezza.html  # Sezione File, cloud & sicurezza
 │   └── *.html              # Pagine dettaglio per ogni progetto

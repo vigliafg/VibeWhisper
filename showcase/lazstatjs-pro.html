@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LazStats Pro — VibeWhisper</title>
+  <meta name="description" content="LazStats Pro 0.35.0: oltre 70 procedure statistiche, report e grafici, CLI lazstats e server MCP con 8 tool per agenti AI. Local-first, senza cloud.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <a href="statistica.html" class="back-link">← Statistica</a>
+    <div class="icon-lg purple">⚡</div>
+    <h1>LazStats Pro <span class="tech-tag" style="vertical-align:middle;font-size:0.8rem;">v0.35.0</span></h1>
+    <p class="subtitle">
+      L'evoluzione desktop e agentica di LazStats JS: oltre 70 procedure statistiche, report e grafici esportabili, CLI e server MCP. Tutto in locale, con i calcoli sempre visibili.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Electron</span>
+      <span class="tech-tag">React 19</span>
+      <span class="tech-tag">TypeScript</span>
+      <span class="tech-tag">Vite</span>
+      <span class="tech-tag">Vega-Lite</span>
+      <span class="tech-tag">Node.js 22</span>
+      <span class="tech-tag">MCP</span>
+      <span class="tech-tag">6 lingue</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/lazstatjs-pro" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/lazstatjs-pro/releases/tag/v0.35.0" class="link-btn" target="_blank" rel="noopener">🚀 Release 0.35.0</a>
+      <a href="https://github.com/vigliafg/lazstatjs-pro/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+      <h2>📖 Cos'è</h2>
+      <p>
+        <strong>LazStats Pro</strong> è l'evoluzione desktop di <a href="lazstatjs.html">LazStats JS</a>. Porta lo stesso principio — analisi statistica trasparente e locale — in un workbench completo: oltre <strong>70 procedure in 12 famiglie</strong>, griglia tipizzata, import CSV/TSV/JSON/XLSX e SPSS/Stata, progetti <code>.lzs</code>, report discorsivi, grafici editabili ed export HTML, Word e XLSX. La release <strong>0.35.0</strong> aggiunge la CLI <code>lazstats</code> e il server <strong>MCP</strong> <code>lazstats-mcp</code>, rendendo le analisi richiamabili anche da agenti AI.
+      </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+      <h2>👤 A chi serve</h2>
+      <p>
+        LazStats Pro è pensato per <strong>ricercatori, studenti e analisti</strong> che vogliono procedure statistiche solide senza affidare i dati a un servizio cloud. È utile a <strong>docenti</strong> che devono mostrare tabelle, diagnostica e assunzioni in modo leggibile, e a <strong>sviluppatori di agenti</strong> che cercano un motore statistico locale, documentato e senza effetti collaterali sul filesystem. Chi ha iniziato con LazStats JS ritrova lo stesso approccio, con più profondità e strumenti di automazione.
+      </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+      <h2>🚀 Novità della 0.35.0</h2>
+      <p>
+        <strong>1. CLI <code>lazstats</code>:</strong> catalogo, schema, ispezione, run, batch e rendering dei risultati, con envelope JSON e help esauribile anche in formato macchina.<br>
+        <strong>2. Server MCP <code>lazstats-mcp</code>:</strong> otto tool stdio per far scoprire, ispezionare ed eseguire analisi a un host agentico, senza rete, shell o scritture su disco.<br>
+        <strong>3. Capacità agentica:</strong> l'agente può leggere solo la directory concessa con <code>--root</code>, eseguire un run-report e recuperare tabelle, prosa e grafici; i risultati restano in cache e possono essere renderizzati.<br>
+        <strong>4. Interfaccia:</strong> gruppi di comandi colorati con contrasto accessibile, temi <strong>Midnight color</strong> e <strong>Misty color</strong>, toolbar Dati/Progetto e autosave nella status bar.
+      </p>
+    </div>
+
+    <h2>🧰 Capacità agentiche</h2>
+    <p>
+      Il server MCP espone il motore statistico a host come Claude Desktop, Cursor o qualsiasi client compatibile. Non è un chatbot dentro l'app: è un contratto di tool che permette a un agente di orchestrare analisi riproducibili.
+    </p>
+    <table>
+      <thead>
+        <tr><th>Tool</th><th>Cosa permette</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>engine_info</code></td><td>Versioni, capacità, limiti e topic di help</td></tr>
+        <tr><td><code>list_analyses</code></td><td>Catalogo delle procedure disponibili</td></tr>
+        <tr><td><code>describe_analysis</code></td><td>Ruoli, default, parametri e contratto di una procedura</td></tr>
+        <tr><td><code>inspect_dataset</code></td><td>Colonne, tipi e anteprima limitata del dataset</td></tr>
+        <tr><td><code>run_analysis</code></td><td>Esegue una procedura da path, progetto o dati inline</td></tr>
+        <tr><td><code>get_result</code></td><td>Recupera le sezioni del run-report dalla cache</td></tr>
+        <tr><td><code>render_chart</code></td><td>Restituisce specifiche o SVG dei grafici</td></tr>
+        <tr><td><code>validate_project</code></td><td>Valida un progetto <code>.lzs</code> in sola lettura</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🔁 Da LazStats JS a LazStats Pro</h2>
+    <table>
+      <thead>
+        <tr><th></th><th>LazStats JS</th><th>LazStats Pro</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Dove gira</strong></td><td>Browser, zero installazione</td><td>Desktop Electron, CLI e server MCP</td></tr>
+        <tr><td><strong>Profondità</strong></td><td>6 famiglie di test</td><td>Oltre 70 procedure in 12 famiglie</td></tr>
+        <tr><td><strong>Dati</strong></td><td>Spreadsheet editor e dataset compatti</td><td>Griglia tipizzata, import SPSS/Stata, progetti <code>.lzs</code></td></tr>
+        <tr><td><strong>Output</strong></td><td>Tabelle e grafici Victory</td><td>Report HTML/Word/XLSX, grafici editabili, export</td></tr>
+        <tr><td><strong>Automazione</strong></td><td>Interazione manuale</td><td>CLI, batch e 8 tool MCP per agenti</td></tr>
+        <tr><td><strong>Release</strong></td><td>Versione browser open source</td><td><strong>0.35.0</strong>, con runtime CLI/MCP inclusi</td></tr>
+      </tbody>
+    </table>
+
+    <h2>✨ Caratteristiche</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>Oltre 70 procedure</strong> — Descriptive, compare, regressione, multivariata, survival, time series, quality, DOE, ML e advanced.</li>
+      <li><span class="dot cyan"></span> <strong>Report leggibili</strong> — Tabelle, prosa, diagnostica e grafici nello stesso run-report, esportabili in HTML, Word e XLSX.</li>
+      <li><span class="dot green"></span> <strong>Local-first</strong> — Nessun backend e nessun cloud: i dataset restano sulla macchina.</li>
+      <li><span class="dot amber"></span> <strong>Sei lingue</strong> — Interfaccia, help e report in italiano, inglese, francese, spagnolo, tedesco e portoghese.</li>
+      <li><span class="dot blue"></span> <strong>Temi accessibili</strong> — 13 temi built-in, inclusi Midnight color e Misty color, con contrasto verificato.</li>
+      <li><span class="dot rose"></span> <strong>Runtime autonomi</strong> — Tarball <code>lazstats</code> e <code>lazstats-mcp</code> allegati alla release GitHub.</li>
+    </ul>
+
+    <h2>🔒 Privacy &amp; Sicurezza</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Dati locali</strong> — Nessun upload e nessuna telemetria.</li>
+      <li><span class="dot accent"></span> <strong>MCP in sola lettura</strong> — Il server non esegue shell, eval o scritture su disco.</li>
+      <li><span class="dot amber"></span> <strong>Perimetro esplicito</strong> — L'agente accede solo alla directory passata con <code>--root</code>.</li>
+      <li><span class="dot purple"></span> <strong>Risultati riproducibili</strong> — Parametri, versione del motore e metadati accompagnano ogni run-report.</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="statistica.html" style="color:var(--accent-2);">Statistica</a> · <a href="https://github.com/vigliafg/lazstatjs-pro" style="color:var(--accent-2);">GitHub</a> · Local-first</p>
+</footer>
+
+</body>
+</html>
