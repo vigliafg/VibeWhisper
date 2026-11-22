@@ -39,3 +39,9 @@ env/
 # ── Misc ──
 *.bak
 *.orig
+
+# ── HyperFrames (animazioni) ──
+animations/*/.hyperframes/
+animations/*/renders/
+
+animations/*/.thumbnails/
