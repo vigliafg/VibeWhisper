@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dBX — VibeWhisper</title>
+  <meta name="description" content="dBX (dbasex) 0.9.0: personal database desktop in stile dBASE 5.5, scritto in Python + PyQt6 con motore SQLite. Tabelle, query QBE, form, report, etichette, script, menu e progetto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-dbasex-mobile.svg">
+      <img src="banner-dbasex.svg" alt="dBX Banner" class="project-hero-banner">
+    </picture>
+    <a href="database.html" class="back-link">← Sezione Database</a>
+    <div class="icon-lg cyan">🧮</div>
+    <h1>dBX</h1>
+    <p class="subtitle">
+      Personal database desktop multipiattaforma in <strong>Python + PyQt6</strong> con motore <strong>SQLite</strong>, ispirato a <em>dBASE 5.5 for Windows</em> di Borland. Riunisce i costruttori visivi che hanno reso celebre dBASE — tabelle, form, report, script, menu e progetto — con un'interfaccia moderna a tema Aurora.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">PyQt6</span>
+      <span class="tech-tag">SQLite</span>
+      <span class="tech-tag">dBASE</span>
+      <span class="tech-tag">QBE</span>
+      <span class="tech-tag">MiniScript</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/dbasex" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/dbasex/tree/v0.9.0" class="link-btn" target="_blank" rel="noopener">🏷️ Sorgente v0.9.0</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>dBX</strong> è un database personale a finestre che ricostruisce il modello di lavoro di dBASE 5.5 senza emularne il pixel: area documenti a schede, Navigator a categorie, Table Structure a griglia unica, Form Designer a tre zone, Report Designer a bande impilate, Program Editor, Menu Designer e Project Editor. I dati vivono in <strong>SQLite</strong>, il progetto in un manifest JSON, e ogni oggetto — tabella, query, form, report, etichetta, menu, programma — è modificabile dai suoi costruttori. Il tema <strong>Aurora</strong> sostituisce il grigio Win16 con superfici chiare, gradienti e focus visibile; i temi <code>silver</code> e <code>dark</code> restano disponibili.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      A chi vuole un database desktop <em>senza scrivere SQL</em> per gestire rubrica, fatture, inventari, soci o collezioni. A chi ha conosciuto dBASE e cerca gli stessi strumenti — struttura tabella, query per esempio, report a bande, etichette — dentro un'app di oggi. E a chi vuole studiare come si costruisce un ambiente dati completo con Python, PyQt6 e SQLite: 559 test automatici e nessun servizio esterno.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      Il progetto è un file <code>.dbx.json</code> affiancato al database SQLite: il Navigator elenca gli oggetti per categoria (Database, Query, Form, Report, Etichette, Menu, Programmi) e li apre in schede. Il <strong>Table Builder</strong> definisce campi, tipi, obbligatorietà, default, indici, relazioni e regole; il <strong>Query Designer</strong> costruisce join dalle foreign key, filtri, ordinamento e <code>GROUP BY</code>, con anteprima SQL parametrizzata e modalità <strong>QBE</strong> a query image. I <strong>Form</strong> hanno designer a tre zone, Object Inspector, eventi e runtime con portali uno-a-molti; i <strong>Report</strong> sono a bande con gruppi, totali, grafici e anteprima PDF; le <strong>etichette</strong> coprono preset A4/Avery e mail merge. Il <strong>Program Editor</strong> esegue MiniScript con azioni tipizzate, parametri dichiarati, variabili globali e transazioni esplicite; il <strong>Project Builder</strong> valida i riferimenti e produce una cartella distribuibile più zip.
+    </p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">0.9.0</div><div class="lbl">Versione corrente</div></div>
+      <div class="stat-card"><div class="num">7</div><div class="lbl">Costruttori visivi</div></div>
+      <div class="stat-card"><div class="num">559</div><div class="lbl">Test automatici</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Dati in locale</div></div>
+    </div>
+
+    <h2>✨ Caratteristiche principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot cyan"></span> <strong>Navigator e area documenti</strong> — Oggetti per categoria, filtro file e schede dei documenti con menu dBASE e SpeedBar</li>
+      <li><span class="dot accent"></span> <strong>Table Builder</strong> — Griglia <code>Field · Name · Type · Width · Decimal · Index</code>, schede per indici, relazioni, proprietà e DDL</li>
+      <li><span class="dot green"></span> <strong>Query Designer e QBE</strong> — Join dalle FK, filtri AND, ordinamento multiplo, aggregati e query image con example elements</li>
+      <li><span class="dot amber"></span> <strong>Form Designer e runtime</strong> — Palette controlli, righelli, griglia 8 px, undo/redo, Object Inspector, portali uno-a-molti</li>
+      <li><span class="dot rose"></span> <strong>Report Designer</strong> — Bande impilate, gruppi, totali, grafici barre/linee/torta, anteprima e PDF</li>
+      <li><span class="dot purple"></span> <strong>Etichette e mail merge</strong> — Preset A4/Avery, griglia colonne/righe, modello <code>[campo]</code> e stampa su più fogli</li>
+      <li><span class="dot cyan"></span> <strong>Program Editor</strong> — MiniScript con vista azioni ↔ sorgente, Step Picker, parametri, variabili globali e transazioni</li>
+      <li><span class="dot accent"></span> <strong>Esperti e manutenzione</strong> — Wizard per tabelle, query, report e form; rinomina, duplica, compatta e verifica integrità</li>
+      <li><span class="dot green"></span> <strong>Import/export</strong> — Import CSV con mappatura tipi, export CSV, crosstab e build del progetto in zip</li>
+    </ul>
+
+    <h2>📦 Installazione e avvio</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.82rem;overflow-x:auto;line-height:1.8;margin:16px 0;">
+# Requisiti: Python 3.10+ e PyQt6 6.10.2
+git clone https://github.com/vigliafg/dbasex.git
+cd dbasex
+
+python3 -m venv .venv && source .venv/bin/activate
+pip install -e .
+
+python -m dbx                    # finestra vuota
+python -m dbx --demo             # progetto Rubrica + Fatture
+python -m dbx --theme silver     # tema storico dBASE
+python -m dbx --smoke            # verifica headless end-to-end</pre>
+    <p>
+      In alternativa <code>./start.sh</code> sceglie un interprete con PyQt6 senza attivare il virtualenv.
+      Per ora dBX si distribuisce <strong>dal sorgente</strong> (tag <code>v0.9.0</code>): non ci sono ancora
+      pacchetti precompilati per Windows, macOS o Linux.
+    </p>
+
+    <h2>💡 Casi d'uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot cyan"></span> <strong>Gestionale personale</strong> — Rubrica, fatture, scadenze e preventivi con form e report su misura</li>
+      <li><span class="dot accent"></span> <strong>Archivi e cataloghi</strong> — Tabelle collegate, query di riepilogo e crosstab per inventari e collezioni</li>
+      <li><span class="dot green"></span> <strong>Automazione leggera</strong> — Script MiniScript con parametri, transazioni e menu per le operazioni ricorrenti</li>
+      <li><span class="dot rose"></span> <strong>Studio e didattica</strong> — Un clone strutturale di dBASE con 559 test, utile per capire un ambiente dati desktop completo</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/dbasex" style="color:var(--accent-2);">GitHub</a> · <a href="https://github.com/vigliafg/dbasex/tree/v0.9.0" style="color:var(--accent-2);">v0.9.0</a></p>
+</footer>
+
+</body>
+</html>

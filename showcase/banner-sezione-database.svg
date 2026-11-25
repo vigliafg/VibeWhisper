@@ -28,7 +28,7 @@
   </g>
   <g>
     <rect x="932" y="99" width="108" height="30" rx="15" fill="#34d399" fill-opacity="0.08" stroke="#34d399" stroke-opacity="0.32"/>
-    <text x="1027" y="118" text-anchor="end" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12" fill="#34d399" letter-spacing="1.1">1 PROGETTO</text>
+    <text x="1027" y="118" text-anchor="end" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12" fill="#34d399" letter-spacing="1.1">2 PROGETTI</text>
   </g>
 
   <rect x="60" y="166" width="82" height="82" rx="20" fill="#34d399" fill-opacity="0.10" stroke="#34d399" stroke-opacity="0.35"/>
@@ -36,7 +36,7 @@
   <rect x="60" y="264" width="46" height="3" rx="1.5" fill="#34d399"/>
 
   <text x="60" y="304" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="46" font-weight="800" fill="#f4f6fa" letter-spacing="-1.4">Database</text>
-  <text x="60" y="352" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">adbx-legacy: Alpha Four v3 su SQLite,</text><text x="60" y="379" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">griglia 80×25 e file .DBF interoperabili.</text>
+  <text x="60" y="352" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">adbx-legacy e dBX: due database desktop</text><text x="60" y="379" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">su SQLite, tra Alpha Four e dBASE 5.5.</text>
 
     <rect x="60" y="424" width="63" height="30" rx="15" fill="#34d399" fill-opacity="0.10" stroke="#34d399" stroke-opacity="0.30"/>
     <text x="91" y="444" text-anchor="middle" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="13" fill="#c9cfda">SQLite</text>

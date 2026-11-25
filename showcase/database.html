@@ -39,7 +39,7 @@
     <div class="icon-lg green">🗄️</div>
     <h1>Database</h1>
     <p class="subtitle">
-      Strumenti che trattano i dati come materia prima: tabelle, record, indici e regole. Per ora un solo progetto, <strong>adbx-legacy</strong>, che riporta in vita il database relazionale di Alpha Four 3.0 sopra SQLite, con la griglia a caratteri 80×25 dell'originale.
+      Strumenti che trattano i dati come materia prima: tabelle, record, indici e regole. Due progetti, due tradizioni: <strong>adbx-legacy</strong>, che riporta in vita il database relazionale di Alpha Four 3.0 su griglia 80×25, e <strong>dBX</strong>, il personal database in stile dBASE 5.5 con costruttori visivi di tabelle, form, report e script.
     </p>
     <div class="tech-tags">
       <span class="tech-tag">SQLite</span>
@@ -56,9 +56,9 @@
   <div class="eco-wrap">
 
     <div class="stats-row">
-      <div class="stat-card"><div class="num">1</div><div class="lbl">Progetto</div></div>
-      <div class="stat-card"><div class="num">25</div><div class="lbl">Lezioni del Tutorial</div></div>
-      <div class="stat-card"><div class="num">525</div><div class="lbl">Test automatici</div></div>
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Progetti</div></div>
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Motori SQLite</div></div>
+      <div class="stat-card"><div class="num">1084</div><div class="lbl">Test automatici</div></div>
       <div class="stat-card"><div class="num">100%</div><div class="lbl">Dati in locale</div></div>
     </div>
 
@@ -66,7 +66,7 @@
       <div class="eco-section-head">
         <span class="eco-kicker">Sezione 08 · Database</span>
         <h2>Dati relazionali con l'anima del 1993</h2>
-        <p>Qui vivono i progetti che gestiscono archivi e record. La sezione esordisce con adbx-legacy: un database relazionale completo — tabelle, regole di campo, set, report, script e applicazioni — dentro una finestra moderna, con file <code>.DBF</code> ancora interoperabili.</p>
+        <p>Qui vivono i progetti che gestiscono archivi e record. Da una parte adbx-legacy, database relazionale completo — tabelle, regole di campo, set, report, script e applicazioni — con file <code>.DBF</code> ancora interoperabili. Dall'altra dBX, che riprende il modello dBASE 5.5 e lo porta su SQLite con costruttori visivi per tabelle, query QBE, form, report, etichette, menu e programmi.</p>
       </div>
 
       <div class="project-grid eco-grid">
@@ -90,6 +90,27 @@
             </div>
           </div>
         </article>
+
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon cyan">🧮</div>
+              <div>
+                <h3>dBX</h3>
+                <span class="eco-badge">Desktop · versione 0.9.0</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">PyQt6</span><span class="tag">SQLite</span><span class="tag">dBASE</span>
+            </div>
+            <p class="desc">
+              Personal database in stile dBASE 5.5: Table Builder, Query Designer con QBE, Form e Report Designer a bande, etichette e mail merge, MiniScript con parametri e transazioni, Project Builder. 559 test automatici.
+            </p>
+            <div class="eco-links">
+              <a href="dbasex.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/dbasex" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -104,6 +125,7 @@
         <li><span class="dot accent"></span> <strong>Compatibilità</strong> — I file <code>.DBF</code> restano leggibili e scrivibili: i dati di Alpha Four non vanno convertiti per essere usati.</li>
         <li><span class="dot green"></span> <strong>Stesso motore, due griglie</strong> — adbx-legacy è la variante 80×25 della linea principale 132×43: identici test e comportamento, cambia solo il layout.</li>
         <li><span class="dot amber"></span> <strong>Dentro e fuori</strong> — Import/export in dieci formati, PDF per report ed etichette, stampa e backup senza cloud.</li>
+        <li><span class="dot cyan"></span> <strong>Due scuole</strong> — adbx-legacy segue Alpha Four (menu a lettere, regole dichiarative); dBX segue dBASE 5.5 (Navigator, designer, script). Entrambi usano SQLite e restano offline.</li>
       </ul>
     </section>
 

@@ -20,13 +20,13 @@
   <circle cx="46" cy="55" r="4.5" fill="#34d399"/>
   <text x="60" y="61" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="16" font-weight="700" fill="#e7eaf0">VibeWhisper</text>
   <rect x="684" y="41" width="106" height="28" rx="14" fill="#34d399" fill-opacity="0.08" stroke="#34d399" stroke-opacity="0.32"/>
-  <text x="778" y="59" text-anchor="end" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="11" fill="#34d399" letter-spacing="1">1 PROGETTO</text>
+  <text x="778" y="59" text-anchor="end" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="11" fill="#34d399" letter-spacing="1">2 PROGETTI</text>
 
   <rect x="44" y="106" width="68" height="68" rx="17" fill="#34d399" fill-opacity="0.10" stroke="#34d399" stroke-opacity="0.35"/>
   <text x="78" y="153" text-anchor="middle" font-family="'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji',sans-serif" font-size="34">🗄️</text>
 
   <text x="44" y="268" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="48" font-weight="800" fill="#f4f6fa" letter-spacing="-1.3">Database</text>
-  <text x="44" y="314" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="20" fill="#aeb6c4">adbx-legacy: Alpha Four v3 su SQLite,</text><text x="44" y="343" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="20" fill="#aeb6c4">griglia 80×25 e file .DBF interoperabili.</text>
+  <text x="44" y="314" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="20" fill="#aeb6c4">adbx-legacy e dBX: due database desktop</text><text x="44" y="343" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="20" fill="#aeb6c4">su SQLite, tra Alpha Four e dBASE 5.5.</text>
 
     <rect x="44" y="390" width="63" height="30" rx="15" fill="#34d399" fill-opacity="0.10" stroke="#34d399" stroke-opacity="0.30"/>
     <text x="75" y="410" text-anchor="middle" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="13" fill="#c9cfda">SQLite</text>
