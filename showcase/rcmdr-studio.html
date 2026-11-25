@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RcmdrShiny Studio — VibeWhisper</title>
+  <meta name="description" content="RcmdrShiny Studio 3.2.0: workbench statistico browser-native ispirato a R Commander. Command palette, Chart Studio ggplot2, report, progetti .rcmdrproj e Plugin SDK v2.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <a href="statistica.html" class="back-link">← Statistica</a>
+    <div class="icon-lg cyan">🎛️</div>
+    <h1>RcmdrShiny Studio <span class="tech-tag" style="vertical-align:middle;font-size:0.8rem;">v3.2.0</span></h1>
+    <p class="subtitle">
+      Non un clone pixel-per-pixel di R Commander, ma un workbench statistico browser-native: menubar desktop, command palette, Data e Chart Studio, report e progetti versionati. Stesso motore Rcmdr, stessa promessa: ogni azione lascia un comando R visibile.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">R 4.1+</span>
+      <span class="tech-tag">Shiny</span>
+      <span class="tech-tag">ggplot2</span>
+      <span class="tech-tag">plotly</span>
+      <span class="tech-tag">DT</span>
+      <span class="tech-tag">shinyAce</span>
+      <span class="tech-tag">Plugin SDK v2</span>
+      <span class="tech-tag">GPL-2+</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/rcmdr-studio" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/rcmdr-studio/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+      <a href="rstats-commander.html" class="link-btn">📊 RcmdrShiny →</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+      <h2>📖 Cos'è</h2>
+      <p>
+        <strong>RcmdrShiny Studio</strong> è la seconda generazione del progetto RcmdrShiny: un workbench statistico locale che gira nel browser. Mantiene il motore e la semantica dei comandi di <strong>R Commander 2.15.0</strong>, ma sostituisce la metafora desktop/Tk con una Studio nativa: menubar orizzontale, command palette, cronologia strutturata, workspace per dati, grafici e report, più una <strong>Classic mode</strong> per compatibilità. La release <strong>3.2.0</strong> aggiunge la galleria <em>Examples</em> con 28 ricette offline tratte dall'R Graph Gallery e otto nuovi tipi di grafico ggplot2.
+      </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+      <h2>👤 A chi serve</h2>
+      <p>
+        Per <strong>analisti e ricercatori</strong> che vogliono la potenza di R con un'interfaccia desktop curata, per <strong>docenti</strong> che mostrano dati, grafici e comandi nella stessa sessione, e per <strong>team</strong> che hanno bisogno di progetti riapribili e report riproducibili. È la scelta giusta se ti serve più di una GUI: un ambiente di lavoro con palette dei comandi, cronologia, checkpoint, galleria di grafici e un SDK per estendere i menu senza toccare il core.
+      </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+      <h2>⚙️ Come funziona</h2>
+      <p>
+        La shell Studio mostra una vista di workspace alla volta, con un secondo slot opzionale e pannelli Inspector/Preview nascondibili; la menubar è guidata da un registry stabile di <code>menu_id</code> e <code>item_id</code>. Il <strong>Chart Studio</strong> usa un unico motore ggplot2: il builder visuale genera comandi R, l'anteprima è isolata e con debounce, e la galleria conserva i grafici con round-trip nel builder. Il <strong>Report Studio</strong> gestisce più documenti con outline cliccabile, celle eseguibili e knit in HTML/PDF/Word. La cronologia strutturata permette di rieseguire un comando, riaprire il dialogo o inserirlo nello script. I limiti sui dati sono dichiarati: sopra 5.000 righe la griglia pagina lato server, sopra 10.000 celle l'editor browser è disattivato.
+      </p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">3.2.0</div><div class="lbl">Release corrente</div></div>
+      <div class="stat-card"><div class="num">41</div><div class="lbl">Tipi di grafico</div></div>
+      <div class="stat-card"><div class="num">644</div><div class="lbl">Topic di help</div></div>
+      <div class="stat-card"><div class="num">28</div><div class="lbl">Ricette di esempio</div></div>
+    </div>
+
+    <h2>✨ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot cyan"></span> <strong>Shell Studio</strong> — Menubar orizzontale, due slot di workspace, pannelli richiudibili, undo/redo applicativo e dialoghi ridimensionabili</li>
+      <li><span class="dot purple"></span> <strong>Command palette</strong> — <code>Ctrl+K</code> su menu, help, dataset, variabili e cronologia, con anteprima del comando R e “To script”</li>
+      <li><span class="dot green"></span> <strong>Data Studio</strong> — Registry dei dataset, ricerca globale, ispettore di colonna, operazioni strutturali riproducibili, checkpoint e dizionario dati</li>
+      <li><span class="dot amber"></span> <strong>Chart Studio</strong> — Builder per tipo, 33 tipi più 8 nuovi (lollipop, dumbbell, doughnut, area, ridgeline, beeswarm, radar, parallele), temi e palette</li>
+      <li><span class="dot rose"></span> <strong>Examples offline</strong> — 28 ricette dalla R Graph Gallery, con anteprime locali, filtri, ricerca e “Open in builder” senza eseguire codice</li>
+      <li><span class="dot blue"></span> <strong>Report e script</strong> — Più documenti, outline sincronizzato, celle eseguibili, template, knit manager e autosave con recovery</li>
+      <li><span class="dot green"></span> <strong>Progetti e plugin</strong> — Progetti <code>.rcmdrproj</code> versionati, bundle export, checkpoint e Plugin SDK v2 con componenti, preset, workflow e template</li>
+      <li><span class="dot accent"></span> <strong>Accessibile</strong> — Temi chiaro, scuro, alto contrasto e di sistema, scorciatoie da tastiera e guida interattiva al primo avvio</li>
+    </ul>
+
+    <h2>🆚 RcmdrShiny e Studio</h2>
+    <table>
+      <thead>
+        <tr><th></th><th>RcmdrShiny 1.13</th><th>RcmdrShiny Studio 3.2</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Interfaccia</strong></td><td>Layout Rcmdr classico a schede</td><td>Shell Studio con menubar, slot e command palette; Classic mode inclusa</td></tr>
+        <tr><td><strong>Grafici</strong></td><td>Grafici base, RcmdrMisc, car, lattice, plotly e rgl</td><td>Un solo motore ggplot2, builder visuale, 41 tipi e galleria di esempi</td></tr>
+        <tr><td><strong>Dati</strong></td><td>Griglia DT + editor rhandsontable</td><td>Data Studio con registry, ispettore, operazioni, checkpoint e paging oltre 5.000 righe</td></tr>
+        <tr><td><strong>Lavoro salvato</strong></td><td>Script e workspace R</td><td>Progetti <code>.rcmdrproj</code>, autosave, recovery e bundle export</td></tr>
+        <tr><td><strong>Estensioni</strong></td><td>Plugin Rcmdr-style</td><td>Plugin SDK v2 e registry stabile di menu</td></tr>
+      </tbody>
+    </table>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Requisiti: R >= 4.1
+install.packages(c("shiny", "bslib", "DT", "shinyAce", "shinyFiles",
+                   "rhandsontable", "RcmdrMisc", "ggplot2", "plotly"))
+
+# Dal clone locale
+git clone https://github.com/vigliafg/rcmdr-studio.git
+cd rcmdr-studio
+R -e 'install.packages(".", repos = NULL, type = "source")'
+
+# Avvio
+R -e 'RcmdrShiny::run()'</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot cyan"></span> <strong>Analisi esplorativa</strong> — Import con anteprima, ispettore di colonna e grafici costruiti a mano, con il comando R sempre in vista</li>
+      <li><span class="dot purple"></span> <strong>Reportistica</strong> — Documenti R Markdown con celle eseguibili, template e knit in HTML, PDF o Word</li>
+      <li><span class="dot green"></span> <strong>Didattica</strong> — Galleria di esempi e command palette per mostrare il percorso dal menu al codice</li>
+      <li><span class="dot amber"></span> <strong>Progetti lunghi</strong> — Autosave, checkpoint, cronologia strutturata e progetti riapribili</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="statistica.html" style="color:var(--accent-2);">Statistica</a> · <a href="https://github.com/vigliafg/rcmdr-studio" style="color:var(--accent-2);">GitHub</a> · GPL-2+</p>
+</footer>
+
+</body>
+</html>

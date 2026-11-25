@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Statistica — VibeWhisper</title>
-  <meta name="description" content="LazStats JS e LazStats Pro: statistica inferenziale nel browser e su desktop, con report, CLI e server MCP per agenti AI. Release 0.35.0.">
+  <meta name="description" content="Quattro progetti di statistica locale: LazStats JS e LazStats Pro, RcmdrShiny e RcmdrShiny Studio. Browser, desktop, CLI e MCP, senza cloud.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
     <div class="icon-lg purple">📊</div>
     <h1>Statistica</h1>
     <p class="subtitle">
-      Due generazioni di analisi statistica locale: LazStats JS nel browser e LazStats Pro su desktop, CLI e agenti AI. Stesso metodo: calcoli espliciti, dati che restano tuoi e limiti dichiarati.
+      Quattro progetti per l'analisi statistica locale: LazStats JS e LazStats Pro per il calcolo inferenziale, RcmdrShiny e RcmdrShiny Studio per l'interfaccia grafica su R. Stesso metodo: calcoli espliciti, dati che restano tuoi e limiti dichiarati.
     </p>
     <div class="tech-tags">
       <span class="tech-tag">Statistica</span>
@@ -47,27 +47,30 @@
       <span class="tech-tag">CLI</span>
       <span class="tech-tag">MCP</span>
       <span class="tech-tag">Agenti AI</span>
+      <span class="tech-tag">R</span>
+      <span class="tech-tag">Shiny</span>
     </div>
     <div style="margin-top:20px;">
       <a href="#progetti" class="link-btn">📂 Vedi i progetti</a>
       <a href="lazstatjs-pro.html" class="link-btn">⚡ Scopri LazStats Pro</a>
+      <a href="rcmdr-studio.html" class="link-btn">🎛️ Scopri RcmdrShiny Studio</a>
     </div>
   </div>
 
   <div class="eco-wrap">
 
     <div class="stats-row">
-      <div class="stat-card"><div class="num">2</div><div class="lbl">Generazioni</div></div>
-      <div class="stat-card"><div class="num">70+</div><div class="lbl">Procedure in Pro</div></div>
-      <div class="stat-card"><div class="num">8</div><div class="lbl">Tool MCP</div></div>
-      <div class="stat-card"><div class="num">0.35.0</div><div class="lbl">Release LazStats Pro</div></div>
+      <div class="stat-card"><div class="num">4</div><div class="lbl">Progetti</div></div>
+      <div class="stat-card"><div class="num">70+</div><div class="lbl">Procedure in LazStats Pro</div></div>
+      <div class="stat-card"><div class="num">863/900</div><div class="lbl">Voci di menu RcmdrShiny</div></div>
+      <div class="stat-card"><div class="num">41</div><div class="lbl">Tipi di grafico Studio</div></div>
     </div>
 
     <section class="eco-section" id="progetti">
       <div class="eco-section-head">
         <span class="eco-kicker">Sezione 05 · Statistica</span>
-        <h2>Dal browser agli agenti</h2>
-        <p>LazStats JS ha portato l'analisi inferenziale nel browser. LazStats Pro ne fa un workbench completo per desktop, riga di comando e agenti AI, senza rinunciare al local-first.</p>
+        <h2>Dal browser a R, senza cloud</h2>
+        <p>LazStats JS ha portato l'analisi inferenziale nel browser e LazStats Pro l'ha estesa a desktop, CLI e agenti AI. RcmdrShiny porta R Commander su Shiny senza Tcl/Tk; RcmdrShiny Studio ne fa un workbench browser-native. Tutto local-first.</p>
       </div>
 
       <div class="project-grid eco-grid">
@@ -114,14 +117,56 @@
             </div>
           </div>
         </article>
+
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon purple">📊</div>
+              <div>
+                <h3>RcmdrShiny</h3>
+                <span class="eco-badge">R · Shiny · v1.13.0</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Rcmdr</span><span class="tag">Shiny</span><span class="tag">GPL-2+</span>
+            </div>
+            <p class="desc">
+              R Commander ricostruito su Shiny, senza Tcl/Tk: 213 dialoghi, 863 voci di menu, R Markdown e knitr con knit in HTML/PDF/Word, 443 topic di help offline e 15 plugin. Ogni azione genera il comando R corrispondente.
+            </p>
+            <div class="eco-links">
+              <a href="rstats-commander.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/rstats-commander" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon cyan">🎛️</div>
+              <div>
+                <h3>RcmdrShiny Studio</h3>
+                <span class="eco-badge">R · Shiny · v3.2.0</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">ggplot2</span><span class="tag">41 grafici</span><span class="tag">Plugin SDK</span>
+            </div>
+            <p class="desc">
+              Workbench statistico browser-native ispirato a R Commander: command palette, Data e Chart Studio con un solo motore ggplot2, Examples offline, report, progetti <code>.rcmdrproj</code> e Plugin SDK v2. Classic mode inclusa.
+            </p>
+            <div class="eco-links">
+              <a href="rcmdr-studio.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/rcmdr-studio" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="eco-section">
       <div class="eco-section-head">
-        <span class="eco-kicker">Due generazioni, un metodo</span>
-        <h2>Prima nel browser, poi ovunque</h2>
-        <p>LazStats JS resta il modo più rapido per esplorare un dataset senza installare nulla. LazStats Pro aggiunge la profondità del desktop e la possibilità di far pilotare le analisi a un agente.</p>
+        <span class="eco-kicker">Quattro progetti, un metodo</span>
+        <h2>Due mondi, un solo confine</h2>
+        <p>LazStats copre il calcolo in JavaScript; RcmdrShiny porta in browser il mondo R e la sua GUI storica. In entrambi i casi l'elaborazione resta sulla macchina e l'output è ispezionabile.</p>
       </div>
 
       <ul class="feature-list">
@@ -130,6 +175,8 @@
         <li><span class="dot green"></span> <strong>CLI <code>lazstats</code></strong> — Analisi riproducibili da terminale, batch, envelope JSON e rendering dei risultati.</li>
         <li><span class="dot amber"></span> <strong>Server MCP</strong> — Otto tool per scoprire procedure, ispezionare dati, eseguire analisi e recuperare risultati da un host agentico.</li>
         <li><span class="dot blue"></span> <strong>Stesso confine</strong> — Dati locali, calcoli espliciti e nessun invio a servizi esterni: l'agente legge solo la directory che gli viene concessa.</li>
+        <li><span class="dot purple"></span> <strong>RcmdrShiny</strong> — L'intero catalogo R Commander su Shiny, con 863 voci di menu su 900, authoring R Markdown/knitr e help offline.</li>
+        <li><span class="dot cyan"></span> <strong>RcmdrShiny Studio</strong> — La stessa base R in una shell desktop: command palette, Data e Chart Studio, progetti versionati e Plugin SDK v2.</li>
       </ul>
     </section>
 

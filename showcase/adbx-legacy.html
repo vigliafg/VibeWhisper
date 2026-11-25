@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>adbx-legacy — VibeWhisper</title>
+  <meta name="description" content="adbx-legacy: clone funzionale di Alpha Four v3 su griglia 80×25, motore SQLite e file .DBF. Release 0.10.0 con installer Windows NSIS, .dmg macOS, .deb e AppImage Linux.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-adbx-legacy-mobile.svg">
+      <img src="banner-adbx-legacy.svg" alt="adbx-legacy Banner" class="project-hero-banner">
+    </picture>
+    <a href="database.html" class="back-link">← Sezione Database</a>
+    <div class="icon-lg green">🗄️</div>
+    <h1>adbx-legacy</h1>
+    <p class="subtitle">
+      Clone funzionale di <strong>Alpha Four versione 3</strong> (Alpha Software, 1993) nella variante a 80×25 celle: un database relazionale completo — regole di campo, set, form, report, etichette, lettere, script e applicazioni — con motore SQLite, file <code>.DBF</code> interoperabili e finestra moderna.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">PyQt6</span>
+      <span class="tech-tag">SQLite</span>
+      <span class="tech-tag">DBF</span>
+      <span class="tech-tag">Report</span>
+      <span class="tech-tag">Script</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/adbx-legacy/releases/latest" class="link-btn" target="_blank" rel="noopener">⬇️ Scarica la release 0.10.0</a>
+      <a href="https://github.com/vigliafg/adbx-legacy" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+    <h2>📖 Cos'è</h2>
+    <p>
+      <strong>adbx-legacy</strong> è la variante a 80×25 della linea adbx: riporta la finestra alla griglia del modo testo DOS — 80 colonne e 25 righe, con area di lavoro, status line, help line e menu line — ma la disegna con un font TrueType scalabile (DejaVu Sans Mono) e uno zoom da 50% al 200%. Sotto c'è un motore <strong>SQLite</strong>; i file <code>.DBF</code> restano leggibili e scrivibili, quindi gli archivi storici non vanno convertiti. Il prodotto non emula il DOS: replica il comportamento di Alpha Four, non il suo hardware.
+    </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+    <h2>👤 A chi serve</h2>
+    <p>
+      A chi ha usato Alpha Four e vuole ritrovare il suo modo di lavorare — database directory, menu a lettere, regole dichiarative, report — su un computer di oggi. A piccoli studi e archivi che devono consultare o aggiornare dati in <code>.DBF</code> senza cloud né abbonamenti. A chi cerca un database desktop <em>senza scrivere SQL</em>, ma anche a chi vuole studiare come un'app del 1993 può essere ricostruita con test automatici e un motore moderno.
+    </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+    <h2>⚙️ Come funziona</h2>
+    <p>
+      All'avvio compare il banner con l'ultimo database o set usato; <code>F10</code> prosegue, <code>F9</code> apre il Database Directory. Ogni database è una cartella con il file <code>.DBF</code> e i suoi metadati: struttura dei campi, indici, range, regole, form, report, etichette, lettere e applicazioni. Le <strong>regole di campo</strong> coprono default, incrementi, template, maschere, valori obbligatori, validazione, doppia immissione, skip, campi calcolati, lookup table/database/cascading e post-data. I <strong>set</strong> legano più tabelle con relazioni First/Last/Closest/All e controllo di integrità. Il <strong>motore di report</strong> gestisce nove gruppi, summary e multipass, con anteprima e PDF; le <strong>etichette</strong> e le <strong>lettere</strong> hanno giustificazioni e condizionali. Gli <strong>script</strong> coprono il capitolo 18 del manuale con 22 trigger, variabili <code>%SYS_*</code>, dialog box, menu bar, debugger e <code>AUTOEXEC</code>; le applicazioni hanno editor a outline, parametri, banner, macro e protezione dei file di supporto.
+    </p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">80×25</div><div class="lbl">Griglia a celle</div></div>
+      <div class="stat-card"><div class="num">25</div><div class="lbl">Lezioni del Tutorial</div></div>
+      <div class="stat-card"><div class="num">525</div><div class="lbl">Test automatici</div></div>
+      <div class="stat-card"><div class="num">6</div><div class="lbl">File scaricabili</div></div>
+    </div>
+
+    <h2>💾 Download e installazione</h2>
+    <p>
+      La release <strong>0.10.0</strong> è pubblicata su
+      <a href="https://github.com/vigliafg/adbx-legacy/releases/tag/v0.10.0" target="_blank" rel="noopener">GitHub Releases</a>
+      con i checksum in <code>SHA256SUMS.txt</code>. Ogni pacchetto contiene l'applicazione completa: Python, Qt e i font sono inclusi, non serve installare nulla.
+    </p>
+
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.88rem;min-width:560px;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);text-align:left;">
+          <th style="padding:10px 14px;color:var(--text-dim);">Piattaforma</th>
+          <th style="padding:10px 14px;color:var(--text-dim);">File</th>
+          <th style="padding:10px 14px;color:var(--accent-2);">Uso</th>
+        </tr>
+      </thead>
+      <tbody style="color:var(--text-muted);">
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 14px;">Windows 10/11 x64</td>
+          <td style="padding:10px 14px;"><a href="https://github.com/vigliafg/adbx-legacy/releases/download/v0.10.0/adbx-legacy-0.10.0-windows-x64-setup.exe" style="color:var(--accent-2);">setup.exe</a> · 26 MB</td>
+          <td style="padding:10px 14px;">Installer NSIS: collegamenti, disinstallatore, voce in App e funzionalità</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 14px;">Windows 10/11 x64</td>
+          <td style="padding:10px 14px;"><a href="https://github.com/vigliafg/adbx-legacy/releases/download/v0.10.0/adbx-legacy-0.10.0-windows-x64-portable.zip" style="color:var(--accent-2);">portable.zip</a> · 36 MB</td>
+          <td style="padding:10px 14px;">Scompattare e avviare <code>adbx-legacy.exe</code></td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 14px;">macOS Apple Silicon</td>
+          <td style="padding:10px 14px;"><a href="https://github.com/vigliafg/adbx-legacy/releases/download/v0.10.0/adbx-legacy-0.10.0-macos-arm64.dmg" style="color:var(--accent-2);">macos-arm64.dmg</a> · 30 MB</td>
+          <td style="padding:10px 14px;">Trascinare <code>adbx-legacy.app</code> in Applicazioni</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 14px;">Debian / Ubuntu x86_64</td>
+          <td style="padding:10px 14px;"><a href="https://github.com/vigliafg/adbx-legacy/releases/download/v0.10.0/adbx-legacy_0.10.0_amd64.deb" style="color:var(--accent-2);">adbx-legacy_0.10.0_amd64.deb</a> · 54 MB</td>
+          <td style="padding:10px 14px;"><code>sudo apt install ./file.deb</code></td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 14px;">Linux x86_64</td>
+          <td style="padding:10px 14px;"><a href="https://github.com/vigliafg/adbx-legacy/releases/download/v0.10.0/adbx-legacy-0.10.0-linux-x86_64.AppImage" style="color:var(--accent-2);">x86_64.AppImage</a> · 64 MB</td>
+          <td style="padding:10px 14px;"><code>chmod +x</code> e avvio, senza installazione</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 14px;">Linux x86_64</td>
+          <td style="padding:10px 14px;"><a href="https://github.com/vigliafg/adbx-legacy/releases/download/v0.10.0/adbx-legacy-0.10.0-linux-x86_64.tar.gz" style="color:var(--accent-2);">x86_64.tar.gz</a> · 70 MB</td>
+          <td style="padding:10px 14px;">Archivio portabile</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;">Tutte</td>
+          <td style="padding:10px 14px;"><a href="https://github.com/vigliafg/adbx-legacy/releases/download/v0.10.0/SHA256SUMS.txt" style="color:var(--accent-2);">SHA256SUMS.txt</a></td>
+          <td style="padding:10px 14px;">Verifica dei download</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>
+      I pacchetti non sono firmati: su Windows SmartScreen chiede <em>Ulteriori informazioni → Esegui comunque</em>; su macOS serve tasto destro → <em>Apri</em> oppure:
+    </p>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.82rem;overflow-x:auto;line-height:1.8;margin:16px 0;">
+xattr -dr com.apple.quarantine /Applications/adbx-legacy.app</pre>
+
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.82rem;overflow-x:auto;line-height:1.8;margin:16px 0;">
+# Debian / Ubuntu
+sudo apt install ./adbx-legacy_0.10.0_amd64.deb
+adbx-legacy
+
+# AppImage
+chmod +x adbx-legacy-0.10.0-linux-x86_64.AppImage
+./adbx-legacy-0.10.0-linux-x86_64.AppImage
+
+# Windows portabile
+# Scompattare l'archivio e avviare adbx-legacy.exe</pre>
+
+    <p>
+      La cartella dati dell'app installata è quella utente:
+      <code>%APPDATA%\adbx-legacy</code> su Windows,
+      <code>~/Library/Application Support/adbx-legacy</code> su macOS,
+      <code>~/.local/share/adbx-legacy</code> su Linux. Le variabili
+      <code>ADBX_DATA</code> e l'opzione <code>--data</code> la sovrascrivono.
+    </p>
+
+    <h2>✨ Caratteristiche principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Griglia 80×25</strong> — La geometria dell'originale, con font scalabile e zoom 50–200% salvato in <code>config.json</code></li>
+      <li><span class="dot accent"></span> <strong>SQLite + DBF</strong> — Motore relazionale moderno e file Alpha Four interoperabili</li>
+      <li><span class="dot amber"></span> <strong>Table designer</strong> — Campi, tipi, maschere, indici, range, regole e lookup dalla finestra</li>
+      <li><span class="dot rose"></span> <strong>View / Enter / Change / Browse</strong> — Cancellazione logica, Find, Locate e Replace</li>
+      <li><span class="dot purple"></span> <strong>Regole di campo complete</strong> — Default, incrementi, template, required, validation, double entry, skip, calcolati, post data</li>
+      <li><span class="dot cyan"></span> <strong>Set e relazioni</strong> — Link First/Last/Closest/All, integrità, cascading e regioni 1:N</li>
+      <li><span class="dot green"></span> <strong>Report, etichette e lettere</strong> — Nove gruppi, summary 7×3×4×2, multipass, anteprima e PDF</li>
+      <li><span class="dot amber"></span> <strong>Script e applicazioni</strong> — Keystroke, dialog box, menu bar, 22 trigger, debugger e macro</li>
+      <li><span class="dot accent"></span> <strong>Utility e I/O</strong> — Copy, append, summarize, pack, zap, crosstab, join, global update e dieci formati di import/export</li>
+    </ul>
+
+    <h2>📦 Dal sorgente</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.82rem;overflow-x:auto;line-height:1.8;margin:16px 0;">
+git clone https://github.com/vigliafg/adbx-legacy.git
+cd adbx-legacy
+./start.sh                 # crea .venv e installa PyQt6 alla prima esecuzione
+./start.sh --smoke         # verifica headless: griglia 80x25 e digest
+./start.sh --data ~/dati   # parte dalla cartella indicata</pre>
+
+    <h2>💡 Casi d'uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot amber"></span> <strong>Archivi storici</strong> — Aprire e aggiornare database <code>.DBF</code> senza convertirli</li>
+      <li><span class="dot accent"></span> <strong>Gestionale su misura</strong> — Tabelle, regole, set e report per inventari, soci, corsi, collezioni</li>
+      <li><span class="dot green"></span> <strong>Retrocomputing</strong> — Studiare e usare un'app del 1993 ricostruita con test e PDF</li>
+      <li><span class="dot rose"></span> <strong>Didattica</strong> — Un percorso guidato in 25 lezioni dal database directory alle applicazioni</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/adbx-legacy" style="color:var(--accent-2);">GitHub</a> · <a href="https://github.com/vigliafg/adbx-legacy/releases/latest" style="color:var(--accent-2);">Release 0.10.0</a></p>
+</footer>
+
+</body>
+</html>

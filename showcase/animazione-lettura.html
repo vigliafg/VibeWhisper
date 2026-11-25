@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Un uomo che legge — VibeWhisper</title>
+  <meta name="description" content="Illustrazione animata in SVG e CSS: un uomo legge un libro, respira, sbatte le palpebre e gira una pagina.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #06080d;
+      --text: #eef1f8;
+      --dim: #8b94a8;
+      --accent: #f3b27a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      align-items: safe center;
+      justify-items: center;
+      padding: 24px 18px;
+      background:
+        radial-gradient(900px 600px at 50% 30%, rgba(129, 140, 248, 0.08), transparent 70%),
+        var(--bg);
+      color: var(--text);
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    }
+
+    .stage {
+      width: min(100%, 620px);
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding: 6px 14px;
+      border: 1px solid rgba(243, 178, 122, 0.28);
+      border-radius: 999px;
+      background: rgba(243, 178, 122, 0.08);
+      color: var(--accent);
+      font-family: "Outfit", sans-serif;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-family: "Outfit", sans-serif;
+      font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      margin: 0 auto 16px;
+      max-width: 44ch;
+      color: var(--dim);
+      font-size: 0.86rem;
+      line-height: 1.65;
+    }
+
+    .scene-shell {
+      width: min(100%, 54vh, 500px);
+      margin: 0 auto;
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      background: #0a0d16;
+      box-shadow:
+        0 30px 80px -30px rgba(0, 0, 0, 0.85),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .reading-scene {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* ---- Animations ---- */
+
+    .breathe {
+      animation: breathe 5.6s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 300px 560px;
+    }
+
+    .head {
+      animation: nod 7s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 300px 352px;
+    }
+
+    .eye {
+      animation: blink 5.4s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .eye.right { animation-delay: 0.06s; }
+
+    .lamp-glow {
+      animation: lamp 7s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .turn-page {
+      animation: page-turn 9.5s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+      transform-box: view-box;
+      transform-origin: 300px 448px;
+      backface-visibility: hidden;
+    }
+
+    .right-static {
+      animation: right-page 9.5s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+    }
+
+    .mote {
+      animation: float 12s linear infinite;
+      opacity: 0;
+    }
+
+    .mote:nth-child(2) { animation-duration: 15s; animation-delay: 1.4s; }
+    .mote:nth-child(3) { animation-duration: 11s; animation-delay: 3.6s; }
+    .mote:nth-child(4) { animation-duration: 17s; animation-delay: 5.2s; }
+    .mote:nth-child(5) { animation-duration: 13s; animation-delay: 7.1s; }
+    .mote:nth-child(6) { animation-duration: 16s; animation-delay: 2.3s; }
+
+    @keyframes breathe {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-3.5px) scale(1.006); }
+    }
+
+    @keyframes nod {
+      0%, 100% { transform: rotate(-1.1deg); }
+      50% { transform: rotate(1.4deg); }
+    }
+
+    @keyframes blink {
+      0%, 91%, 100% { transform: scaleY(1); }
+      93.5%, 95.5% { transform: scaleY(0.08); }
+    }
+
+    @keyframes lamp {
+      0%, 100% { opacity: 0.55; transform: scale(1); }
+      50% { opacity: 0.82; transform: scale(1.035); }
+    }
+
+    @keyframes page-turn {
+      0%, 54% { transform: translateY(0) rotateY(0deg); opacity: 1; }
+      62% { transform: translateY(-3px) rotateY(-34deg); opacity: 1; }
+      74% { transform: translateY(-4px) rotateY(-122deg); opacity: 1; }
+      83%, 100% { transform: translateY(-2px) rotateY(-178deg); opacity: 0; }
+    }
+
+    @keyframes right-page {
+      0%, 56% { opacity: 1; }
+      60%, 86% { opacity: 0; }
+      92%, 100% { opacity: 1; }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(10px); opacity: 0; }
+      18% { opacity: 0.55; }
+      70% { opacity: 0.28; }
+      100% { transform: translateY(-78px); opacity: 0; }
+    }
+
+    .note {
+      margin: 18px 0 0;
+      color: var(--dim);
+      font-size: 0.78rem;
+      letter-spacing: 0.01em;
+    }
+
+    .note span {
+      color: var(--accent);
+      font-family: "Outfit", sans-serif;
+      font-weight: 600;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .breathe,
+      .head,
+      .eye,
+      .lamp-glow,
+      .turn-page,
+      .right-static,
+      .mote {
+        animation: none !important;
+      }
+      .mote { opacity: 0.25; }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="stage">
+    <div class="eyebrow">Animazione</div>
+    <h1>Un uomo che legge</h1>
+    <p class="subtitle">
+      Una scena disegnata a mano in SVG: la luce della lampada pulsa, il respiro muove le spalle,
+      le palpebre si chiudono e ogni tanto una pagina gira.
+    </p>
+
+    <div class="scene-shell">
+      <svg class="reading-scene" viewBox="0 0 600 600" role="img" aria-labelledby="sceneTitle sceneDesc" xmlns="http://www.w3.org/2000/svg">
+        <title id="sceneTitle">Un uomo che legge un libro</title>
+        <desc id="sceneDesc">Illustrazione animata: un uomo seduto legge un libro. Respira, sbatte le palpebre e gira una pagina sotto la luce calda di una lampada.</desc>
+
+        <defs>
+          <radialGradient id="bg" cx="50%" cy="38%" r="78%">
+            <stop offset="0%" stop-color="#1b2234"/>
+            <stop offset="58%" stop-color="#0f1420"/>
+            <stop offset="100%" stop-color="#080a12"/>
+          </radialGradient>
+
+          <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffcf9b" stop-opacity="0.34"/>
+            <stop offset="55%" stop-color="#ffb877" stop-opacity="0.13"/>
+            <stop offset="100%" stop-color="#ffb877" stop-opacity="0"/>
+          </radialGradient>
+
+          <linearGradient id="sweater" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#6f7cd8"/>
+            <stop offset="100%" stop-color="#4b56a6"/>
+          </linearGradient>
+
+          <linearGradient id="pageLeft" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#f0ddba"/>
+            <stop offset="100%" stop-color="#fbf0d8"/>
+          </linearGradient>
+
+          <linearGradient id="pageRight" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0%" stop-color="#f0ddba"/>
+            <stop offset="100%" stop-color="#fbf0d8"/>
+          </linearGradient>
+
+          <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f7d2ac"/>
+            <stop offset="100%" stop-color="#eab988"/>
+          </linearGradient>
+
+          <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity="0.35"/>
+          </filter>
+        </defs>
+
+        <rect width="600" height="600" fill="url(#bg)"/>
+        <circle class="lamp-glow" cx="300" cy="252" r="205" fill="url(#glow)"/>
+
+        <g aria-hidden="true">
+          <circle class="mote" cx="196" cy="300" r="2.6" fill="#ffd9a8"/>
+          <circle class="mote" cx="404" cy="330" r="2" fill="#ffd9a8"/>
+          <circle class="mote" cx="252" cy="250" r="1.8" fill="#ffe6c2"/>
+          <circle class="mote" cx="366" cy="236" r="2.4" fill="#ffd9a8"/>
+          <circle class="mote" cx="320" cy="196" r="1.6" fill="#ffe6c2"/>
+          <circle class="mote" cx="150" cy="360" r="2.2" fill="#ffd9a8"/>
+        </g>
+
+        <ellipse cx="300" cy="566" rx="190" ry="22" fill="#04060b" opacity="0.55"/>
+
+        <g class="chair" filter="url(#softShadow)">
+          <path d="M150 560 L150 322 Q150 248 224 238 L376 238 Q450 248 450 322 L450 560 Z" fill="#1b2334"/>
+          <path d="M176 560 L176 330 Q176 272 232 264 L368 264 Q424 272 424 330 L424 560 Z" fill="#222c43"/>
+        </g>
+
+        <g class="breathe">
+          <path d="M214 560 L214 470 Q214 424 260 408 L340 408 Q386 424 386 470 L386 560 Z" fill="url(#sweater)"/>
+          <path d="M277 402 Q300 424 323 402 Q314 440 300 440 Q286 440 277 402 Z" fill="#5864bb"/>
+          <path d="M238 424 Q202 452 206 492 Q209 512 228 505 Q215 472 250 446 Z" fill="#4a55a3"/>
+          <path d="M362 424 Q398 452 394 492 Q391 512 372 505 Q385 472 350 446 Z" fill="#4a55a3"/>
+        </g>
+
+        <g class="head">
+          <path d="M283 342 L283 396 Q300 406 317 396 L317 342 Z" fill="#e2ac82"/>
+          <ellipse cx="244" cy="302" rx="11" ry="15" fill="#eebd93"/>
+          <ellipse cx="244" cy="302" rx="4.5" ry="7" fill="#dda278" opacity="0.6"/>
+          <ellipse cx="300" cy="292" rx="57" ry="63" fill="url(#skin)"/>
+
+          <path d="M241 288 C236 224 269 204 301 204 C338 204 365 229 362 288
+                   C356 264 343 250 325 246 C306 241 286 245 272 257
+                   C259 267 247 277 241 288 Z" fill="#272433"/>
+          <path d="M241 288 C246 268 256 254 270 246 C252 261 246 272 244 292 Z" fill="#332f42" opacity="0.75"/>
+
+          <path d="M264 282 Q277 275 289 282" fill="none" stroke="#3a3440" stroke-width="3.4" stroke-linecap="round"/>
+          <path d="M311 282 Q323 275 336 282" fill="none" stroke="#3a3440" stroke-width="3.4" stroke-linecap="round"/>
+
+          <ellipse class="eye" cx="277" cy="297" rx="5" ry="6.2" fill="#2c2833"/>
+          <ellipse class="eye right" cx="323" cy="297" rx="5" ry="6.2" fill="#2c2833"/>
+          <circle cx="278.6" cy="294.8" r="1.4" fill="#fff" opacity="0.85"/>
+          <circle cx="324.6" cy="294.8" r="1.4" fill="#fff" opacity="0.85"/>
+
+          <path d="M300 302 Q306 315 297 317" fill="none" stroke="#d49a70" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M288 331 Q300 339 312 331" fill="none" stroke="#b06a5e" stroke-width="3" stroke-linecap="round"/>
+
+          <ellipse cx="266" cy="318" rx="10" ry="5" fill="#e89a8a" opacity="0.22"/>
+          <ellipse cx="334" cy="318" rx="10" ry="5" fill="#e89a8a" opacity="0.22"/>
+        </g>
+
+        <g class="book" filter="url(#softShadow)">
+          <path d="M184 386 L300 368 L416 386 L416 524 L300 546 L184 524 Z" fill="#7d4034"/>
+          <path d="M300 384 C258 370 214 376 190 392 L190 505 C216 492 260 494 300 512 Z" fill="url(#pageLeft)"/>
+
+          <path d="M300 384 C342 370 386 376 410 392 L410 505 C384 492 340 494 300 512 Z" fill="#e4cda3"/>
+
+          <g class="right-static">
+            <path d="M300 384 C342 370 386 376 410 392 L410 505 C384 492 340 494 300 512 Z" fill="url(#pageRight)"/>
+            <g fill="none" stroke="#c7ad83" stroke-width="2.1" stroke-linecap="round" opacity="0.6">
+              <path d="M394 410 Q350 402 318 412"/>
+              <path d="M394 428 Q350 420 318 430"/>
+              <path d="M394 446 Q350 438 318 448"/>
+              <path d="M394 464 Q350 456 318 466"/>
+              <path d="M394 482 Q350 474 318 484"/>
+            </g>
+          </g>
+
+          <g fill="none" stroke="#c7ad83" stroke-width="2.1" stroke-linecap="round" opacity="0.6">
+            <path d="M206 410 Q250 402 282 412"/>
+            <path d="M206 428 Q250 420 282 430"/>
+            <path d="M206 446 Q250 438 282 448"/>
+            <path d="M206 464 Q250 456 282 466"/>
+            <path d="M206 482 Q250 474 282 484"/>
+          </g>
+
+          <path d="M300 384 L300 514" stroke="#b98d68" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+
+          <g class="turn-page">
+            <path d="M300 384 C342 370 386 376 410 392 L410 505 C384 492 340 494 300 512 Z" fill="#f8ebd0"/>
+            <g fill="none" stroke="#cdb58d" stroke-width="2.1" stroke-linecap="round" opacity="0.55">
+              <path d="M394 410 Q350 402 318 412"/>
+              <path d="M394 428 Q350 420 318 430"/>
+              <path d="M394 446 Q350 438 318 448"/>
+              <path d="M394 464 Q350 456 318 466"/>
+              <path d="M394 482 Q350 474 318 484"/>
+            </g>
+          </g>
+
+          <path d="M236 462 Q206 486 208 522 L232 526 Q230 494 256 474 Z" fill="#4a55a3"/>
+          <path d="M364 462 Q394 486 392 522 L368 526 Q370 494 344 474 Z" fill="#4a55a3"/>
+          <ellipse cx="206" cy="508" rx="23" ry="19" fill="#f0c299"/>
+          <ellipse cx="394" cy="508" rx="23" ry="19" fill="#f0c299"/>
+          <path d="M187 504 Q204 493 225 503" fill="none" stroke="#dca77e" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+          <path d="M375 503 Q396 493 413 504" fill="none" stroke="#dca77e" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+          <path d="M194 514 Q204 518 214 514" fill="none" stroke="#dca77e" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+          <path d="M386 514 Q396 518 406 514" fill="none" stroke="#dca77e" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+        </g>
+      </svg>
+    </div>
+
+    <p class="note"><span>SVG + CSS</span> · loop continuo · preferenze di movimento rispettate</p>
+  </main>
+
+</body>
+</html>

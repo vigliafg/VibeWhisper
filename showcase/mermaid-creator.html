@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mermaid Creator — VibeWhisper</title>
-  <meta name="description" content="Desktop app Tauri per creare diagrammi Mermaid con l&#x27;AI, organizzarli in un workspace affiancato e conservarne le versioni.">
+  <meta name="description" content="Mermaid Creator 0.21.0: chat AI con grounding, catalogo di 12 tipi di diagramma, workspace affiancato, lavagna Excalidraw e versioni in SQLite.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -37,9 +37,9 @@
     </picture>
     <a href="diagrammi-ai.html" class="back-link">← Diagrammi &amp; AI</a>
     <div class="icon-lg cyan">🧜</div>
-    <h1>Mermaid Creator</h1>
+    <h1>Mermaid Creator <span class="tech-tag" style="vertical-align:middle;font-size:0.8rem;">v0.21.0</span></h1>
     <p class="subtitle">
-      Desktop app per creare diagrammi Mermaid con l'AI, organizzarli in un workspace affiancato alla chat e conservarne le versioni. Chat, editor e libreria in un'unica finestra, con i dati salvati in locale.
+      Desktop app per creare diagrammi Mermaid con l'AI, organizzarli in un workspace affiancato alla chat, rifinirli su una lavagna Excalidraw e conservarne le versioni. Chat, editor e libreria in un'unica finestra, con i dati salvati in locale.
     </p>
     <div class="tech-tags">
       <span class="tech-tag">Tauri 2</span>
@@ -48,6 +48,7 @@
       <span class="tech-tag">OpenRouter</span>
       <span class="tech-tag">SQLite</span>
       <span class="tech-tag">Mermaid 12</span>
+      <span class="tech-tag">Excalidraw</span>
     </div>
     <div style="margin-top:20px;">
       <a href="https://github.com/vigliafg/mermaid-creator" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
@@ -59,7 +60,7 @@
     <div class="section-card section-cose">
     <h2>📖 Cos'è</h2>
     <p>
-      <strong>Mermaid Creator</strong> è un'app desktop che unisce una chat AI con streaming e un editor visuale per diagrammi Mermaid. Descrivi il diagramma che ti serve, l'AI lo genera, l'app estrae automaticamente il blocco Mermaid dalla risposta e lo apre nel workspace affiancato: da lì puoi cambiarne tema, forma, etichette e struttura, confrontare le versioni e salvarlo nella libreria. È costruita con Tauri 2 (backend Rust) e React 19, e tiene conversazioni, diagrammi, versioni e allegati in un database SQLite locale.
+      <strong>Mermaid Creator</strong> è un'app desktop che unisce una chat AI con streaming e un editor visuale per diagrammi Mermaid. Descrivi il diagramma che ti serve, l'AI lo genera, l'app estrae automaticamente il blocco Mermaid dalla risposta e lo apre nel workspace affiancato: da lì puoi cambiarne tema, forma, etichette e struttura, confrontare le versioni e salvarlo nella libreria. Dalla <strong>0.21.0</strong> ogni diagramma ha anche una <strong>lavagna Excalidraw</strong> derivata, con conversione nativa, autosave ed export PNG/SVG/.excalidraw. È costruita con Tauri 2 (backend Rust) e React 19, e tiene conversazioni, diagrammi, lavagne, versioni e allegati in un database SQLite locale.
     </p>
     </div>
 
@@ -73,15 +74,15 @@
     <div class="section-card section-comefunziona">
     <h2>⚙️ Come funziona</h2>
     <p>
-      La chat chiama OpenRouter in streaming e salva la conversazione in SQLite. Quando la risposta contiene un blocco <code>mermaid</code>, l'app lo estrae e lo renderizza con <strong>Pele</strong>, con fallback su <strong>Mermaid.js</strong>; il sorgente resta modificabile e l'anteprima si aggiorna in tempo reale. Il workspace supporta selezione, pan, zoom alla rotella, fit, 13 temi e preset, stile per elemento e modifica di label e struttura dei flowchart. Ogni salvataggio crea una versione ripristinabile nella libreria locale. La API key di OpenRouter è validata e conservata nel keyring di sistema.
+      La chat chiama OpenRouter in streaming e salva la conversazione in SQLite. Il prompt Mermaid v4 analizza testo e dati, suggerisce la vista adatta e fa grounding gratuito su Wikipedia, Wikidata, OpenAlex, Bing RSS e URL diretti; la risposta viene validata e, se serve, auto-corretta. Quando contiene un blocco <code>mermaid</code>, l'app lo estrae e lo renderizza con <strong>Pele</strong>, con fallback su <strong>Mermaid.js</strong>; il sorgente resta modificabile e l'anteprima si aggiorna in tempo reale. Il workspace supporta selezione, pan, zoom alla rotella, fit, 13 temi e preset, stile per elemento e modifica di label e struttura dei flowchart. Ogni salvataggio crea una versione ripristinabile nella libreria locale. La API key di OpenRouter è validata e conservata nel keyring di sistema.
     </p>
     </div>
 
 
     <div class="stats-row">
+      <div class="stat-card"><div class="num">12</div><div class="lbl">Tipi di diagramma</div></div>
+      <div class="stat-card"><div class="num">120</div><div class="lbl">Varianti in catalogo</div></div>
       <div class="stat-card"><div class="num">13</div><div class="lbl">Temi per diagrammi</div></div>
-      <div class="stat-card"><div class="num">2</div><div class="lbl">Renderer: Pele + Mermaid.js</div></div>
-      <div class="stat-card"><div class="num">1</div><div class="lbl">Database SQLite locale</div></div>
       <div class="stat-card"><div class="num">0</div><div class="lbl">Telemetria</div></div>
     </div>
 
@@ -95,12 +96,15 @@
       <li><span class="dot cyan"></span> <strong>Chat con streaming</strong> — Conversazione con il modello via OpenRouter, con estrazione automatica dei blocchi Mermaid dalle risposte</li>
       <li><span class="dot accent"></span> <strong>Catalogo modelli</strong> — Ricerca nel catalogo OpenRouter, filtri vision/gratis e preferiti salvati in locale</li>
       <li><span class="dot green"></span> <strong>Allegati</strong> — Testo, PDF testuali, DOCX, immagini, clipboard e drag&amp;drop direttamente nella chat</li>
+      <li><span class="dot cyan"></span> <strong>Grounding e validazione</strong> — Prompt Mermaid v4 con viste consigliate, fonti gratuite (Wikipedia, Wikidata, OpenAlex, Bing RSS, URL) e auto-correzione della sintassi</li>
+      <li><span class="dot purple"></span> <strong>Catalogo</strong> — 12 tipi di diagramma e 10 varianti per tipo, con anteprime autofit e fascia laterale delle varianti</li>
       <li><span class="dot amber"></span> <strong>Workspace espandibile</strong> — Editor a tutta finestra, con selezione, pan, zoom alla rotella, fit e fascia controlli richiudibile</li>
       <li><span class="dot purple"></span> <strong>13 temi e preset</strong> — Neon, Blueprint, Terminal, Mono e altri, con comandi AI per preset e palette</li>
       <li><span class="dot rose"></span> <strong>Editing visuale</strong> — Stile per elemento, modifica di label e struttura flowchart, punte delle connessioni e direzione del layout</li>
       <li><span class="dot green"></span> <strong>Versioni e ripristino</strong> — Ogni salvataggio conserva una versione del diagramma, ripristinabile dalla cronologia</li>
       <li><span class="dot accent"></span> <strong>Libreria</strong> — Ricerca, preferiti ed export in SVG, PNG e sorgente .mmd</li>
-      <li><span class="dot amber"></span> <strong>Privacy by design</strong> — API key nel keyring di sistema, dati in SQLite locale, nessuna telemetria</li>
+      <li><span class="dot green"></span> <strong>Lavagna Excalidraw</strong> — Conversione nativa dal diagramma, autosave, versioni con snapshot, export PNG/SVG/.excalidraw, font self-hosted e uso offline</li>
+      <li><span class="dot amber"></span> <strong>Privacy by design</strong> — API key nel keyring di sistema, dati in SQLite locale, nessuna telemetria; testi e allegati vengono inviati solo a OpenRouter e al provider scelto</li>
     </ul>
 
     <h2>🏗️ Come Funziona</h2>
@@ -110,12 +114,13 @@
       <li>L'app estrae il blocco Mermaid dalla risposta e lo apre nel workspace affiancato</li>
       <li>Rifinisci tema, struttura, etichette e direzione del layout con l'anteprima live</li>
       <li>Salva: il diagramma entra nella libreria e la versione precedente resta ripristinabile</li>
-      <li>Esporta in SVG, PNG o .mmd per condividerlo o versionarlo nel tuo repository</li>
+      <li>Passa alla lavagna Excalidraw per una copia derivata e modificabile, poi esporta in SVG, PNG o .mmd</li>
     </ol>
 
     <h2>📦 Installazione</h2>
     <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
 # Requisiti: Node.js 24+, Rust stable, WebKitGTK 4.1 (Linux)
+# Release 0.21.0: pacchetti .deb/.rpm/.AppImage, .exe e .dmg
 git clone https://github.com/vigliafg/mermaid-creator.git
 cd mermaid-creator
 

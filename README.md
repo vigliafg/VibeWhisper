@@ -2,7 +2,7 @@
 
 > Idee che diventano codice
 
-**VibeWhisper** è il portfolio showcase di **35 progetti** raccolti in **8 sezioni tematiche** — dal mondo dei PDF agli EPUB, dalla traduzione di documenti ai diagrammi Mermaid, dal cloud storage al batch renaming, dalla dettatura vocale all'analisi forex. Ogni progetto risolve un problema reale con un'interfaccia pensata per chi la usa.
+**VibeWhisper** è il portfolio showcase di **39 progetti** raccolti in **9 sezioni tematiche** — dal mondo dei PDF agli EPUB, dalla traduzione di documenti ai diagrammi Mermaid, dal cloud storage al batch renaming, dalla dettatura vocale all'analisi forex, fino ai database relazionali. Ogni progetto risolve un problema reale con un'interfaccia pensata per chi la usa.
 
 ## 🚀 Guarda lo Showcase
 
@@ -19,9 +19,10 @@ La home è un hub: ogni sezione raccoglie i progetti per **tipo di lavoro**.
 | [📚 EPUB & libri](showcase/epub-libri.html) | 4 | IBS Metadata Scraper, epub2site, epubsplitter, epubslimer |
 | [🌍 Lingua & voce](showcase/lingua-voce.html) | 3 | mdtranslator, cli_translator, NovoDictate |
 | [📈 Finanza](showcase/finanza.html) | 3 | ForexFlow AI, ForexVision, ForexSMC |
-| [📊 Statistica](showcase/statistica.html) | 2 | LazStats JS, LazStats Pro (v0.35.0, CLI e MCP) |
+| [📊 Statistica](showcase/statistica.html) | 4 | LazStats JS, LazStats Pro (v0.35.0, CLI e MCP), RcmdrShiny (v1.13.0), RcmdrShiny Studio (v3.2.0) |
 | [🧩 Diagrammi & AI](showcase/diagrammi-ai.html) | 2 | Mermaid Creator, mermaid-to-excalidraw |
 | [🗂️ File, cloud & sicurezza](showcase/file-cloud-sicurezza.html) | 3 | Bulk Renamer PRO, Cyfer, TGM Drive NXT |
+| [🗄️ Database](showcase/database.html) | 1 | adbx-legacy (v0.10.0, Windows/macOS/Linux) |
 
 La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 famiglie. La tabella qui sotto elenca le **schede con pagina di dettaglio**; gli altri repository Noesis sono raggiungibili dalla mappa.
 
@@ -58,7 +59,10 @@ La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 
 | 📈 [ForexSMC](showcase/forexsmc.html) | Analizzatore SMC/ICT per EUR/USD, GBP/USD e USD/JPY | HTML, Vanilla JS, Python |
 | 📊 [LazStats JS](showcase/lazstatjs.html) | Statistica inferenziale nel browser, 100% client-side | React 19, TypeScript, Victory |
 | ⚡ [LazStats Pro](showcase/lazstatjs-pro.html) | Evoluzione desktop, CLI e MCP: oltre 70 procedure, report e agenti AI. Release 0.35.0 | Electron, React 19, TypeScript, Vega-Lite, MCP |
+| 📊 [RcmdrShiny](showcase/rstats-commander.html) | R Commander ricostruito su Shiny, senza Tcl/Tk: 213 dialoghi, 863 voci di menu, R Markdown e knitr. Release 1.13.0 | R, Shiny, bslib, DT, rhandsontable |
+| 🎛️ [RcmdrShiny Studio](showcase/rcmdr-studio.html) | Workbench statistico browser-native ispirato a R Commander: command palette, Chart Studio ggplot2, progetti e Plugin SDK. Release 3.2.0 | R, Shiny, ggplot2, plotly, DT |
 | 🔄 [Pandoc WASM Studio](showcase/pandoc-wasm-studio.html) | Convertitore universale di documenti nel browser | React 19, TypeScript, WebAssembly |
+| 🗄️ [adbx-legacy](showcase/adbx-legacy.html) | Clone di Alpha Four v3 su griglia 80×25: SQLite, DBF, regole, set, report, script. Release 0.10.0 con installer Windows NSIS, .dmg macOS, .deb e AppImage Linux | Python, PyQt6, SQLite |
 
 ## 🛠️ Tecnologie
 
@@ -68,13 +72,14 @@ La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 
 - **API/AI**: Google Translate, DeepL, Microsoft/Bing, OpenRouter, Gemini, Telegram Bot API, Yahoo Finance
 - **Formati**: EPUB, PDF, Markdown, HTML/CSS, DOCX, LaTeX, Mermaid, SVG/PNG
 - **Dati e motori**: SQLite, PyMuPDF, PyMuPDF4LLM, pdf2zh_next/BabelDOC, Pandoc WASM
+- **Statistica e R**: jStat, Victory, R 4.1+, Shiny, ggplot2, plotly, RcmdrMisc
 
 ## 📁 Struttura
 
 ```
 VibeWhisper/
 ├── showcase/
-│   ├── index.html          # Home hub con le 8 sezioni
+│   ├── index.html          # Home hub con le 9 sezioni
 │   ├── styles.css          # Design system condiviso
 │   ├── noesis.html         # Mappa dell'ecosistema Noesis
 │   ├── documenti.html      # Sezione Documenti & PDF
@@ -84,6 +89,7 @@ VibeWhisper/
 │   ├── statistica.html     # Sezione Statistica
 │   ├── diagrammi-ai.html   # Sezione Diagrammi & AI
 │   ├── file-cloud-sicurezza.html  # Sezione File, cloud & sicurezza
+│   ├── database.html       # Sezione Database
 │   └── *.html              # Pagine dettaglio per ogni progetto
 ├── .agents/                # Codebuff skill config
 └── skills-lock.json

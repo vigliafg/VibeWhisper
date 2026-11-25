@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Database — VibeWhisper</title>
+  <meta name="description" content="Database: adbx-legacy, il clone funzionale di Alpha Four v3 su SQLite con griglia 80×25, file .DBF interoperabili e installer per Windows, macOS e Linux.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <picture>
+      <source media="(max-width: 768px)" srcset="banner-sezione-database-mobile.svg">
+      <img src="banner-sezione-database.svg" alt="Database Banner" class="project-hero-banner">
+    </picture>
+    <a href="index.html#sezioni" class="back-link">← Tutte le sezioni</a>
+    <div class="icon-lg green">🗄️</div>
+    <h1>Database</h1>
+    <p class="subtitle">
+      Strumenti che trattano i dati come materia prima: tabelle, record, indici e regole. Per ora un solo progetto, <strong>adbx-legacy</strong>, che riporta in vita il database relazionale di Alpha Four 3.0 sopra SQLite, con la griglia a caratteri 80×25 dell'originale.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">SQLite</span>
+      <span class="tech-tag">DBF</span>
+      <span class="tech-tag">PyQt6</span>
+      <span class="tech-tag">Desktop</span>
+      <span class="tech-tag">Legacy</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="#progetti" class="link-btn">📂 Vedi i progetti</a>
+    </div>
+  </div>
+
+  <div class="eco-wrap">
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">1</div><div class="lbl">Progetto</div></div>
+      <div class="stat-card"><div class="num">25</div><div class="lbl">Lezioni del Tutorial</div></div>
+      <div class="stat-card"><div class="num">525</div><div class="lbl">Test automatici</div></div>
+      <div class="stat-card"><div class="num">100%</div><div class="lbl">Dati in locale</div></div>
+    </div>
+
+    <section class="eco-section" id="progetti">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Sezione 08 · Database</span>
+        <h2>Dati relazionali con l'anima del 1993</h2>
+        <p>Qui vivono i progetti che gestiscono archivi e record. La sezione esordisce con adbx-legacy: un database relazionale completo — tabelle, regole di campo, set, report, script e applicazioni — dentro una finestra moderna, con file <code>.DBF</code> ancora interoperabili.</p>
+      </div>
+
+      <div class="project-grid eco-grid">
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon green">🗄️</div>
+              <div>
+                <h3>adbx-legacy</h3>
+                <span class="eco-badge">Desktop · release 0.10.0</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">PyQt6</span><span class="tag">SQLite</span><span class="tag">DBF</span>
+            </div>
+            <p class="desc">
+              Clone funzionale di Alpha Four v3 sulla griglia 80×25 dell'originale: table designer, regole di campo, set, form, report, etichette, script e applicazioni. Installer Windows NSIS, <code>.dmg</code> macOS, <code>.deb</code> e AppImage Linux.
+            </p>
+            <div class="eco-links">
+              <a href="adbx-legacy.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/adbx-legacy/releases/latest" class="link-btn" target="_blank" rel="noopener">⬇️ Release 0.10.0</a><a href="https://github.com/vigliafg/adbx-legacy" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="eco-section">
+      <div class="eco-section-head">
+        <span class="eco-kicker">Come è collegato</span>
+        <h2>Un ponte tra il 1993 e oggi</h2>
+        <p>La sezione Database non è archeologia: è il tentativo di tenere vivo un modello di lavoro — dati relazionali, regole dichiarative, report — senza rinunciare a SQLite, ai font scalabili e alle piattaforme moderne.</p>
+      </div>
+
+      <ul class="feature-list">
+        <li><span class="dot accent"></span> <strong>Compatibilità</strong> — I file <code>.DBF</code> restano leggibili e scrivibili: i dati di Alpha Four non vanno convertiti per essere usati.</li>
+        <li><span class="dot green"></span> <strong>Stesso motore, due griglie</strong> — adbx-legacy è la variante 80×25 della linea principale 132×43: identici test e comportamento, cambia solo il layout.</li>
+        <li><span class="dot amber"></span> <strong>Dentro e fuori</strong> — Import/export in dieci formati, PDF per report ed etichette, stampa e backup senza cloud.</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="index.html#sezioni" style="color:var(--accent-2);">Tutte le sezioni</a> · 2026</p>
+</footer>
+
+</body>
+</html>

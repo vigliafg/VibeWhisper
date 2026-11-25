@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RcmdrShiny (rstats-commander) — VibeWhisper</title>
+  <meta name="description" content="RcmdrShiny 1.13.0: R Commander ricostruito su Shiny, senza Tcl/Tk. 213 dialoghi, 863 voci di menu, R Markdown e knitr, 443 topic di help offline.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <a href="statistica.html" class="back-link">← Statistica</a>
+    <div class="icon-lg purple">📊</div>
+    <h1>RcmdrShiny <span class="tech-tag" style="vertical-align:middle;font-size:0.8rem;">v1.13.0</span></h1>
+    <p class="subtitle">
+      L'R Commander di sempre, ricostruito su Shiny e liberato da Tcl/Tk. Menu, dialoghi e log dei comandi identici nella sostanza: ogni click produce un comando R riproducibile nel pannello di output.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">R 4.1+</span>
+      <span class="tech-tag">Shiny</span>
+      <span class="tech-tag">bslib</span>
+      <span class="tech-tag">DT</span>
+      <span class="tech-tag">shinyAce</span>
+      <span class="tech-tag">rhandsontable</span>
+      <span class="tech-tag">RcmdrMisc</span>
+      <span class="tech-tag">GPL-2+</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/rstats-commander" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/rstats-commander/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+      <a href="rcmdr-studio.html" class="link-btn">🎛️ RcmdrShiny Studio →</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+      <h2>📖 Cos'è</h2>
+      <p>
+        <strong>RcmdrShiny</strong> è un fork del motore di <strong>R Commander 2.15.0</strong> ricostruito come applicazione Shiny locale, dentro il browser. Conserva la semantica di generazione dei comandi di Rcmdr — ogni azione nell'interfaccia produce un comando R visibile nello script log e nel pannello di output — ma elimina la dipendenza da Tcl/Tk. La release <strong>1.13.0</strong> porta l'authoring di documenti: la scheda Script gestisce script R, documenti R Markdown e knitr, li compila in HTML, PDF o Word e mostra il risultato nella scheda <strong>Report</strong>.
+      </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+      <h2>👤 A chi serve</h2>
+      <p>
+        È pensata per chi insegna e impara la statistica con R: <strong>docenti</strong> che vogliono far vedere il comando dietro ogni analisi, <strong>studenti</strong> che arrivano da SPSS o da R Commander e cercano la stessa logica senza installare Tcl/Tk, e <strong>ricercatori</strong> che preferiscono un'interfaccia locale e riproducibile ai notebook. Fa per te se ti serve l'intero catalogo Rcmdr — modelli, grafici, distribuzioni, plugin — e vuoi che tutto resti sulla tua macchina.
+      </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+      <h2>⚙️ Come funziona</h2>
+      <p>
+        La UI Shiny costruisce la sidebar dai menu di <code>Rcmdr-menus.txt</code> e attiva le voci con i predicati di Rcmdr (<code>numericP()</code>, <code>modelCapability()</code>, …). Ogni dialogo raccoglie i parametri e chiama un <em>command builder</em> puro che genera il comando R; <code>run_command()</code> lo valuta in <code>.GlobalEnv</code> e cattura output, messaggi, warning, errori e grafici. La scheda Script (Ace) esegue selezione o intero file, la griglia dati usa <code>DT</code> e <code>rhandsontable</code> (editor disattivato oltre 10.000 celle), e la scheda Report mostra i documenti compilati. I plugin si registrano con <code>RcmdrShiny.plugin()</code>.
+      </p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">213</div><div class="lbl">Dialoghi core</div></div>
+      <div class="stat-card"><div class="num">863</div><div class="lbl">Voci di menu su 900</div></div>
+      <div class="stat-card"><div class="num">443</div><div class="lbl">Topic di help</div></div>
+      <div class="stat-card"><div class="num">15</div><div class="lbl">Plugin supportati</div></div>
+    </div>
+
+    <h2>✨ Caratteristiche Principali</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>Menu e dialoghi Rcmdr</strong> — 213 dialoghi core e 863 voci di menu implementate su 900, con attivazione reattiva dai predicati Rcmdr</li>
+      <li><span class="dot cyan"></span> <strong>Comandi riproducibili</strong> — Ogni azione genera il comando R corrispondente, visibile e copiabile dallo script log</li>
+      <li><span class="dot green"></span> <strong>Script, R Markdown e knitr</strong> — La scheda Script cambia modalità senza perdere il codice, esegue chunk e sezioni e compila in HTML/PDF/Word</li>
+      <li><span class="dot amber"></span> <strong>Dati e modelli</strong> — Import CSV, Excel, SPSS, Stata, SAS e Minitab; editing, ricodifica, merge, modelli lineari, GLM, misti e multivariati</li>
+      <li><span class="dot rose"></span> <strong>Grafici e 3D</strong> — Grafici base, RcmdrMisc, car e lattice, versioni interattive plotly e scena rgl con <code>rglwidget()</code></li>
+      <li><span class="dot blue"></span> <strong>Help offline</strong> — 443 topic Markdown con ricerca, categorie, help contestuale dentro i dialoghi e 21 topic tradotti in italiano</li>
+      <li><span class="dot green"></span> <strong>Plugin</strong> — Quattro wave di plugin (Export, sos, ROC, survival, FactoMineR, EZR e altri) con alias dei comandi e API a menu, comandi e dialoghi</li>
+      <li><span class="dot accent"></span> <strong>Accessibile</strong> — Landmark ARIA, navigazione da tastiera, tema scuro e selettore della lingua</li>
+    </ul>
+
+    <h2>🧱 Dentro il pacchetto</h2>
+    <table>
+      <thead>
+        <tr><th>Componente</th><th>Responsabilità</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>R/app.R</code></td><td>UI Shiny, server, wiring dei menu, pannelli e status bar</td></tr>
+        <tr><td><code>R/state.R</code></td><td><code>AppState</code>: ambiente, dataset e modello attivi, log, memoria dei dialoghi</td></tr>
+        <tr><td><code>R/commands.R</code></td><td><code>run_command()</code>: valutazione, cattura di output e grafici</td></tr>
+        <tr><td><code>R/dialogs*.R</code></td><td>Specifiche dei dialoghi, validazione e registry</td></tr>
+        <tr><td><code>R/command-builders.R</code></td><td>Funzioni pure che generano comandi compatibili con Rcmdr</td></tr>
+        <tr><td><code>inst/help-topics/</code></td><td>Documentazione Markdown con front matter YAML, per core e plugin</td></tr>
+      </tbody>
+    </table>
+
+    <h2>📦 Installazione</h2>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;color:var(--text-muted);font-family:var(--font-mono);font-size:0.78rem;overflow-x:auto;line-height:1.8;">
+# Requisiti: R >= 4.1
+install.packages(c("shiny", "bslib", "DT", "shinyAce", "shinyFiles",
+                   "rhandsontable", "RcmdrMisc"))
+
+# Dal clone locale
+git clone https://github.com/vigliafg/rstats-commander.git
+cd rstats-commander
+R -e 'install.packages(".", repos = NULL, type = "source")'
+
+# Avvio: apre l'app Shiny nel browser
+R -e 'RcmdrShiny::run()'</pre>
+
+    <h2>💡 Casi d'Uso</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>Didattica</strong> — Mostrare il comando R dietro ogni menu, con help e report nella stessa lezione</li>
+      <li><span class="dot cyan"></span> <strong>Analisi di base</strong> — Statistiche descrittive, t-test, ANOVA, regressioni e tabelle senza scrivere codice a mano</li>
+      <li><span class="dot green"></span> <strong>Report</strong> — Scrivere R Markdown o knitr nello stesso ambiente e compilarlo in HTML, PDF o Word</li>
+      <li><span class="dot amber"></span> <strong>Migrazione da Rcmdr</strong> — Ritrovare menu, plugin e semantica dei comandi senza Tcl/Tk</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="statistica.html" style="color:var(--accent-2);">Statistica</a> · <a href="https://github.com/vigliafg/rstats-commander" style="color:var(--accent-2);">GitHub</a> · GPL-2+</p>
+</footer>
+
+</body>
+</html>
