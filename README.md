@@ -6,7 +6,7 @@
 
 ## 🚀 Guarda lo Showcase
 
-Apri [`showcase/index.html`](showcase/index.html) nel browser oppure visita la [GitHub Pages demo](https://vigliafg.github.io/VibeWhisper/).
+Apri [`showcase/index.html`](showcase/index.html) nel browser oppure visita il sito live su Cloudflare: [vibewhisper.vigliafg.workers.dev](https://vibewhisper.vigliafg.workers.dev/).
 
 ## 🗺️ Le Sezioni
 
@@ -72,8 +72,8 @@ La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 
 
 - **Frontend**: Vanilla JS, React 19 + TypeScript, Tailwind CSS
 - **Backend/CLI**: Python, Node.js, FastAPI, Docker
-- **Desktop GUI**: PyQt6, Tauri 2 + Rust, Tkinter, CustomTkinter
-- **API/AI**: Google Translate, DeepL, Microsoft/Bing, OpenRouter, Gemini, Telegram Bot API, Yahoo Finance
+- **Desktop GUI**: PyQt6, Flet, Tauri 2 + Rust, Tkinter, CustomTkinter, Textual
+- **API/AI**: Google Translate, DeepL, Microsoft/Bing, OpenRouter, Gemini, Telegram Bot API, Yahoo Finance, Claude Code
 - **Formati**: EPUB, PDF, Markdown, HTML/CSS, DOCX, LaTeX, Mermaid, SVG/PNG
 - **Dati e motori**: SQLite, PyMuPDF, PyMuPDF4LLM, pdf2zh_next/BabelDOC, Pandoc WASM
 - **Statistica e R**: jStat, Victory, R 4.1+, Shiny, ggplot2, plotly, RcmdrMisc
