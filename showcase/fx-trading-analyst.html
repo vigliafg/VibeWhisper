@@ -79,7 +79,7 @@
         <strong>2. Smart Money Concepts:</strong> struttura di mercato, order block, fair value gap, pool di liquidità, premium/discount, con livelli e invalidazioni.<br>
         <strong>3. Tecnica e statistica:</strong> SMA, RSI, MACD, ATR e Bollinger, più un bootstrap dei rendimenti storici (oltre 100.000 percorsi) con bande p5–p95 a cinque sedute.<br>
         <strong>4. Contesto:</strong> <code>sentiment.py</code> (posizionamento CFTC COT, DXY, VIX, US10Y), <code>analogs.py</code> (cosa è successo quando il mercato era così, dieci anni di storico), <code>debate.py</code> (tre pesature), <code>scorecard.py</code> (registra gli scenari e li valuta sul close reale).<br>
-        <strong>5. Pagina:</strong> <code>build_report.py</code> esegue l'intera pipeline e scrive HTML e grafico; un timer systemd può lanciarla ogni giorno alle 16:30 e, se c'è la CLI di Claude, far riscrivere solo la sintesi (max 130 parole) con verifica che nessuna frase contraddica i numeri.
+        <strong>5. Pagina:</strong> <code>build_report.py</code> esegue l'intera pipeline e scrive un <strong>HTML autocontenuto</strong>: grafici in SVG inline e font IBM Plex incorporati in base64 — nessuna dipendenza esterna, renderizza identico anche offline. Un timer systemd può lanciarla ogni giorno alle 16:30 e, se c'è la CLI di Claude, far riscrivere solo la sintesi (max 130 parole) con verifica che nessuna frase contraddica i numeri.
       </p>
     </div>
 
@@ -90,6 +90,7 @@
       <li><span class="dot purple"></span> <strong>Quattro moduli di contesto</strong> — Sentiment, analoghi storici, dibattito a tre pesature, scorecard che si autovaluta</li>
       <li><span class="dot amber"></span> <strong>Zero dipendenze</strong> — Solo Python 3.10+ e curl: nessun pacchetto esterno da installare</li>
       <li><span class="dot cyan"></span> <strong>Report in una pagina</strong> — Verdetto, struttura, statistica, scenari con probabilità, livelli e grafico</li>
+      <li><span class="dot blue"></span> <strong>HTML autocontenuto</strong> — Grafici SVG inline e font incorporati in base64: un solo file, funziona anche offline</li>
       <li><span class="dot green"></span> <strong>Automazione onesta</strong> — Timer systemd giornaliero; la sintesi AI è facoltativa e viene verificata contro i numeri</li>
     </ul>
 
