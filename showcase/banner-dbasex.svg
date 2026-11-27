@@ -88,5 +88,5 @@
   <line x1="60" y1="540" x2="1040" y2="540" stroke="#ffffff" stroke-opacity="0.09"/>
   <line x1="60" y1="540" x2="360" y2="540" stroke="url(#accentLine)" stroke-width="1.4"/>
   <text x="60" y="570" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12.5" fill="#7c8496">github.com/vigliafg/dbasex</text>
-  <text x="1040" y="570" text-anchor="end" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12" fill="#5b6273">versione 0.9.0 · 2026</text>
+  <text x="1040" y="570" text-anchor="end" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12" fill="#5b6273">versione 0.10.0 · 2026</text>
 </svg>

@@ -22,7 +22,7 @@ La home è un hub: ogni sezione raccoglie i progetti per **tipo di lavoro**.
 | [📊 Statistica](showcase/statistica.html) | 4 | LazStats JS, LazStats Pro (v0.35.0, CLI e MCP), RcmdrShiny (v1.13.0), RcmdrShiny Studio (v3.2.0) |
 | [🧩 Diagrammi & AI](showcase/diagrammi-ai.html) | 2 | Mermaid Creator, mermaid-to-excalidraw |
 | [🗂️ File, cloud & sicurezza](showcase/file-cloud-sicurezza.html) | 3 | Bulk Renamer PRO, Cyfer, TGM Drive NXT |
-| [🗄️ Database](showcase/database.html) | 2 | adbx-legacy (v0.10.0, Windows/macOS/Linux), dBX (v0.9.0, Python/PyQt6) |
+| [🗄️ Database](showcase/database.html) | 2 | adbx-legacy (v0.10.0, Windows/macOS/Linux), dBX (v0.10.0, Python/PyQt6, wheel e bundle multipiattaforma) |
 
 La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 famiglie. La tabella qui sotto elenca le **schede con pagina di dettaglio**; gli altri repository Noesis sono raggiungibili dalla mappa.
 
@@ -63,7 +63,7 @@ La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 
 | 🎛️ [RcmdrShiny Studio](showcase/rcmdr-studio.html) | Workbench statistico browser-native ispirato a R Commander: command palette, Chart Studio ggplot2, progetti e Plugin SDK. Release 3.2.0 | R, Shiny, ggplot2, plotly, DT |
 | 🔄 [Pandoc WASM Studio](showcase/pandoc-wasm-studio.html) | Convertitore universale di documenti nel browser | React 19, TypeScript, WebAssembly |
 | 🗄️ [adbx-legacy](showcase/adbx-legacy.html) | Clone di Alpha Four v3 su griglia 80×25: SQLite, DBF, regole, set, report, script. Release 0.10.0 con installer Windows NSIS, .dmg macOS, .deb e AppImage Linux | Python, PyQt6, SQLite |
-| 🧮 [dBX](showcase/dbasex.html) | Personal database in stile dBASE 5.5: Table Builder, Query Designer con QBE, form, report, etichette, MiniScript. Versione 0.9.0, 559 test | Python, PyQt6, SQLite |
+| 🧮 [dBX](showcase/dbasex.html) | Personal database in stile dBASE 5.5: Table Builder, Query Designer con QBE, form, report, etichette, MiniScript e validazione dei campi. Versione 0.10.0, 584 test, wheel e bundle Linux/Windows/macOS | Python, PyQt6, SQLite |
 
 ## 🛠️ Tecnologie
 
