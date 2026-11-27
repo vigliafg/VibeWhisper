@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FX Trading Analyst — VibeWhisper</title>
+  <meta name="description" content="Skill per Claude Code e CLI Python che genera il report previsionale giornaliero FX: Smart Money Concepts e analisi tecnico-statistica sugli stessi candle, più sentiment, analoghi, dibattito e scorecard.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <a href="finanza.html" class="back-link">← Finanza</a>
+    <div class="icon-lg green">📉</div>
+    <h1>FX Trading Analyst</h1>
+    <p class="subtitle">
+      Una skill per Claude Code — e una CLI Python — che ogni mattina produce il report previsionale su EUR/USD (o sulla coppia richiesta) combinando <strong>Smart Money Concepts</strong> e <strong>analisi tecnico-statistica</strong> sugli stessi candle, con quattro moduli di contesto e una pagina HTML pronta da leggere.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python 3.10+</span>
+      <span class="tech-tag">Solo stdlib</span>
+      <span class="tech-tag">Claude Code Skill</span>
+      <span class="tech-tag">SMC/ICT</span>
+      <span class="tech-tag">Bootstrap</span>
+      <span class="tech-tag">Yahoo Finance</span>
+      <span class="tech-tag">systemd</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/fx-trading-analyst" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/fx-trading-analyst/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+      <a href="https://github.com/vigliafg/fx-trading-analyst/blob/main/SKILL.md" class="link-btn" target="_blank" rel="noopener">📜 SKILL.md</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+      <h2>📖 Cos'è</h2>
+      <p>
+        <strong>FX Trading Analyst</strong> è una skill per agenti compatibili con Claude Code che genera un <strong>report previsionale giornaliero</strong> sul cambio, di default EUR/USD. Due letture indipendenti degli stessi candle — struttura e liquidità da un lato, indicatori e distribuzione statistica dall'altro — vengono affiancate e confrontate, insieme a quattro moduli che aggiungono contesto macro, storico e autovalutazione.
+      </p>
+      <p>
+        Il risultato è una singola pagina HTML con verdetto, lettura SMC, lettura statistica, scenari con probabilità, tabella dei livelli e grafico. Nessuna previsione a punto: sempre una distribuzione, con i livelli che la invaliderebbero.
+      </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+      <h2>👤 A chi serve</h2>
+      <p>
+        A chi segue il forex e vuole un <strong>briefing ripetibile</strong> invece di una lettura improvvisata: la pipeline è deterministica, ogni numero risale a una serie scaricata o ad aritmetica su di essa. A chi usa un agente e preferisce una skill pronta, con regole esplicite, invece di un prompt da ricostruire ogni volta. A chi vuole <strong>leggere il disaccordo</strong>: prudente, neutrale e aggressivo sono tre pesature dichiarate, e la differenza tra loro è parte dell'output.
+      </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+      <h2>⚙️ Come funziona</h2>
+      <p>
+        <strong>1. Dati:</strong> candle OHLC e fixing BCE scaricati con la sola stdlib (<code>urllib</code>), più curl per i feed che lo richiedono.<br>
+        <strong>2. Smart Money Concepts:</strong> struttura di mercato, order block, fair value gap, pool di liquidità, premium/discount, con livelli e invalidazioni.<br>
+        <strong>3. Tecnica e statistica:</strong> SMA, RSI, MACD, ATR e Bollinger, più un bootstrap dei rendimenti storici (oltre 100.000 percorsi) con bande p5–p95 a cinque sedute.<br>
+        <strong>4. Contesto:</strong> <code>sentiment.py</code> (posizionamento CFTC COT, DXY, VIX, US10Y), <code>analogs.py</code> (cosa è successo quando il mercato era così, dieci anni di storico), <code>debate.py</code> (tre pesature), <code>scorecard.py</code> (registra gli scenari e li valuta sul close reale).<br>
+        <strong>5. Pagina:</strong> <code>build_report.py</code> esegue l'intera pipeline e scrive HTML e grafico; un timer systemd può lanciarla ogni giorno alle 16:30 e, se c'è la CLI di Claude, far riscrivere solo la sintesi (max 130 parole) con verifica che nessuna frase contraddica i numeri.
+      </p>
+    </div>
+
+    <h2>✨ Caratteristiche</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Due motori, stessi candle</strong> — SMC e tecnico-statistica non condividono ipotesi: il confronto è l'output</li>
+      <li><span class="dot accent"></span> <strong>Bootstrap dei rendimenti</strong> — Oltre 100.000 percorsi, bande p5–p95 a cinque sedute, nessuna previsione a punto</li>
+      <li><span class="dot purple"></span> <strong>Quattro moduli di contesto</strong> — Sentiment, analoghi storici, dibattito a tre pesature, scorecard che si autovaluta</li>
+      <li><span class="dot amber"></span> <strong>Zero dipendenze</strong> — Solo Python 3.10+ e curl: nessun pacchetto esterno da installare</li>
+      <li><span class="dot cyan"></span> <strong>Report in una pagina</strong> — Verdetto, struttura, statistica, scenari con probabilità, livelli e grafico</li>
+      <li><span class="dot green"></span> <strong>Automazione onesta</strong> — Timer systemd giornaliero; la sintesi AI è facoltativa e viene verificata contro i numeri</li>
+    </ul>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Motori indipendenti</div></div>
+      <div class="stat-card"><div class="num">4</div><div class="lbl">Moduli di contesto</div></div>
+      <div class="stat-card"><div class="num">100k+</div><div class="lbl">Percorsi bootstrap</div></div>
+      <div class="stat-card"><div class="num">10 anni</div><div class="lbl">Storico analoghi</div></div>
+    </div>
+
+    <h2>🧩 I moduli</h2>
+    <table>
+      <thead>
+        <tr><th>Modulo</th><th>Domanda a cui risponde</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>sentiment.py</strong></td><td>Come è posizionato il mercato: CFTC COT, DXY, VIX, rendimento US10Y</td></tr>
+        <tr><td><strong>analogs.py</strong></td><td>Cosa è successo le altre volte che il mercato era in una configurazione simile</td></tr>
+        <tr><td><strong>debate.py</strong></td><td>Tre pesature — prudente, neutrale, aggressiva — e il disaccordo tra loro</td></tr>
+        <tr><td><strong>scorecard.py</strong></td><td>Gli scenari passati erano corretti? Lo registra e lo valuta sul close reale</td></tr>
+      </tbody>
+    </table>
+
+    <h2>📏 Le regole del metodo</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Mai inventare un prezzo</strong> — Ogni numero risale a una serie scaricata o ad aritmetica su di essa</li>
+      <li><span class="dot accent"></span> <strong>Scenario, mai consiglio</strong> — Livelli, probabilità e invalidazioni; niente buy/sell</li>
+      <li><span class="dot amber"></span> <strong>Sempre distribuzione</strong> — Mai una previsione a punto</li>
+      <li><span class="dot purple"></span> <strong>La sintesi nomina il dato che contraddice la tesi</strong> — Oppure dice cosa la farebbe cambiare</li>
+      <li><span class="dot cyan"></span> <strong>Convenzioni dichiarate</strong> — Fixing BCE delle 14:15 e close di New York non vengono mai mescolati in un confronto</li>
+    </ul>
+
+    <h2>⚠️ Limiti dichiarati</h2>
+    <p>
+      Il motore statistico è un'estrapolazione dei rendimenti passati; l'SMC è un insieme di convenzioni di disegno. Nessuno dei due sa nulla di una decisione sui tassi, di un intervento o di una notizia non ancora pubblicata. Il report è uno strumento di lettura e di metodo, non consulenza finanziaria.
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/fx-trading-analyst" style="color:var(--accent-2);">GitHub</a> · MIT License</p>
+</footer>
+
+</body>
+</html>

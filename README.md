@@ -2,7 +2,7 @@
 
 > Idee che diventano codice
 
-**VibeWhisper** è il portfolio showcase di **40 progetti** raccolti in **9 sezioni tematiche** — dal mondo dei PDF agli EPUB, dalla traduzione di documenti ai diagrammi Mermaid, dal cloud storage al batch renaming, dalla dettatura vocale all'analisi forex, fino ai database relazionali. Ogni progetto risolve un problema reale con un'interfaccia pensata per chi la usa.
+**VibeWhisper** è il portfolio showcase di **43 progetti** raccolti in **9 sezioni tematiche** — dal mondo dei PDF agli EPUB, dalla traduzione di documenti ai diagrammi Mermaid, dal cloud storage al batch renaming, dalla dettatura vocale all'analisi forex, fino ai database relazionali. Ogni progetto risolve un problema reale con un'interfaccia pensata per chi la usa.
 
 ## 🚀 Guarda lo Showcase
 
@@ -15,10 +15,10 @@ La home è un hub: ogni sezione raccoglie i progetti per **tipo di lavoro**.
 | Sezione | Progetti | Cosa contiene |
 |---|---|---|
 | [🧭 Noesis](showcase/noesis.html) | 14 | Reader, traduzione EPUB/PDF, cloner, engine, EPUB tools, Excalidraw, Roads, sito |
-| [📄 Documenti & PDF](showcase/documenti.html) | 5 | pdfhandler, pdfhandler-ng, pdfextractor, pdfshow, Pandoc WASM Studio |
-| [📚 EPUB & libri](showcase/epub-libri.html) | 4 | IBS Metadata Scraper, epub2site, epubsplitter, epubslimer |
+| [📄 Documenti & PDF](showcase/documenti.html) | 6 | pdfhandler, pdfhandler-ng, pdfextractor, pdfshow, Pandoc WASM Studio, Book Consultant |
+| [📚 EPUB & libri](showcase/epub-libri.html) | 5 | IBS Metadata Scraper, epub2site, epubsplitter, epubslimer, fscalibre |
 | [🌍 Lingua & voce](showcase/lingua-voce.html) | 3 | mdtranslator, cli_translator, NovoDictate |
-| [📈 Finanza](showcase/finanza.html) | 3 | ForexFlow AI, ForexVision, ForexSMC |
+| [📈 Finanza](showcase/finanza.html) | 4 | ForexFlow AI, ForexVision, ForexSMC, FX Trading Analyst |
 | [📊 Statistica](showcase/statistica.html) | 4 | LazStats JS, LazStats Pro (v0.35.0, CLI e MCP), RcmdrShiny (v1.13.0), RcmdrShiny Studio (v3.2.0) |
 | [🧩 Diagrammi & AI](showcase/diagrammi-ai.html) | 2 | Mermaid Creator, mermaid-to-excalidraw |
 | [🗂️ File, cloud & sicurezza](showcase/file-cloud-sicurezza.html) | 3 | Bulk Renamer PRO, Cyfer, TGM Drive NXT |
@@ -57,6 +57,9 @@ La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 
 | 📊 [ForexFlow AI](showcase/forexflow.html) | Analisi tecnica EUR/USD con 9 modelli previsionali e AI | React 19, TypeScript, Vite, OpenRouter, NVIDIA NIM |
 | 📈 [ForexVision](showcase/forexvision.html) | Tecnica, SMC e sentiment in un unico verdetto | Vanilla JS, Canvas, Yahoo Finance |
 | 📈 [ForexSMC](showcase/forexsmc.html) | Analizzatore SMC/ICT per EUR/USD, GBP/USD e USD/JPY | HTML, Vanilla JS, Python |
+| 📝 [Book Consultant](showcase/book-consultant.html) | Assistente desktop per scrivere libri: editor a sezioni, cinque personalità AI che propongono, versioning live, Second Brain, figure generate ed export in cinque formati. Release 1.0.0, 455 test | Python, Flet 1.1.4, SQLite, OpenRouter |
+| 🔎 [fscalibre](showcase/fscalibre.html) | Ricerca fuzzy nella libreria Calibre: titolo, autore, descrizione e tag in AND, soglia regolabile, TUI Textual e GUI Flet sullo stesso motore | Python, Textual, Flet, rapidfuzz |
+| 📉 [FX Trading Analyst](showcase/fx-trading-analyst.html) | Briefing FX giornaliero con SMC e analisi tecnico-statistica sugli stessi candle, più sentiment, analoghi, dibattito e scorecard. Solo stdlib | Python, Claude Code Skill, Bootstrap |
 | 📊 [LazStats JS](showcase/lazstatjs.html) | Statistica inferenziale nel browser, 100% client-side | React 19, TypeScript, Victory |
 | ⚡ [LazStats Pro](showcase/lazstatjs-pro.html) | Evoluzione desktop, CLI e MCP: oltre 70 procedure, report e agenti AI. Release 0.35.0 | Electron, React 19, TypeScript, Vega-Lite, MCP |
 | 📊 [RcmdrShiny](showcase/rstats-commander.html) | R Commander ricostruito su Shiny, senza Tcl/Tk: 213 dialoghi, 863 voci di menu, R Markdown e knitr. Release 1.13.0 | R, Shiny, bslib, DT, rhandsontable |

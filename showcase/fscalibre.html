@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fscalibre — VibeWhisper</title>
+  <meta name="description" content="Ricerca fuzzy e combinabile nella libreria Calibre: titolo, autore, descrizione e tag, in TUI Textual o GUI Flet, con lo stesso motore e gli stessi risultati. Sola lettura su metadata.db.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <a href="epub-libri.html" class="back-link">← EPUB &amp; libri</a>
+    <div class="icon-lg purple">🔎</div>
+    <h1>fscalibre</h1>
+    <p class="subtitle">
+      Ricerca <strong>fuzzy e combinabile</strong> nella tua libreria Calibre: titolo, autore, descrizione e tag, tollerante ai refusi, su decine di migliaia di libri. Due interfacce — TUI nel terminale e GUI Flet — con lo stesso motore e gli stessi risultati.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python 3.10+</span>
+      <span class="tech-tag">Textual</span>
+      <span class="tech-tag">Flet</span>
+      <span class="tech-tag">rapidfuzz</span>
+      <span class="tech-tag">Calibre</span>
+      <span class="tech-tag">Sola lettura</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/fscalibre" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/fscalibre/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+      <h2>📖 Cos'è</h2>
+      <p>
+        <strong>fscalibre</strong> cerca dentro la libreria <a href="https://calibre-ebook.com/" target="_blank" rel="noopener" style="color:var(--accent-2);">Calibre</a> quando ricordi solo un pezzo del titolo, un autore scritto male o un argomento letto mesi fa in una descrizione. Quattro criteri <strong>indipendenti e combinabili</strong> — titolo, autore, descrizione e tag — si sommano in AND: un libro entra nei risultati solo se li soddisfa tutti.
+      </p>
+      <p>
+        La ricerca è <strong>fuzzy</strong>: <code>mancer</code> trova <em>Neuromancer</em>, <code>gibsn</code> trova <em>Gibson</em>. Una soglia da 0 a 100 regola in tempo reale quanto stretti devono essere i match, e le copie della stessa opera in formati diversi vengono fuse in un solo risultato.
+      </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+      <h2>👤 A chi serve</h2>
+      <p>
+        A chi ha una libreria Calibre <strong>grande e disordinata</strong> e passa più tempo a cercare un libro che a leggerlo. A chi lavora nel terminale e vuole una TUI veloce, ma anche a chi preferisce una finestra desktop o il browser: le due interfacce mostrano esattamente gli stessi risultati con gli stessi punteggi, perché tutta la logica vive in un motore headless.
+      </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+      <h2>⚙️ Come funziona</h2>
+      <p>
+        <strong>1. Lettura:</strong> apre <code>metadata.db</code> di Calibre <strong>in sola lettura</strong>, cercandolo in <code>CALIBRE_LIBRARY</code>, in <code>~/CalibreLibrary</code> o nel percorso indicato con <code>-l</code>. La libreria non viene mai modificata.<br>
+        <strong>2. Indice e cache:</strong> la prima indicizzazione di una libreria grande richiede circa 15 secondi; il risultato viene salvato accanto al database (pickle compresso, circa 20 MB) e si ricarica in circa un secondo. La cache si invalida da sola quando il database cambia.<br>
+        <strong>3. Scansione:</strong> la ricerca fuzzy gira su un pool di processi (fino a 6), quindi resta reattiva anche su decine di migliaia di libri. Con <code>rapidfuzz</code> usa l'algoritmo in C++; senza, ricade su <code>difflib</code> della stdlib con gli stessi risultati.<br>
+        <strong>4. Risultati:</strong> nessun limite fisso: la lista si allunga a pagine mentre scorri, con dettaglio del libro e apertura della cartella.
+      </p>
+    </div>
+
+    <h2>✨ Caratteristiche</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>Quattro criteri in AND</strong> — Titolo, autore, descrizione e tag, combinabili liberamente</li>
+      <li><span class="dot accent"></span> <strong>Fuzzy tollerante ai refusi</strong> — Sottostringhe e distanza tra stringhe, con soglia regolabile in tempo reale</li>
+      <li><span class="dot green"></span> <strong>Due interfacce, un motore</strong> — TUI Textual e GUI Flet (desktop o web) condividono <code>cfcore.py</code> e gli stessi punteggi</li>
+      <li><span class="dot amber"></span> <strong>Cache intelligente</strong> — Indice persistente compresso, invalidato dal mtime del database</li>
+      <li><span class="dot cyan"></span> <strong>Scansione parallela</strong> — Fino a 6 processi per restare reattiva su librerie enormi</li>
+      <li><span class="dot green"></span> <strong>Sola lettura</strong> — Nessuna scrittura, nessuna modifica, nessun rischio per la libreria</li>
+      <li><span class="dot purple"></span> <strong>Copie fuse</strong> — Stesso titolo e autore in formati diversi diventano un solo risultato, tranne quando filtri per tag</li>
+    </ul>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">4</div><div class="lbl">Criteri combinabili</div></div>
+      <div class="stat-card"><div class="num">2</div><div class="lbl">Interfacce</div></div>
+      <div class="stat-card"><div class="num">6</div><div class="lbl">Processi di scansione</div></div>
+      <div class="stat-card"><div class="num">~1 s</div><div class="lbl">Ricarica dalla cache</div></div>
+    </div>
+
+    <h2>⌨️ La TUI in breve</h2>
+    <table>
+      <thead>
+        <tr><th>Tasto</th><th>Azione</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>ctrl+a</code> / <code>ctrl+t</code> / <code>ctrl+d</code> / <code>ctrl+e</code></td><td>Vai al campo autore / titolo / descrizione / tag</td></tr>
+        <tr><td><code>invio</code></td><td>Passa ai risultati</td></tr>
+        <tr><td><code>d</code></td><td>Mostra o nasconde il dettaglio del libro</td></tr>
+        <tr><td><code>o</code></td><td>Apre la cartella del libro</td></tr>
+        <tr><td><code>s</code> / <code>più</code> / <code>meno</code></td><td>Regola la soglia di match (0–100)</td></tr>
+        <tr><td><code>ctrl+r</code> / <code>q</code></td><td>Ricarica la libreria / esci</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🧱 Architettura</h2>
+    <pre style="font-size:0.75rem; line-height:1.6; background:rgba(16,20,30,0.8);">
+cfcore.py                 motore headless
+  │  normalizzazione, cache, indice tag
+  │  scansione fuzzy multi-processo
+  │  fusione copie, punteggi
+  ├──▶ calibrefind.py      TUI Textual
+  └──▶ calibrefind_flet.py GUI Flet (desktop / web)
+
+metadata.db (Calibre, sola lettura) ──▶ cache pickle+zlib ──▶ risultati</pre>
+
+    <h2>🔒 Privacy</h2>
+    <p>
+      Tutto accade in locale: nessun upload, nessun servizio esterno, nessuna telemetria. Il database della libreria viene aperto in sola lettura e la cache resta accanto ad esso. In modalità web la GUI ascolta su <code>127.0.0.1</code>, a meno che tu non scelga esplicitamente di esporla sulla rete locale.
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/fscalibre" style="color:var(--accent-2);">GitHub</a> · MIT License</p>
+</footer>
+
+</body>
+</html>

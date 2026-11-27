@@ -55,7 +55,7 @@
   <div class="eco-wrap">
 
     <div class="stats-row">
-      <div class="stat-card"><div class="num">4</div><div class="lbl">Progetti</div></div>
+      <div class="stat-card"><div class="num">5</div><div class="lbl">Progetti</div></div>
       <div class="stat-card"><div class="num">2</div><div class="lbl">Strumenti EPUB</div></div>
       <div class="stat-card"><div class="num">1</div><div class="lbl">Conversione EPUB→sito</div></div>
       <div class="stat-card"><div class="num">0</div><div class="lbl">Upload</div></div>
@@ -65,7 +65,7 @@
       <div class="eco-section-head">
         <span class="eco-kicker">Sezione 02 · Libri</span>
         <h2>La filiera del libro digitale</h2>
-        <p>Arricchire i metadati, trasformare un EPUB in un sito, estrarre un capitolo o alleggerire le immagini: ogni progetto interviene in un punto preciso del ciclo di vita di un ebook.</p>
+        <p>Arricchire i metadati, trasformare un EPUB in un sito, estrarre un capitolo, alleggerire le immagini o ritrovare un libro nella propria libreria: ogni progetto interviene in un punto preciso del ciclo di vita di un ebook.</p>
       </div>
 
       <div class="project-grid eco-grid">
@@ -149,6 +149,26 @@
             </div>
           </div>
         </article>
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon purple">🔎</div>
+              <div>
+                <h3>fscalibre</h3>
+                <span class="eco-badge">TUI + GUI · Flet</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Textual</span><span class="tag">Flet</span><span class="tag">rapidfuzz</span>
+            </div>
+            <p class="desc">
+              Ricerca fuzzy e combinabile nella libreria Calibre: titolo, autore, descrizione e tag in AND, soglia regolabile, cache e scansione multi-processo. Sola lettura su metadata.db.
+            </p>
+            <div class="eco-links">
+              <a href="fscalibre.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/fscalibre" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -156,13 +176,14 @@
       <div class="eco-section-head">
         <span class="eco-kicker">Come sono collegati</span>
         <h2>Fili comuni</h2>
-        <p>I due strumenti di Noesis EPUB Tools condividono lo stesso repository e la stessa interfaccia; gli altri due lavorano a monte e a valle.</p>
+        <p>I due strumenti di Noesis EPUB Tools condividono lo stesso repository e la stessa interfaccia; gli altri lavorano a monte, a valle e dentro la libreria.</p>
       </div>
 
       <ul class="feature-list">
         <li><span class="dot green"></span> <strong>IBS Metadata Scraper</strong> — Arricchisce i metadati del libro prima della conversione o della pubblicazione.</li>
         <li><span class="dot amber"></span> <strong>epub2site</strong> — Trasforma l'EPUB in un sito statico leggibile ovunque, con reader e TOC.</li>
         <li><span class="dot purple"></span> <strong>Noesis EPUB Tools</strong> — epubsplitter ed epubslimer sono i due strumenti della suite: estrazione capitoli e compressione immagini.</li>
+        <li><span class="dot cyan"></span> <strong>fscalibre</strong> — Quando la libreria è grande e i titoli non si ricordano: la ricerca arriva prima della lettura, non dopo.</li>
       </ul>
     </section>
 

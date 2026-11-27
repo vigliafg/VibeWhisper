@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Consultant — VibeWhisper</title>
+  <meta name="description" content="Assistente desktop alla costruzione di libri: editor a sezioni, cinque personalità AI, versioning live, Second Brain, ricerca web, figure generate ed export MD/DOCX/PDF/EPUB/HTML. Flet, SQLite, OpenRouter.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <a href="documenti.html" class="back-link">← Documenti &amp; PDF</a>
+    <div class="icon-lg amber">📝</div>
+    <h1>Book Consultant <span class="tech-tag" style="vertical-align:middle;font-size:0.8rem;">v1.0.0</span></h1>
+    <p class="subtitle">
+      Assistente desktop alla costruzione di documenti e libri: editor a sezioni collassabili, chat con cinque personalità AI che propongono e non scrivono da sole, versioning live, Second Brain, ricerca web, figure generate ed export in cinque formati.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Flet 1.1.4</span>
+      <span class="tech-tag">SQLite</span>
+      <span class="tech-tag">Markdown</span>
+      <span class="tech-tag">OpenRouter</span>
+      <span class="tech-tag">FTS5</span>
+      <span class="tech-tag">Pandoc</span>
+      <span class="tech-tag">Mermaid</span>
+      <span class="tech-tag">Flet pack</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/book-consultant" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/book-consultant/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+      <a href="https://github.com/vigliafg/book-consultant/blob/main/docs/release-checklist.md" class="link-btn" target="_blank" rel="noopener">✅ Release checklist</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+      <h2>📖 Cos'è</h2>
+      <p>
+        <strong>Book Consultant</strong> è un'applicazione desktop per chi scrive documenti lunghi: un editor a sezioni collassabili dove ogni proposta dell'AI arriva come <strong>modifica da approvare</strong>, mai come scrittura automatica. Il testo resta in Markdown e in SQLite, il versioning è continuo (flush ogni 1,5 secondi, snapshot compressi, checkpoint espliciti) e la cronologia permette di tornare indietro.
+      </p>
+      <p>
+        Attorno all'editor vivono cinque personalità specialistiche — <strong>Ricercatore, Integratore, Rifinitore, Illustratore, Editore</strong> — più un assistente generale che smista le richieste. Ognuna ha prompt, permessi e tool distinti; tutte passano dallo stesso protocollo di proposte, con verifica di hash e revisione prima dell'applicazione.
+      </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+      <h2>👤 A chi serve</h2>
+      <p>
+        A chi scrive <strong>saggi, manuali e libri</strong> e vuole un aiuto che resti sotto controllo: la struttura in sezioni, l'indice, i segnalibri e il focus su una parte del testo sono pensati per documenti che crescono per settimane. A chi lavora con <strong>fonti e citazioni</strong>: import di PDF e DOCX con pagina, note di ricerca con URL e estratti verificati, controllo che una citazione non sia stata inventata. A chi deve <strong>consegnare un file finito</strong>: export Markdown, DOCX, PDF, EPUB e HTML con preflight delle dipendenze.
+      </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+      <h2>⚙️ Come funziona</h2>
+      <p>
+        <strong>1. Struttura:</strong> il documento è un albero di sezioni con blocchi tipizzati (paragrafo, titolo, citazione, elenco, tabella, figura, diagramma). Solo le sezioni espanse costruiscono i controlli: il rendering resta leggero anche con centinaia di blocchi.<br>
+        <strong>2. Contesto:</strong> l'editor sa quale blocco è attivo, dove sta il cursore e che cosa è selezionato; l'agente riceve il contesto esatto e propone una modifica mirata, non una riscrittura del mondo.<br>
+        <strong>3. Proposte:</strong> ogni azione dell'AI è una proposta con precondizioni (hash del blocco, revisione del documento). Si applica o si rifiuta; una proposta obsoleta viene bloccata.<br>
+        <strong>4. Ricerca:</strong> il Ricercatore legge le fonti del progetto, cerca sul web con DuckDuckGo dietro guardie SSRF e <code>robots.txt</code>, apre poche pagine per turno e propone note con citazioni verificabili.<br>
+        <strong>5. Immagini:</strong> l'Illustratore propone tabelle, diagrammi Mermaid (renderizzati con <code>mmdc</code> o <code>dot</code>) e figure generate dall'API Images di OpenRouter, solo dopo approvazione.<br>
+        <strong>6. Consegna:</strong> export con Pandoc e LaTeX, controllo editoriale automatico (<code>doc.analyze</code>), backup ZIP con ripristino, log ruotati senza segreti.
+      </p>
+    </div>
+
+    <h2>✨ Caratteristiche</h2>
+    <ul class="feature-list">
+      <li><span class="dot accent"></span> <strong>Editor a sezioni</strong> — Collassa, espandi, focus su una sezione, indice e segnalibri persistenti</li>
+      <li><span class="dot purple"></span> <strong>Versioning live</strong> — Flush ogni 1,5 s, snapshot zlib, checkpoint manuali e cronologia con diff e ripristino</li>
+      <li><span class="dot green"></span> <strong>Second Brain</strong> — Indice del progetto, ricerca full-text FTS5 e <code>brain.json</code> sempre consultabile</li>
+      <li><span class="dot amber"></span> <strong>Cinque personalità</strong> — Ricercatore, Integratore, Rifinitore, Illustratore, Editore, con matrice di permessi distinta</li>
+      <li><span class="dot cyan"></span> <strong>Import</strong> — PDF, DOCX, HTML, Markdown e testo, con proposta di struttura e fonti archiviate con hash</li>
+      <li><span class="dot accent"></span> <strong>Ricerca web</strong> — DuckDuckGo senza chiave, guardie SSRF, rispetto di robots.txt, note con citazioni e pagine PDF</li>
+      <li><span class="dot purple"></span> <strong>Figure e diagrammi</strong> — API Images di OpenRouter (1K, fino a 14 reference) e catena Mermaid → DOT → sorgente</li>
+      <li><span class="dot green"></span> <strong>Export completo</strong> — MD, DOCX, PDF, EPUB e HTML con anteprima, indice, figure e preflight delle dipendenze</li>
+      <li><span class="dot amber"></span> <strong>Manutenzione</strong> — Backup ZIP ripristinabile, retention delle revisioni, <code>VACUUM</code>, log ruotati con redazione di chiavi e token</li>
+    </ul>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">5</div><div class="lbl">Personalità AI</div></div>
+      <div class="stat-card"><div class="num">5</div><div class="lbl">Formati di export</div></div>
+      <div class="stat-card"><div class="num">455</div><div class="lbl">Test automatici</div></div>
+      <div class="stat-card"><div class="num">1,5 s</div><div class="lbl">Finestra di rischio</div></div>
+    </div>
+
+    <h2>🧠 Le personalità</h2>
+    <table>
+      <thead>
+        <tr><th>Personalità</th><th>Cosa fa</th><th>Scrive?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Assistente editoriale</strong></td><td>Punto di ingresso, sceglie l'intervento minimo e smista alle personalità adatte</td><td>Solo proposte</td></tr>
+        <tr><td><strong>Ricercatore</strong></td><td>Legge le fonti, cerca sul web, produce note con citazioni e pagine</td><td>No: solo note</td></tr>
+        <tr><td><strong>Integratore</strong></td><td>Struttura: sezioni, ordine, passaggi mancanti, coerenza dell'indice</td><td>Struttura</td></tr>
+        <tr><td><strong>Rifinitore</strong></td><td>Semplifica, accorcia o espande la prosa su un blocco o una selezione</td><td>Testo</td></tr>
+        <tr><td><strong>Illustratore</strong></td><td>Tabelle, diagrammi Mermaid e figure con prompt, alt e didascalia</td><td>Media</td></tr>
+        <tr><td><strong>Editore</strong></td><td>Analisi dell'intero documento, terminologia, tono, transizioni</td><td>Report e ritocchi mirati</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🗂️ La filiera del documento</h2>
+    <p>
+      Dalla fonte al file consegnato, ogni passaggio lascia una traccia: la fonte importata ha hash e stato, la proposta ha una revisione di riferimento, l'export crea un checkpoint, il backup contiene database, impostazioni, asset e fonti.
+    </p>
+    <pre style="font-size:0.75rem; line-height:1.6; background:rgba(16,20,30,0.8);">
+Import PDF/DOCX ──▶ Fonti (hash, pagine)
+        │
+        ▼
+Editor a sezioni ──▶ Versioning (1,5 s) ──▶ Checkpoint / cronologia
+        │
+        ├──▶ Ricercatore ──▶ nota di ricerca ──▶ Sorgenti
+        ├──▶ Illustratore ──▶ tabella / diagramma / figura
+        └──▶ Editore ──▶ doc.analyze ──▶ report
+        │
+        ▼
+Export MD · DOCX · PDF · EPUB · HTML ──▶ Backup ZIP</pre>
+
+    <h2>🔒 Privacy &amp; Sicurezza</h2>
+    <ul class="feature-list">
+      <li><span class="dot green"></span> <strong>Chiave fuori dal progetto</strong> — Letta da variabile d'ambiente, file con permessi 600 o keyring; mai nel database, nei log o nelle proposte</li>
+      <li><span class="dot accent"></span> <strong>Nessuna scrittura senza approvazione</strong> — Ogni modifica passa da una proposta con precondizioni di hash e revisione</li>
+      <li><span class="dot amber"></span> <strong>Web con guardie</strong> — URL privati e loopback rifiutati, <code>robots.txt</code> rispettato, materiale esterno trattato come dati e non come istruzioni</li>
+      <li><span class="dot purple"></span> <strong>Log redatti</strong> — Rotazione 1 MB × 3, con rimozione di chiavi, token e header <code>Bearer</code></li>
+    </ul>
+
+    <h2>📦 Release</h2>
+    <p>
+      Versione <strong>1.0.0</strong>, con installazione in editable, CI GitHub Actions (lint e test) e pacchetto Linux da <code>flet pack</code>. La checklist di release e il manuale di accettazione sono nel repository. Limiti dichiarati: niente OCR nell'import, un documento primario per progetto, figure e diagrammi non ancora renderizzati inline nell'editor.
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/book-consultant" style="color:var(--accent-2);">GitHub</a> · Licenza da definire</p>
+</footer>
+
+</body>
+</html>
