@@ -39,7 +39,7 @@
     <div class="icon-lg cyan">🐳</div>
     <h1>Noesis PDF Cloner Service</h1>
     <p class="subtitle">
-      Server web e CLI headless della pipeline di Noesis PDF Cloner: carichi un PDF, scegli le pagine e scarichi la versione tradotta con lo stesso layout.
+      Server web e CLI headless della pipeline di Noesis PDF Cloner: carichi un PDF, scegli le pagine e scarichi la versione tradotta. PDF nativi con layout, scansioni via Mistral OCR in Markdown + PDF hardcopy.
     </p>
     <div class="tech-tags">
       <span class="tech-tag">FastAPI</span>
@@ -49,6 +49,7 @@
       <span class="tech-tag">AGPL-3.0</span>
     </div>
     <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/noesis-pdf-cloner-service/releases/tag/v0.2.2" class="link-btn" target="_blank" rel="noopener">⬇️ Release 0.2.2</a>
       <a href="https://github.com/vigliafg/noesis-pdf-cloner-service" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
     </div>
   </div>
@@ -58,7 +59,7 @@
     <div class="section-card section-cose">
     <h2>📖 Cos'è</h2>
     <p>
-      <strong>Noesis PDF Cloner Service</strong> porta la pipeline di traduzione PDF con layout preservato su una macchina, in LAN o in un container. Ha due anime: un'interfaccia web con drag&amp;drop per scegliere pagine, lingua e motore, e una CLI headless per lavorare su molti PDF in blocco. Il risultato è un PDF unico con le pagine tradotte oppure uno ZIP con le pagine singole; il motore è pdf2zh_next v2 (BabelDOC) con Google, Bing o LLM via OpenRouter.
+      <strong>Noesis PDF Cloner Service</strong> porta la pipeline di traduzione PDF su una macchina, in LAN o in un container. Ha due anime: un'interfaccia web con drag&amp;drop per scegliere pagine, lingua e motore, e una CLI headless per lavorare su molti PDF in blocco. I PDF nativi mantengono il layout (pdf2zh_next v2/BabelDOC); le pagine <strong>scansionate</strong>, con <code>OCR_SCANS=1</code>, passano da <strong>Mistral OCR</strong> e diventano <strong>Markdown tradotto + PDF hardcopy</strong> (senza impaginazione). Motori: Google, Bing o LLM via OpenRouter (default <code>gpt-oss-120b</code>).
     </p>
     </div>
 
@@ -100,6 +101,7 @@
       <li><span class="dot cyan"></span> <strong>Autosizing</strong> — Parallelismo regolato su CPU, RAM e disco; guardie che proteggono il servizio</li>
       <li><span class="dot accent"></span> <strong>Scala</strong> — API e worker separabili, con worker aggiungibili anche su più macchine</li>
       <li><span class="dot green"></span> <strong>Docker pronto</strong> — Immagine <code>linux/amd64</code> e <code>linux/arm64</code> su GHCR, tutto incluso</li>
+      <li><span class="dot blue"></span> <strong>Scansioni OCR</strong> — <code>OCR_SCANS=1</code>: Mistral OCR via OpenRouter, Markdown + PDF hardcopy; costo ~$0,002/pagina</li>
     </ul>
 
     <h2>🏗️ Come Funziona</h2>
@@ -133,6 +135,30 @@ docker run -d --name noesis -p 18080:18080 -v noesis-data:/data \
 ./run-cli.sh pdfs/libro.pdf -p 100-103 --src en --dst it --engine google \
   --output libro_it --range-mode merged</pre>
 
+
+    <h2>⬇️ Download (v0.2.2)</h2>
+    <p>
+      Release <strong>0.2.2</strong> su
+      <a href="https://github.com/vigliafg/noesis-pdf-cloner-service/releases/tag/v0.2.2" target="_blank" rel="noopener">GitHub Releases</a>.
+      Include l'allineamento OCR/Markdown al desktop e il default LLM <code>gpt-oss-120b</code>.
+    </p>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;color:var(--text-muted);font-size:0.9rem;">
+      <thead><tr style="border-bottom:1px solid var(--border);color:var(--text);text-align:left;">
+        <th style="padding:10px 14px;">Piattaforma</th><th style="padding:10px 14px;">File</th><th style="padding:10px 14px;">Dimensione</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:10px 14px;">Linux x86_64</td><td style="padding:10px 14px;"><a href="https://github.com/vigliafg/noesis-pdf-cloner-service/releases/download/v0.2.2/noesis-pdf-cloner-service-linux-x86_64.tar.gz" style="color:var(--accent-2);">.tar.gz</a></td><td style="padding:10px 14px;">~57 MB</td></tr>
+        <tr><td style="padding:10px 14px;">macOS Apple Silicon</td><td style="padding:10px 14px;"><a href="https://github.com/vigliafg/noesis-pdf-cloner-service/releases/download/v0.2.2/noesis-pdf-cloner-service-macos-arm64.tar.gz" style="color:var(--accent-2);">.tar.gz</a></td><td style="padding:10px 14px;">~39 MB</td></tr>
+        <tr><td style="padding:10px 14px;">macOS Intel</td><td style="padding:10px 14px;"><a href="https://github.com/vigliafg/noesis-pdf-cloner-service/releases/download/v0.2.2/noesis-pdf-cloner-service-macos-x64.tar.gz" style="color:var(--accent-2);">.tar.gz</a></td><td style="padding:10px 14px;">~41 MB</td></tr>
+        <tr><td style="padding:10px 14px;">Windows x64</td><td style="padding:10px 14px;"><a href="https://github.com/vigliafg/noesis-pdf-cloner-service/releases/download/v0.2.2/noesis-pdf-cloner-service-windows-x64.zip" style="color:var(--accent-2);">.zip</a></td><td style="padding:10px 14px;">~37 MB</td></tr>
+        <tr><td style="padding:10px 14px;">Python</td><td style="padding:10px 14px;"><a href="https://github.com/vigliafg/noesis-pdf-cloner-service/releases/download/v0.2.2/noesis_pdf_cloner_service-0.2.2-py3-none-any.whl" style="color:var(--accent-2);">wheel</a> · <a href="https://github.com/vigliafg/noesis-pdf-cloner-service/releases/download/v0.2.2/noesis_pdf_cloner_service-0.2.2.tar.gz" style="color:var(--accent-2);">sdist</a></td><td style="padding:10px 14px;">~200 KB</td></tr>
+        <tr><td style="padding:10px 14px;">Docker</td><td style="padding:10px 14px;"><code>ghcr.io/vigliafg/noesis-pdf-cloner-service:0.2.2</code> · <code>:latest</code></td><td style="padding:10px 14px;">multi-arch</td></tr>
+        <tr><td style="padding:10px 14px;">Verifica</td><td style="padding:10px 14px;"><a href="https://github.com/vigliafg/noesis-pdf-cloner-service/releases/download/v0.2.2/SHA256SUMS.txt" style="color:var(--accent-2);">SHA256SUMS.txt</a></td><td style="padding:10px 14px;">checksum</td></tr>
+      </tbody>
+    </table>
+    </div>
+
     <h2>💡 Casi d'Uso</h2>
     <ul class="feature-list">
       <li><span class="dot cyan"></span> <strong>Servizio di laboratorio</strong> — Un computer in LAN che traduce per tutti, senza installare nulla sui client</li>
@@ -145,7 +171,7 @@ docker run -d --name noesis -p 18080:18080 -v noesis-data:/data \
 </main>
 
 <footer>
-  <p>VibeWhisper · <a href="https://github.com/vigliafg/noesis-pdf-cloner-service" style="color:var(--accent-2);">GitHub</a> · AGPL-3.0</p>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/noesis-pdf-cloner-service" style="color:var(--accent-2);">GitHub</a> · <a href="https://github.com/vigliafg/noesis-pdf-cloner-service/releases/latest" style="color:var(--accent-2);">Release 0.2.2</a> · AGPL-3.0</p>
 </footer>
 
 </body>

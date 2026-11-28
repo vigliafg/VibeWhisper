@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noesis PDF Cloner — VibeWhisper</title>
-  <meta name="description" content="App desktop PyQt6 che mostra il PDF originale a sinistra e la pagina tradotta con layout preservato a destra, con export in PDF o ZIP.">
+  <meta name="description" content="App desktop PyQt6: PDF originale e clone tradotto con layout preservato; le scansioni passano da Mistral OCR a Markdown tradotto, con export PDF e Markdown. Release 0.2.2.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
     <div class="icon-lg blue">🌍</div>
     <h1>Noesis PDF Cloner</h1>
     <p class="subtitle">
-      App desktop che apre un PDF e mostra a sinistra la pagina originale, a destra la stessa pagina tradotta nella lingua scelta con il layout preservato.
+      App desktop che apre un PDF e mostra a sinistra la pagina originale, a destra la stessa pagina tradotta. I PDF nativi mantengono il layout; le scansioni diventano testo Markdown tradotto con le figure, senza impaginazione.
     </p>
     <div class="tech-tags">
       <span class="tech-tag">PyQt6</span>
@@ -50,6 +50,7 @@
       <span class="tech-tag">AGPL-3.0</span>
     </div>
     <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/noesis-pdf-cloner/releases/tag/v0.2.2" class="link-btn" target="_blank" rel="noopener">⬇️ Release 0.2.2</a>
       <a href="https://github.com/vigliafg/noesis-pdf-cloner" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
     </div>
   </div>
@@ -59,7 +60,7 @@
     <div class="section-card section-cose">
     <h2>📖 Cos'è</h2>
     <p>
-      <strong>Noesis PDF Cloner</strong> è un'app desktop derivata da Noesis PDF Reader Lite che traduce un PDF mantenendone l'impaginazione: testo, immagini, tabelle e numeri di pagina restano al loro posto, cambia solo la lingua. La pagina tradotta è prodotta da <a href="https://github.com/PDFMathTranslate/PDFMathTranslate-next" target="_blank" rel="noopener">pdf2zh_next v2</a> con typesetter BabelDOC, ed è mostrata accanto all'originale in una vista affiancata. La traduzione avviene on-demand pagina per pagina, con cache su disco separata per motore e coppia linguistica.
+      <strong>Noesis PDF Cloner</strong> è un'app desktop derivata da Noesis PDF Reader Lite con <strong>due pipeline</strong>. I PDF nativi vengono clonati mantenendo l'impaginazione: testo, immagini, tabelle e numeri di pagina restano al loro posto, cambia solo la lingua (pdf2zh_next v2 + BabelDOC). Le pagine <strong>scansionate</strong> (senza livello testo) vengono riconosciute con <strong>Mistral OCR</strong> via OpenRouter e trasformate in un <strong>documento Markdown tradotto</strong>, con le figure estratte in coda: il pannello destro diventa un viewer Markdown e l'export produce PDF testuale + Markdown con immagini base64. La traduzione avviene on-demand pagina per pagina, con cache su disco separata per motore e coppia linguistica.
     </p>
     </div>
 
@@ -73,7 +74,7 @@
     <div class="section-card section-comefunziona">
     <h2>⚙️ Come funziona</h2>
     <p>
-      L'app apre il PDF con PyMuPDF e mostra due pannelli sincronizzati. Quando premi <strong>▶ Traduci</strong>, il motore selezionato (Google, Bing o LLM) genera il clone della pagina corrente con pdf2zh_next; il risultato viene messo in cache su disco per motore e lingua. Google usa una catena gratuita con fallback progressivi, Bing è il traduttore integrato di pdf2zh_next, LLM passa da OpenRouter. Le pagine si traducono una alla volta; le richieste interne dell'LLM possono essere parallelizzate dalle impostazioni. L'export guidato in 5 passi permette di scegliere pagine, lingue, motore e formato senza perdere il riferimento alla numerazione fisica o stampata.
+      L'app apre il PDF con PyMuPDF e mostra due pannelli sincronizzati. Quando premi <strong>▶ Traduci</strong>, il motore selezionato (Google, Bing o LLM) produce la pagina: per i PDF nativi il clone con pdf2zh_next, per le scansioni il testo Markdown tradotto (con un'animazione di scansione durante l'OCR e il viewer Markdown alla fine). Google usa una catena gratuita con fallback progressivi, Bing è il traduttore integrato/Edge, LLM passa da OpenRouter ed è <code>openai/gpt-oss-120b</code> di default. Ogni pagina è messa in cache; l'export guidato in 5 passi permette di scegliere pagine, lingue, motore e formato senza perdere la numerazione fisica o stampata.
     </p>
     </div>
 
@@ -101,6 +102,9 @@
       <li><span class="dot purple"></span> <strong>Azioni di pagina</strong> — Salva, esporta, traduci la successiva, ritraduci, apri nel visualizzatore o cancella la cache</li>
       <li><span class="dot green"></span> <strong>Tema e avvisi</strong> — Chiaro, scuro o come il sistema; notifica e suono a fine lavoro, senza standby durante la traduzione</li>
       <li><span class="dot accent"></span> <strong>Chiave protetta</strong> — La chiave OpenRouter è salvata in un file per-utente 0600, con verifica e messaggi di errore classificati</li>
+      <li><span class="dot blue"></span> <strong>Scansioni OCR</strong> — Le pagine senza testo passano da Mistral OCR (OpenRouter): avviso di costo, Markdown tradotto e figure estratte in coda</li>
+      <li><span class="dot cyan"></span> <strong>Viewer Markdown</strong> — Per le pagine OCR il pannello destro mostra tabelle, titoli e immagini renderizzati, con animazione di scansione durante il riconoscimento</li>
+      <li><span class="dot green"></span> <strong>Export PDF + Markdown</strong> — PDF hardcopy del Markdown e file <code>.md</code> con immagini base64; per i PDF nativi restano PDF/ZIP/cartella</li>
     </ul>
 
     <h2>🏗️ Come Funziona</h2>
@@ -129,6 +133,29 @@ cd noesis-pdf-cloner
 export OPENROUTER_API_KEY=&quot;sk-or-...&quot;
 </pre>
 
+
+    <h2>⬇️ Download (v0.2.2)</h2>
+    <p>
+      Release <strong>0.2.2</strong> su
+      <a href="https://github.com/vigliafg/noesis-pdf-cloner/releases/tag/v0.2.2" target="_blank" rel="noopener">GitHub Releases</a>.
+      Include OCR delle scansioni, viewer Markdown, default LLM <code>gpt-oss-120b</code> e le correzioni precedenti.
+    </p>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;color:var(--text-muted);font-size:0.9rem;">
+      <thead><tr style="border-bottom:1px solid var(--border);color:var(--text);text-align:left;">
+        <th style="padding:10px 14px;">Piattaforma</th><th style="padding:10px 14px;">File</th><th style="padding:10px 14px;">Dimensione</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:10px 14px;">Windows x64</td><td style="padding:10px 14px;"><a href="https://github.com/vigliafg/noesis-pdf-cloner/releases/download/v0.2.2/NoesisPDFCloner-windows-x64-setup.exe" style="color:var(--accent-2);">installer .exe</a></td><td style="padding:10px 14px;">~144 MB</td></tr>
+        <tr><td style="padding:10px 14px;">Windows x64</td><td style="padding:10px 14px;"><a href="https://github.com/vigliafg/noesis-pdf-cloner/releases/download/v0.2.2/NoesisPDFCloner-windows-x64.exe" style="color:var(--accent-2);">portable .exe</a></td><td style="padding:10px 14px;">~147 MB</td></tr>
+        <tr><td style="padding:10px 14px;">macOS Apple Silicon</td><td style="padding:10px 14px;"><a href="https://github.com/vigliafg/noesis-pdf-cloner/releases/download/v0.2.2/NoesisPDFCloner-macos-arm64.dmg" style="color:var(--accent-2);">.dmg</a></td><td style="padding:10px 14px;">~142 MB</td></tr>
+        <tr><td style="padding:10px 14px;">macOS Intel</td><td style="padding:10px 14px;"><a href="https://github.com/vigliafg/noesis-pdf-cloner/releases/download/v0.2.2/NoesisPDFCloner-macos-x64.dmg" style="color:var(--accent-2);">.dmg</a></td><td style="padding:10px 14px;">~80 MB</td></tr>
+        <tr><td style="padding:10px 14px;">Linux x86_64</td><td style="padding:10px 14px;"><a href="https://github.com/vigliafg/noesis-pdf-cloner/releases/download/v0.2.2/NoesisPDFCloner-x86_64.AppImage" style="color:var(--accent-2);">AppImage</a></td><td style="padding:10px 14px;">~196 MB</td></tr>
+        <tr><td style="padding:10px 14px;">Motore (opzionale)</td><td style="padding:10px 14px;"><a href="https://github.com/vigliafg/noesis-pdf-cloner/releases/download/v0.2.2/setup_engine.sh" style="color:var(--accent-2);">setup_engine.sh</a> · <a href="https://github.com/vigliafg/noesis-pdf-cloner/releases/download/v0.2.2/setup_engine.ps1" style="color:var(--accent-2);">setup_engine.ps1</a></td><td style="padding:10px 14px;">script</td></tr>
+      </tbody>
+    </table>
+    </div>
+
     <h2>💡 Casi d'Uso</h2>
     <ul class="feature-list">
       <li><span class="dot blue"></span> <strong>Paper scientifici</strong> — Leggere un articolo in italiano mantenendo figure, tabelle e riferimenti</li>
@@ -141,7 +168,7 @@ export OPENROUTER_API_KEY=&quot;sk-or-...&quot;
 </main>
 
 <footer>
-  <p>VibeWhisper · <a href="https://github.com/vigliafg/noesis-pdf-cloner" style="color:var(--accent-2);">GitHub</a> · AGPL-3.0</p>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/noesis-pdf-cloner" style="color:var(--accent-2);">GitHub</a> · <a href="https://github.com/vigliafg/noesis-pdf-cloner/releases/latest" style="color:var(--accent-2);">Release 0.2.2</a> · AGPL-3.0</p>
 </footer>
 
 </body>

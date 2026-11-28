@@ -44,8 +44,8 @@ La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 
 | 📖 [cli_translator](showcase/cli_translator.html) | Traduci EPUB con Google o AI via OpenRouter | Python, CLI, ebooklib |
 | 📚 [Noesis Ebook Translator](showcase/noesis-ebook-translator.html) | Traduci EPUB preservando formattazione e indice | Python, PyQt6, foliate-js, LLM |
 | ⌨️ [Noesis Ebook Translator Engine](showcase/noesis-ebook-translator-engine.html) | Lo stesso motore EPUB in CLI, TUI e server MCP per agenti, senza Qt | Python, CLI, Textual, MCP |
-| 🌍 [Noesis PDF Cloner](showcase/noesis-pdf-cloner.html) | PDF originale e clone tradotto affiancati | Python, PyQt6, pdf2zh_next, BabelDOC |
-| 🐳 [Noesis PDF Cloner Service](showcase/noesis-pdf-cloner-service.html) | Server web e CLI per PDF tradotti con layout | FastAPI, Docker, pdf2zh_next |
+| 🌍 [Noesis PDF Cloner](showcase/noesis-pdf-cloner.html) | PDF originale e clone tradotto affiancati; scansioni via Mistral OCR → Markdown tradotto, viewer Markdown ed export PDF/MD. Release 0.2.2 | Python, PyQt6, pdf2zh_next, BabelDOC, Mistral OCR |
+| 🐳 [Noesis PDF Cloner Service](showcase/noesis-pdf-cloner-service.html) | Server web e CLI per PDF tradotti; scansioni OCR → Markdown + PDF hardcopy. Release 0.2.2 | FastAPI, Docker, pdf2zh_next, Mistral OCR |
 | 🔎 [Noesis PDF Reader Lite](showcase/noesis-pdf-reader-lite.html) | PDF → Markdown con engine adattativo dei fix | Python, PyQt6, PyMuPDF4LLM |
 | 🧾 [Noesis PDF Reader Lite Engine](showcase/noesis-pdf-reader-lite-engine.html) | Estrazione e traduzione PDF da riga di comando | Python, CLI, OCR, pandoc |
 | 🎨 [Noesis Roads](showcase/noesis-roads.html) | Schede didattiche d'arte dettaglio per dettaglio | React, Node.js, SQLite, AI |
