@@ -29,7 +29,7 @@
   </g>
   <g>
     <rect x="932" y="99" width="108" height="30" rx="15" fill="#a78bfa" fill-opacity="0.08" stroke="#a78bfa" stroke-opacity="0.32"/>
-    <text x="1027" y="118" text-anchor="end" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12" fill="#a78bfa" letter-spacing="1.1">5 PROGETTI</text>
+    <text x="1027" y="118" text-anchor="end" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="12" fill="#a78bfa" letter-spacing="1.1">6 PROGETTI</text>
   </g>
 
   <rect x="60" y="166" width="82" height="82" rx="20" fill="#a78bfa" fill-opacity="0.10" stroke="#a78bfa" stroke-opacity="0.35"/>
@@ -37,7 +37,7 @@
   <rect x="60" y="264" width="46" height="3" rx="1.5" fill="#a78bfa"/>
 
   <text x="60" y="304" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="46" font-weight="800" fill="#f4f6fa" letter-spacing="-1.4">EPUB &amp; libri</text>
-  <text x="60" y="352" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">Metadati, conversione, split e compressione:</text><text x="60" y="379" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">tutto ciò che serve a un EPUB.</text>
+  <text x="60" y="352" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">Leggere, editare, convertire e comprimere:</text><text x="60" y="379" font-family="'DejaVu Sans','Segoe UI',system-ui,sans-serif" font-size="17.5" fill="#aeb6c4">tutto l'EPUB, dalla A alla Z.</text>
   
     <rect x="60" y="424" width="47" height="30" rx="15" fill="#a78bfa" fill-opacity="0.10" stroke="#a78bfa" stroke-opacity="0.30"/>
     <text x="83" y="444" text-anchor="middle" font-family="'DejaVu Sans Mono','SF Mono',ui-monospace,monospace" font-size="13" fill="#c9cfda">EPUB</text>

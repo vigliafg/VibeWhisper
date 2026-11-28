@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPUB Studio — VibeWhisper</title>
+  <meta name="description" content="Lettore, editor e toolkit EPUB in un'unica app desktop multipiattaforma: pagina singola, doppia e scorrimento, editing XHTML/CSS/OPF con anteprima live, split, compressione immagini, export e motore Calibre incluso nel pacchetto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VibeWhisper</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#sezioni" class="active">Sezioni</a></li>
+      <li><a href="noesis.html">Noesis</a></li>
+    </ul>
+    <button class="hamburger" onclick="var o=document.getElementById('mobileNav');o.classList.toggle('open');this.textContent=o.classList.contains('open')?'✕':'☰';" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNav" onclick="this.classList.remove('open');document.querySelector('.hamburger').textContent='☰';">
+    <a href="index.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Home</a>
+    <a href="index.html#sezioni" class="active" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Sezioni</a>
+    <a href="noesis.html" onclick="event.stopPropagation();document.getElementById('mobileNav').classList.remove('open');document.querySelector('.hamburger').textContent='☰';">Noesis</a>
+  </div>
+</nav>
+
+<main>
+  <div class="project-hero">
+    <a href="epub-libri.html" class="back-link">← EPUB &amp; libri</a>
+    <div class="icon-lg purple">📖</div>
+    <h1>EPUB Studio <span class="tech-tag" style="vertical-align:middle;font-size:0.8rem;">v0.1.0</span></h1>
+    <p class="subtitle">
+      Lettore, editor e toolkit EPUB in <strong>un'unica app desktop multipiattaforma</strong>. Interfaccia Adobe Acrobat, pagina singola / doppia / scorrimento, editing XHTML/CSS/OPF con anteprima live, evidenziazioni, note, split, compressione immagini ed export — con il motore Calibre incluso nel pacchetto, quindi funziona anche senza Calibre installato.
+    </p>
+    <div class="tech-tags">
+      <span class="tech-tag">Electron 45</span>
+      <span class="tech-tag">React 19</span>
+      <span class="tech-tag">TypeScript</span>
+      <span class="tech-tag">epub.js</span>
+      <span class="tech-tag">CodeMirror 6</span>
+      <span class="tech-tag">Calibre engine</span>
+      <span class="tech-tag">Python 3.13 incluso</span>
+      <span class="tech-tag">JSZip</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a href="https://github.com/vigliafg/epub-studio" class="link-btn" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://github.com/vigliafg/epub-studio/blob/main/README.md" class="link-btn" target="_blank" rel="noopener">📄 README</a>
+      <a href="https://github.com/vigliafg/epub-studio/releases/tag/v0.1.0" class="link-btn" target="_blank" rel="noopener">⬇️ Release 0.1.0</a>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="section-card section-cose">
+      <h2>📖 Cos'è</h2>
+      <p>
+        <strong>EPUB Studio</strong> riunisce i progetti EPUB dell'ecosistema Noesis in un solo programma: quello che prima richiedeva un reader, un editor, uno splitter, uno slimmer e un convertitore diventa una finestra con menu, barra strumenti, tab dei documenti e pannello laterale, nello stile di Adobe Acrobat.
+      </p>
+      <p>
+        Dentro c'è un <strong>motore EPUB in TypeScript</strong> (container, OPF, NCX/Nav, percorsi, immagini, archivio) che copre lettura, modifica, split, compressione ed export <strong>senza dipendenze esterne</strong>. In più un <strong>sidecar Python</strong> parla JSON-lines con il motore OEB di Calibre — quello installato sul sistema oppure quello ridotto incluso nel pacchetto — per check book, politura, subset dei font e conversione.
+      </p>
+    </div>
+
+    <div class="section-card section-chiserve">
+      <h2>👤 A chi serve</h2>
+      <p>
+        A chi <strong>legge e corregge EPUB</strong> e non vuole saltare tra cinque strumenti: autori che controllano l'impaginazione, redattori che aggiustano XHTML e CSS, traduttori che verificano capitoli e metadati. A chi lavora <strong>offline</strong> e non vuole caricare libri su un sito: tutto gira in locale. A chi vuole un <strong>installer pronto</strong>: AppImage o .deb su Linux, .dmg su macOS, .exe su Windows, 170 MB con il motore già dentro.
+      </p>
+    </div>
+
+    <div class="section-card section-comefunziona">
+      <h2>⚙️ Come funziona</h2>
+      <p>
+        <strong>1. Lettura:</strong> rendition <code>epub.js</code> con pagina singola, doppia pagina e scorrimento continuo, zoom 50–300%, indice gerarchico, ricerca full-text e posizione salvata per libro (CFI). Il foglio si adatta da solo al viewport, con frecce e aree di click ai lati per sfogliare.<br>
+        <strong>2. Editing:</strong> albero dei file con creazione, rinomina (riscrivendo i riferimenti) ed eliminazione; editor CodeMirror 6 per XHTML, CSS, OPF, NCX e XML, con anteprima live che applica CSS e immagini inline. Find &amp; replace su tutti i file testuali, metadati OPF completi e check book strutturale.<br>
+        <strong>3. Trasformazioni:</strong> compressione immagini con Canvas (JPEG/PNG/WebP, qualità 10–90%), splitter di un capitolo con i sotto-capitoli in un EPUB autonomo (OPF, manifest, spine e nav rigenerati), politura Calibre e aggiornamento a EPUB 3.<br>
+        <strong>4. Motore:</strong> a runtime sceglie <code>calibre-debug</code> se c'è, altrimenti il runtime Python incluso, altrimenti <code>python3</code> di sistema. Nessuno dei tre serve per leggere, modificare, dividere, comprimere ed esportare: quelle funzioni girano sul motore TypeScript interno.<br>
+        <strong>5. Esportazione:</strong> sito statico autonomo (una pagina per capitolo), testo, Markdown, HTML unico, JSON strutturato e annotazioni in Markdown/JSON.
+      </p>
+    </div>
+
+    <h2>✨ Caratteristiche</h2>
+    <ul class="feature-list">
+      <li><span class="dot purple"></span> <strong>Una finestra per tutto</strong> — Lettura, editing, trasformazioni ed export nello stesso documento</li>
+      <li><span class="dot accent"></span> <strong>Interfaccia Acrobat</strong> — Menu, toolbar, tab, pannello laterale, rail e barra di stato sempre visibile</li>
+      <li><span class="dot green"></span> <strong>Autofit del foglio</strong> — La pagina si ridimensiona con la finestra e resta interamente nel viewport, in tutte e tre le modalità</li>
+      <li><span class="dot amber"></span> <strong>Annotazioni</strong> — Evidenziazioni in quattro colori, note e pannello commenti, con CFI persistente</li>
+      <li><span class="dot cyan"></span> <strong>Editor vero</strong> — CodeMirror 6 con evidenziazione della sintassi, anteprima live e rinomina sicura dei file</li>
+      <li><span class="dot purple"></span> <strong>Offline di serie</strong> — Motore EPUB interno e runtime Python incluso: nessun upload, nessun servizio esterno</li>
+      <li><span class="dot green"></span> <strong>Multipiattaforma</strong> — AppImage/.deb, .dmg e installer NSIS generati dalla stessa base di codice</li>
+      <li><span class="dot accent"></span> <strong>GPL-3.0</strong> — Codice aperto, fork e contributi benvenuti</li>
+    </ul>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Piattaforme</div></div>
+      <div class="stat-card"><div class="num">3</div><div class="lbl">Modalità di lettura</div></div>
+      <div class="stat-card"><div class="num">50–300%</div><div class="lbl">Zoom</div></div>
+      <div class="stat-card"><div class="num">0</div><div class="lbl">Upload</div></div>
+    </div>
+
+    <h2>⬇️ Download</h2>
+    <table>
+      <thead>
+        <tr><th>Piattaforma</th><th>Pacchetto</th><th>Dimensione</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Linux x86_64</td><td><a href="https://github.com/vigliafg/epub-studio/releases/download/v0.1.0/epub-studio-0.1.0-linux-x86_64.AppImage" style="color:var(--accent-2);">AppImage</a></td><td>181 MB</td></tr>
+        <tr><td>Linux Debian/Ubuntu</td><td><a href="https://github.com/vigliafg/epub-studio/releases/download/v0.1.0/epub-studio-0.1.0-linux-amd64.deb" style="color:var(--accent-2);">.deb</a></td><td>122 MB</td></tr>
+        <tr><td>macOS Apple Silicon</td><td><a href="https://github.com/vigliafg/epub-studio/releases/download/v0.1.0/epub-studio-0.1.0-mac-arm64.dmg" style="color:var(--accent-2);">.dmg</a></td><td>167 MB</td></tr>
+        <tr><td>Windows x64</td><td><a href="https://github.com/vigliafg/epub-studio/releases/download/v0.1.0/epub-studio-0.1.0-win-x64.exe" style="color:var(--accent-2);">installer .exe</a></td><td>165 MB</td></tr>
+      </tbody>
+    </table>
+    <p style="color:var(--muted);font-size:0.9rem;">
+      I pacchetti non sono firmati: su macOS usa tasto destro → Apri, su Windows conferma l'avviso di SmartScreen.
+    </p>
+
+    <h2>⌨️ Comandi rapidi</h2>
+    <table>
+      <thead>
+        <tr><th>Tasto</th><th>Azione</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>←</code> / <code>→</code> · <code>PageUp</code> / <code>PageDown</code></td><td>Pagina precedente / successiva</td></tr>
+        <tr><td>Clic sull'area a sinistra / destra del foglio</td><td>Pagina precedente / successiva</td></tr>
+        <tr><td><code>Ctrl</code> + <code>O</code></td><td>Apri un EPUB</td></tr>
+        <tr><td><code>Ctrl</code> + <code>S</code> / <code>Ctrl</code> + <code>Shift</code> + <code>S</code></td><td>Salva / salva con nome</td></tr>
+        <tr><td><code>Ctrl</code> + <code>W</code></td><td>Chiudi il documento attivo</td></tr>
+        <tr><td><code>Ctrl</code> + <code>+</code> / <code>Ctrl</code> + <code>-</code></td><td>Ingrandisci / riduci</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🧱 Architettura</h2>
+    <pre style="font-size:0.75rem; line-height:1.6; background:rgba(16,20,30,0.8);">
+Electron (main) ──stdio JSON-RPC── sidecar/bridge.py → Calibre / ebook-convert incluso
+     │ IPC
+Renderer React ── epub.js (lettura) · CodeMirror 6 (editing)
+     └─────────── src/core: OPF, TOC NCX/Nav, percorsi, immagini, archivio
+                  split · slim · export · check strutturale</pre>
+
+    <h2>🔒 Privacy</h2>
+    <p>
+      Tutto accade in locale: i libri non lasciano il computer, non ci sono upload, account o telemetria. Il runtime Python incluso lavora sulla copia del libro aperta dall'app e la libreria personale resta su disco, nei dati dell'applicazione.
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  <p>VibeWhisper · <a href="https://github.com/vigliafg/epub-studio" style="color:var(--accent-2);">GitHub</a> · GPL-3.0</p>
+</footer>
+
+</body>
+</html>

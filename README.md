@@ -2,7 +2,7 @@
 
 > Idee che diventano codice
 
-**VibeWhisper** è il portfolio showcase di **43 progetti** raccolti in **9 sezioni tematiche** — dal mondo dei PDF agli EPUB, dalla traduzione di documenti ai diagrammi Mermaid, dal cloud storage al batch renaming, dalla dettatura vocale all'analisi forex, fino ai database relazionali. Ogni progetto risolve un problema reale con un'interfaccia pensata per chi la usa.
+**VibeWhisper** è il portfolio showcase di **44 progetti** raccolti in **9 sezioni tematiche** — dal mondo dei PDF agli EPUB, dalla traduzione di documenti ai diagrammi Mermaid, dal cloud storage al batch renaming, dalla dettatura vocale all'analisi forex, fino ai database relazionali. Ogni progetto risolve un problema reale con un'interfaccia pensata per chi la usa.
 
 ## 🚀 Guarda lo Showcase
 
@@ -16,7 +16,7 @@ La home è un hub: ogni sezione raccoglie i progetti per **tipo di lavoro**.
 |---|---|---|
 | [🧭 Noesis](showcase/noesis.html) | 14 | Reader, traduzione EPUB/PDF, cloner, engine, EPUB tools, Excalidraw, Roads, sito |
 | [📄 Documenti & PDF](showcase/documenti.html) | 6 | pdfhandler, pdfhandler-ng, pdfextractor, pdfshow, Pandoc WASM Studio, Book Consultant |
-| [📚 EPUB & libri](showcase/epub-libri.html) | 5 | IBS Metadata Scraper, epub2site, epubsplitter, epubslimer, fscalibre |
+| [📚 EPUB & libri](showcase/epub-libri.html) | 6 | EPUB Studio (v0.1.0, desktop multipiattaforma), IBS Metadata Scraper, epub2site, epubsplitter, epubslimer, fscalibre |
 | [🌍 Lingua & voce](showcase/lingua-voce.html) | 3 | mdtranslator, cli_translator, NovoDictate |
 | [📈 Finanza](showcase/finanza.html) | 4 | ForexFlow AI, ForexVision, ForexSMC, FX Trading Analyst |
 | [📊 Statistica](showcase/statistica.html) | 4 | LazStats JS, LazStats Pro (v0.35.0, CLI e MCP), RcmdrShiny (v1.13.0), RcmdrShiny Studio (v3.2.0) |
@@ -36,6 +36,7 @@ La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 
 | 📊 [IBS EPUB Metadata Scraper](showcase/ibs-epub-metadata-scraper.html) | Arricchisci EPUB con metadati da IBS.it | Python, CLI + GUI, Web Scraping |
 | 🌐 [epub2site](showcase/epub2site.html) | Converti EPUB in sito web statico leggibile ovunque | Node.js, CLI |
 | ☁️ [TGM Drive NXT](showcase/tgm-drive-nxt.html) | Cloud personale via Telegram: upload fino a 2 GB | Python, PyQt6, Telegram API |
+| 📖 [EPUB Studio](showcase/epub-studio.html) | Lettore, editor e toolkit EPUB desktop con interfaccia Acrobat, motore Calibre incluso e installer per Linux, macOS e Windows. Release 0.1.0 | Electron, React 19, TypeScript, epub.js, CodeMirror 6 |
 | ✂️ [epubsplitter](showcase/epubsplitter.html) | Estrai capitoli EPUB in nuovi file autonomi | React + TS, JSZip |
 | 🗜️ [epubslimer](showcase/epubslimer.html) | Comprimi immagini EPUB con Canvas API | React + TS, JSZip |
 | 📑 [pdfextractor](showcase/pdfextractor.html) | Converti PDF scientifici in Markdown pulito | Python, Docling, CLI |
@@ -70,7 +71,7 @@ La sezione **Noesis** ha una mappa dedicata che classifica i 14 repository in 6 
 
 ## 🛠️ Tecnologie
 
-- **Frontend**: Vanilla JS, React 19 + TypeScript, Tailwind CSS
+- **Frontend**: Vanilla JS, React 19 + TypeScript, Tailwind CSS, Electron, epub.js, CodeMirror 6
 - **Backend/CLI**: Python, Node.js, FastAPI, Docker
 - **Desktop GUI**: PyQt6, Flet, Tauri 2 + Rust, Tkinter, CustomTkinter, Textual
 - **API/AI**: Google Translate, DeepL, Microsoft/Bing, OpenRouter, Gemini, Telegram Bot API, Yahoo Finance, Claude Code
@@ -94,6 +95,7 @@ VibeWhisper/
 │   ├── diagrammi-ai.html   # Sezione Diagrammi & AI
 │   ├── file-cloud-sicurezza.html  # Sezione File, cloud & sicurezza
 │   ├── database.html       # Sezione Database
+│   ├── epub-studio.html    # Scheda EPUB Studio
 │   ├── adbx-legacy.html    # Scheda adbx-legacy
 │   ├── dbasex.html         # Scheda dBX
 │   └── *.html              # Pagine dettaglio per ogni progetto

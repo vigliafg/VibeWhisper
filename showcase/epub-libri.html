@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EPUB &amp; libri — VibeWhisper</title>
-  <meta name="description" content="Metadati, conversione, estrazione capitoli e compressione: i progetti che lavorano sul libro digitale.">
+  <meta name="description" content="Leggere, correggere, arricchire, convertire e comprimere: i progetti che lavorano sul libro digitale, con EPUB Studio come suite desktop.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -39,10 +39,12 @@
     <div class="icon-lg purple">📚</div>
     <h1>EPUB &amp; libri</h1>
     <p class="subtitle">
-      Metadati, conversione, estrazione capitoli e compressione: i progetti che lavorano sul libro digitale, prima e dopo la lettura.
+      Leggere, correggere, arricchire, convertire e comprimere: i progetti che lavorano sul libro digitale, prima, durante e dopo la lettura.
     </p>
     <div class="tech-tags">
       <span class="tech-tag">EPUB</span>
+      <span class="tech-tag">Lettura</span>
+      <span class="tech-tag">Editing</span>
       <span class="tech-tag">Metadati</span>
       <span class="tech-tag">Split</span>
       <span class="tech-tag">Compressione</span>
@@ -55,7 +57,8 @@
   <div class="eco-wrap">
 
     <div class="stats-row">
-      <div class="stat-card"><div class="num">5</div><div class="lbl">Progetti</div></div>
+      <div class="stat-card"><div class="num">6</div><div class="lbl">Progetti</div></div>
+      <div class="stat-card"><div class="num">1</div><div class="lbl">App desktop</div></div>
       <div class="stat-card"><div class="num">2</div><div class="lbl">Strumenti EPUB</div></div>
       <div class="stat-card"><div class="num">1</div><div class="lbl">Conversione EPUB→sito</div></div>
       <div class="stat-card"><div class="num">0</div><div class="lbl">Upload</div></div>
@@ -65,10 +68,30 @@
       <div class="eco-section-head">
         <span class="eco-kicker">Sezione 02 · Libri</span>
         <h2>La filiera del libro digitale</h2>
-        <p>Arricchire i metadati, trasformare un EPUB in un sito, estrarre un capitolo, alleggerire le immagini o ritrovare un libro nella propria libreria: ogni progetto interviene in un punto preciso del ciclo di vita di un ebook.</p>
+        <p>Leggere, correggere e trasformare: dalla suite desktop che riunisce lettura ed editing, ai metadati, al sito statico, fino allo split, alla compressione e alla ricerca nella libreria Calibre. Ogni progetto interviene in un punto preciso del ciclo di vita di un ebook.</p>
       </div>
 
       <div class="project-grid eco-grid">
+        <article class="eco-card project-card">
+          <div class="card-body">
+            <div class="eco-card-head">
+              <div class="icon purple">📖</div>
+              <div>
+                <h3>EPUB Studio</h3>
+                <span class="eco-badge">Desktop · Electron · v0.1.0</span>
+              </div>
+            </div>
+            <div class="tags">
+              <span class="tag">Electron</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">epub.js</span><span class="tag">Calibre</span>
+            </div>
+            <p class="desc">
+              Legge, corregge e trasforma EPUB in un'unica app multipiattaforma: interfaccia Acrobat, pagina singola/doppia/scorrimento, editor XHTML/CSS/OPF con anteprima live, split, compressione ed export. Motore Calibre incluso.
+            </p>
+            <div class="eco-links">
+              <a href="epub-studio.html" class="link-btn">Scheda →</a><a href="https://github.com/vigliafg/epub-studio" class="link-btn" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/vigliafg/epub-studio/releases/tag/v0.1.0" class="link-btn" target="_blank" rel="noopener">Download</a>
+            </div>
+          </div>
+        </article>
         <article class="eco-card project-card">
           <div class="card-body">
             <div class="eco-card-head">
@@ -176,10 +199,11 @@
       <div class="eco-section-head">
         <span class="eco-kicker">Come sono collegati</span>
         <h2>Fili comuni</h2>
-        <p>I due strumenti di Noesis EPUB Tools condividono lo stesso repository e la stessa interfaccia; gli altri lavorano a monte, a valle e dentro la libreria.</p>
+        <p><strong>EPUB Studio</strong> raccoglie in un'unica app desktop le funzioni degli altri: i due strumenti di Noesis EPUB Tools condividono lo stesso repository e la stessa interfaccia; gli altri lavorano a monte, a valle e dentro la libreria.</p>
       </div>
 
       <ul class="feature-list">
+        <li><span class="dot accent"></span> <strong>EPUB Studio</strong> — La suite desktop che riunisce lettura, editing, split, compressione ed export, con il motore Calibre incluso.</li>
         <li><span class="dot green"></span> <strong>IBS Metadata Scraper</strong> — Arricchisce i metadati del libro prima della conversione o della pubblicazione.</li>
         <li><span class="dot amber"></span> <strong>epub2site</strong> — Trasforma l'EPUB in un sito statico leggibile ovunque, con reader e TOC.</li>
         <li><span class="dot purple"></span> <strong>Noesis EPUB Tools</strong> — epubsplitter ed epubslimer sono i due strumenti della suite: estrazione capitoli e compressione immagini.</li>
